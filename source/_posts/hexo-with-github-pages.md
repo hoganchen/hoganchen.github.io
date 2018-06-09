@@ -301,6 +301,32 @@ git clone https://github.com/hoganchen/hoganchen.github.io.git
 cd hoganchen.github.io.git
 npm install
 npm install hexo-deployer-git --save
+
+# hexo为默认的branch
+git branch -r
+git branch -a
+git checkout -b master origin/master
+git checkout hexo
+
+git config user.email "hogan.chen@ymail.com"
+git config user.name "hogan chen"
+
+# 提交原始数据到hexo分支
+git add .
+git commit -m "commit message"
+git push origin hexo
+
+# 静态网站数据提交master分支
+hexo clean
+hexo g
+hexo s
+hexo d
+
+cd .deploy_git/
+git config user.email "hogan.chen@ymail.com"
+git config user.name "hogan chen"
+
+hexo d
 ```
 
 ##### VirtualBox相关操作
