@@ -1,5 +1,5 @@
 ---
-title: jenkins usage
+title: Jenkins使用问题记录
 date: 2018-06-08 15:31:51
 tags: jenkins
 ---
@@ -11,6 +11,8 @@ tags: jenkins
 
 2. 配置：jienkins->【系统管理】->【系统设置】->【Locale】，输入：zh_CN，并勾上Ignore browser preference and force this language to all users. 这里还有很多语言，比如：en_US等都是国际化标志。
 ```
+
+<!-- more -->
 
 ##### <li> Jenkins允许匿名访问 </li>
 ```
@@ -49,20 +51,6 @@ http://www.cnblogs.com/comeonbaby/p/5016021.html
 这个权限对应 test用户可以是管理员、打标签权限。
 ```
 
-##### <li> Jenkins配置邮件列表 </li>
-```
-xiangkeyu@goodix.com, luochaohong@goodix.com, wanglin@goodix.com, limingfei@goodix.com, yangxianxu@goodix.com, zengying@goodix.com, chenfahai@goodix.com, chuyanliang@goodix.com, xujiangcheng@goodix.com, guoxiang@goodix.com, yuanmingwu@goodix.com, gongwenjie@goodix.com, cc:zoujinghua@goodix.com, cc:yibing@goodix.com, bcc:chenlianghong@goodix.com
-
-new email list
-xiangkeyu@goodix.com, luochaohong@goodix.com, wanglin@goodix.com, limingfei@goodix.com, yangxianxu@goodix.com, zengying@goodix.com, chenfahai@goodix.com, chuyanliang@goodix.com, xujiangcheng@goodix.com, guoxiang@goodix.com, yuanmingwu@goodix.com, gongwenjie@goodix.com, wangdayao@goodix.com, songzhigang@goodix.com, cc:zoujinghua@goodix.com, cc:yibing@goodix.com, bcc:chenlianghong@goodix.com
-
-system->system configuration
-smtp: smtp.goodix.com
-e-mail suffix: @goodix.com
-user: chenlianghong
-password: goodix**123
-smtp port: 587
-```
 
 ##### <li> 启动 </li>
 ```
@@ -82,21 +70,6 @@ http://localhost:8080/restart
 http://localhost:8080/reload
 ```
 
-##### <li> Jenkins账号管理 </li>
-```
-http://172.16.49.142:8080
-User: admin
-Pwd: admin@jks0
-Full name: administrator
-Email: espen@163.com
-
-http://172.16.49.2:8080
-User: admin
-Pwd: admin@jks0
-Full name: admin
-Email: espen@163.com
-```
-
 ##### <li> Jenkins插件选择 </li>
 ```
 Email Extension Template Plugin
@@ -105,6 +78,7 @@ Test Results Analyzer Plugin
 xUnit plugin
 Locale plugin
 Hudson Post build task /构建结束后执行shell命令
+Lockable Resources Plugin
 ```
 
 ##### <li> Jenkins Email Extension Template Plugin配置 </li>
@@ -137,9 +111,9 @@ job.getBuilds().each { it.delete() }
 
 
 ###### 第三种解决方案
-
+https://stackoverflow.com/questions/3410141/how-do-i-clear-my-jenkins-hudson-build-history
 转到您的Jenkins主页→管理Jenkins→脚本控制台
-![manage_jenkins.png](https://imgtn.gxnotes.com/images/2017/06/9f84cfe1ba69495e20b07a53640eb164.jpg)
+![manage_jenkins.jpg](/upload_image/jenkins-usage/manage_jenkins.jpg)
 
 在那里运行以下脚本。将copy_folder更改为your project name
 
@@ -301,9 +275,9 @@ A: 将html的依赖文件作为附件发送
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 # added by Anaconda3 4.4.0 installer
-# export PATH="/home/goodix/anaconda3/bin:$PATH"
-alias condapython='/home/chenlianghong/anaconda3/bin/python'
-alias condapip='/home/chenlianghong/anaconda3/bin/pip'
+# export PATH="/home/hogan/anaconda3/bin:$PATH"
+alias condapython='/home/hogan/anaconda3/bin/python'
+alias condapip='/home/hogan/anaconda3/bin/pip'
 
 # user define alias
 alias pyshare='python -m SimpleHTTPServer'
@@ -317,5 +291,5 @@ fi
 
 
 # Add new path variable for coverage tools
-PATH=$PATH:/home/goodix/.jenkins/workspace/BLE_Unit_Test/tools/cov_tools
+PATH=$PATH:/home/hogan/.jenkins/workspace/XXX_Unit_Test/tools/cov_tools
 ```
