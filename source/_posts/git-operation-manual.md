@@ -689,6 +689,66 @@ git push
 git diff				#只显示尚未暂存的修改
 git diff --cached		#查看已暂存的修改
 git diff --staged		#查看已暂存的修改
+git diff --stat         #查看尚未暂存的文件修改列表
+```
+
+##### 查看两个版本之间的修改
+```
+hogan@ubuntu:/mnt/share/github/hoganchen.github.io$ git log
+commit 69b4086950024785ef144b02532a62047317826b
+Author: hogan chen <hogan.chen@ymail.com>
+Date:   Mon Jun 11 22:41:59 2018 +0800
+
+    update the markdown articles
+
+commit 77144ba12c8e60c2b8000feb5a26071dc5de2bcb
+Author: hogan chen <hogan.chen@ymail.com>
+Date:   Mon Jun 11 22:41:59 2018 +0800
+
+    update the markdown articles
+
+commit 094cfcf5bfc6847a9cf87f08185e6c9562f47506
+Author: hogan chen <hogan.chen@ymail.com>
+Date:   Mon Jun 11 21:46:45 2018 +0800
+
+    update markdown article
+
+commit 75a08a18aed07f60ae859a780dc040ea50c42bdf
+Author: hogan chen <hogan.chen@ymail.com>
+Date:   Mon Jun 11 18:56:15 2018 +0800
+
+    update markdown article
+
+1. 通过commit id对比，显示详细修改记录
+hogan@ubuntu:/mnt/share/github/hoganchen.github.io$ git diff 77144ba12c8e60c2b8000feb5a26071dc5de2bcb..69b4086950024785ef144b02532a62047317826b
+diff --git a/source/_posts/git-operation-manual.md b/source/_posts/git-operation-manual.md
+index dc8bf96..288f395 100644
+--- a/source/_posts/git-operation-manual.md
++++ b/source/_posts/git-operation-manual.md
+
+2. 通过HEAD对比，显示详细修改记录
+hogan@ubuntu:/mnt/share/github/hoganchen.github.io$ git diff HEAD^..HEAD
+diff --git a/source/_posts/git-operation-manual.md b/source/_posts/git-operation-manual.md
+index dc8bf96..288f395 100644
+--- a/source/_posts/git-operation-manual.md
++++ b/source/_posts/git-operation-manual.md
+
+hogan@ubuntu:/mnt/share/github/hoganchen.github.io$ git diff HEAD^^..HEAD^
+diff --git a/source/_posts/bash-usage.md b/source/_posts/bash-usage.md
+index 3f78319..cdf08cf 100644
+--- a/source/_posts/bash-usage.md
++++ b/source/_posts/bash-usage.md
+
+3. 对比修改的文件列表，不显示详细修改记录
+hogan@ubuntu:/mnt/share/github/hoganchen.github.io$ git diff  HEAD^^..HEAD^ --stat
+ source/_posts/bash-usage.md               | 56 +++++++++++++++++++++++-----------------------
+ source/_posts/c-program-language-usage.md |  6 ++---
+ source/_posts/cmocka-usage.md             |  6 ++---
+ source/_posts/git-operation-manual.md     | 83 ++++++++++++++++++++++++++++++++++++++++++++++++++-------------------
+ source/_posts/hexo-with-github-pages.md   |  4 ++--
+ source/_posts/ubuntu-usage.md             | 18 +++++++--------
+ 6 files changed, 106 insertions(+), 67 deletions(-)
+
 ```
 
 ##### 跳过添加文件到暂存区，Git就会自动把所有已经跟踪过的文件暂存起来一并提交
