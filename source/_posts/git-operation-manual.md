@@ -41,6 +41,41 @@ git config --list
 git config -l 查看config配置，用 git config --global -l 查看全局设置。
 ```
 
+##### Git快捷方式添加
+https://peter517.github.io/2015/08/10/Git%E4%B8%AA%E4%BA%BA%E9%85%8D%E7%BD%AE/
+https://www.jianshu.com/p/e5ed3a29a3c4
+
+1. 通过git命令添加
+```
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.ci commit
+git config --global alias.br branch
+```
+
+2. 直接修改~/.gitconfig
+```
+hogan@ubuntu:~$ cat .gitconfig
+[alias]
+        st = status
+        co = checkout
+        ci = commit
+        br = branch
+```
+
+3. 添加.bashrc的alias
+```
+alias gitcommit="git commit -m"
+alias gitlog="git log"
+alias gitshow="git show" #查看修改内容
+alias gitcat="git cat-file"
+alias gitloggraph="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'" #以图形方式显示提交日志
+alias gitinfo="git remote show origin" #查看仓库信息
+alias gitshortlog="git shortlog --since=1.day.ago" #查看最近一天的提交日志
+alias gitweekshortlog="git shortlog --since=1.week.ago --author='pengjun' | grep -v Merge | uniq" #查看最近一周pengjun的提交日志
+alias gitfilelog="git log --follow -p" #查看文件的修改日志
+```
+
 ##### Git ssh访问设置
 ```
 $ ssh-keygen -t rsa -C "hogan.chen@ymail.com"
