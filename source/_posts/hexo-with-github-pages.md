@@ -379,7 +379,7 @@ upload_image位于themes/next/source目录下
 ##### "hexo g"错误解决
 https://sessionch.com/hexo/hexo-common-markdown.html
 ```
-hogan@hogan:~/hoganchen.github.io$ hexo g
+hogan@ubuntu:~/hoganchen.github.io$ hexo g
 INFO  Start processing
 FATAL Something's wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html
 Template render error: (unknown path)
@@ -422,7 +422,7 @@ http://zclau.com/2015/12/01/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4
 https://zcdll.github.io/2018/01/11/hexo-bugs/
 ```
 现象:
-hogan@hogan:~/hoganchen.github.io$ hexo s
+hogan@ubuntu:~/hoganchen.github.io$ hexo s
 INFO  Start processing
 FATAL Something's wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html
 Error: watch /home/hogan/hoganchen.github.io/themes/next/source/upload_image/ubuntu-usage/input_method_configuration.png ENOSPC

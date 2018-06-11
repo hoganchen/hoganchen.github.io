@@ -8,11 +8,11 @@ tags:
 
 ##### build example
 ```
-hogan@hogan:~/framework/cmocka/tests$ gcc -o test_ordering_fail test_ordering_fail.c -I ../build/ -I ../include/ -lcmocka
+hogan@ubuntu:~/framework/cmocka/tests$ gcc -o test_ordering_fail test_ordering_fail.c -I ../build/ -I ../include/ -lcmocka
 
-hogan@hogan:~/framework/cmocka/tests$ gcc -o test_skip test_skip.c -lcmocka
+hogan@ubuntu:~/framework/cmocka/tests$ gcc -o test_skip test_skip.c -lcmocka
 
-hogan@hogan:~/framework/cmocka/tests$ gcc -o test_ordering test_ordering.c -I ../build/ -I ../include/ -lcmocka
+hogan@ubuntu:~/framework/cmocka/tests$ gcc -o test_ordering test_ordering.c -I ../build/ -I ../include/ -lcmocka
 
 cd ~/share/framework/cmocka/build/example
 make clean

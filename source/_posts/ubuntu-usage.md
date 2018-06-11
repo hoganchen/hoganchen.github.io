@@ -80,7 +80,7 @@ deb-src http://ppa.launchpad.net/drwright/stable/ubuntu precise main
 
 
 Uubntu 14中，执行add-apt-repository命令后， 修改/etc/apt/sources.list.d/drwright-stable-trusty.list文件内容如下，然后执行update操作，并install，但是在系统设置中也没有type break的设置，待重启验证(不能work)
-hogan@hogan-Latitude-E5270:/etc/apt/sources.list.d$ cat drwright-stable-trusty.list
+hogan@ubuntu:/etc/apt/sources.list.d$ cat drwright-stable-trusty.list
 deb http://ppa.launchpad.net/drwright/stable/ubuntu precise main
 # deb-src http://ppa.launchpad.net/drwright/stable/ubuntu precise main
 # deb http://ppa.launchpad.net/drwright/stable/ubuntu trusty main
@@ -200,9 +200,9 @@ http://blog.csdn.net/sgzy001/article/details/51901344
 http://blog.csdn.net/ustczwc/article/details/9005142
 https://www.jianshu.com/p/0209d5d04216
 ```
-hogan@hogan-Latitude-E5270:~/.local/share/applications$ pwd
+hogan@ubuntu:~/.local/share/applications$ pwd
 /home/hogan/.local/share/applications
-hogan@hogan-Latitude-E5270:~/.local/share/applications$ cat eclipse.desktop
+hogan@ubuntu:~/.local/share/applications$ cat eclipse.desktop
 [Desktop Entry]
 Encoding=UTF-8
 Version=1.0
@@ -343,7 +343,7 @@ nmcli c up id <SavedWiFiConn>
 ##### bc除法精度问题
 http://codingstandards.iteye.com/blog/793734
 ```
-hogan@hogan-Latitude-E5270:~$ bc
+hogan@ubuntu:~$ bc
 bc 1.06.95
 Copyright 1991-1994, 1997, 1998, 2000, 2004, 2006 Free Software Foundation, Inc.
 This is free software with ABSOLUTELY NO WARRANTY.
@@ -544,18 +544,18 @@ http://ghoulich.xninja.org/2016/08/09/install-and-use-wine-on-centos/
 Ubuntu系统中，侧边栏最上面的图标叫dash快速启动，而整个侧边栏叫launcher，可在侧边栏的任意图标上右键，有unlock from launchers选项，通过Wine安装好的应用程序都可以在Dash中搜索到，这时只需要将搜索到图标拖放到launcher上即可，也可以通过运行命令行运行后，在侧边栏上右键单击并选择lock to launcher即可，对非Wine安装的应用程序也可以如此操作添加到侧边栏快速启动。
 
 Wine的桌面快捷方式为.desktop的文件，位于~/Desktop目录下，格式如下：
-hogan@hogan-Latitude-E5270:~/Desktop$ pwd
+hogan@ubuntu:~/Desktop$ pwd
 /home/hogan/Desktop
-hogan@hogan-Latitude-E5270:~/Desktop$ ls
+hogan@ubuntu:~/Desktop$ ls
 Notepad++ (copy).desktop  Source Insight 3.desktop  Source Insight 4.0.desktop
-hogan@hogan-Latitude-E5270:~/Desktop$ cat Source\ Insight\ 4.0.desktop
+hogan@ubuntu:~/Desktop$ cat Source\ Insight\ 4.0.desktop
 [Desktop Entry]
 Name=Source Insight 4.0
 Exec=env WINEPREFIX="/home/hogan/.wine" wine C:\\\\Program\\ Files\\ \\(x86\\)\\\\Source\\ Insight\\ 4.0\\\\sourceinsight4.exe
 Type=Application
 StartupNotify=true
 Icon=1E94_NewShortcut11_9B96954BC5A741EBA38089DC96765DF7.0
-hogan@hogan-Latitude-E5270:~/Desktop$
+hogan@ubuntu:~/Desktop$
 ```
 
 ##### Ubuntu添加桌面快捷方式
@@ -732,7 +732,7 @@ http://www.nirsoft.net/utils/socket_sniffer.html
 
 ##### .bashrc backup
 ```
-hogan@hogan-Latitude-E5270:~$ cat .bashrc
+hogan@ubuntu:~$ cat .bashrc
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples

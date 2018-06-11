@@ -22,8 +22,8 @@ git config --global user.name "hogan chen"
 git config credential.helper store
 
 设置代理
-git config --global http.proxy http://127.0.0.1:1080
-git config --global https.proxy https://127.0.0.1:1080
+git config --global http.proxy http://173.17.40.143:1080
+git config --global https.proxy https://173.17.40.143:1080
 ```
 
 ##### 非全局用户信息配置
@@ -54,6 +54,45 @@ The key fingerprint is:
 ......
 ```
 
+##### Github ssh和https访问切换
+https://www.sheng00.com/2057.html
+https://help.github.com/articles/connecting-to-github-with-ssh/
+```
+1. Generating a new SSH key
+ssh-keygen -t rsa -b 4096 -C "hogan.chen@ymail.com"
+
+2. Adding a new SSH key to your GitHub account
+https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
+
+3. Testing your SSH connection
+ssh -T git@github.com
+
+4. change the https to ssh
+4.1 change the config file directly
+hogan@ubuntu:~/hoganchen.github.io/.git$ cat config
+[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+[remote "origin"]
+        # url = https://github.com/hoganchen/hoganchen.github.io.git
+        url = git@github.com:hoganchen/hoganchen.github.io.git
+        fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "hexo"]
+        remote = origin
+        merge = refs/heads/hexo
+[user]
+        email = hogan.chen@ymail.com
+        name = hogan chen
+[branch "master"]
+        remote = origin
+        merge = refs/heads/master
+
+4.2 or use command to change the remote url
+git remote set-url origin git@github.com:hoganchen/hoganchen.github.io.git
+```
+
 ##### Git for Windows错误解决
 http://blog.csdn.net/leedaning/article/details/49887015
 http://blog.csdn.net/junheart/article/details/51324848
@@ -64,9 +103,9 @@ Host *
     KexAlgorithms +diffie-hellman-group1-sha1
 
 
-$ git clone ssh://hogan@127.0.0.1:29418/git_project
+$ git clone ssh://hogan@173.17.40.143:29418/git_project
 Cloning into 'git_project'...
-Unable to negotiate with 127.0.0.1 port 29418: no matching key exchange method found. Their offer: diffie-hellman-group1-sha1
+Unable to negotiate with 173.17.40.143 port 29418: no matching key exchange method found. Their offer: diffie-hellman-group1-sha1
 fatal: Could not read from remote repository.
 
 Please make sure you have the correct access rights
@@ -74,10 +113,10 @@ and the repository exists.
 
 在~/.ssh目录下新建config文件，并添加文件内容如下：
 $ cat ~/.ssh/config
-Host 127.0.0.1
+Host 173.17.40.143
     KexAlgorithms +diffie-hellman-group1-sha1
 
-Host 127.0.0.1
+Host 173.17.40.143
     FingerprintHash md5
 $
 
@@ -85,13 +124,13 @@ $
 no matching key exchange method found. Their offer: diffie-hellman-group1-sha1
 
 解决方法：创建.ssh/config文件，并添加
-Host 127.0.0.1
+Host 173.17.40.143
     KexAlgorithms +diffie-hellman-group1-sha1
 
 RSA key fingerprint is SHA256
 
 解决方法：在config文件中添加
-Host 127.0.0.1
+Host 173.17.40.143
     FingerprintHash md5
 
 ```
@@ -387,12 +426,12 @@ http://www.itguai.com/git/a5954029.html
 https://codeday.me/bug/20170216/350.html
 http://www.cnblogs.com/sumsung753/p/3821511.html
 ```
-hogan@hogan:~$git commit -a -m "add new chapter for automation system testing"
+hogan@ubuntu:~$git commit -a -m "add new chapter for automation system testing"
 [master a7f5046] add new chapter for automation system testing
  1 file changed, 0 insertions(+), 0 deletions(-)
  rewrite doc/XXX_Test_Plan.docx (78%)
 
-hogan@hogan:~$git pull --rebase
+hogan@ubuntu:~$git pull --rebase
 remote: Counting objects: 42, done
 remote: Finding sources: 100% (26/26)
 remote: Total 26 (delta 12), reused 21 (delta 12)
@@ -416,7 +455,7 @@ When you have resolved this problem, run "git rebase --continue".
 If you prefer to skip this patch, run "git rebase --skip" instead.
 To check out the original branch and stop rebasing, run "git rebase --abort".
 
-hogan@hogan:~$git st
+hogan@ubuntu:~$git st
 rebase in progress; onto 6d8c8d0
 You are currently rebasing branch 'master' on '6d8c8d0'.
   (fix conflicts and then run "git rebase --continue")
@@ -429,15 +468,15 @@ Unmerged paths:
 
 	both modified:      doc/XXX_Test_Plan.docx
 
-hogan@hogan:~$git rebase --skip
+hogan@ubuntu:~$git rebase --skip
 
-hogan@hogan:~$git st
+hogan@ubuntu:~$git st
 On branch master
 Your branch is up-to-date with 'origin/master'.
 
-hogan@hogan:~$git log
+hogan@ubuntu:~$git log
 
-hogan@hogan:~$git reflog
+hogan@ubuntu:~$git reflog
 6d8c8d0 HEAD@{0}: rebase finished: returning to refs/heads/master
 6d8c8d0 HEAD@{1}: pull --rebase: checkout 6d8c8d06708e57def4fd2222616daa72a58d7181
 a7f5046 HEAD@{2}: commit: add new chapter for automation system testing
@@ -450,7 +489,7 @@ a7f5046 HEAD@{2}: commit: add new chapter for automation system testing
 7461406 HEAD@{9}: pull --rebase: checkout 746140620b686c91a81019f0f2df8dea3d8d0a79
 d33dd57 HEAD@{10}: rebase finished: returning to refs/heads/master
 
-hogan@hogan:~$git checkout -b doc_recovery a7f5046
+hogan@ubuntu:~$git checkout -b doc_recovery a7f5046
 Switched to a new branch 'doc_recovery'
 
 ```
@@ -461,15 +500,15 @@ https://git-scm.com/book/zh/v1/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%8
 https://zlargon.gitbooks.io/git-tutorial/content/branch/create_delete.html
 https://qiita.com/hudichao/items/d665cd769ed1d2ce832a
 ```
-hogan@hogan:~$git branch
+hogan@ubuntu:~$git branch
   doc_recovery
 * master
-hogan@hogan:~$git branch -D doc_recovery
+hogan@ubuntu:~$git branch -D doc_recovery
 Deleted branch doc_recovery (was a7f5046).
-hogan@hogan:~$git st
+hogan@ubuntu:~$git st
 On branch master
 Your branch is up-to-date with 'origin/master'.
-hogan@hogan:~$git branch
+hogan@ubuntu:~$git branch
 * master
 
 ```
@@ -518,12 +557,12 @@ git checkout -b git_project remotes/origin/git_project
 git checkout git_project
 
 
-hogan@hogan:~/git_project/doc/Test$ git checkout -b git_project remotes/origin/git_project
+hogan@ubuntu:~/git_project/doc/Test$ git checkout -b git_project remotes/origin/git_project
 Checking out files: 100% (6131/6131), done.
 Branch git_project set up to track remote branch git_project from origin.
 Switched to a new branch 'git_project'
 
-hogan@hogan:~/git_project/doc/Test$ git checkout git_project
+hogan@ubuntu:~/git_project/doc/Test$ git checkout git_project
 Checking out files: 100% (6131/6131), done.
 Branch git_project set up to track remote branch git_project from origin.
 Switched to a new branch 'git_project'

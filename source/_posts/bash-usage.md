@@ -85,7 +85,7 @@ datetime=$(date '+%Y%m%d%H%M'); for i in {1..10}; do condapython -u st_main.py >
 tail -f $(ls -rth | tail -1)
 
 命令行循环语句
-hogan@hogan:~/Docs/codes/python/practise$ for i in 1 2 3 4 5 6 7 8 9 10; do ls; done
+hogan@ubuntu:~/Docs/codes/python/practise$ for i in 1 2 3 4 5 6 7 8 9 10; do ls; done
 calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
 calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
 calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
@@ -96,7 +96,7 @@ calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
 calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
 calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
 calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
-hogan@hogan:~/Docs/codes/python/practise$ for i in $(seq 10); do ls; done
+hogan@ubuntu:~/Docs/codes/python/practise$ for i in $(seq 10); do ls; done
 calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
 calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
 calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
@@ -107,7 +107,7 @@ calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
 calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
 calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
 calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
-hogan@hogan:~/Docs/codes/python/practise$ for i in {1..10}; do ls; done
+hogan@ubuntu:~/Docs/codes/python/practise$ for i in {1..10}; do ls; done
 calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
 calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
 calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
@@ -118,7 +118,7 @@ calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
 calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
 calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
 calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
-hogan@hogan:~/Docs/codes/python/practise$ for((i=0; i<=10; i++)); do ls; done
+hogan@ubuntu:~/Docs/codes/python/practise$ for((i=0; i<=10; i++)); do ls; done
 calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
 calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
 calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
@@ -130,7 +130,7 @@ calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
 calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
 calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
 calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py
-hogan@hogan:~/Docs/codes/python/practise$
+hogan@ubuntu:~/Docs/codes/python/practise$
 
 
 命令行检查多个目录git状态
@@ -392,32 +392,32 @@ http://wiki.jikexueyuan.com/project/unix/regular-expressions.html
 http://wiki.jikexueyuan.com/project/shell-learning/sed-search-and-replace.html
 
 ```
-hogan@hogan:~$ temp=/home/test/; var=aa
-hogan@hogan:~$ echo $var
+hogan@ubuntu:~$ temp=/home/test/; var=aa
+hogan@ubuntu:~$ echo $var
 aa
-hogan@hogan:~$ echo $temp
+hogan@ubuntu:~$ echo $temp
 /home/test/
-hogan@hogan:~$ echo $temp | sed 's/\//$var/g'
+hogan@ubuntu:~$ echo $temp | sed 's/\//$var/g'
 $varhome$vartest$var
-hogan@hogan:~$ echo $temp | sed "s/\//$var/g"
+hogan@ubuntu:~$ echo $temp | sed "s/\//$var/g"
 aahomeaatestaa
-hogan@hogan:~$ echo $temp | sed "s/\//\$var/g"
+hogan@ubuntu:~$ echo $temp | sed "s/\//\$var/g"
 $varhome$vartest$var
-hogan@hogan:~$ echo $temp | sed "s/.*$/&$var/g"
+hogan@ubuntu:~$ echo $temp | sed "s/.*$/&$var/g"
 /home/test/aa
-hogan@hogan:~$ echo $temp | sed "s/^.*$/&$var/g"
+hogan@ubuntu:~$ echo $temp | sed "s/^.*$/&$var/g"
 /home/test/aa
-hogan@hogan:~$ echo $temp | sed "s/$/&$var/g"
+hogan@ubuntu:~$ echo $temp | sed "s/$/&$var/g"
 /home/test/aa
-hogan@hogan:~$ echo $temp | sed "s/^/&$var/g"
+hogan@ubuntu:~$ echo $temp | sed "s/^/&$var/g"
 aa/home/test/
-hogan@hogan:~$ echo "</td>Hello World" | sed "s/<[^>]\+>//g"
+hogan@ubuntu:~$ echo "</td>Hello World" | sed "s/<[^>]\+>//g"
 Hello World
 
 ifconfig wlan0 | grep 'inet addr' | awk '{print $2}' | sed 's/addr://g'
 173.17.40.143
 
-hogan@hogan:~$ ifconfig wlan0
+hogan@ubuntu:~$ ifconfig wlan0
 wlan0     Link encap:Ethernet  HWaddr e5:b4:19:6c:5e:8d
           inet addr:173.17.40.143  Bcast:173.17.40.255  Mask:255.255.255.0
           inet6 addr: fe80::e6b3:18ff:fe6b:5d8c/64 Scope:Link
@@ -427,7 +427,7 @@ wlan0     Link encap:Ethernet  HWaddr e5:b4:19:6c:5e:8d
           collisions:0 txqueuelen:1000
           RX bytes:64552812 (64.5 MB)  TX bytes:20122109 (20.1 MB)
 
-hogan@hogan:~$ ifconfig wlan0 | sed -n '/inet addr/s/^[^:]*:\([0-9.]\{7,15\}\).*/\1/p'
+hogan@ubuntu:~$ ifconfig wlan0 | sed -n '/inet addr/s/^[^:]*:\([0-9.]\{7,15\}\).*/\1/p'
 173.17.40.143
 ```
 
@@ -866,10 +866,10 @@ http://www.runoob.com/linux/linux-comm-grep.html
 http://www.oracle.com/technetwork/cn/topics/calish-find-096463-zhs.html
 https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/Linux
 ```
-hogan@hogan:~$ echo "fdsl[]" | grep -Eo "[][ a-z]+"
+hogan@ubuntu:~$ echo "fdsl[]" | grep -Eo "[][ a-z]+"
 fdsl[]
 
-hogan@hogan:~/ebook$ find . -type f | sed 's/.*\///g' | grep -E "[][}{]"
+hogan@ubuntu:~/ebook$ find . -type f | sed 's/.*\///g' | grep -E "[][}{]"
 [www.java1234.com]LINUX SHELL脚本攻略(第二版).pdf
 [测试之美].Beautiful.Testing.文字版.pdf
 [www.eimhe.com][计算机软件测试（原书第二版）].Cem.Kaner等.pdf
@@ -886,24 +886,24 @@ hogan@hogan:~/ebook$ find . -type f | sed 's/.*\///g' | grep -E "[][}{]"
 ##### Linux命令备份
 ```
 查找文件名中的特殊字符
-hogan@hogan:~/knowledge$ find ./ -name "*
+hogan@ubuntu:~/knowledge$ find ./ -name "*
 > *"
-hogan@hogan:~/knowledge$ find ./ -name "* *"
-hogan@hogan:~/Downloads$ find ./ -name "*[\ \
+hogan@ubuntu:~/knowledge$ find ./ -name "* *"
+hogan@ubuntu:~/Downloads$ find ./ -name "*[\ \
 > ]*"
 
 查找window系统不允许的特殊文件名
-hogan@hogan:~$ find ./ -name "*[\\\:\*\?\"\<\>\|
+hogan@ubuntu:~$ find ./ -name "*[\\\:\*\?\"\<\>\|
 > ]*"
 
 中文特殊字符
-hogan@hogan:~$ find ./ -name "*[\ \\\:\：\*\?\"\“\”\<\>\《\》\|
+hogan@ubuntu:~$ find ./ -name "*[\ \\\:\：\*\?\"\“\”\<\>\《\》\|
 > ]*"
 中文特殊字符
-hogan@hogan:~$ find ./ -name "*[\ \\\/\:\：\*\?\"\“\”\<\>\《\》\|
+hogan@ubuntu:~$ find ./ -name "*[\ \\\/\:\：\*\?\"\“\”\<\>\《\》\|
 > ]*"
 中文特殊字符
-hogan@hogan:~/ebook$ find . -type f | sed 's/.*\///g' | grep -E "[][\\\/\:\*\?\"\<\>\|\`\~)(}{;\'\,\～ （）【】、；：‘’“”，。《》？ -]"
+hogan@ubuntu:~/ebook$ find . -type f | sed 's/.*\///g' | grep -E "[][\\\/\:\*\?\"\<\>\|\`\~)(}{;\'\,\～ （）【】、；：‘’“”，。《》？ -]"
 
 重复文件查找
 for file in $(find . -path ./.git -prune -o -print); do if [ -f ${file} ]; then md5sum ${file}; fi done > /tmp/md5.log
@@ -1032,7 +1032,7 @@ crontab的文件格式
 很簡單吧！用 * 與 /5 來搭配，也可以寫成 0-59/5 ，相同意思！
 
 
-hogan@hogan:~$ crontab -l
+hogan@ubuntu:~$ crontab -l
 # Edit this file to introduce tasks to be run by cron.
 #
 # Each task to run has to be defined through a single line

@@ -496,9 +496,9 @@ if (condition)
 https://gcc.gnu.org/onlinedocs/gcc-7.1.0/gcc/Link-Options.html
 https://sourceware.org/binutils/docs/ld/Options.html
 
-hogan@hogan:/tmp/chef_wrap$ gcc -o waiter_test_wrap chef.c waiter_test_wrap.c -Wl,--wrap,chef_cook -lcmocka
-hogan@hogan:/tmp/chef_wrap$ gcc -o waiter_test_wrap chef.c waiter_test_wrap.c -Wl,--wrap=chef_cook -lcmocka
-hogan@hogan:~/share/framework/cmocka/example/chef_wrap$ gcc -o waiter_test_wrap waiter_test_wrap.c chef.c -lcmocka -Wl,--wrap=chef_cook
+hogan@ubuntu:/tmp/chef_wrap$ gcc -o waiter_test_wrap chef.c waiter_test_wrap.c -Wl,--wrap,chef_cook -lcmocka
+hogan@ubuntu:/tmp/chef_wrap$ gcc -o waiter_test_wrap chef.c waiter_test_wrap.c -Wl,--wrap=chef_cook -lcmocka
+hogan@ubuntu:~/share/framework/cmocka/example/chef_wrap$ gcc -o waiter_test_wrap waiter_test_wrap.c chef.c -lcmocka -Wl,--wrap=chef_cook
 
 ```
 Wl:	 	Link Options
