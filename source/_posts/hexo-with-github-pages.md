@@ -6,7 +6,7 @@ tags:
 
 <ol>
 
-### <li> 选择Hexo还是Jekyll
+### 选择Hexo还是Jekyll
 https://www.jianshu.com/p/ce1619874d34
 
 于是开始接触比较流行的一些静态博客框架，比较流行的有Jekyll，Hexo，Simple，Octopress，Pelican以及Lo·gecho等等。这些静态程序可以说都有各自的好处，但最后我选择了Hexo来搭建自己的博客，和Jekyll相比，选择Hexo主要原因是：
@@ -18,10 +18,10 @@ https://www.jianshu.com/p/ce1619874d34
 
 <!-- more -->
 
-### <li> Hexo博客开发过程
+### Hexo博客开发过程
 https://hexo.io/zh-cn/docs/index.html
 
-#### <li> 安装nodejs和npm
+#### 安装nodejs和npm
 https://www.howtoing.com/install-latest-nodejs-npm-on-ubuntu
 https://github.com/nodesource/distributions
 
@@ -100,19 +100,19 @@ hogan@ubuntu:/mnt/share/github/hoganchen.github.io$ npm -v
 5.6.0
 ```
 
-#### <li> 安装git
+#### 安装git
 ```
 sudo apt-get update
 sudo apt-get install git
 ```
 
-#### g<li> ithub添加username.github.io的库
+#### github添加username.github.io的库
 我添加的库为hoganchen.github.io，以下都以我添加的库来说明，可自行修改为对应的库名称
 
-#### <li> 安装hexo博客
+#### 安装hexo博客
 https://hexo.io/zh-cn/docs/index.html
 
-##### <li> 安装hexo
+##### 安装hexo
 https://github.com/hexojs/hexo/issues/1836
 https://docs.npmjs.com/getting-started/fixing-npm-permissions
 
@@ -121,7 +121,7 @@ https://docs.npmjs.com/getting-started/fixing-npm-permissions
 sudo npm install -g hexo-cli
 ```
 
-##### <li> 建站
+##### 建站
 https://hexo.io/zh-cn/docs/setup.html
 
 安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。
@@ -131,7 +131,7 @@ cd hoganchen.github.io
 npm install
 ```
 
-##### <li> 安装 hexo-deployer-git
+##### 安装 hexo-deployer-git
 https://hexo.io/zh-cn/docs/deployment.html
 
 Hexo 提供了快速方便的一键部署功能，让您只需一条命令就能将网站部署到服务器上。
@@ -155,7 +155,7 @@ deploy:
   branch: master
 ```
 
-##### <li> 修改_config.yml中site section和Deployment section相关信息，全部内容如下
+##### 修改_config.yml中site section和Deployment section相关信息，全部内容如下
 https://hexo.io/zh-cn/docs/configuration.html
 ```
 # Hexo Configuration
@@ -244,7 +244,7 @@ deploy:
   branch: master
 ```
 
-##### <li> 相关命令
+##### 相关命令
 https://hexo.io/zh-cn/docs/commands.html
 https://segmentfault.com/a/1190000002632530
 
@@ -258,7 +258,7 @@ hexo d == hexo deploy #部署
 hexo clean ##清除缓存 网页正常情况下可以忽略此条命令
 ```
 
-##### <li> github相关操作
+##### github相关操作
 https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013752340242354807e192f02a44359908df8a5643103a000
 http://www.ruanyifeng.com/blog/2014/06/git_remote.html
 https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8
@@ -331,11 +331,11 @@ git config user.name "hogan chen"
 hexo d
 ```
 
-##### <li> VirtualBox相关操作
+##### VirtualBox相关操作
 由于是在虚拟机环境上执行以上操作，所以为了预览文章，需要在虚拟机上作端口转发，设置如下，这样就可以在windows浏览器中输入http://localhost:4000/来进行预览。
 ![hexo-server-port-forward.PNG](/upload_image/hexo-with-github-pages/hexo-server-port-forward.PNG)
 
-##### <li> hexo博客如何设置「阅读全文」
+##### hexo博客如何设置「阅读全文」
 http://theme-next.iissnan.com/faqs.html#%E9%A6%96%E9%A1%B5%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E6%91%98%E5%BD%95
 
 ```
@@ -355,7 +355,7 @@ auto_excerpt:
 建议使用 <!-- more -->（即第一种方式），除了可以精确控制需要显示的摘录内容以外， 这种方式也可以让 Hexo 中的插件更好的识别。
 ```
 
-##### <li> 更换主题
+##### 更换主题
 ```
 cd hoganchen.github.io/
 git clone https://github.com/iissnan/hexo-theme-next themes/next
@@ -369,9 +369,71 @@ cp -af themes/landscape/source/upload_image/ themes/next/source/
 theme: next
 ```
 
-##### <li> 插入图片
+##### 插入图片
 ```
 upload_image位于themes/next/source目录下
 
 ![github-hexo-branch.PNG](/upload_image/hexo-with-github-pages/github-hexo-branch.PNG)
+```
+
+##### "hexo g"错误解决
+https://sessionch.com/hexo/hexo-common-markdown.html
+```
+hogan@hogan:~/hoganchen.github.io$ hexo g
+INFO  Start processing
+FATAL Something's wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html
+Template render error: (unknown path)
+  Error: expected end of comment, got end of file
+
+INFO  Start processing
+FATAL Something's wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html
+Template render error: (unknown path)
+  Error: expected end of comment, got end of file
+
+特殊字符未转义导致
+!   &#33;   — 惊叹号 Exclamation mark
+”   &#34;   &quot; 双引号 Quotation mark
+#   &#35;   — 数字标志 Number sign
+$   &#36;   — 美元标志 Dollar sign
+%   &#37;   — 百分号 Percent sign
+&   &#38;   &amp; Ampersand
+‘   &#39;   — 单引号 Apostrophe
+(   &#40;   — 小括号左边部分 Left parenthesis
+)   &#41;   — 小括号右边部分 Right parenthesis
+*   &#42;   — 星号 Asterisk
++   &#43;   — 加号 Plus sign
+<   &#60;   &lt; 小于号 Less than
+=   &#61;   — 等于符号 Equals sign
+>   &#62;   &gt; 大于号 Greater than
+?   &#63;   — 问号 Question mark
+@   &#64;   — Commercial at
+[   &#91;   --- 中括号左边部分 Left square bracket
+\   &#92;   --- 反斜杠 Reverse solidus (backslash)
+]   &#93;   — 中括号右边部分 Right square bracket
+{   &#123;  — 大括号左边部分 Left curly brace
+|   &#124;  — 竖线Vertical bar
+}   &#125;  — 大括号右边部分 Right curly brace
+
+```
+
+##### "hexo s"错误解决(watch xxx ENOSPC)
+https://hexo.io/zh-cn/docs/troubleshooting.html
+http://zclau.com/2015/12/01/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/
+https://zcdll.github.io/2018/01/11/hexo-bugs/
+```
+现象:
+hogan@hogan:~/hoganchen.github.io$ hexo s
+INFO  Start processing
+FATAL Something's wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html
+Error: watch /home/hogan/hoganchen.github.io/themes/next/source/upload_image/ubuntu-usage/input_method_configuration.png ENOSPC
+    at _errnoException (util.js:992:11)
+    at FSWatcher.start (fs.js:1382:19)
+    at Object.fs.watch (fs.js:1408:11)
+
+解决方法:
+可以用过运行 $ npm dedupe 来解决，如果不起作用的话，可以尝试在 Linux 终端中运行下列命令：
+
+$ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+这将会提高你能监视的文件数量。
 ```
