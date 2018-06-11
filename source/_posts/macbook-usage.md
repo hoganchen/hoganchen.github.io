@@ -4,8 +4,6 @@ date: 2018-06-11 16:02:20
 tags:
 ---
 
-<!-- more -->
-
 <ol>
 
 #### .bash_profile
@@ -39,6 +37,8 @@ export CLICOLOR=1
 alias ll='ls -alrt'
 alias grep='grep --color'
 ```
+
+<!-- more -->
 
 #### .vimrc
 ```

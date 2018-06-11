@@ -4,8 +4,6 @@ date: 2018-06-11 15:31:24
 tags: Bash
 ---
 
-<!-- more -->
-
 <ol>
 
 ##### 多行注释 & here document
@@ -29,6 +27,8 @@ EOF
             ......code line
 <tab><tab>EOF
 ```
+
+<!-- more -->
 
 ##### 命令与变量
 ```

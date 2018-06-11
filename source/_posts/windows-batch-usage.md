@@ -4,8 +4,6 @@ date: 2018-06-11 16:38:50
 tags: Bat
 ---
 
-<!-- more -->
-
 <ol>
 
 ##### Echo命令
@@ -15,6 +13,8 @@ https://zhidao.baidu.com/question/21121153.html
 echo off -- 关闭回显
 @echo off
 ```
+
+<!-- more -->
 
 ##### Set命令
 http://www.jb51.net/article/18973_all.htm

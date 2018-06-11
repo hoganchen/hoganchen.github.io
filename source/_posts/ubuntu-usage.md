@@ -4,8 +4,6 @@ date: 2018-06-11 16:36:20
 tags: Linux
 ---
 
-<!-- more -->
-
 <ol>
 
 ##### Ubuntu入门教程
@@ -13,6 +11,8 @@ http://wiki.ubuntu.org.cn/Ubuntu%E6%A1%8C%E9%9D%A2%E5%85%A5%E9%97%A8%E6%8C%87%E5
 https://help.ubuntu.com/
 http://wiki.ubuntu.org.cn/%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8%E6%8C%87%E5%BC%95
 http://teliute.org/linux/TeUbt/lesson3/lesson3.html
+
+<!-- more -->
 
 ##### Ubuntu快捷键
 ```
@@ -162,6 +162,9 @@ sudo apt-get install oracle-java8-set-default
 ```
 
 ##### apt命令
+https://linux.cn/article-7364-1.html
+https://my.oschina.net/junn/blog/138803
+http://www.cnblogs.com/indiepop/archive/2011/11/10/2244903.html
 ```
 更新本地数据库
 sudo apt-get update
@@ -171,6 +174,19 @@ sudo apt-get install <package>
 
 查找软件包
 sudo apt-cache search <package>
+
+更新已安装的包
+sudo apt-get upgrade
+
+升级系统
+sudo apt-get dist-upgrade
+
+删除软件包
+sudo apt-get remove <package>
+
+删除软件包，包括删除配置文件
+sudo apt-get remove --purge <package>
+sudo apt-get purge <package>
 ```
 
 ##### Ubuntu侧边栏图标

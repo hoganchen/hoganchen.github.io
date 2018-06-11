@@ -4,8 +4,6 @@ date: 2018-06-11 16:11:40
 tags:
 ---
 
-<!-- more -->
-
 <ol>
 
 #### markdown语法
@@ -17,6 +15,8 @@ https://www.gitbook.com/book/vincent4j/markdowncn/details
 http://wowubuntu.com/markdown/
 http://www.jianshu.com/p/q81RER
 https://coding.net/help/doc/project/markdown.html
+
+<!-- more -->
 
 #### markdown自动生成序号
 https://www.zhihu.com/question/31628467

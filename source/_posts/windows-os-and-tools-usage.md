@@ -1,10 +1,8 @@
 ---
-title: windows-os-and-tools-usage
+title: windows使用杂记
 date: 2018-06-11 16:41:01
 tags: Misc
 ---
-
-<!-- more -->
 
 <ol>
 
@@ -12,6 +10,8 @@ tags: Misc
 ```
 按住shift键，然后在需要打开的文件夹中单击鼠标右键，选择"在此处打开命令窗口"
 ```
+
+<!-- more -->
 
 ##### chrome浏览器导出密码
 https://websetnet.com/export-import-passwords-chrome-browser/

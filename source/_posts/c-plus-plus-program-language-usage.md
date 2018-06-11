@@ -4,8 +4,6 @@ date: 2018-06-11 15:45:46
 tags: C&C++
 ---
 
-<!-- more -->
-
 <ol>
 
 ##### 读写文件
@@ -89,6 +87,8 @@ int main()
     return 0；
 }
 ```
+
+<!-- more -->
 
 ##### error :"cout " was not declared in this scope
 http://blog.csdn.net/easonleelee/article/details/16930995

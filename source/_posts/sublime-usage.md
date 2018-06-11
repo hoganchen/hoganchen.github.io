@@ -4,8 +4,6 @@ date: 2018-06-11 16:31:12
 tags: Editor
 ---
 
-<!-- more -->
-
 <ol>
 
 #### reference links
@@ -17,6 +15,8 @@ http://zh.lucida.me/blog/sublime-text-complete-guide/
 https://www.zhihu.com/question/22904994
 https://laravel-china.org/topics/2825
 ```
+
+<!-- more -->
 
 #### 安装插件管理器Package Control
 进入 Package Control的[官网](https://packagecontrol.io/)，里面有详细的安装教程。

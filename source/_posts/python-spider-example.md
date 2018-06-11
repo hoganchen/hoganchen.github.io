@@ -4,8 +4,6 @@ date: 2018-06-11 16:21:20
 tags: Python
 ---
 
-<!-- more -->
-
 <ol>
 
 ##### 常用User Agent
@@ -112,6 +110,8 @@ fake-useragent 即可。 使用：
        ua = UserAgnet()
        ua.random
 ```
+
+<!-- more -->
 
 ##### Urllib库详解
 http://www.bkjia.com/Pythonjc/1043449.html

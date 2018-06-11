@@ -4,8 +4,6 @@ date: 2018-06-11 16:15:43
 tags: Python
 ---
 
-<!-- more -->
-
 <ol>
 
 ##### Pandas reference links
@@ -31,6 +29,8 @@ https://github.com/familyld/learnpython/blob/master/Efficient_Pandas_Skills.md
 http://xight.top/2015/10/23/pandas-%E6%8C%87%E5%8D%97-2/
 https://zhuanlan.zhihu.com/p/21598982
 http://kekefund.com/2016/06/17/pandas-groupby/
+
+<!-- more -->
 
 
 ##### DataFrame获取列名

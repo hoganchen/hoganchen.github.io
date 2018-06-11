@@ -4,8 +4,6 @@ date: 2018-06-11 15:50:41
 tags:
 ---
 
-<!-- more -->
-
 <ol>
 
 ##### build example

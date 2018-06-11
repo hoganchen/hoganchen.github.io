@@ -4,14 +4,14 @@ date: 2018-06-11 13:49:54
 tags: Misc
 ---
 
-<!-- more -->
-
 <ol>
 
 ##### DD-WRT, Tomato 和 OpenWRT 有什么区别和联系
 https://www.zhihu.com/question/21271677
 https://zh.wikipedia.org/zh-cn/OpenWrt
 https://zh.wikipedia.org/zh-cn/DD-WRT
+
+<!-- more -->
 
 ##### xiaomi广告
 https://www.zhihu.com/question/54992021

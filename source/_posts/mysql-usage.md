@@ -4,8 +4,6 @@ date: 2018-06-11 16:12:49
 tags:
 ---
 
-<!-- more -->
-
 <ol>
 
 ##### Window安装mysql 5.7.19压缩包
@@ -48,6 +46,8 @@ mysqld --initialize-insecure --console
 6. 启动mysql服务
 net start mysql
 ```
+
+<!-- more -->
 
 ##### Window卸载mysql
 ```

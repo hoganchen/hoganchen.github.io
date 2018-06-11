@@ -4,13 +4,13 @@ date: 2018-06-11 16:17:29
 tags: Editor
 ---
 
-<!-- more -->
-
 <ol>
 
 ##### Pycharm shortcuts reference link
 http://blog.csdn.net/u013088062/article/details/50100121
 http://www.jianshu.com/p/23e52f7b8ec7
+
+<!-- more -->
 
 
 ##### 编辑

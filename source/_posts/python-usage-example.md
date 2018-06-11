@@ -4,8 +4,6 @@ date: 2018-06-11 16:23:52
 tags:
 ---
 
-<!-- more -->
-
 <ol>
 
 ##### Python实现\_\_func\_\_, \_\_LINE\_\_, \_\_FILE\_\
@@ -22,6 +20,8 @@ def print_line_file_func():
     print(info.function)                        # __FUNCTION__
     print(info.lineno)                          # __LINE__
 ```
+
+<!-- more -->
 
 ##### Python操作excel表格
 http://openpyxl.readthedocs.io/en/default/usage.html

@@ -4,8 +4,6 @@ date: 2018-06-11 15:56:07
 tags:
 ---
 
-<!-- more -->
-
 <ol>
 
 ##### YAML语法
@@ -22,6 +20,8 @@ http://www.yduba.com/biancheng-8553099226.html
 http://blog.leanote.com/post/ozaki.lsc@gmail.com/YAML%E8%AF%AD%E6%B3%95
 http://docs.saltstack.cn/topics/yaml/index.html
 http://www.stay-stupid.com/?p=357
+
+<!-- more -->
 
 
 ##### Python读取Yaml

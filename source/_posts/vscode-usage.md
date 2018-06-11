@@ -4,8 +4,6 @@ date: 2018-06-11 16:37:48
 tags: Editor
 ---
 
-<!-- more -->
-
 <ol>
 
 ##### 快捷键
@@ -15,6 +13,8 @@ https://stackoverflow.com/questions/36154283/method-list-in-visual-studio-code
 Cmd +Shift+o (Command + Shift + o (letter o, not zero)) on Mac,
 ctrl+Shift+o on Windows.
 ```
+
+<!-- more -->
 
 ##### User Settings Backup
 ```
