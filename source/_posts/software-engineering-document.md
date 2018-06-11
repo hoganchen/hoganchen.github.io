@@ -8,7 +8,7 @@ tags:
 
 <ol>
 
-##### <li> 软件工程中的几个阶段
+##### 软件工程中的几个阶段
 http://www.cnblogs.com/wattone/archive/2010/02/09/1666662.html
 http://www.voidcn.com/article/p-dfwqnfes-oz.html
 ```

@@ -8,12 +8,12 @@ tags: Misc
 
 <ol>
 
-##### <li> 在当前文件夹打开CMD终端
+##### 在当前文件夹打开CMD终端
 ```
 按住shift键，然后在需要打开的文件夹中单击鼠标右键，选择"在此处打开命令窗口"
 ```
 
-##### <li> chrome浏览器导出密码
+##### chrome浏览器导出密码
 https://websetnet.com/export-import-passwords-chrome-browser/
 http://lifehacker.com/chrome-has-an-option-to-export-passwords-heres-how-to-1790816137
 https://www.ghacks.net/2017/07/10/google-chrome-password-export-and-import/
@@ -62,10 +62,10 @@ How to export and import passwords in Chrome browser
 This small experimental feature can come in handy when you want to have a backup of your saved passwords in Chrome so that in the case of any unforeseen circumstances, you can restore them in your browser.
 ```
 
-##### <li> Source Insight 3.*支持utf-8
+##### Source Insight 3.*支持utf-8
 http://www.cnblogs.com/Red_angelX/p/3713935.html
 
-##### <li> Source Insight 3.*下载
+##### Source Insight 3.*下载
 https://www.sourceinsight.com/download/
 https://bbs.pediy.com/thread-208609-1.htm
 http://blog.csdn.net/chenqiai0/article/details/46874609
@@ -85,7 +85,7 @@ File: Si3583Setup.exe (3.5.0083)
 Key: SI3US-361500-17409
 ```
 
-##### <li> Source Insight 4.*下载
+##### Source Insight 4.*下载
 https://bbs.pediy.com/thread-215669.htm
 https://www.gsxio.com/source-insight-4-0%E6%97%A0%E6%8D%9F%E7%A0%B4%E8%A7%A3%E6%8C%87%E5%8D%97.html
 https://www.jianshu.com/p/e52181dca645

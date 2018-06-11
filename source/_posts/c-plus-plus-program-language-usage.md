@@ -8,7 +8,7 @@ tags: C&C++
 
 <ol>
 
-##### <li> 读写文件
+##### 读写文件
 http://www.runoob.com/cplusplus/cpp-files-streams.html
 http://blog.csdn.net/kingstar158/article/details/6859379
 ```
@@ -90,7 +90,7 @@ int main()
 }
 ```
 
-##### <li> error :"cout " was not declared in this scope
+##### error :"cout " was not declared in this scope
 http://blog.csdn.net/easonleelee/article/details/16930995
 http://www.jianshu.com/p/cda668a06bee
 ```
@@ -113,7 +113,7 @@ int main(int argc, char *argv[])
 }
 ```
 
-##### <li> error: no matching function for call to 'std::basic_ifstream<char>::open(std::string&)
+##### error: no matching function for call to 'std::basic_ifstream<char>::open(std::string&)
 http://blog.csdn.net/alpine_climbing/article/details/51464358
 ```
 原文地址：  http://blog.csdn.net/cs_zlg/article/details/8300124
@@ -144,11 +144,11 @@ error: no matching function for call to 'std::basic_ifstream<char>::open(std::st
     fin.open(filename);
 ```
 
-##### <li> visual studio读写xml文件
+##### visual studio读写xml文件
 https://support.microsoft.com/zh-cn/help/815658/how-to-read-the-xml-data-from-a-file-by-using-visual-c
 
 
-##### <li> string操作与char *和CString的转换
+##### string操作与char *和CString的转换
 http://blog.csdn.net/luoweifu/article/details/20232379
 
 http://www.runoob.com/cplusplus/cpp-strings.html
@@ -215,7 +215,7 @@ http://blog.csdn.net/monkeyduck/article/details/23541073
      }
 ```
 
-##### <li> c++中类对象作为参数都是值拷贝吗？
+##### c++中类对象作为参数都是值拷贝吗？
 https://segmentfault.com/q/1010000004599429
 ```
 ++中参数的传递方式是值拷贝(by value)还是引用拷贝(by reference)取决于你的形参命名方式。
@@ -260,7 +260,7 @@ func(str);
 // str is not supposed to be changed after func() invoke.
 ```
 
-##### <li> String处理函数
+##### String处理函数
 https://www.cnblogs.com/xFreedom/archive/2011/05/16/2048037.html
 https://www.renfei.org/blog/introduction-to-cpp-string.html
 http://www.cnblogs.com/youxin/archive/2012/06/21/2558279.html
@@ -305,7 +305,7 @@ length是因为沿用C语言的习惯而保留下来的，string类最初只有l
 string类的size()/length()方法返回的是字节数，不管是否有汉字。
 ```
 
-##### <li> CString, LPCWSTR, string, char *等字符串格式的互相转换
+##### CString, LPCWSTR, string, char *等字符串格式的互相转换
 http://xionghuilin.com/?p=621
 https://www.kancloud.cn/wangshubo1989/string/100983
 https://social.msdn.microsoft.com/Forums/vstudio/en-US/901f3217-f667-485b-9bd8-83d6f7fe89d4/how-to-convert-lpcwstr-to-string
@@ -401,7 +401,7 @@ LPCWSTR to string(unicode)
 	sDescStr = std::string(ncharStr);
 ```
 
-##### <li> string to LPCWSTR(C++ unicode)
+##### string to LPCWSTR(C++ unicode)
 https://social.msdn.microsoft.com/Forums/fr-FR/0f749fd8-8a43-4580-b54b-fbf964d68375/convert-stdstring-to-lpcwstr-best-way-in-c?forum=Vsexpressvc
 http://blackfs.blogspot.jp/2015/01/convert-stdstring-to-lpcwstr-in-c.html
 https://stackoverflow.com/questions/27220/how-to-convert-stdstring-to-lpcwstr-in-c-unicode
@@ -445,7 +445,7 @@ std::wstring stemp = s2ws(myString);
 LPCWSTR result = stemp.c_str();
 ```
 
-##### <li> unsigned char and signed char区别
+##### unsigned char and signed char区别
 http://bbs.chinaunix.net/thread-4291073-1-1.html
 https://ask.helplib.com/c++/post_864391
 http://www.cnblogs.com/qytan36/archive/2010/09/27/1836569.html
@@ -478,7 +478,7 @@ printf(" 0x%x", (unsigned)(unsigned char)pixel_data[0] );
 printf(" 0x%x", (unsigned)pixel_data[0] & 0xffU );
 ```
 
-##### <li> string比较
+##### string比较
 http://bbs.csdn.net/topics/40135334
 https://www.cnblogs.com/xFreedom/archive/2011/05/16/2048037.html
 ```
@@ -508,7 +508,7 @@ if (strcmp(t1.c_str(),t2.c_str()) == 0)
 }
 ```
 
-##### <li> Vector使用
+##### Vector使用
 http://blog.csdn.net/hancunai0017/article/details/7032383
 ```
 	vector(向量): C++中的一种数据结构,确切的说是一个类.它相当于一个动态的数组,当程序员无法知道自己需要的数组的规模多大时,用其来解决问题可以达到最大节约空间的目的.
@@ -563,7 +563,7 @@ cout<<a[0];       //输出结果为5
 18.swap         与另一个vector交换数据
 ```
 
-##### <li> C++值传递，引用传递和指针传递
+##### C++值传递，引用传递和指针传递
 http://blog.csdn.net/shhdgl/article/details/50212237
 http://www.cnblogs.com/skyseraph/archive/2010/10/25/1860032.html
 http://blog.csdn.net/whzhaochao/article/details/12891329
@@ -759,10 +759,10 @@ More Effective C++ 一书的总结
 这两个区别点导致引用有更加安全和高效的特性，但是指针却有无可比拟的灵活性。大部分人出于安全性的考虑会推荐使用引用，这其实也是它设计的主要目的，但是如果你想要灵活的设计，大部分时候你只能选用指针，比如设计模式种的大部分设计都是使用指针而不是使用引用。引用在参数传递的时候用得多一些，而类内部的组合中可能会使用指针来提高设计的灵活性（毕竟一旦设定就无法改变对于灵活性来说是个灾难）。
 ```
 
-##### <li> CString与LPCWSTR、LPSTR、char*、LPWSTR等类型的转换
+##### CString与LPCWSTR、LPSTR、char*、LPWSTR等类型的转换
 http://blog.csdn.net/sl159/article/details/6412171
 
-##### <li> C++ Debug Reference
+##### C++ Debug Reference
 ```
 2018.01.05 update
 
@@ -855,12 +855,12 @@ http://blog.csdn.net/xijiaoda_liuhao/article/details/8807742
 https://www.cnblogs.com/devymex/archive/2010/09/06/1818754.html
 ```
 
-##### <li> C++ Library API reference
+##### C++ Library API reference
 http://en.cppreference.com/w/cpp/string/basic_string/size
 http://www.cplusplus.com/reference/string/string/compare/
 http://www.howsoftworks.net/cplusplus.api/std/string_compare.html
 
-##### <li> Win32串口编程
+##### Win32串口编程
 http://blog.csdn.net/czc1009/article/details/17118971
 http://blog.csdn.net/lingtianyulong/article/details/8477130
 http://blog.csdn.net/ypist/article/details/8793037
@@ -875,23 +875,23 @@ COM10以上串口
 http://blog.csdn.net/playboy1/article/details/48316263
 http://blog.csdn.net/ccing/article/details/6234050
 
-##### <li> C++正则表达式
+##### C++正则表达式
 https://msdn.microsoft.com/zh-cn/library/bb982727.aspx
 http://www.cnblogs.com/pmars/archive/2012/10/24/2736831.html
 http://www.cnblogs.com/ittinybird/p/4853532.html
 http://blog.csdn.net/mycwq/article/details/18838151
 
-##### <li> strcpy, strncpy, strncpy_s
+##### strcpy, strncpy, strncpy_s
 http://zh.cppreference.com/w/c/string/byte/strncpy
 http://blog.csdn.net/xin_yu_xin/article/details/51577008
 http://blog.csdn.net/geekvc/article/details/22578215
 
-##### <li> std::cout与printf
+##### std::cout与printf
 std::cout and printf
 http://blog.csdn.net/witnessai1/article/details/47658283
 https://www.cnblogs.com/devymex/archive/2010/09/06/1818754.html
 
-##### <li> C++操作xml文件
+##### C++操作xml文件
 https://www.bbsmax.com/A/n2d9GR4JDv/
 https://msdn.microsoft.com/en-us/library/ms756987(v=vs.85).aspx
 http://blog.csdn.net/cds27/article/details/5545455
@@ -899,12 +899,12 @@ http://www.cnblogs.com/xuandi/p/5719295.html
 http://blog.csdn.net/dongdan_002/article/details/41348985
 https://msdn.microsoft.com/en-us/library/ms766702(v=vs.85).aspx
 
-##### <li> Win32 API reference
+##### Win32 API reference
 https://stackoverflow.com/questions/4701193/download-windows-api-reference-msdn-for-offline-use
 http://laurencejackson.com/win32/
 https://www.microsoft.com/zh-CN/download/details.aspx?id=20955
 
-##### <li> 面向对象基本知识
+##### 面向对象基本知识
 http://coredumper.cn/index.php/2017/05/21/c_plus_plus_booklist/
 
 http://www.cnblogs.com/lrh-xl/p/5252156.html

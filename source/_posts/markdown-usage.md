@@ -8,7 +8,7 @@ tags:
 
 <ol>
 
-#### <li> markdown语法
+#### markdown语法
 http://markdown.tw/
 http://blog.leanote.com/post/freewalk/Markdown-%E8%AF%AD%E6%B3%95%E6%89%8B%E5%86%8C
 https://zh.wikipedia.org/wiki/Markdown
@@ -18,13 +18,13 @@ http://wowubuntu.com/markdown/
 http://www.jianshu.com/p/q81RER
 https://coding.net/help/doc/project/markdown.html
 
-#### <li> markdown自动生成序号
+#### markdown自动生成序号
 https://www.zhihu.com/question/31628467
 ```
 markdown本身就是简化的html语法，所以html语法在markdown中完全适用。
 ```
 
-#### <li> Vscode编写markdown
+#### Vscode编写markdown
 http://www.jianshu.com/p/18876655b452
 https://segmentfault.com/a/1190000008538161
 https://www.kancloud.cn/pwedu/code-fans/321504

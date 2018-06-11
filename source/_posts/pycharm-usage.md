@@ -8,12 +8,12 @@ tags: Editor
 
 <ol>
 
-##### <li> Pycharm shortcuts reference link
+##### Pycharm shortcuts reference link
 http://blog.csdn.net/u013088062/article/details/50100121
 http://www.jianshu.com/p/23e52f7b8ec7
 
 
-##### <li> 编辑
+##### 编辑
 ```
 1. cmd + /				注释光标所在的当前行
 2. cmd + b				跳转到函数声明
@@ -28,13 +28,13 @@ http://www.jianshu.com/p/23e52f7b8ec7
 11. cmd + enter			当前光标前新建一行
 ```
 
-##### <li> 调试
+##### 调试
 ```
 1. ctrl + shift + r		运行模式执行当前程序
 2. ctrl + shift + d		调试模式执行当前程序，可设置断点，单步
 ```
 
-##### <li> FAQ
+##### FAQ
 ```
 3.1 pycharm 能显示当前 python 文件下的函数和类的列表吗？
 3.1.1 左侧 project 工具栏窗口顶部那个齿轮有个 show member 选项，默认是不开的，勾选后 py 文件会显示内部定义的 class 和 method

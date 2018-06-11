@@ -8,7 +8,7 @@ tags: Bash
 
 <ol>
 
-##### <li> 多行注释 & here document
+##### 多行注释 & here document
 ```
 https://stackoverflow.com/questions/27201004/line-54-warning-here-document-at-line-42-delimited-by-end-of-file-wanted-eof
 https://stackoverflow.com/questions/18660798/here-document-gives-unexpected-end-of-file-error
@@ -30,7 +30,7 @@ EOF
 <tab><tab>EOF
 ```
 
-##### <li> 命令与变量
+##### 命令与变量
 ```
 命令执行结果可以用`cmd`，也可以用$(cmd)
 变量的引用需要用${variable}
@@ -41,12 +41,12 @@ test_path=$(dirname $(dirname $(pwd)))/code/test
 cd ${test_path}
 ```
 
-##### <li> 空语句
+##### 空语句
 ```
 ： # 冒号
 ```
 
-##### <li> unary operator expected error
+##### unary operator expected error
 ```
 如果$2为空，执行如下语句，会得到unary operator expected error
 if [ 'gcovr' = $2 ]
@@ -61,12 +61,12 @@ then
 fi
 ```
 
-##### <li> bash脚本不需要命令输出
+##### bash脚本不需要命令输出
 ```
 which ls > /dev/null
 ```
 
-##### <li> 命令行循环语句
+##### 命令行循环语句
 http://blog.csdn.net/column/details/wanbash.html
 ```
 while :; do ls -lrth; sleep 2; done
@@ -137,13 +137,13 @@ hogan@hogan:~/Docs/codes/python/practise$
 for file in $(ls); do cd ${file}; echo -e "enter the ${file} folder..."; git st; cd ..; done
 ```
 
-##### <li> 获取脚本名字和脚本路径
+##### 获取脚本名字和脚本路径
 ```
 basename $0 # 脚本名字
 dirname $0 #脚本路径
 ```
 
-##### <li> Shell变量作用域
+##### Shell变量作用域
 ```
 (1)Shell脚本中定义的变量是global的，其作用域从被定义的地方开始，到shell结束或
 被显示删除的地方为止。
@@ -243,13 +243,13 @@ echo $v1
 来源  http://blog.csdn.net/ltx19860420/article/details/5570902
 ```
 
-##### <li> 删除变量和函数
+##### 删除变量和函数
 ```
 unset variable_nameaa
 unset function_name
 ```
 
-##### <li> 命令执行结果以及变量赋值
+##### 命令执行结果以及变量赋值
 ```
 current_path=`pwd`
 current_path=$(pwd)
@@ -265,12 +265,12 @@ new_path="${current_path}/tools"
 gitout=$(git pull --rebase 2>&1)
 ```
 
-##### <li> 查看当前shell
+##### 查看当前shell
 ```
 ps -p $$
 ```
 
-##### <li> cut命令
+##### cut命令
 https://www.ibm.com/support/knowledgecenter/zh/ssw_aix_72/com.ibm.aix.cmds1/cut.htm#cut__row-d3e151685
 http://blog.csdn.net/Frozen_fish/article/details/2260804
 http://www.cnblogs.com/dong008259/archive/2011/12/09/2282679.html
@@ -354,7 +354,7 @@ ifconfig wlan0 | grep 'inet addr' | awk '{print $2}' | cut -c 6-
 173.17.40.143
 ```
 
-##### <li> tr命令
+##### tr命令
 http://man.linuxde.net/tr
 http://www.runoob.com/linux/linux-comm-tr.html
 https://www.ibm.com/support/knowledgecenter/zh/ssw_aix_61/com.ibm.aix.cmds5/tr.htm
@@ -380,7 +380,7 @@ ifconfig wlan0 | grep 'inet addr' | awk '{print $2}' | tr -d 'addr:'
 173.17.40.143
 ```
 
-##### <li> Sed命令
+##### Sed命令
 参考:
 http://sed.sourceforge.net/sed1line_zh-CN.html
 https://www.zhukun.net/archives/6975
@@ -431,10 +431,10 @@ hogan@hogan:~$ ifconfig wlan0 | sed -n '/inet addr/s/^[^:]*:\([0-9.]\{7,15\}\).*
 173.17.40.143
 ```
 
-##### <li> bash不同引号区别
+##### bash不同引号区别
 http://www.igigo.net/post/archives/128
 
-##### <li> bash正则表达式
+##### bash正则表达式
 https://www.ibm.com/developerworks/cn/education/aix/au-unixtips3/index.html
 http://wiki.jikexueyuan.com/project/linux-command/chap20.html
 http://blog.csdn.net/hittata/article/details/8911117
@@ -458,7 +458,7 @@ http://yidao620c.iteye.com/blog/1879755
 [:xdigit:] 	用来表示十六进制数字的字符。在 ASCII 中，等价于：[0-9A-Fa-f]
 ```
 
-##### <li> bash按行读取命令输出
+##### bash按行读取命令输出
 http://gohom.win/2015/08/16/readlineBash/
 https://linux.cn/article-6119-1.html
 
@@ -586,7 +586,7 @@ IFS=$OLDIFS
     done
 ```
 
-##### <li> Bash Shell 解析路径获取文件名和目录名
+##### Bash Shell 解析路径获取文件名和目录名
 http://blog.csdn.net/wzy_1988/article/details/40590747
 http://blog.csdn.net/ljianhui/article/details/43128465
 ```
@@ -633,17 +633,17 @@ awk+for循环的方法：
     echo /tmp/csdn/zhengyi/test/adb.log | awk 'BEGIN{res=""; FS="/";}{ for(i=2;i<=NF-1;i++) res=(res"/"$i);} END{print res}
 ```
 
-##### <li> bash字符串操作
+##### bash字符串操作
 https://my.oschina.net/aiguozhe/blog/41557
 http://blog.wtlucky.com/blog/2013/05/02/start-write-shell/
 
-##### <li> bash数组
+##### bash数组
 https://blog.zengrong.net/post/1518.html
 https://blog.zengrong.net/post/1591.html
 https://nicesu.gitbooks.io/shell-guide/content/chapter4/46.html
 http://blog.csdn.net/qq_31821675/article/details/74331607
 
-##### <li> sed命令
+##### sed命令
 http://sed.sourceforge.net/sed1line_zh-CN.html
 https://www.ibm.com/developerworks/cn/education/aix/au-unixtips3/index.html
 https://zhengheng.me/2015/11/12/sed-course/
@@ -655,15 +655,15 @@ http://man.linuxde.net/sed
 https://www.ibm.com/support/knowledgecenter/zh/ssw_aix_61/com.ibm.aix.cmds5/sed.htm
 http://huchaowei.com/2017/05/24/Linux%20sed%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/
 
-##### <li> sed命令unknown option to 's'解决办法
+##### sed命令unknown option to 's'解决办法
 http://hadesmo.com/2015/07/20/sed.html
 https://stackoverflow.com/questions/9366816/sed-unknown-option-to-s
 http://blog.csdn.net/qq1124794084/article/details/76419464
 
-##### <li> diff命令
+##### diff命令
 http://www.ruanyifeng.com/blog/2012/08/how_to_read_diff.html
 
-##### <li> grep命令
+##### grep命令
 http://www.cnblogs.com/ggjucheng/archive/2013/01/13/2856896.html
 http://mufool.com/2016/07/13/linux-grep/
 https://www.teakki.com/p/57e237d4104112321cd7c91e
@@ -677,7 +677,7 @@ git st | grep -E "Untracked files|Changes not staged for commit"
 git st | grep -e "Untracked files" -e "Changes not staged for commit"
 ```
 
-##### <li> bash参数和参数扩展
+##### bash参数和参数扩展
 https://www.ibm.com/developerworks/cn/linux/l-bash-parameters.html
 http://blog.51cto.com/huangyandong/1281327
 ```
@@ -769,7 +769,7 @@ http://blog.51cto.com/huangyandong/1281327
        实例:a=${b:?} #则shell中错误输出-bash: b: error
 ```
 
-##### <li> shell内置变量
+##### shell内置变量
 http://blog.csdn.net/gaoming655/article/details/7238695s
 http://blog.csdn.net/ljianhui/article/details/43128465
 https://www.gnu.org/software/bash/manual/bashref.html#Special-Parameters
@@ -800,7 +800,7 @@ $* 与 $@ 区别：
     不同点：只有在双引号中体现出来。假设在脚本运行时写了三个参数 1、2、3，，则 " * " 等价于 "1 2 3"（传递了一个参数），而 "@" 等价于 "1" "2" "3"（传递了三个参数）。
 ```
 
-##### <li> Shell脚本调试技巧
+##### Shell脚本调试技巧
 http://coolshell.cn/articles/1379.html
 https://www.ibm.com/developerworks/cn/linux/l-cn-shell-debug/index.html
 http://bbs.chinaunix.net/forum.php?mod=viewthread&tid=1356019
@@ -830,7 +830,7 @@ _log() {
 5.
 ```
 
-##### <li> Linux的script命令——隐藏在终端的记录器
+##### Linux的script命令——隐藏在终端的记录器
 http://blog.jobbole.com/70563/
 ```
 script是将终端会话制成打印稿的命令。对于想重现终端输入输出历史的人来说，十分管用。而且，这些记录还能被保存或打印。
@@ -838,7 +838,7 @@ script是将终端会话制成打印稿的命令。对于想重现终端输入�
 一般地，我们可以通过在终端上敲入script来启动它。敲击ctrl+d或exit，可以停止记录。你会发现写入记录是发生在停止之后的。
 ```
 
-##### <li> Grep匹配中括号
+##### Grep匹配中括号
 https://regexr.com/
 https://regex101.com/
 
@@ -883,7 +883,7 @@ hogan@hogan:~/ebook$ find . -type f | sed 's/.*\///g' | grep -E "[][}{]"
 ```
 
 
-##### <li> Linux命令备份
+##### Linux命令备份
 ```
 查找文件名中的特殊字符
 hogan@hogan:~/knowledge$ find ./ -name "*
@@ -926,7 +926,7 @@ find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g' > structure.txt
 find ebook -print | sed -e 's;[^/]*/;│── ;g;s;── │;   │;g' > structure.txt
 ```
 
-##### <li> time命令查看命令执行时间
+##### time命令查看命令执行时间
 http://www.runoob.com/linux/linux-comm-time.html
 ```
 time  find . \! -type d -exec md5sum '{}' ';' | sort | uniq -D -w 33
@@ -940,7 +940,7 @@ user值表示程序本身，以及它所调用的库中的子例程使用的时�
 sys是由程序直接或间接调用的系统调用执行的时间。
 ```
 
-##### <li> crontab详解
+##### crontab详解
 http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/crontab.html
 http://linux.vbird.org/linux_basic/0430cron.php
 http://www.cnblogs.com/b028/archive/2011/01/07/1930243.html
@@ -1062,14 +1062,14 @@ hogan@hogan:~$ crontab -l
 
 ```
 
-##### <li> watch周期性的方式执行给定的指令
+##### watch周期性的方式执行给定的指令
 ```
 watch -n 1 -d "netstat -nalt | grep 20000"
 
 while :; do netstat -nal | grep 20000; echo -e "\n\n"; sleep 1; done
 ```
 
-##### <li> Tcpdump命令行格式
+##### Tcpdump命令行格式
 http://www.cnblogs.com/yc_sunniwell/archive/2010/07/05/1771563.html
 http://linuxwiki.github.io/NetTools/tcpdump.html
 http://blog.csdn.net/hzhsan/article/details/43445787

@@ -8,7 +8,7 @@ tags:
 
 <ol>
 
-##### <li> Window安装mysql 5.7.19压缩包
+##### Window安装mysql 5.7.19压缩包
 https://my.oschina.net/u/2557245/blog/876028
 http://www.jianshu.com/p/b601097ef5c9
 http://www.phperz.com/article/16/0703/231878.html
@@ -49,7 +49,7 @@ mysqld --initialize-insecure --console
 net start mysql
 ```
 
-##### <li> Window卸载mysql
+##### Window卸载mysql
 ```
 以下命令都在cmd中执行，cmd需要以管理员身份运行，即找到cmd程序的路径，然后右键单击选择以管理员身份运行即可，cmd程序的路径为：C:\Windows\System32
 
@@ -70,7 +70,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Eventlog\Application\MySQL 
 注册表中的ControlSet001、ControlSet002不一定是001和002，可能是ControlSet005、006之类，删除的时候都删除就可以 。
 ```
 
-##### <li> 数据库备份与恢复
+##### 数据库备份与恢复
 http://www.cnblogs.com/zhoujinyi/p/5684903.html
 
 ```
@@ -82,7 +82,7 @@ hogan@ubuntu:/tmp$ gzip -d stck_db.sql.gz
 hogan@ubuntu:/tmp$ mysql -u root -p'rO0t@stck5ql*' < /tmp/stck_db.sql
 ```
 
-##### <li> Mysql忘记密码
+##### Mysql忘记密码
 https://www.skyf.org/reset-mysql579-root-password/
 https://my.oschina.net/shf/blog/545684
 http://blog.csdn.net/stubbornness1219/article/details/53445904
@@ -121,24 +121,24 @@ mysql> flush privileges；
 mysql> quit
 ```
 
-##### <li> Mysql虚拟表
+##### Mysql虚拟表
 http://yypiao.iteye.com/blog/2359859
 http://www.cnblogs.com/jevo/p/3262227.html
 http://www.nowamagic.net/librarys/veda/detail/1405
 http://2853725.blog.51cto.com/2843725/1394430
 
-##### <li> 临时表
+##### 临时表
 http://blog.sae.sina.com.cn/archives/4096
 http://www.runoob.com/mysql/mysql-temporary-tables.html
 
-##### <li> Mysql慢查询
+##### Mysql慢查询
 http://www.jianshu.com/p/7529a0fbf088
 https://tech.meituan.com/mysql-index.html
 https://www.kancloud.cn/thinkphp/mysql-design-optimalize/39320
 https://flyerboy.github.io/2016/12/23/mysql_slow/
 http://www.cnblogs.com/ggjucheng/archive/2012/11/11/2765237.html
 
-##### <li> Mysql排序
+##### Mysql排序
 http://www.runoob.com/mysql/mysql-order-by.html
 ```
 语法
@@ -163,7 +163,7 @@ select * from basics_data where pe > 0 and pb > 0 order by pb, pe desc limit 10;
 
 ```
 
-##### <li> Mysql更新字段
+##### Mysql更新字段
 http://www.runoob.com/mysql/mysql-alter.html
 ```
 更改字段属性not null为null
@@ -182,7 +182,7 @@ mysql> alter table hist_week_data alter turnover set default 0;
 mysql> alter table hist_month_data alter turnover set default 0;
 ```
 
-##### <li> 删除数据
+##### 删除数据
 http://www.runoob.com/mysql/mysql-delete-query.html
 ```
 mysql> delete from k_week_data where date = '2017-09-21';
@@ -193,7 +193,7 @@ Empty set (10.51 sec)
 
 ```
 
-##### <li> Mysql索引
+##### Mysql索引
 http://wiki.jikexueyuan.com/project/mysql/indexes.html
 http://www.runoob.com/mysql/mysql-index.html
 https://read01.com/78Ojo4.html
@@ -239,7 +239,7 @@ UNIQUE索引
 
 ```
 
-##### <li> MySQL函数
+##### MySQL函数
 ```
 查询结果求平均值
 
@@ -250,7 +250,7 @@ mysql> select avg(open) as openavg, avg(close), avg(high), avg(low), max(high), 
 
 ```
 
-##### <li> 查看警告信息
+##### 查看警告信息
 ```
 mysql> show warnings;
 ```

@@ -8,7 +8,7 @@ tags: Editor
 
 <ol>
 
-#### <li> reference links
+#### reference links
 ```
 http://feliving.github.io/Sublime-Text-3-Documentation/index.html
 http://sublime-text.readthedocs.io/en/latest/index.html
@@ -18,7 +18,7 @@ https://www.zhihu.com/question/22904994
 https://laravel-china.org/topics/2825
 ```
 
-#### <li> 安装插件管理器Package Control
+#### 安装插件管理器Package Control
 进入 Package Control的[官网](https://packagecontrol.io/)，里面有详细的安装教程。
 
 The simplest method of installation is through the Sublime Text console. The console is accessed via the ctrl+` shortcut or the View > Show Console menu. Once open, paste the appropriate Python code for your version of Sublime Text into the console.
@@ -31,7 +31,7 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
 
 优雅使用Sublime Text，插件则是不可缺少的存在；而插件的备份就显得非常的重要（譬如：各平台同步；更换系统/电脑，迅速使用已安装的插件）。这事儿也很简单，只需将Packages（Preferences > Browse Packages）中内容拷贝一份，同步云端即可；至于存储何处，云盘，Github，皆无不可；譬如先前有存一份于sublime_packages，每有所需只要Down下来，替换掉原Packages下内容就好。
 
-#### <li> Sublime Text快捷键
+#### Sublime Text快捷键
 https://www.jianshu.com/p/6185dc5eb507
 ```
 Sublime Text 常用快捷键（MAC 下）
@@ -135,7 +135,7 @@ Sublime Text 常用快捷键（MAC 下）
 ⌘B          | 运行脚本
 ⌘`          | 多个Sublime实例切换
 
-#### <li> Sublime Text 3 快捷键精华版
+#### Sublime Text 3 快捷键精华版
 https://segmentfault.com/a/1190000002570753
 ```
 Ctrl+Shift+P：打开命令面板
@@ -316,7 +316,7 @@ Ctrl+k+3 折叠if
 Ctrl+k+4 折叠switch
 ```
 
-#### <li> Sublime Text常用快捷键
+#### Sublime Text常用快捷键
 https://gist.github.com/xingfuqiu/6171892
 ```
 Ctrl+Shift+P：打开命令面板
@@ -357,7 +357,7 @@ Shift+右键拖动：光标多不，用来更改或插入列内容
 按Ctrl+Shift+上下键，可替换行
 ```
 
-#### <li> Sublime Text 常用快捷键整理
+#### Sublime Text 常用快捷键整理
 http://kuanghy.github.io/2015/11/23/sublimetext-hotkey
 ```
 插入
@@ -599,13 +599,13 @@ Esc 退出光标多行选择，退出搜索框，命令框等。
 垂直分屏-3屏。
 ```
 
-#### <li> sublime text修改换行符为linux风格
+#### sublime text修改换行符为linux风格
 ```
 文件的格式控制可以Perference->Setting-*中找到。设置对象是default_line_ending，这个参数有三 个可用选
 项：system,windows,unix，system是根据当前系统情况设置，windows使用的CRLF，unix使用的是 LF。按你的情况，应该在Setting-User中设置"default_line_ending":"unix"就可以解决这个问题。
 ```
 
-#### <li> Perferences.sublime-settings -- User备份
+#### Perferences.sublime-settings -- User备份
 ```
 {
     "file_exclude_patterns":
@@ -655,7 +655,7 @@ Esc 退出光标多行选择，退出搜索框，命令框等。
 }
 ```
 
-#### <li> Sublime ShortCut
+#### Sublime ShortCut
 
 http://www.techug.com/post/sublime-text-complete-guide.html
 http://www.cocoachina.com/programmer/20150715/12550.html
@@ -675,20 +675,20 @@ http://luopuya.github.io/2014/03/26/Sublime%20Text%203%20%E5%B8%B8%E7%94%A8%E5%B
 http://blog.csdn.net/cywosp/article/details/31791881
 http://blog.csdn.net/txz_gray/article/details/70516912
 
-##### <li> 多行快速选择文本
+##### 多行快速选择文本
 
     Ctrl+D：选中光标所占的文本，继续操作则会选中下一个相同的文本。（非常实用）
     Ctrl-K, Ctrl-D：把当前选中所占文本的光标，跳转到下一个相同文本。（配合Ctrl+D很实用）
     Ctrl+D选择当前光标所在的词并高亮该词所有出现的位置，再次Ctrl+D选择该词出现的下一个位置，在多重选词的过程中，使用Ctrl+K进行跳过，使用Ctrl+U进行回退，使用Esc退出多重编辑。
     Alt-F3：一次性选中(当前选中的文本）相同的文本。等于多次实用Ctrl+D。（部分修改情况下慎用，Mac下:Ctrl-Cmd-G）
 
-##### <li> 行操作
-###### <li> 选择类
+##### 行操作
+###### 选择类
 
     Ctrl+L：选择光标当前行，重复可依次增加选择下一行，若多有行光标，则第一次选择多行。
     Ctrl+J ：将光标的下一行，合并到光标当前行。若选择多行，则合并选择的多行为一行，同时再合并当前行的下一行。
 
-###### <li> 操作类
+###### 操作类
 	Shift+鼠标右键： 列模式
     Ctrl+G：跳转到第几行。
     Ctrl+Shift+L：（前提先选中多行）会在每行行尾插入光标，即可同时编辑这些行。有时我们需要对一片区域的所有行进行同时编辑，Ctrl + Shift + L可以将当前选中区域打散，然后进行同时编辑
@@ -699,24 +699,24 @@ http://blog.csdn.net/txz_gray/article/details/70516912
     Ctrl+Shift+D： 复制光标或所选区所在的整行，插入到下一行。
     Ctrl+Shift+T： 快速恢复关闭的标签页
 
-###### <li> 删除类
+###### 删除类
 
     Ctrl+Shift+K：删除整行，没有空白符。
     Ctrl+k+k： 从光标处至行尾删除。
     Ctrl+K+Backspace：从光标处至行首删除。
 
-###### <li> 注释
+###### 注释
 
     Ctrl+Shift+/：根据选择进行多行注释。
     Ctrl+/：单行注释。
 
-###### <li> 缩进
+###### 缩进
 
     Ctrl+[ ]：左右缩进当光标或光标所在的行。
     Tab： 向右缩进。
     Shift+Tab：向左缩进。
 
-###### <li> 代码块
+###### 代码块
 
     Ctrl+Shift+[：选中代码，按下快捷键，折叠代码。
     Ctrl+Shift+]：选中代码，按下快捷键，展开代码。
@@ -725,14 +725,14 @@ http://blog.csdn.net/txz_gray/article/details/70516912
     Ctrl+M：跳转到对应括号。
     Ctrl+Shift+J：快速选择同级的内容，同级内容=兄弟内容。
 
-###### <li> 编辑
+###### 编辑
 
     Ctrl+Y：恢复撤销。
     Ctrl+Z： 撤销。
     Ctrl+K+U：转换光标最近单词，或所选区域大写。
     Ctrl+K+L：转换光标最近单词，或所选区域小写。
 
-###### <li> 查找
+###### 查找
 
     Ctrl+F:在当前页面中查找
     Ctrl+shift+F：高级查找，在文件夹内查找。
@@ -745,7 +745,7 @@ http://blog.csdn.net/txz_gray/article/details/70516912
     Ctrl+R：打开搜索框，自动带@，输入关键字，查找文件中的函数名。
     Ctrl+; ：打开搜索框，自动带#，输入关键字，查找文件中的变量名、属性名等。
 
-###### <li> 窗口
+###### 窗口
 
     Alt+Shift+1：窗口分屏，恢复默认1屏（非小键盘的数字）
     Alt+Shift+2：左右分屏-2列。
@@ -762,7 +762,7 @@ http://blog.csdn.net/txz_gray/article/details/70516912
     Ctrl+W：关闭当前标签，当窗口内没有标签时会关闭该窗口
     Ctrl+Shift+T：恢复刚刚关闭的标签
 
-###### <li> 高级
+###### 高级
 
     Ctrl+Shift+Space：选择当前光标最小块的代码。（非常好用）
     Ctrl+Shift+'：emmet插件下，这个可以在html中，选择光标最近的一组闭合标签。修改标签非常方便。

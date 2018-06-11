@@ -8,7 +8,7 @@ tags:
 
 <ol>
 
-##### <li> YAML语法
+##### YAML语法
 https://learnxinyminutes.com/docs/yaml/
 http://yaml.org/
 http://yaml.org/spec/
@@ -24,7 +24,7 @@ http://docs.saltstack.cn/topics/yaml/index.html
 http://www.stay-stupid.com/?p=357
 
 
-##### <li> Python读取Yaml
+##### Python读取Yaml
 ```
 class ConfigHandleClass:
     config = None
@@ -66,7 +66,7 @@ class ConfigHandleClass:
 
 ```
 
-##### <li> yaml语法格式和使用示例(learnyaml.yaml)
+##### yaml语法格式和使用示例(learnyaml.yaml)
 https://learnxinyminutes.com/docs/yaml/
 ```
 # Comments in YAML look like this.

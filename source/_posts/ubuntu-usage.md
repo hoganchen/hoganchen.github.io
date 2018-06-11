@@ -8,18 +8,18 @@ tags: Linux
 
 <ol>
 
-##### <li> Ubuntu入门教程
+##### Ubuntu入门教程
 http://wiki.ubuntu.org.cn/Ubuntu%E6%A1%8C%E9%9D%A2%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97
 https://help.ubuntu.com/
 http://wiki.ubuntu.org.cn/%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8%E6%8C%87%E5%BC%95
 http://teliute.org/linux/TeUbt/lesson3/lesson3.html
 
-##### <li> Ubuntu快捷键
+##### Ubuntu快捷键
 ```
 长按super(win)键即可显示系统快捷键图
 ```
 
-##### <li> Ubuntu快速显示桌面
+##### Ubuntu快速显示桌面
 http://blog.csdn.net/yelangjueqi/article/details/55098099
 http://blog.csdn.net/u010454729/article/details/45061359
 
@@ -45,13 +45,13 @@ http://blog.csdn.net/u010454729/article/details/45061359
 11, 查看当前系统已经设置的快捷键：设置--系统设置--键盘--快捷键
 ```
 
-##### <li> Ubuntu显示隐藏目录
+##### Ubuntu显示隐藏目录
 https://www.ubuntudoc.com/show-hidden-files-folders-ubuntu/?lang=zh
 ```
 Ctrl + H
 ```
 
-##### <li> Ubuntu安装护眼程序Typing Break
+##### Ubuntu安装护眼程序Typing Break
 https://askubuntu.com/questions/63999/how-can-i-install-typing-break
 ```
 11.10
@@ -88,7 +88,7 @@ deb http://ppa.launchpad.net/drwright/stable/ubuntu precise main
 
 ```
 
-##### <li> Ubuntu安装Flux色温调节软件
+##### Ubuntu安装Flux色温调节软件
 http://blog.csdn.net/gatieme/article/details/62922164
 ```
 安装GUI
@@ -104,12 +104,12 @@ sudo cp xflux /usr/bin
 打开fluxgui配置经纬度即可
 ```
 
-##### <li> Eyerest and workrave
+##### Eyerest and workrave
 http://blog.csdn.net/gevolution90/article/details/8579069
 http://forum.ubuntu.com.cn/viewtopic.php?f=137&t=392969
 https://github.com/zlbruce/eyerest
 
-##### <li> Ubuntu安装build-essential
+##### Ubuntu安装build-essential
 http://www.cnblogs.com/bing-yu12/p/6384447.html
 http://blog.163.com/zhangjinqing1234@126/blog/static/307302602009538137113
 ```
@@ -121,7 +121,7 @@ sudo apt-get update
 sudo apt-get install build-essential
 ```
 
-##### <li> Ubuntu安装JRE
+##### Ubuntu安装JRE
 https://linux.cn/article-3792-1.html
 http://zh.wikihow.com/%E5%9C%A8Ubuntu-Linux%E4%B8%8A%E5%AE%89%E8%A3%85Oracle-Java
 ```
@@ -144,7 +144,7 @@ java -version
     sudo apt-get install oracle-java8-set-default
 ```
 
-##### <li> ubuntu安装JDK
+##### ubuntu安装JDK
 http://topspeedsnail.com/ubuntu16-install-java-jdk/
 http://www.cnblogs.com/a2211009/p/4265225.html
 http://zh.wikihow.com/%E5%9C%A8Ubuntu-Linux%E4%B8%8A%E5%AE%89%E8%A3%85Oracle-Java
@@ -161,7 +161,7 @@ sudo apt-get install oracle-java8-installer
 sudo apt-get install oracle-java8-set-default
 ```
 
-##### <li> apt命令
+##### apt命令
 ```
 更新本地数据库
 sudo apt-get update
@@ -173,12 +173,12 @@ sudo apt-get install <package>
 sudo apt-cache search <package>
 ```
 
-##### <li> Ubuntu侧边栏图标
+##### Ubuntu侧边栏图标
 ```
 侧边栏图标位于~/.local/share/applications，可修改，可删除，解决新老版本交替使用的问题
 ```
 
-##### <li> Eclipse加上侧边栏图标
+##### Eclipse加上侧边栏图标
 https://my.oschina.net/secyaher/blog/274490
 http://blog.csdn.net/sgzy001/article/details/51901344
 http://blog.csdn.net/ustczwc/article/details/9005142
@@ -236,7 +236,7 @@ nautilus .
 找到eclipse图标，拖到左侧
 ```
 
-##### <li> Ubuntu免密码sudo
+##### Ubuntu免密码sudo
 http://www.jianshu.com/p/5d02428f313d
 http://blog.csdn.net/cor_twi/article/details/44679839
 ```
@@ -251,7 +251,7 @@ http://blog.csdn.net/cor_twi/article/details/44679839
     ESC :wq!
 ```
 
-##### <li> Ubuntu命令行或脚本连接断开wifi
+##### Ubuntu命令行或脚本连接断开wifi
 https://linux.cn/article-4015-1.html
 https://www.deadend.me/2016/08/13/ubuntu-14-04-connect-wifi-via-command-line/
 https://gxnotes.com/article/17300.html
@@ -324,7 +324,7 @@ nmcli c up id <SavedWiFiConn>
 
 ```
 
-##### <li> bc除法精度问题
+##### bc除法精度问题
 http://codingstandards.iteye.com/blog/793734
 ```
 hogan@hogan-Latitude-E5270:~$ bc
@@ -346,7 +346,7 @@ scale=2
 20.00
 ```
 
-##### <li> ubuntu使用ibus或者fcitx框架输入法
+##### ubuntu使用ibus或者fcitx框架输入法
 
 Ubuntu默认安装了ibus和fcitx的输入法框架，而且默认的输入法框架为ibus
 
@@ -435,13 +435,13 @@ http://www.xbatu.com/node/251
 http://yuenshome.space/?p=4378
 ```
 
-##### <li> ubuntu手动更新
+##### ubuntu手动更新
 http://www.jb51.net/os/Ubuntu/397838.html
 ```
 Dash中搜索update， software updater或软件更新器
 ```
 
-##### <li> sudo apt-get update错误
+##### sudo apt-get update错误
 http://blog.csdn.net/u013038461/article/details/39519449
 http://forum.ubuntu.com.cn/viewtopic.php?f=48&t=462924
 
@@ -468,7 +468,7 @@ sudo apt-get update
 要是无效的话，还可以参考http://forum.ubuntu.org.cn/viewtopic.php?f=48&t=464134
 ```
 
-##### <li> Wine安装
+##### Wine安装
 http://wiki.ubuntu.org.cn/Wine
 https://wiki.winehq.org/Main_Page
 https://www.ibm.com/developerworks/cn/linux/l-wine/
@@ -517,7 +517,7 @@ sudo apt-get install wine-staging
        sudo apt-get autoremove
 ```
 
-##### <li> Wine使用
+##### Wine使用
 http://wiki.ubuntu.org.cn/UbuntuHelp:Wine/zh
 https://lado.me/2017/04/27/wine-run-windows-program-on-linux/
 http://wiki.ubuntu.org.cn/Wine%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B
@@ -542,7 +542,7 @@ Icon=1E94_NewShortcut11_9B96954BC5A741EBA38089DC96765DF7.0
 hogan@hogan-Latitude-E5270:~/Desktop$
 ```
 
-##### <li> Ubuntu添加桌面快捷方式
+##### Ubuntu添加桌面快捷方式
 https://www.ibm.com/developerworks/cn/linux/l-cn-dtef/index.html
 http://www.flakor.cn/2014-11-26-796.html
 
@@ -554,7 +554,7 @@ http://www.jb51.net/os/Ubuntu/84222.html
 http://blog.csdn.net/golden1314521/article/details/32179811
 https://www.jianshu.com/p/0209d5d04216
 
-##### <li> Ubuntu添加快捷方式到dash或launcher
+##### Ubuntu添加快捷方式到dash或launcher
 https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html
 https://my.oschina.net/Obahua/blog/110612
 http://blog.csdn.net/johnnycode/article/details/17848291
@@ -592,7 +592,7 @@ http://hahaya.github.io/add-software-ico-to-launcher/
 2、复制以上代码时注意每行末尾不要有空格。
 ```
 
-##### <li> wine安装程序桌面快捷方式备份
+##### wine安装程序桌面快捷方式备份
 ```
 Source Insight
 command: env WINEPREFIX="/home/hogan/.wine" wine C:\\Program\ Files\ \(x86\)\\Source\ Insight\ 3\\Insight3.exe
@@ -611,7 +611,7 @@ command: env WINEPREFIX="/home/hogan/.wine" wine C:\\windows\\command\\start.exe
 command: env WINEPREFIX="/home/hogan/.wine" wine C:\\Program\ Files\ \(x86\)\\eudic\\eudic.exe
 ```
 
-##### <li> Wine卸载软件
+##### Wine卸载软件
 http://forum.ubuntu.org.cn/viewtopic.php?t=65231
 http://blog.csdn.net/ustczwc/article/details/8956231
 http://blog.csdn.net/tongxxhaha/article/details/76875188
@@ -657,7 +657,7 @@ deb格式软件的卸载：
 　　顺道写上如何卸载deb格式的文件同时删除配置文件：sudo dpkg -p 文件名，输入以后回车即可。
 ```
 
-##### <li> Ubuntu桌面图标不显示
+##### Ubuntu桌面图标不显示
 https://www.coder4.com/archives/4307
 http://www.oschina.net/question/54100_9404
 http://www.it610.com/article/4462067.htm
@@ -678,7 +678,7 @@ org.gnome.nautilus.desktop
 这下面的值分别代表了图标，不解释了，找到需要的设置为true即可。
 ```
 
-##### <li> 工具推荐
+##### 工具推荐
 ```
 1. 串口工具
 cutecom
@@ -714,7 +714,7 @@ http://www.simplecomtools.com/productcart/pc/viewCategories.asp?idCategory=5
 http://www.nirsoft.net/utils/socket_sniffer.html
 ```
 
-##### <li> .bashrc backup
+##### .bashrc backup
 ```
 hogan@hogan-Latitude-E5270:~$ cat .bashrc
 # ~/.bashrc: executed by bash(1) for non-login shells.

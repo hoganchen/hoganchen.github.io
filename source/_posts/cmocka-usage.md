@@ -8,7 +8,7 @@ tags:
 
 <ol>
 
-##### <li> build example
+##### build example
 ```
 hogan@hogan:~/framework/cmocka/tests$ gcc -o test_ordering_fail test_ordering_fail.c -I ../build/ -I ../include/ -lcmocka
 

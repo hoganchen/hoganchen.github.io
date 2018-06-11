@@ -8,7 +8,7 @@ tags: C&C++
 
 <ol>
 
-##### <li> 原码，反码和补码
+##### 原码，反码和补码
 http://www.itwendao.com/article/detail/8172.html
 https://yq.aliyun.com/wenji/72426
 http://blog.csdn.net/liushuijinger/article/details/7429197
@@ -84,7 +84,7 @@ http://blog.sina.com.cn/s/blog_6b87c7eb010186mp.html
 总的来说，在整数中，原码和补码、反码都是一样的，对于负数反码在符号位不变的情况下各位取反所得；补码为反码基础上加1.而原码补码反码的出现都是为了满足在计算机在运算过程更加简单和便捷而出现的。
 ```
 
-##### <li> 浮点数在内存中存放格式
+##### 浮点数在内存中存放格式
 http://blog.sina.com.cn/s/blog_77abbf390100qwun.html
 https://www.pediy.com/kssd/pediy03/forum669.htm
 https://www.2cto.com/kf/201708/672079.html
@@ -171,7 +171,7 @@ int main(int argc, char *argv[])
 对于p+3指向的单元，01000010，为正数，则其大小为66。上面程序输出结果验证了其正确性。
 ```
 
-##### <li> C数组初始化
+##### C数组初始化
 http://blog.csdn.net/sibylle/article/details/2026915
 http://lib.csdn.net/article/c/19784
 http://www.cnblogs.com/youxin/p/3235817.html
@@ -213,7 +213,7 @@ int chr[] = {'a', 'b', 'c'}; // a, b, c, \0
 */
 ```
 
-##### <li> 结构体成员赋值
+##### 结构体成员赋值
 ```
 struct CMUnitTestState {
     const ListNode *check_point; /* Check point of the test if there's a setup function. */
@@ -240,7 +240,7 @@ for (i = 0; i < num_tests; i++) {
 }
 ```
 
-##### <li> C语言实现变长数组
+##### C语言实现变长数组
 ```
 typedef struct
 {
@@ -255,7 +255,7 @@ typedef struct
 }data_buf;
 ````
 
-##### <li> 特殊符号"#、##"
+##### 特殊符号"#、##"
 ```
 http://www.cnblogs.com/Anker/p/3418792.html
 http://blog.csdn.net/acs713/article/details/6891837
@@ -288,7 +288,7 @@ TYPE1(int, c); 转换为：int 　name_int_type ; (因为##号将后面分为 na
 TYPE2(int, d);转换为： int 　d_int_type ; (因为##号将后面分为 name、_、type 、_type四组，替换后强制连接)
 ```
 
-##### <li> strstr和strchr的区别
+##### strstr和strchr的区别
 http://blog.csdn.net/wusuopubupt/article/details/38741015
 ```
 通过函数的定义来区分：
@@ -320,7 +320,7 @@ http://blog.csdn.net/wusuopubupt/article/details/38741015
 另外，strrchr返回字符c在字符串str中最后出现的位置
 ```
 
-##### <li> \_\_FILE\_\_, \_\_LINE\_\_ and \_\_func\_\_
+##### \_\_FILE\_\_, \_\_LINE\_\_ and \_\_func\_\_
 ```
 https://gcc.gnu.org/onlinedocs/cpp/Standard-Predefined-Macros.html
 
@@ -455,7 +455,7 @@ static void __debug_info(const char *prefix,const char *fmt, ...) {
 #endif
 ```
 
-##### <li> do{...}while(0)
+##### do{...}while(0)
 http://www.cnblogs.com/lizhenghn/p/3674430.html
 
 1. 代码中的do{}while(0)可避免使用goto语句
@@ -484,7 +484,7 @@ int func()
 }
 ```
 
-##### <li> 空语句
+##### 空语句
 ```
 if (condition)
 {
@@ -492,7 +492,7 @@ if (condition)
 }
 ```
 
-##### <li>  gcc -Wl option and Link wrap option
+#####  gcc -Wl option and Link wrap option
 https://gcc.gnu.org/onlinedocs/gcc-7.1.0/gcc/Link-Options.html
 https://sourceware.org/binutils/docs/ld/Options.html
 
@@ -527,7 +527,7 @@ Wl:	 	Link Options
     You may wish to provide a __real_malloc function as well, so that links without the --wrap option will succeed. If you do this, you should not put the definition of __real_malloc in the same file as __wrap_malloc; if you do, the assembler may resolve the call before the linker has a chance to wrap it to malloc.
 ```
 
-##### <li> 大小端转换的宏
+##### 大小端转换的宏
 ```
 typedef unsigned short int uint16;
 typedef unsigned long int uint32;
@@ -542,7 +542,7 @@ typedef unsigned long int uint32;
                                    (((uint32)(A) & 0x000000ff) << 24))
 ```
 
-##### <li> 一段代码判断大小端
+##### 一段代码判断大小端
 ```
 #include <stdio.h>
 
@@ -592,12 +592,12 @@ int main( int argc, char * argv[] )
 }
 ```
 
-##### <li> GCC编译动态链接库
+##### GCC编译动态链接库
 ```
 gcc stub.c -fPIC -shared -o libstub.so
 ```
 
-##### <li> 结构体初始化
+##### 结构体初始化
 ```
 struct point {
 	int x;
@@ -608,7 +608,7 @@ struct point {
 struct point p = {.x = 3, .y = 4, .z = 5};
 ```
 
-##### <li> 数组名取地址
+##### 数组名取地址
 ```
 在C语言中，对数组名取地址，得到的地址也是数组第一个元素的地址，如果对这个地址执行+1操作，这个+1的步长是整个数组的长度。即对整个数组取地址。可以对比结构体指针理解。
 

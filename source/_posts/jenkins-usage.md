@@ -6,7 +6,7 @@ tags: jenkins
 
 <ol>
 
-##### <li> Jenkins强制设置语言为中文 </li>
+##### Jenkins强制设置语言为中文 </li>
 ```
 1. 先安装插件：Locale plugin
 
@@ -15,12 +15,12 @@ tags: jenkins
 
 <!-- more -->
 
-##### <li> Jenkins允许匿名访问 </li>
+##### Jenkins允许匿名访问 </li>
 ```
 jienkins->【系统管理】->Configure Global Security, 勾上Allow anonymous read access
 ```
 
-##### <li> Jenkins权限管理
+##### Jenkins权限管理
 http://www.cnblogs.com/zz0412/p/jenkins_jj_14.html
 ```
 配置用户权限
@@ -32,7 +32,7 @@ http://www.cnblogs.com/zz0412/p/jenkins_jj_14.html
 说明：安全矩阵和项目矩阵授权策略的配置是一模一样的，唯一的区别是项目矩阵授权策略支持在Job的配置页面再次配置授权策略。
 ```
 
-##### <li> Jenkins的Admin账号权限恢复
+##### Jenkins的Admin账号权限恢复
 http://blog.sina.com.cn/s/blog_56d8ea90010147z3.html
 https://www.jianshu.com/p/3dd94ed4cde3
 http://www.cnblogs.com/comeonbaby/p/5016021.html
@@ -53,13 +53,13 @@ http://www.cnblogs.com/comeonbaby/p/5016021.html
 ```
 
 
-##### <li> 启动 </li>
+##### 启动 </li>
 ```
 cd ~/Downloads/jenkins/ && java -jar jenkins.war
 cd ~/Downloads/jenkins/ && java -Dhudson.model.DirectoryBrowserSupport.CSP= -jar jenkins.war
 ```
 
-##### <li> 服务管理 </li>
+##### 服务管理 </li>
 ```
 关闭jenkins服务
 http://localhost:8080/exit
@@ -71,7 +71,7 @@ http://localhost:8080/restart
 http://localhost:8080/reload
 ```
 
-##### <li> Jenkins插件选择 </li>
+##### Jenkins插件选择 </li>
 ```
 Email Extension Template Plugin
 HTML Publisher plugin
@@ -82,12 +82,12 @@ Hudson Post build task /构建结束后执行shell命令
 Lockable Resources Plugin
 ```
 
-##### <li> Jenkins Email Extension Template Plugin配置 </li>
+##### Jenkins Email Extension Template Plugin配置 </li>
 jenkins->system management
 
 ![extended_email_notification.png](/upload_image/jenkins-usage/extended_email_notification.png)
 
-##### <li> 删除构建历史 </li>
+##### 删除构建历史 </li>
 ###### 最佳解决方案
 如果您单击Manage Hudson /Reload Configuration From Disk，Hudson将重新加载所有构建历史数据。
 
@@ -154,7 +154,7 @@ def jobs = Jenkins.instance.projects.collect { it }
 jobs.each { job -> job.getBuilds().each { it.delete() }}
 
 
-##### <li> Jenkins Configuration </li>
+##### Jenkins Configuration </li>
 ![conf1.png](/upload_image/jenkins-usage/conf1.png)
 ![conf2.png](/upload_image/jenkins-usage/conf2.png)
 ![conf3.png](/upload_image/jenkins-usage/conf3.png)
@@ -166,7 +166,7 @@ jobs.each { job -> job.getBuilds().each { it.delete() }}
 ![conf9.png](/upload_image/jenkins-usage/conf9.png)
 
 
-##### <li> Jenkins调用第三方脚本的console output没有实时打印 </li>
+##### Jenkins调用第三方脚本的console output没有实时打印 </li>
 https://gxnotes.com/article/206166.html
 https://stackoverflow.com/questions/11631951/jenkins-console-output-not-in-realtime?answertab=votes
 http://debugtalk.com/post/make-Jenkins-Console-Output-Colorful/
@@ -174,13 +174,13 @@ http://debugtalk.com/post/make-Jenkins-Console-Output-Colorful/
 python -u script.py
 ```
 
-##### <li> 配置备份
+##### 配置备份
 https://wiki.jenkins.io/display/JENKINS/Administering+Jenkins#AdministeringJenkins-Moving%2Fcopying%2Frenamingjobs
 https://stackoverflow.com/questions/8424228/export-import-jobs-in-jenkins
 http://blog.csdn.net/tengdazhang770960436/article/details/62043154
 http://www.jianshu.com/p/8762e251c41c
 
-##### <li> Jenkins升级、迁移和备份
+##### Jenkins升级、迁移和备份
 http://www.cnblogs.com/zz0412/tag/jenkins/
 http://www.cnblogs.com/zz0412/p/jenkins_jj_17.html
 http://www.cnblogs.com/LegendOfBFS/p/3487259.html
@@ -263,14 +263,14 @@ http://www.tinygroup.org/docs/1862982733741657197
 2）在项目配置中，如果 源码管理--Git中输入账号就报错，可能是git版本过低。如果jenkins是2.12的，那么git需要1.8及以上版本。
 
 
-##### <li> Email Notification </li>
+##### Email Notification </li>
 ```
 FAQ:
 Q. 邮件发送的html报告中，css样式丢失
 A: 将html的依赖文件作为附件发送
 ```
 
-##### <li> .bashrc backup </li>
+##### .bashrc backup </li>
 ```
 # bash每执行完一条命令，都要显示一个新的提示符，而在显示提示符的同时，会执行保存在环境变量PROMPT_COMMAND里面的命令
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"

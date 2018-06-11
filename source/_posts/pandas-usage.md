@@ -8,7 +8,7 @@ tags: Python
 
 <ol>
 
-##### <li> Pandas reference links
+##### Pandas reference links
 http://pandas.pydata.org/pandas-docs/stable/
 http://pandas.pydata.org/pandas-docs/stable/api.html
 
@@ -33,20 +33,20 @@ https://zhuanlan.zhihu.com/p/21598982
 http://kekefund.com/2016/06/17/pandas-groupby/
 
 
-##### <li> DataFrame获取列名
+##### DataFrame获取列名
 ```
 k_df.columns
 k_df.columns[0]
 ```
 
-##### <li> DataFrame列作为list返回
+##### DataFrame列作为list返回
 ```
 list(k_df.columns)
 list(k_df)
 list(k_df[:0])
 ```
 
-##### <li> 获取DataFrame中的某个值
+##### 获取DataFrame中的某个值
 ```
 code_df.iat[index, 0] # 第一个参数为index值，后一个参数是列所在的索引
 code_df.iloc[index, 0] # 第一个参数为index值，后一个参数是列所在的索引
@@ -65,14 +65,14 @@ hist_df['close']
 12.6
 ```
 
-##### <li> 设置DataFrame中的某个值
+##### 设置DataFrame中的某个值
 ```
 df.at[dates[0],'A'] = 0
 df.at[1,'A'] = 0 # 第一个参数为行索引，第二个参数为列名
 df.iat[1, 1] = 0 # 第一个参数为行号(行所在位置)，第二个参数是列的索引值
 ```
 
-##### <li> 列交换位置
+##### 列交换位置
 ```
 # A list
 k_df_column = list(k_df) # k_df_column = list(k_df.columns)
@@ -80,7 +80,7 @@ k_df_column.insert(0, k_df_column.pop(k_df_column.index(k_df.columns[-1])))  # �
 k_df = k_df[k_df_column]
 ```
 
-##### <li> 取前两列
+##### 取前两列
 ```
 code_df = today_df[list(today_df.columns[0:2])]
 code_df = today_df[list(range(2))]
@@ -90,7 +90,7 @@ code_df = today_df[list(today_df.columns[::2])]
 code_df = today_df[today_df.columns[::2]]
 ```
 
-##### <li> 插入一列
+##### 插入一列
 ```
 # 第一个参数为插入位置，列名为date，值为today_date_str
 today_df.insert(0, 'date', today_date_str)
@@ -99,7 +99,7 @@ hist_df.insert(0, 'code', code)
 hist_df.insert(1, 'date', hist_df.index)
 ```
 
-##### <li> 插入一行
+##### 插入一行
 ```
 low_increase_df = today_df[0:0]
 
@@ -119,12 +119,12 @@ low_increase_df.iat[len(low_increase_df) - 1, df_columns + 2] = float(ma20prc)
 low_increase_df.iat[len(low_increase_df) - 1, df_columns + 3] = float(float(today_trad_price) / float(ma20prc))
 ```
 
-##### <li> 获取dateFrame的索引值
+##### 获取dateFrame的索引值
 ```
 basics_df.index
 ```
 
-##### <li> 获取某一列或几列的所有值
+##### 获取某一列或几列的所有值
 http://www.cnblogs.com/kylinlin/p/5231404.html
 INDEXING AND SELECTING DATA chapter in pandas document
 p1193
@@ -160,7 +160,7 @@ today_df.loc[:, 0:2]
 即通过[]获取DataFrame的值，如果只有一个参数或者参数列表，则是获取这些列的值，而且这些参数必须是列名，如：df[['code', 'name', 'volume']], df[df.columns[1:5]]。如果是参数是一个范围，则是获取行的值，如df[0:len(df)-1], df[::2]
 ```
 
-##### <li> 复制DataFrame
+##### 复制DataFrame
 ```
 new_code_df = code_df[:]
 new_code_df = code_df.copy()
@@ -172,13 +172,13 @@ new_today_df = today_df.loc[:]
 new_today_df = today_df.iloc[:]
 ```
 
-##### <li> 复制DataFrame的结构
+##### 复制DataFrame的结构
 ```
 new_code_df = code_df[:0] # 复制空的DataFrame
 new_code_df = code_df[0:0]
 ```
 
-##### <li> 创建DataFrame
+##### 创建DataFrame
 http://blog.csdn.net/chixujohnny/article/details/54133866
 ```
 df = pd.DataFrame(np.random.randn(6,4), index=dates, columns=list('ABCD'))
@@ -244,7 +244,7 @@ empty.append(new,ignore_index=True)​
 ​否则，数据始终没有写入。
 ```
 
-##### <li> DataFrame数据过滤
+##### DataFrame数据过滤
 http://bluewhale.cc/2016-08-06/use-pandas-filter-and-sort.html
 http://www.cnblogs.com/renfanzi/p/6420783.html
 http://blog.csdn.net/zhili8866/article/details/68134481
@@ -279,7 +279,7 @@ new_df = basics_df.dropna() # 获取所有列中值不为空的行
 new_df = basics_df[basics_df.columns[:4]].dropna() # 获取前四列中值不为空的行
 ```
 
-##### <li> 求每列最大值，最小值，和，平均值
+##### 求每列最大值，最小值，和，平均值
 http://www.cnblogs.com/wuzhiblog/p/python_new_row_or_col.html
 ```
 pandas.pdf P504
@@ -371,7 +371,7 @@ df.loc['Row_sum'] = df.apply(lambda x: x.sum())
 Row_sum  0.461987  0.225310 -1.769627 -1.592595  1.652828 -1.022097
 ```
 
-##### <li> 获取某一行的值
+##### 获取某一行的值
 https://pandas.pydata.org/pandas-docs/stable/indexing.html
 https://stackoverflow.com/questions/28757389/loc-vs-iloc-vs-ix-vs-at-vs-iat
 http://blog.csdn.net/xw_classmate/article/details/51333646
@@ -434,7 +434,7 @@ today_df.loc[[1,2,4], [today_df.columns[0], today_df.columns[2]]]
 today_df.iloc[[1,2,4], [0, 2]]
 ```
 
-##### <li> Pandas中loc ,iloc,ix,iat区别
+##### Pandas中loc ,iloc,ix,iat区别
 http://www.cnblogs.com/coskaka/p/6107372.html
 https://stackoverflow.com/questions/28757389/loc-vs-iloc-vs-ix-vs-at-vs-iat
 http://www.cnblogs.com/harvey888/p/6006200.html
@@ -499,7 +499,7 @@ Name: 9, dtype: float64
 Traceback (most recent call last):
 ```
 
-##### <li> DataFrame排序
+##### DataFrame排序
 ```
 # 按照index排序
 df.sort_index(axis=1, ascending=False)
@@ -509,7 +509,7 @@ today_df.sort_values('settlement', ascending=False)
 df.sort_values(by='B', ascending=False)
 ```
 
-##### <li> Merge操作
+##### Merge操作
 pandas.v0.19.2 p410, p449, p727
 http://freefarm.cc/2016/05/24/PANDAS%E5%B8%B8%E7%94%A8%E6%89%8B%E5%86%8C-IV-%E5%90%88%E5%B9%B6%E6%95%B0%E6%8D%AE%E9%9B%86/
 https://amaozhao.gitbooks.io/pandas-notebook/content/%E5%90%88%E5%B9%B6%E6%95%B0%E6%8D%AE%E9%9B%86.html
@@ -681,7 +681,7 @@ Index: []
 11 -0.423520  0.458304 -0.221281 -0.381890
 ```
 
-##### <li> Series与DataFrame的区别
+##### Series与DataFrame的区别
 ```
 Series的list操作得到的是该列的值作为list返回
 new_code_df = code_df[code_df.columns[0]]
@@ -734,7 +734,7 @@ len(new_code_list)
 Out[45]: 3345
 ```
 
-##### <li> DataFrame一行数据的访问
+##### DataFrame一行数据的访问
 ```
 >>> hist_df = ts.get_hist_data('600000', start='2017-09-26', end='2017-09-28', ktype='D')
 http://api.finance.ifeng.com/akdaily/?code=sh600000&type=last
@@ -826,7 +826,7 @@ Name: 2017-09-26, dtype: float64
 
 ```
 
-##### <li> pandas按index排序
+##### pandas按index排序
 ```
 >>> hist_df.sort_index(ascending=False)
              open   high  close    low     volume  price_change  p_change  \
@@ -925,7 +925,7 @@ date
 >>>
 ```
 
-##### <li> pandas按照某列值排序
+##### pandas按照某列值排序
 ```
 >>> hist_df
              open   high  close    low     volume  price_change  p_change  \
@@ -1129,7 +1129,7 @@ date
 
 ```
 
-##### <li> pandas生成图表
+##### pandas生成图表
 https://amaozhao.gitbooks.io/pandas-notebook/content/pandas%E4%B8%AD%E7%9A%84%E7%BB%98%E5%9B%BE%E5%87%BD%E6%95%B0.html
 http://cloga.info/python/2014/02/23/plotting_with_pandas
 http://blog.csdn.net/u013524655/article/details/41291715
@@ -1149,11 +1149,11 @@ http://www.cnblogs.com/splended/p/5229699.html
 ```
 ![plot.png](/upload_image/pandas-usage/plot.png)
 
-##### <li> pandas坑
+##### pandas坑
 https://tracholar.github.io/wiki/python/pandas.html
 https://www.zybuluo.com/ds17/note/806790
 
-##### <li> Pandas速查手册中文版
+##### Pandas速查手册中文版
 https://zhuanlan.zhihu.com/p/25630700
 ```
 本文翻译自文章：Pandas Cheat Sheet - Python for Data Science，同时添加了部分注解。

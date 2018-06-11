@@ -8,7 +8,7 @@ tags: Bat
 
 <ol>
 
-##### <li> Echo命令
+##### Echo命令
 http://www.jb51.net/article/30987.htm
 https://zhidao.baidu.com/question/21121153.html
 ```
@@ -16,7 +16,7 @@ echo off -- 关闭回显
 @echo off
 ```
 
-##### <li> Set命令
+##### Set命令
 http://www.jb51.net/article/18973_all.htm
 http://blog.csdn.net/djkin99/article/details/2182206
 ```
@@ -80,7 +80,7 @@ set /a 语法, var变量名 1 + 1 数学式子
 一个简单的加法运算!
 ```
 
-##### <li> 批处理的注释语句
+##### 批处理的注释语句
 http://blog.csdn.net/wh_19910525/article/details/8125762
 https://lzw.me/a/bat-rem.html
 ```
@@ -107,9 +107,9 @@ https://lzw.me/a/bat-rem.html
     8、:标签 注释内容（可以用作标签下方段的执行内容）
 ```
 
-##### <li> 变量赋值
+##### 变量赋值
 
-##### <li> IF语句
+##### IF语句
 http://www.jb51.net/article/14986.htm
 http://blog.163.com/for_dba/blog/static/195623250201183094021245/
 http://www.bathome.net/redirect.php?fid=5&tid=8072&goto=nextoldset
@@ -123,7 +123,7 @@ http://www.bathome.net/redirect.php?fid=5&tid=1962&goto=nextoldset
 　　GEQ - 大于或等于
 ```
 
-##### <li> For循环
+##### For循环
 http://bbs.bathome.net/thread-2189-1-1.html
 http://www.jb51.net/article/93170.htm
 http://blog.csdn.net/jeefchen/article/details/5663822
@@ -156,7 +156,7 @@ http://bbs.csdn.net/topics/380068572
 　　for %%i in (d:\mydocuments\*.doc) do @echo %%i --显示d:\mydocuments\目录下与*.doc相匹配的文件
 ```
 
-##### <li> 变量扩展
+##### 变量扩展
 http://www.bathome.net/thread-2899-1-1.html
 http://bbs.bathome.net/thread-354-1-1.html
 http://bbs.bathome.net/thread-112-1-1.html
@@ -220,7 +220,7 @@ http://blog.csdn.net/subkiller/article/details/7344509
 好了，变量延迟扩展解释完了，至少这就是我知道的变量延迟扩展。
 ```
 
-##### <li> 批处理字符串处理
+##### 批处理字符串处理
 http://blog.csdn.net/benkaoya/article/details/7784013
 http://www.cnblogs.com/ZC_Mo-Blog/archive/2009/12/28/1633766.html
 http://blog.csdn.net/elimago/article/details/4145800
@@ -261,13 +261,13 @@ echo str4=%str4%
 echo 输出完毕，按任意键退出&&pause>nul&&exit
 ```
 
-##### <li> 批处理读取文件内容
+##### 批处理读取文件内容
 http://josephdong.blog.163.com/blog/static/1774389720093402836603/
 http://www.jb51.net/article/39990.htm
 http://luhongyuaaa.blog.163.com/blog/static/217554222010213101959533/
 https://zhidao.baidu.com/question/746207667158208932.html
 
-##### <li> Tips
+##### Tips
 http://bbs.bathome.net/thread-37612-1-1.html
 ```
 批处理循环中赋值，因为他在括号里面，算是复合句。复合句里面设置变量要用变量扩展
@@ -291,7 +291,7 @@ set /P OEM=<tmp.txt
 
 ```
 
-##### <li> Example
+##### Example
 根据file_filter.txt中的文件列表，删除未在列表中的文件
 ```
 @echo off

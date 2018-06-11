@@ -8,7 +8,7 @@ tags: Python
 
 <ol>
 
-##### <li> 常用User Agent
+##### 常用User Agent
 http://blog.csdn.net/kang_tju/article/details/52563374
 http://blkstone.github.io/2016/03/02/crawler-anti-anti-cheat/
 https://www.waitig.com/python-%E7%88%AC%E8%99%AB%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84uauser-agent.html
@@ -113,13 +113,13 @@ fake-useragent 即可。 使用：
        ua.random
 ```
 
-##### <li> Urllib库详解
+##### Urllib库详解
 http://www.bkjia.com/Pythonjc/1043449.html
 http://blog.csdn.net/drdairen/article/details/51149498
 http://www.bijishequ.com/detail/441751?p=
 
 
-##### <li> 简单爬虫
+##### 简单爬虫
 ```
 import urllib.request
 
@@ -193,7 +193,7 @@ if match_obj:
 
 ```
 
-##### <li> 爬虫入门
+##### 爬虫入门
 http://yshblog.com/blog/148
 http://blog.csdn.net/column/details/why-bug.html
 http://blog.csdn.net/Eastmount/article/category/5758691
@@ -204,7 +204,7 @@ https://segmentfault.com/a/1190000009111635
 http://docs.python-requests.org/zh_CN/latest/user/quickstart.html
 http://www.cnblogs.com/yizhenfeng168/p/7078480.html
 
-##### <li> Python爬虫技巧
+##### Python爬虫技巧
 http://blkstone.github.io/2016/03/02/crawler-anti-anti-cheat/
 http://gohom.win/2016/01/21/proxy-py/
 http://ningning.today/2015/10/04/python/Python%E7%88%AC%E8%99%AB%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%BB%E7%BB%93/
@@ -218,27 +218,27 @@ https://www.zhihu.com/topic/19577498
 https://www.zhihu.com/question/35461941
 https://github.com/lining0806/PythonSpiderNotes
 
-##### <li> 爬虫与反爬虫
+##### 爬虫与反爬虫
 https://zhuanlan.zhihu.com/p/20520370
 https://www.zhihu.com/question/28168585
 https://www.zhihu.com/question/26221432
 
-##### <li> BeautifulSoup教程
+##### BeautifulSoup教程
 http://beautifulsoup.readthedocs.io/zh_CN/latest/
 https://www.gitbook.com/book/wizardforcel/bs4-doc/details
 https://www.crifan.com/files/doc/docbook/python_topic_beautifulsoup/release/pdf/python_topic_beautifulsoup.pdf
 http://www.jianshu.com/p/154211515a41
 
-##### <li> Scrapy教程
+##### Scrapy教程
 http://scrapy-chs.readthedocs.io/zh_CN/latest/index.html
 
-##### <li> 爬虫实战项目
+##### 爬虫实战项目
 http://www.jianshu.com/p/78684e5a7916
 https://zhuanlan.zhihu.com/p/25172216
 http://python.jobbole.com/88325/
 http://yz0515.com/2017/03/29/%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E2%80%94%E2%80%94%E5%B0%86%E5%BB%96%E9%9B%AA%E5%B3%B0%E7%9A%84%E6%95%99%E7%A8%8B%E8%BD%AC%E6%8D%A2%E6%88%90PDF%E7%94%B5%E5%AD%90%E4%B9%A6/
 
-##### <li> 搜索引擎蜘蛛爬虫User Agent一览
+##### 搜索引擎蜘蛛爬虫User Agent一览
 http://www.wilf.cn/post/search-engine-bots.html
 ```
 今天分析研究了两个网站的 Apache 日志，分析日志虽然很无聊，但却是很有意义的事情，比如跟踪 SPAM 的 User Agent。顺便整理出一些搜索引擎爬虫的 User Agent，在这里分享一下，也欢迎补充。
@@ -415,7 +415,7 @@ TurnitinBot/3.0 (http://www.turnitin.com/robot/crawlerinfo.html)
 TurnitinBot，不认识
 ```
 
-##### <li> 爬虫与正则表达式
+##### 爬虫与正则表达式
 ```
 import re
 import urllib.request

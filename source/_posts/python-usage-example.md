@@ -8,7 +8,7 @@ tags:
 
 <ol>
 
-##### <li> Python实现\_\_func\_\_, \_\_LINE\_\_, \_\_FILE\_\
+##### Python实现\_\_func\_\_, \_\_LINE\_\_, \_\_FILE\_\
 ```
 import inspect
 
@@ -23,11 +23,11 @@ def print_line_file_func():
     print(info.lineno)                          # __LINE__
 ```
 
-##### <li> Python操作excel表格
+##### Python操作excel表格
 http://openpyxl.readthedocs.io/en/default/usage.html
 https://stackoverflow.com/questions/28691998/is-openpyxl-iter-rows-skipping-last-row
 
-##### <li> Python 2和3的区别
+##### Python 2和3的区别
 http://blog.jobbole.com/80006/
 http://www.techug.com/post/the-difference-of-python2-and-python3.html
 https://segmentfault.com/a/1190000000618286
@@ -62,7 +62,7 @@ https://www.gitbook.com/book/wizardforcel/w3school-python/details
 >  9. exec变成函数类似 print() 的变化, 之前是语句.
 ```
 
-##### <li> 编写python2，python3兼容代码
+##### 编写python2，python3兼容代码
 http://python-future.org/compatible_idioms.html
 http://blog.csdn.net/foryouslgme/article/details/52353836
 http://blog.csdn.net/ronnyjiang/article/details/53333538
@@ -192,7 +192,7 @@ out_error_list = obj.communicate('print("hello")')
 print(out_error_list)
 ```
 
-##### <li> Python的几种取整方式
+##### Python的几种取整方式
 ```
 https://www.2cto.com/kf/201507/422109.html
 http://blog.csdn.net/hemingliang1987/article/details/18266967
@@ -295,7 +295,7 @@ print "math.floor(2) => ", math.floor(2)
 print "round(2) => ", round(2)
 ```
 
-##### <li> Python字符串补零
+##### Python字符串补零
 http://www.runoob.com/python/att-string-zfill.html
 http://www.runoob.com/python3/python3-string-zfill.html
 http://www.sharejs.com/codes/python/8037
@@ -317,7 +317,7 @@ s = "%05d" % n
 assert s == "00123"
 ```
 
-##### <li> python命令行参数
+##### python命令行参数
 http://www.runoob.com/python/python-command-line-arguments.html
 https://www.jianshu.com/p/0361cd8b8fec
 https://www.jianshu.com/p/c2c0447e8fd5
@@ -351,7 +351,7 @@ if __name__ == "__main__":
    main(sys.argv[1:])
 ```
 
-##### <li> 检查变量是否被定义
+##### 检查变量是否被定义
 https://stackoverflow.com/questions/1592565/determine-if-variable-is-defined-in-python
 https://stackoverflow.com/questions/750298/easy-way-to-check-that-a-variable-is-defined-in-python
 https://stackoverflow.com/questions/843277/how-do-i-check-if-a-variable-exists
@@ -372,7 +372,7 @@ False
 >>>
 ```
 
-##### <li> Python的raise函数用法
+##### Python的raise函数用法
 http://www.pythondoc.com/pythontutorial3/errors.html
 http://blog.csdn.net/mr_jj_lian/article/details/6786052
 ```
@@ -462,7 +462,7 @@ class TransitionError(Error):
 
 ```
 
-##### <li> Python变量，可变变量
+##### Python变量，可变变量
 https://foofish.net/python-variable.html
 http://www.jianshu.com/p/67db61f013b7
 http://songlee24.github.io/2014/08/12/python-FAQ-01/
@@ -546,7 +546,7 @@ _add_ 和 _iadd_ 的区别
 
 ```
 
-##### <li> Python垃圾回收
+##### Python垃圾回收
 http://www.wklken.me/posts/2015/09/29/python-source-gc.html#biao-ji-qing-chu_1
 http://python.jobbole.com/82061/
 https://github.com/Hipponensis/Notes/blob/master/%E5%85%B3%E4%BA%8EPython%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6.md
@@ -618,7 +618,7 @@ Python的GC模块主要运用了“引用计数”（reference counting）来跟
 2
 ```
 
-##### <li> 函数的参数传递方式
+##### 函数的参数传递方式
 https://foofish.net/python-function-args.html
 http://dantangfan.github.io/2015/05/11/python-arguments.html
 https://www.zhihu.com/question/20591688
@@ -655,7 +655,7 @@ AttributeError: 'int' object has no attribute 'hex'
 >>>
 ```
 
-##### <li> 列表复制(深层赋值只有copy.deepcopy能实现，仔细分析5种复制方法比较)
+##### 列表复制(深层赋值只有copy.deepcopy能实现，仔细分析5种复制方法比较)
 http://www.cnblogs.com/ifantastic/p/3811145.html
 http://henry.precheur.org/python/copy_list
 https://code.i-harness.com/zh-CN/q/27de42
@@ -686,7 +686,7 @@ https://code.i-harness.com/zh-CN/q/27de42
 44834648 [[10], 20]
 ```
 
-##### <li> Python对象的浅拷贝和深拷贝
+##### Python对象的浅拷贝和深拷贝
 http://www.cnblogs.com/wilber2013/p/4645353.html
 http://www.runoob.com/python/att-dictionary-copy.html
 http://www.runoob.com/w3cnote/python-understanding-dict-copy-shallow-or-deep.html
@@ -733,7 +733,7 @@ python中的深拷贝和浅拷贝和java里面的概念是一样的，所谓浅�
 
 ```
 
-##### <li> Python进制转换
+##### Python进制转换
 http://www.runoob.com/python3/python3-conversion-binary-octal-hexadecimal.html
 ```
 以下代码用于实现十进制转二进制、八进制、十六进制：
@@ -752,7 +752,7 @@ print("转换为八进制为：", oct(dec))
 print("转换为十六进制为：", hex(dec))
 ```
 
-##### <li> 默认参数的坑
+##### 默认参数的坑
 https://foofish.net/python-function-args.html
 ```
 def bad_append(new_item, a_list=[]):
@@ -776,7 +776,7 @@ def good_append(new_item, a_list=None):
 即默认参宿不可以是可变对象，可变对象作为默认参数有潜在的风险
 ```
 
-##### <li> 静态类和静态函数的区别
+##### 静态类和静态函数的区别
 ```
 IND = 'ON'
 
@@ -821,7 +821,7 @@ ik1.do_reset()
 ik1.set_db()
 ```
 
-##### <li> Python类成员方法，静态方法和静态类的区别
+##### Python类成员方法，静态方法和静态类的区别
 ```
 IND = 'ON'
 
@@ -892,7 +892,7 @@ http://blog.csdn.net/caroline_wendy/article/details/23383995
 http://www.jianshu.com/p/212b6fdb2c50
 ```
 
-##### <li> 正则表达式
+##### 正则表达式
 http://www.cnblogs.com/huxi/archive/2010/07/04/1771073.html
 https://oncemore2020.github.io/blog/python-re/
 ```
@@ -1005,7 +1005,7 @@ AttributeError: 'NoneType' object has no attribute 'group'
 >>>
 ```
 
-##### <li> 正则表达式使用变量
+##### 正则表达式使用变量
 https://stackoverflow.com/questions/6930982/how-to-use-a-variable-inside-a-regular-expression
 https://code.i-harness.com/zh-CN/q/69c226
 https://codeday.me/bug/20170627/34116.html
@@ -1053,7 +1053,7 @@ print(match)
 >>> regex.match('foo-12345')
 ```
 
-##### <li> Str模块相关函数用法
+##### Str模块相关函数用法
 ```
 1. split
 >>> x = 'checkRepeatConnect_throughput'
@@ -1091,7 +1091,7 @@ Concatenate a list or tuple of words with intervening occurrences of sep. The de
 
 ```
 
-##### <li> Python检查列表，字符串为空
+##### Python检查列表，字符串为空
 https://taizilongxu.gitbooks.io/stackoverflow-about-python/content/15/README.html
 http://codewenda.com/%E7%94%A8python%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9F%A5%E7%9C%8B%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA/
 ```
@@ -1122,7 +1122,7 @@ if str == '':
     print('This is an empty string.')
 ```
 
-##### <li> Python os.path模块
+##### Python os.path模块
 https://www.cnblogs.com/dkblog/archive/2011/03/25/1995537.html
 http://yysfire.github.io/python/python2-standard-library-os.path.html
 ```
@@ -1289,7 +1289,7 @@ path 指向一个实际存在的路径时返回 True。对于坏掉的符号链�
 
 ```
 
-##### <li> python id函数
+##### python id函数
 http://www.runoob.com/python/python-func-id.html
 http://blog.jobbole.com/49705/
 http://blog.csdn.net/djskl/article/details/25886187
@@ -1334,7 +1334,7 @@ id([object])
 >>>
 ```
 
-##### <li> python内存管理
+##### python内存管理
 https://chenrudan.github.io/blog/2016/04/23/pythonmemorycontrol.html
 http://www.cnblogs.com/vamei/p/3232088.html
 http://www.cnblogs.com/Lvkun/archive/2012/03/01/python_object_memory_usage.html
@@ -1401,7 +1401,7 @@ Python有个特别的机制，它会在解释器启动的时候事先分配好�
 因此变量的存储有三个区域，事先分配的静态内存、事先分配的可重复利用内存以及需要通过malloc和free来控制的自由内存。
 ```
 
-##### <li> python利用dis模块进行代码层次的性能剖析
+##### python利用dis模块进行代码层次的性能剖析
 http://hyry.dip.jp/tech/book/page/python/variable_scope_dis.html
 http://blog.csdn.net/handsomekang/article/details/41479597
 http://tinyweb.blog.51cto.com/2462673/982585
@@ -1415,7 +1415,7 @@ http://www.cweye.net/python/2014/08/18/python-bytecode.html
 >>>
 ```
 
-##### <li> Python中给List添加元素的4种方法分享
+##### Python中给List添加元素的4种方法分享
 http://www.jb51.net/article/57923.htm
 ```
 List 是 Python 中常用的数据类型，它一个有序集合，即其中的元素始终保持着初始时的定义的顺序（除非你对它们进行排序或其他修改操作）。
@@ -1465,7 +1465,7 @@ List 是 Python 中常用的数据类型，它一个有序集合，即其中的�
 ['a', 'x', 'b', 'c', 'd', 'y', 'z']
 ```
 
-##### <li> python浮点数精度截取
+##### python浮点数精度截取
 http://python3-cookbook.readthedocs.io/zh_CN/latest/c03/p01_round_number.html
 ```
 对于简单的舍入运算，使用内置的 round(value, ndigits) 函数即可。比如：
@@ -1494,7 +1494,7 @@ http://python3-cookbook.readthedocs.io/zh_CN/latest/c03/p01_round_number.html
 >>>
 ```
 
-##### <li> 使用logging分级打印日志
+##### 使用logging分级打印日志
 http://www.vimer.cn/archives/1883.html
 ```
 LOGGING_LEVEL = logging.DEBUG
@@ -1513,7 +1513,7 @@ if __name__ == "__main__":
 ```
 
 
-##### <li> sleep的用法
+##### sleep的用法
 ```
 time.sleep(value)，value支持小数，即可进行毫秒级的延时
 time_data = '30.3m'
@@ -1534,7 +1534,7 @@ if match_obj:
 
 ```
 
-##### <li> Python字符串合并与格式化
+##### Python字符串合并与格式化
 ```
 x = '19991110'
 xx = x[0:4]+'-'+x[4:6]+'-'+x[6:]
@@ -1545,7 +1545,7 @@ xx = '{0}-{1}-{2}'.format(x[0:4], x[4:6], x[6:])
 python学习手册第四版--第七章
 ```
 
-##### <li> String类中format函数的用法
+##### String类中format函数的用法
 ```
 6.1.3.2. Format examples
 This section contains examples of the str.format() syntax and comparison with the old %-formatting.
@@ -1671,7 +1671,7 @@ Nesting arguments and more complex examples:
 python362.chm--string chapter
 ```
 
-##### <li> Python字符串间隔固定位置插入分割符号
+##### Python字符串间隔固定位置插入分割符号
 https://stackoverflow.com/questions/10055631/how-do-i-insert-spaces-into-a-string-using-the-range-function
 https://stackoverflow.com/questions/2657693/insert-a-newline-character-every-64-characters-using-python
 https://stackoverflow.com/questions/9475241/split-string-every-nth-character
@@ -1709,7 +1709,7 @@ def insert_spaces(text, s_range):
 '04 3E 13 01 00 16 00 01 00 28 AA E0 50 A0 00 07 00 00 00 0A 00 01'
 ```
 
-##### <li> Python字符串转日期
+##### Python字符串转日期
 ```
 >>> timestr = '2017-09-20 16:20:30'
 >>> timeinst = datetime.datetime.strptime(timestr, '%Y-%m-%d %H:%M:%S')
@@ -1743,7 +1743,7 @@ datetime.datetime(2010, 12, 11, 16, 31, 45, 23)
 %f Microsecond as a decimal number, zero-padded on the left. 000000, 000001, ..., 999999
 ```
 
-##### <li> datetime显示开始执行时间和结束执行时间
+##### datetime显示开始执行时间和结束执行时间
 ```
 if __name__ == "__main__":
     print("Script start execution at %s\n\n" % str(datetime.datetime.now()))
@@ -1754,7 +1754,7 @@ if __name__ == "__main__":
 
 ```
 
-##### <li> 判断字符串是否为空
+##### 判断字符串是否为空
 ```
 if len(str):
     print('string not null')
@@ -1766,7 +1766,7 @@ if str != '':
     print('string not null')
 ```
 
-##### <li> 获取指定路径下所有指定后缀的文件
+##### 获取指定路径下所有指定后缀的文件
 http://outofmemory.cn/code-snippet/7194/python-get-specify-path-suo-exist-specify-houzhui-file
 ```
 # 获取指定路径下所有指定后缀的文件
@@ -1828,7 +1828,7 @@ for filename in glob.glob(r'c:\windows\*.exe'):
     print filename
 ```
 
-##### <li> Python文件遍历
+##### Python文件遍历
 http://laocao.blog.51cto.com/480714/525140
 http://hackerxu.com/2014/07/09/file-contrl.html
 http://gohom.win/2016/01/14/py-oswalk/
@@ -1916,7 +1916,7 @@ os.walk可以自顶向下或者自底向上遍历整个文件树，然后返回�
 
 ```
 
-##### <li> python遍历某个文件夹下的全部文件
+##### python遍历某个文件夹下的全部文件
 http://www.huqi.tk/index.php/2017/04/22/python_os_path/
 ```
 在前面的一小节中，我们谈到了对文件的读写操作，这一节我们谈谈使用python遍历某个文件夹下的全部文件，因为在实际的项目场景中这种情况非常常见，如在apk的逆向工程中可能需要在把dex文件反编译后产生的smali文件中查找某一特定的字符串，然后进行替换操作。这个场景很显然就涉及到了对某一文件夹下所有文件进行遍历的过程。这个过程很显然是对文件，目录，路径进行操作，而这些很显然是属于操作系统管理的范畴，因此这些功能被定义在了python中的os模块和os.path模块，使用前需要import相应的模块。这一小节就讲讲python中这两个模块常用的和文件操作相关的重要函数。
@@ -2085,7 +2085,7 @@ os.path.split('./hello.py')
 Out[9]: ('.', 'hello.py')
 ```
 
-##### <li> Python删除文件和目录
+##### Python删除文件和目录
 http://www.manongjc.com/article/975.html
 https://zhiwei.li/text/2010/11/08/python%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95/
 ```
@@ -2195,7 +2195,7 @@ if __name__ == '__main__':
     del_dir_tree(dirname)
 ```
 
-##### <li> Python文件复制拷贝
+##### Python文件复制拷贝
 http://python3-cookbook.readthedocs.io/zh_CN/latest/c13/p07_copy_move_files_and_directories.html
 https://www.zhukun.net/archives/6326
 ```
@@ -2229,7 +2229,7 @@ shutil.rmtree('c:\\test')  #删除整个文件夹（文件夹可以是非空的�
 
 ```
 
-##### <li> os.mkdir与os.makedirs区别
+##### os.mkdir与os.makedirs区别
 https://github.com/dokelung/Python-QA/blob/master/questions/standard_lib/os.mkdir%E5%92%8Cos.makedirs%E7%9A%84%E5%8D%80%E5%88%A5.md
 http://blog.csdn.net/ljl6158999/article/details/70807738
 http://blog.csdn.net/l904126360/article/details/54944020
@@ -2261,7 +2261,7 @@ OSError: [Errno 2] No such file or directory: 'foo/bar'
 很显然在创建多级目录且上级目录的存在未知时，使用makedirs比较方便，不容易出错。mark
 ```
 
-##### <li> Python文件操作
+##### Python文件操作
 http://python.usyiyi.cn/translate/python_278/library/os.path.html
 http://www.cnblogs.com/rollenholt/archive/2012/04/23/2466179.html
 http://blog.csdn.net/longshenlmj/article/details/13294871
@@ -2434,7 +2434,7 @@ print('总共处理了 %s 张图片'%(i))
 总共处理了 109 张图片
 ```
 
-##### <li> Python压缩解压模块
+##### Python压缩解压模块
 http://python3-cookbook.readthedocs.io/zh_CN/latest/c05/p07_read_write_compressed_datafiles.html
 http://blog.csdn.net/luoshengkim/article/details/46647423
 http://www.jianshu.com/p/0c7b3365eec0
@@ -2534,7 +2534,7 @@ write（）方法接受三个参数：第一个参数是我们要压缩的文件
 
 英文原文：https://code.tutsplus.com/tutorials/compressing-and-extracting-files-in-python--cms-26816
 
-##### <li> Python列表合并
+##### Python列表合并
 https://taizilongxu.gitbooks.io/stackoverflow-about-python/content/65/README.html
 http://www.cnblogs.com/NewZi/p/a-pythonic-method-to-merge-list.html
 http://tool.oschina.net/uploads/apidocs/python2.7.3/library/stdtypes.html#mutable-sequence-types
@@ -2565,7 +2565,7 @@ https://zhidao.baidu.com/question/328728387.html
 
 ```
 
-##### <li> Python随机字符串
+##### Python随机字符串
 https://taizilongxu.gitbooks.io/stackoverflow-about-python/content/63/README.html
 https://gist.github.com/hxer/9f03c978ad1fe8ccde26
 https://steemit.com/cn-programming/@oflyhigh/python
@@ -2686,7 +2686,7 @@ choice 的时间主要是在<string>:1，random.py:222，random.py:252 上
 choice 一个 5 行的函数，吃这么多时间，很难理解
 ```
 
-##### <li> Python字符串操作
+##### Python字符串操作
 http://blog.csdn.net/ataraxia2010/article/details/6907907
 http://www.cnpythoner.com/wiki/string.html
 http://www.cnblogs.com/zhongbin/p/3273048.html
@@ -3180,7 +3180,7 @@ S.splitlines([keepends]) #把S按照行分割符分为一个list，keepends是�
 S.swapcase() #大小写互换
 ```
 
-##### <li> python3中替换python2中cmp函数的新函数分析(lt、le、eq、ne、ge、gt)
+##### python3中替换python2中cmp函数的新函数分析(lt、le、eq、ne、ge、gt)
 http://blog.csdn.net/sushengmiyan/article/details/11332589
 ```
 在python2中我们经常会使用cmp函数来比较一些东西，但是在python3中，你再来使用这个函数的时候，发现就报错了，提示找不到这个函数，这是为啥呢？嗯，新版的python已经舍弃之。
@@ -3229,7 +3229,7 @@ ge(a, b)相当于 a>= b
 函数的返回值不是布尔哦。这点需要注意，还是跟cmp一样返回的是数值哦。
 ```
 
-##### <li> Python字符串比较
+##### Python字符串比较
 https://www.liurongxing.com/python-is-cmp-compare-operator.html
 http://www.pythonclub.org/python-basic/string-compare
 ```
@@ -3260,7 +3260,7 @@ True
 2
 ```
 
-##### <li> 利用Python在一个文件的头部插入数据
+##### 利用Python在一个文件的头部插入数据
 http://blog.csdn.net/junbujianwpl/article/details/73194846
 https://www.zhihu.com/question/50986375
 ```
@@ -3345,7 +3345,7 @@ def check_and_change_path_file():
                 file_fd.write(origin_data)
 ```
 
-##### <li> Python文件读写
+##### Python文件读写
 http://blog.csdn.net/XXKKFF/article/details/4421971
 http://blog.csdn.net/ztf312/article/details/47259805
 ```
@@ -3408,7 +3408,7 @@ bool indicating the current state of the file object. This is a read-only attrib
 
 ```
 
-##### <li> Python文件读写时的换行符与回车符
+##### Python文件读写时的换行符与回车符
 http://blog.csdn.net/mrknight/article/details/9717995
 ```
 1. 背景知识
@@ -3503,7 +3503,7 @@ if __name__ == "__main__":
 
 ```
 
-##### <li> Python的with语句
+##### Python的with语句
 https://www.ibm.com/developerworks/cn/opensource/os-cn-pythonwith/index.html
 http://blog.csdn.net/suwei19870312/article/details/23258495
 http://www.jb51.net/article/51045.htm
@@ -3601,7 +3601,7 @@ finally:
     出现异常时，如果 __exit__(type, value, traceback) 返回 False，则会重新抛出异常，让with 之外的语句逻辑来处理异常，这也是通用做法；如果返回 True，则忽略异常，不再对异常进行处理
 ```
 
-##### <li> Python升级模块
+##### Python升级模块
 ```
 pip 当前内建命令并不支持升级所有已安装的Python模块。
 
@@ -3620,7 +3620,7 @@ $ pip freeze --local | grep -v '^-e' | cut -d = -f 1  | xargs -n1 pip install -U
 $ for i in `pip list -o --format legacy|awk '{print $1}'` ; do pip install --upgrade $i; done
 ```
 
-##### <li> Python使用第三方源升级模块
+##### Python使用第三方源升级模块
 ```
 pip默认源由于墙，所以速度很慢，可使用第三源提高速度：
 vim ~/.pip/pip.conf
@@ -3630,7 +3630,7 @@ trusted-host = mirrors.aliyun.com
 index-url = http://mirrors.aliyun.com/pypi/simple
 ```
 
-##### <li> 重新导入Python模块
+##### 重新导入Python模块
 ```
 Python提供了reload()方法，它可以重新导入已import的模块。
 
@@ -3649,7 +3649,7 @@ import importlib
 importlib.reload(module)
 ```
 
-##### <li> Python查看模块版本
+##### Python查看模块版本
 ```
 >>> help(tushare)
 
@@ -3661,7 +3661,7 @@ importlib.reload(module)
 >>>
 ```
 
-##### <li> Python socket编程
+##### Python socket编程
 https://gist.github.com/kevinkindom/108ffd675cb9253f8f71
 https://gxnotes.com/article/80943.html
 https://stackoverflow.com/questions/6439790/sending-a-reset-in-tcp-ip-socket-connection
@@ -3765,7 +3765,7 @@ if __name__ == "__main__":
 
 ```
 
-##### <li> Python多线程
+##### Python多线程
 http://yangcongchufang.com/%E9%AB%98%E7%BA%A7python%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/python-process-thread.html
 https://tracholar.github.io/wiki/python/python-multiprocessing-tutorial.html
 https://morvanzhou.github.io/tutorials/python-basic/multiprocessing/
@@ -3777,10 +3777,10 @@ http://www.cnblogs.com/whatisfantasy/p/6440585.html
 http://python3-cookbook.readthedocs.io/zh_CN/latest/c12/p01_start_stop_thread.html
 http://www.runoob.com/python/python-multithreading.html
 
-##### <li> list和dict的线程安全
+##### list和dict的线程安全
 https://www.zoulei.net/2016/07/31/list_dict_threading_safe/
 
-##### <li> Python协程(异步编程)
+##### Python协程(异步编程)
 https://python.freelycode.com/contribution/detail/57
 https://python.freelycode.com/contribution/detail/858
 https://zhuanlan.zhihu.com/p/27258289
@@ -3796,7 +3796,7 @@ https://www.ziwenxie.site/2016/12/19/python-asyncio/
 http://python.jobbole.com/87310/
 
 
-##### <li> Python subprocess超时问题解决集锦
+##### Python subprocess超时问题解决集锦
 http://www.jianshu.com/p/a58491d1abf8
 http://everettjf.com/2016/01/29/python27-subprocess-timeout/
 https://stackoverflow.com/questions/1191374/using-module-subprocess-with-timeout
@@ -3860,7 +3860,7 @@ command.run(timeout=3)
 command.run(timeout=1)
 ```
 
-##### <li> Python的logging模块
+##### Python的logging模块
 ```
 def logging_config():
     log_format = "%(asctime)s [line: %(lineno)d] - %(levelname)s - %(message)s"
@@ -3888,7 +3888,7 @@ Format Description
 
 ```
 
-##### <li> python enumerate用法
+##### python enumerate用法
 http://blog.csdn.net/dcrmg/article/details/78148997
 http://blog.csdn.net/xyw_blog/article/details/18401237
 http://blog.csdn.net/churximi/article/details/51648388
@@ -3976,7 +3976,7 @@ enumerate用于字符串：
     4 F
 ```
 
-##### <li> repr() 函数
+##### repr() 函数
 http://www.runoob.com/python/python-func-repr.html
 http://www.jianshu.com/p/2a41315ca47e
 ```
@@ -4061,7 +4061,7 @@ datetime.datetime(2017, 4, 22, 15, 41, 33, 12917)
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 ```
 
-##### <li> lambda函数
+##### lambda函数
 http://blog.csdn.net/cc7756789w/article/details/46765391
 ```
 lambda 通常称为匿名函数，常用于定义一些很简单的函数。
@@ -4121,7 +4121,7 @@ lambda起到简化语句，并且不需要担心命名冲突。lambda 也可直�
 3628800
 ```
 
-##### <li> reduce函数
+##### reduce函数
 http://blog.csdn.net/xxkkff/article/details/4411383
 ```
 天在搜用python求阶乘的时候, 搜出来的最简单的是用reduce这个built-in function, 但是我在用reduce的时候, 却报NameError: name 'reduce' is not defined. 于是又搜了一下,发现在python 3.0.0.0以后, reduce已经不在built-in function里了, 要用它就得from functools import reduce.
@@ -4153,11 +4153,11 @@ sequence is empty.
     >>>
 ```
 
-##### <li> Python函数式编程
+##### Python函数式编程
 http://blog.csdn.net/qq_26718271/article/details/72639510
 http://blog.csdn.net/loveliuzz/article/details/77805198
 
-##### <li> map, reduce和filter的用法
+##### map, reduce和filter的用法
 https://stackoverflow.com/questions/13638898/how-to-use-filter-map-and-reduce-in-python-3
 http://blog.csdn.net/damotiansheng/article/details/44139111
 https://stackoverflow.com/questions/40015439/why-does-map-return-a-map-object-instead-of-a-list-in-python-3/40015480
@@ -4198,7 +4198,7 @@ map(lambda x: x, [1,2,3])
 不止是是map函数,python3很多改成返回iterator了. http://docs.python.org/3/whatsnew/3.0.html#views-and-iterators-instead-of-lists
 ```
 
-##### <li> python 非常有用的调试语句能打印内存
+##### python 非常有用的调试语句能打印内存
 http://blog.sina.com.cn/s/blog_754e2e010102vem4.html
 ```
 http://blog.csdn.net/ithomer/article/details/5974029
@@ -4212,7 +4212,7 @@ http://blog.csdn.net/ithomer/article/details/5974029
     print repr(str) # '/x14/x00/x00/x00/x90/x01/x00/x00'
 ```
 
-##### <li> struct模块
+##### struct模块
 http://blog.csdn.net/ithomer/article/details/5974029
 ```
 import struct
@@ -4484,7 +4484,7 @@ For the '?' format character, the return value is either True or False. When pac
 
 ```
 
-##### <li> Python2与Python3的zip结果的差别
+##### Python2与Python3的zip结果的差别
 区别在于，在python2中，zip的结果为一个列表，而python3中，zip的结果是返回一个迭代器，可以被next()函数调用并不断返回下一个值的对象称为迭代器:Iterator. 所以第一次list就调用了迭代器，之后再次调用，该迭代器不能进行下一个next函数操作，所以返回的列表为空。
 ```
 Python3
@@ -4546,7 +4546,7 @@ Python2
 
 ```
 
-##### <li> Python判断某个对象是否是可迭代对象
+##### Python判断某个对象是否是可迭代对象
 https://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/0013868196435255fcca20a1630446ea2dd434a7176e152000
 http://www.cnblogs.com/hdtianfu/archive/2012/10/20/2732689.html
 https://codeday.me/bug/20170218/1148.html
@@ -4627,7 +4627,7 @@ True
 
 ```
 
-##### <li> 可迭代对象，迭代器和生成器
+##### 可迭代对象，迭代器和生成器
 https://foofish.net/iterators-vs-generators.html
 http://foofish.net/blog/109/iterators-vs-generators
 https://python-ning.github.io/2015/11/30/python_generators_and_iterators/
@@ -4800,7 +4800,7 @@ for val in c:
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 ```
 
-##### <li> Python执行windows cmd命令
+##### Python执行windows cmd命令
 http://www.cnblogs.com/xuxm2007/archive/2011/01/17/1937220.html
 http://www.cnblogs.com/feichengwulai/articles/3463139.html
 http://www.cnblogs.com/vamei/archive/2012/09/23/2698014.html
@@ -4885,7 +4885,7 @@ Open a pipe to/from a command returning a file object.
 	UnicodeEncodeError: 'ascii' codec can't encode characters in position 46-52: ordinal not inrange(128)
 ```
 
-##### <li> Python 内置的那些牛逼闪亮的函数
+##### Python 内置的那些牛逼闪亮的函数
 http://pycoders-weekly-chinese.readthedocs.io/en/latest/issue15/python-built-in-functions-are-awesome-use-them.html
 
 http://www.runoob.com/python/python-built-in-functions.html
@@ -5047,7 +5047,7 @@ Python 内置函数很方便，它们很快并且经过了优化，所以它们�
 可迭代的对象 － iterable
 ```
 
-##### <li> python入门
+##### python入门
 ```
 任意元素的列表
 
@@ -5243,7 +5243,7 @@ Python Official Document
 简明Python教程，Python学习手册，Python编程
 ```
 
-##### <li> python命令行集锦
+##### python命令行集锦
 ```
 >>> record = ('Dave', 'dave@example.com', '773-555-1212', '847-555-1212')
 >>> name, email, *phone_numbers = record
@@ -5262,7 +5262,7 @@ TypeError: unhashable type: 'dict'
 >>>
 ```
 
-##### <li> Python日志重定向输出缓存问题
+##### Python日志重定向输出缓存问题
 ```
 python -u script.py
 

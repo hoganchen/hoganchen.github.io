@@ -8,12 +8,12 @@ tags: Misc
 
 <ol>
 
-##### <li> DD-WRT, Tomato 和 OpenWRT 有什么区别和联系
+##### DD-WRT, Tomato 和 OpenWRT 有什么区别和联系
 https://www.zhihu.com/question/21271677
 https://zh.wikipedia.org/zh-cn/OpenWrt
 https://zh.wikipedia.org/zh-cn/DD-WRT
 
-##### <li> xiaomi广告
+##### xiaomi广告
 https://www.zhihu.com/question/54992021
 https://www.zhihu.com/question/20162501
 https://www.zhihu.com/question/27707202
@@ -64,7 +64,7 @@ com.xiaomi.smarthome
 这些并没有什么用的程序厚颜无耻的发个教程地址：解决小米电视/盒子 广告 - 后花园
 ```
 
-##### <li> 优酷视频广告
+##### 优酷视频广告
 https://www.zhihu.com/question/20610513
 ```
 作者：隔岸观火
@@ -178,7 +178,7 @@ PC端
 3、 然后将以上的网址加进去，替换存为原来的hosts文件，并记得更改权限为rw-r--r--。
 ```
 
-##### <li> 自动切换代理
+##### 自动切换代理
 https://eliyar.biz/AutoProxy-By-Shadowsocks-and-SwitchyOmega/
 https://github.com/gfwlist/gfwlist
 https://github.com/FelisCatus/SwitchyOmega/wiki/GFWList

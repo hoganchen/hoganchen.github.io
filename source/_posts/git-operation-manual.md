@@ -6,14 +6,14 @@ tags: Git
 
 <ol>
 
-#### <li> GIT是什么
+#### GIT是什么
 https://github.com/pubyun/testing
 Git(读音为/gɪt/。)是一个开源的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。
 Torvalds 开始着手开发 Git 是为了作为一种过渡方案来替代 BitKeeper，后者之前一直是 Linux 内核开发人员在全球使用的主要源代码工具。开放源码社区中的有些人觉得BitKeeper 的许可证并不适合开放源码社区的工作，因此 Torvalds 决定着手研究许可证更为灵活的版本控制系统。尽管最初 Git 的开发是为了辅助 Linux 内核开发的过程，但是我们已经发现在很多其他自由软件项目中也使用了 Git。例如 很多 Freedesktop 的项目迁移到了 Git 上。
 
 <!-- more -->
 
-##### <li> 全局用户信息配置
+##### 全局用户信息配置
 ```
 git config --global user.email "hogan.chen@ymail.com"
 git config --global user.name "hogan chen"
@@ -26,13 +26,13 @@ git config --global http.proxy http://127.0.0.1:1080
 git config --global https.proxy https://127.0.0.1:1080
 ```
 
-##### <li> 非全局用户信息配置
+##### 非全局用户信息配置
 ```
 git config user.email "hogan.chen@ymail.com"
 git config user.name "hogan chen"
 ```
 
-##### <li> 检查配置信息
+##### 检查配置信息
 https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%88%9D%E6%AC%A1%E8%BF%90%E8%A1%8C-Git-%E5%89%8D%E7%9A%84%E9%85%8D%E7%BD%AE
 https://git-scm.com/book/zh/v2/%E8%87%AA%E5%AE%9A%E4%B9%89-Git-%E9%85%8D%E7%BD%AE-Git
 ```
@@ -41,7 +41,7 @@ git config --list
 git config -l 查看config配置，用 git config --global -l 查看全局设置。
 ```
 
-##### <li> Git ssh访问设置
+##### Git ssh访问设置
 ```
 $ ssh-keygen -t rsa -C "hogan.chen@ymail.com"
 Generating public/private rsa key pair.
@@ -54,7 +54,7 @@ The key fingerprint is:
 ......
 ```
 
-##### <li> Git for Windows错误解决
+##### Git for Windows错误解决
 http://blog.csdn.net/leedaning/article/details/49887015
 http://blog.csdn.net/junheart/article/details/51324848
 ```
@@ -96,14 +96,14 @@ Host 127.0.0.1
 
 ```
 
-##### <li> 获取帮助
+##### 获取帮助
 ```
 $ git help \<verb>
 $ git \<verb> --help
 $ man git-\<verb>
 ```
 
-##### <li> Git多平台换行符问题
+##### Git多平台换行符问题
 http://kuanghy.github.io/2017/03/19/git-lf-or-crlf
 ```
 跨平台协作开发是常有的，不统一的换行符确实对跨平台的文件交换带来了麻烦。最大的问题是，在不同平台上，换行符发生改变时，Git 会认为整个文件被修改，这就造成我们没法 diff，不能正确反映本次的修改。还好 Git 在设计时就考虑了这一点，其提供了一个 autocrlf 的配置项，用于在提交和检出时自动转换换行符，该配置有三个可选项：
@@ -124,7 +124,7 @@ git config --global core.autocrlf input
 git config --global core.autocrlf false
 ```
 
-##### <li> Git diff生成patch
+##### Git diff生成patch
 http://blog.csdn.net/liuhaomatou/article/details/54410361
 https://www.cnblogs.com/y041039/articles/2411600.html
 https://www.cnblogs.com/chenfulin5/p/6210581.html
@@ -157,7 +157,7 @@ git apply ~/wvt_bug_fix_patch_20180205.patch
 git apply --check ~/wvt_bug_fix_patch_20180205.patch
 ```
 
-##### <li> Git head图解
+##### Git head图解
 https://codeday.me/bug/20170224/4134.html
 ```
 G   H   I   J
@@ -183,14 +183,14 @@ I = F^   = B^3^    = A^^3^
 J = F^2  = B^3^2   = A^^3^2
 ```
 
-##### <li> Git reset hard后恢复
+##### Git reset hard后恢复
 https://tonydeng.github.io/2015/07/08/how-to-undo-almost-anything-with-git/
 https://segmentfault.com/q/1010000000167491
 ```
 git reflog查看操作历史，找到之前HEAD的hash值，然后git reset --hard到那个hash即可。
 ```
 
-##### <li> Stash操作
+##### Stash操作
 https://git-scm.com/book/zh/v1/Git-%E5%B7%A5%E5%85%B7-%E5%82%A8%E8%97%8F%EF%BC%88Stashing%EF%BC%89
 https://jasonhzy.github.io/2016/06/15/git-stash/
 https://kingofamani.gitbooks.io/git-teach/content/chapter_3_branch/stash.html
@@ -238,7 +238,7 @@ $ git stash drop
 $ git stash clear
 ```
 
-##### <li> 克隆现有仓库
+##### 克隆现有仓库
 ```
 ssh:
 git clone git@github.com:hoganchen/hoganchen.github.io.git
@@ -247,7 +247,7 @@ https:
 git clone https://github.com/hoganchen/hoganchen.github.io.git
 ```
 
-##### <li> 合并提交
+##### 合并提交
 http://wuaner.iteye.com/blog/1683282
 https://gxnotes.com/article/203186.html
 http://feisky.xyz/2015/06/04/git-commit/
@@ -259,17 +259,17 @@ git commit --amend -m "comments"
 git commit --amend
 ```
 
-##### <li> 添加文件到暂存区，可使用通配符*
+##### 添加文件到暂存区，可使用通配符*
 ```
 git add \<filename>
 ```
 
-##### <li> 提交修改
+##### 提交修改
 ```
 git commit -m "comments"
 ```
 
-##### <li> 推送修改到远程仓库
+##### 推送修改到远程仓库
 ```
 git push origin master
 
@@ -280,13 +280,13 @@ girret git_project分支
 git push origin HEAD:refs/for/git_project
 ```
 
-##### <li> 查看当前文档状态
+##### 查看当前文档状态
 ```
 git status
 git status –s
 ```
 
-##### <li> 删除文件
+##### 删除文件
 http://blog.csdn.net/p106786860/article/details/52023885
 http://hbiao68.iteye.com/blog/2213238
 https://tonydeng.github.io/2015/07/08/how-to-undo-almost-anything-with-git/
@@ -376,7 +376,7 @@ Date:   Fri Nov 7 13:47:59 2008 -0500
 
 ```
 
-##### <li> git rebase --skip误操作的恢复
+##### git rebase --skip误操作的恢复
 http://blog.csdn.net/w_xue/article/details/10975719
 http://blog.screensteps.com/recovering-from-a-disastrous-git-rebase-mistake
 https://codeday.me/bug/20170821/57813.html
@@ -455,7 +455,7 @@ Switched to a new branch 'doc_recovery'
 
 ```
 
-##### <li> 删除分支
+##### 删除分支
 https://backlogtool.com/git-tutorial/cn/stepup/stepup2_5.html
 https://git-scm.com/book/zh/v1/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E7%AE%A1%E7%90%86
 https://zlargon.gitbooks.io/git-tutorial/content/branch/create_delete.html
@@ -474,13 +474,13 @@ hogan@hogan:~$git branch
 
 ```
 
-##### <li> git远程操作
+##### git远程操作
 http://www.ruanyifeng.com/blog/2014/06/git_remote.html
 https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF
 http://www.cnblogs.com/wangkangluo1/archive/2011/09/02/2164313.html
 https://blog.csdn.net/whlclw/article/details/8633328
 
-##### <li> git branch操作
+##### git branch操作
 https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E6%96%B0%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6
 https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375840038939c291467cc7c747b1810aab2fb8863508000
 https://zlargon.gitbooks.io/git-tutorial/content/branch/create_delete.html
@@ -529,7 +529,7 @@ Branch git_project set up to track remote branch git_project from origin.
 Switched to a new branch 'git_project'
 ```
 
-##### <li> Git clone非master分支
+##### Git clone非master分支
 https://gaohaoyang.github.io/2016/07/07/git-clone-not-master-branch/
 ```
 直接使用命令
@@ -556,7 +556,7 @@ git checkout origin/daily/1.4.1
 git checkout -b local-branchname origin/remote_branchname
 ```
 
-##### <li> cherry-pick命令
+##### cherry-pick命令
 https://marklodato.github.io/visual-git-guide/index-zh-cn.html
 ```
 Cherry Pick
@@ -564,7 +564,7 @@ Cherry Pick
 cherry-pick命令"复制"一个提交节点并在当前分支做一次完全一样的新提交。
 ```
 
-##### <li> Git fetch 和 git pull的区别
+##### Git fetch 和 git pull的区别
 http://www.jianshu.com/p/4060731613c1
 https://ruby-china.org/topics/15729
 ```
@@ -597,7 +597,7 @@ git merge test
 在实际使用中，git fetch更安全一些, 因为在merge前，我们可以查看更新情况，然后再决定是否合并.
 ```
 
-##### <li> Git远程操作详解
+##### Git远程操作详解
 http://www.ruanyifeng.com/blog/2014/06/git_remote.html
 http://liwei5917.logdown.com/posts/1417079-git-remote-collaboration
 
@@ -610,24 +610,24 @@ git pull
 git push
 ```
 
-##### <li> 查看修改
+##### 查看修改
 ```
 git diff				#只显示尚未暂存的修改
 git diff --cached		#查看已暂存的修改
 git diff --staged		#查看已暂存的修改
 ```
 
-##### <li> 跳过添加文件到暂存区，Git就会自动把所有已经跟踪过的文件暂存起来一并提交
+##### 跳过添加文件到暂存区，Git就会自动把所有已经跟踪过的文件暂存起来一并提交
 ```
 git commit -a -m 'added new benchmarks'
 ```
 
-##### <li> 重命名文件
+##### 重命名文件
 ```
 git mv file_from file_to
 ```
 
-##### <li> 查看提交历史
+##### 查看提交历史
 ```
 git log
 git log –p			#显示每次的提交的内容差异
@@ -635,7 +635,7 @@ git log –p -2		#最近两次的内容差异
 git log --stat		#显示文件修改的简略统计信息
 ```
 
-##### <li> 撤消操作
+##### 撤消操作
 https://tonydeng.github.io/2015/07/08/how-to-undo-almost-anything-with-git/ (**必读**)
 https://github.com/geeeeeeeeek/git-recipes/wiki/5.2-%E4%BB%A3%E7%A0%81%E5%9B%9E%E6%BB%9A%EF%BC%9AReset%E3%80%81Checkout%E3%80%81Revert-%E7%9A%84%E9%80%89%E6%8B%A9
 
@@ -653,17 +653,17 @@ $ git add forgotten_file
 $ git commit --amend
 ```
 
-##### <li> 取消暂存的文件，可使用通配符*
+##### 取消暂存的文件，可使用通配符*
 ```
 git reset HEAD <filename>
 ```
 
-##### <li> 撤消对文件的修改，可使用通配符*
+##### 撤消对文件的修改，可使用通配符*
 ```
 git checkout -- <filename>
 ```
 
-##### <li> 查看远程仓库
+##### 查看远程仓库
 ```
 git remote
 git remote -v
@@ -671,27 +671,27 @@ git remote show
 git remote show origin
 ```
 
-##### <li> 添加远程仓库
+##### 添加远程仓库
 ```
 git remote add <shortname> <url>
 ```
 
-##### <li> 远程仓库抓取
+##### 远程仓库抓取
 ```
 git fetch [remote-name]
 ```
 
-##### <li> 远程仓库拉取，如果你有一个分支设置为跟踪一个远程分支，可以使用git pull命令来自动的抓取然后合并远程分支到当前分支
+##### 远程仓库拉取，如果你有一个分支设置为跟踪一个远程分支，可以使用git pull命令来自动的抓取然后合并远程分支到当前分支
 ```
 git pull
 ```
 
-##### <li> 远程仓库移除
+##### 远程仓库移除
 ```
 git remote rm <remote-name>
 ```
 
-##### <li> 远程仓库重命名
+##### 远程仓库重命名
 ```
 git remote rename <orig-name> <new-name>
 ```

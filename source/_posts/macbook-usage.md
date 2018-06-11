@@ -8,7 +8,7 @@ tags:
 
 <ol>
 
-#### <li> .bash_profile
+#### .bash_profile
 ```
 hoganchens-MacBook-Pro:~ hogan.chen$ cat .bash_profile
 
@@ -40,14 +40,14 @@ alias ll='ls -alrt'
 alias grep='grep --color'
 ```
 
-#### <li> .vimrc
+#### .vimrc
 ```
 hoganchens-MacBook-Pro:~ hogan.chen$ cat .vimrc
 colorscheme desert
 syntax on
 ```
 
-#### <li> rebuild LaunchServices database
+#### rebuild LaunchServices database
 ```
 # This command is use to resolve the invalid shortcuts
 hoganchens-MacBook-Pro:~ hogan.chen$ /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain system-domainuser
