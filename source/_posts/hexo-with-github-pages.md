@@ -4,7 +4,9 @@ date: 2018-06-09 18:16:55
 tags:
 ---
 
-### 选择Hexo还是Jekyll
+<ol>
+
+### <li> 选择Hexo还是Jekyll
 https://www.jianshu.com/p/ce1619874d34
 
 于是开始接触比较流行的一些静态博客框架，比较流行的有Jekyll，Hexo，Simple，Octopress，Pelican以及Lo·gecho等等。这些静态程序可以说都有各自的好处，但最后我选择了Hexo来搭建自己的博客，和Jekyll相比，选择Hexo主要原因是：
@@ -16,10 +18,10 @@ https://www.jianshu.com/p/ce1619874d34
 
 <!-- more -->
 
-### Hexo博客开发过程
+### <li> Hexo博客开发过程
 https://hexo.io/zh-cn/docs/index.html
 
-#### 安装nodejs和npm
+#### <li> 安装nodejs和npm
 https://www.howtoing.com/install-latest-nodejs-npm-on-ubuntu
 https://github.com/nodesource/distributions
 
@@ -98,19 +100,19 @@ hogan@ubuntu:/mnt/share/github/hoganchen.github.io$ npm -v
 5.6.0
 ```
 
-#### 安装git
+#### <li> 安装git
 ```
 sudo apt-get update
 sudo apt-get install git
 ```
 
-#### github添加username.github.io的库
+#### g<li> ithub添加username.github.io的库
 我添加的库为hoganchen.github.io，以下都以我添加的库来说明，可自行修改为对应的库名称
 
-#### 安装hexo博客
+#### <li> 安装hexo博客
 https://hexo.io/zh-cn/docs/index.html
 
-##### 安装hexo
+##### <li> 安装hexo
 https://github.com/hexojs/hexo/issues/1836
 https://docs.npmjs.com/getting-started/fixing-npm-permissions
 
@@ -119,7 +121,7 @@ https://docs.npmjs.com/getting-started/fixing-npm-permissions
 sudo npm install -g hexo-cli
 ```
 
-##### 建站
+##### <li> 建站
 https://hexo.io/zh-cn/docs/setup.html
 
 安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。
@@ -129,7 +131,7 @@ cd hoganchen.github.io
 npm install
 ```
 
-##### 安装 hexo-deployer-git
+##### <li> 安装 hexo-deployer-git
 https://hexo.io/zh-cn/docs/deployment.html
 
 Hexo 提供了快速方便的一键部署功能，让您只需一条命令就能将网站部署到服务器上。
@@ -153,7 +155,7 @@ deploy:
   branch: master
 ```
 
-##### 修改_config.yml中site section和Deployment section相关信息，全部内容如下
+##### <li> 修改_config.yml中site section和Deployment section相关信息，全部内容如下
 https://hexo.io/zh-cn/docs/configuration.html
 ```
 # Hexo Configuration
@@ -242,7 +244,7 @@ deploy:
   branch: master
 ```
 
-##### 相关命令
+##### <li> 相关命令
 https://hexo.io/zh-cn/docs/commands.html
 https://segmentfault.com/a/1190000002632530
 
@@ -256,7 +258,7 @@ hexo d == hexo deploy #部署
 hexo clean ##清除缓存 网页正常情况下可以忽略此条命令
 ```
 
-##### github相关操作
+##### <li> github相关操作
 https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013752340242354807e192f02a44359908df8a5643103a000
 http://www.ruanyifeng.com/blog/2014/06/git_remote.html
 https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8
@@ -329,11 +331,11 @@ git config user.name "hogan chen"
 hexo d
 ```
 
-##### VirtualBox相关操作
+##### <li> VirtualBox相关操作
 由于是在虚拟机环境上执行以上操作，所以为了预览文章，需要在虚拟机上作端口转发，设置如下，这样就可以在windows浏览器中输入http://localhost:4000/来进行预览。
 ![hexo-server-port-forward.PNG](/upload_image/hexo-with-github-pages/hexo-server-port-forward.PNG)
 
-##### hexo博客如何设置「阅读全文」
+##### <li> hexo博客如何设置「阅读全文」
 http://theme-next.iissnan.com/faqs.html#%E9%A6%96%E9%A1%B5%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E6%91%98%E5%BD%95
 
 ```
@@ -353,7 +355,7 @@ auto_excerpt:
 建议使用 <!-- more -->（即第一种方式），除了可以精确控制需要显示的摘录内容以外， 这种方式也可以让 Hexo 中的插件更好的识别。
 ```
 
-##### 更换主题
+##### <li> 更换主题
 ```
 cd hoganchen.github.io/
 git clone https://github.com/iissnan/hexo-theme-next themes/next
@@ -365,4 +367,11 @@ cp -af themes/landscape/source/upload_image/ themes/next/source/
 ## Themes: https://hexo.io/themes/
 # theme: landscape
 theme: next
+```
+
+##### <li> 插入图片
+```
+upload_image位于themes/next/source目录下
+
+![github-hexo-branch.PNG](/upload_image/hexo-with-github-pages/github-hexo-branch.PNG)
 ```

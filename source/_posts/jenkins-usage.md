@@ -5,6 +5,7 @@ tags: jenkins
 ---
 
 <ol>
+
 ##### <li> Jenkins强制设置语言为中文 </li>
 ```
 1. 先安装插件：Locale plugin
@@ -147,7 +148,7 @@ $ curl -u userName:apiToken -X POST http://jenkins-host.tld:8080/jenkins/job/myJ
 
 
 ###### 第六种方案
-这里是如何删除所有工作的所有工作……使用詹金斯脚本。
+这里是如何删除所有工作的所有工作……使用Jenkins脚本。
 
 def jobs = Jenkins.instance.projects.collect { it }
 jobs.each { job -> job.getBuilds().each { it.delete() }}

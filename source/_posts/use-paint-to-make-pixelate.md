@@ -3,6 +3,9 @@ title: 用Windows自带画图快速制作马赛克
 date: 2018-06-09 15:43:17
 tags: Windows
 ---
+
+<!-- more -->
+
 http://www.iku8.com/wiki/688848696.html
 
 #### 工具/原料
@@ -12,8 +15,6 @@ http://www.iku8.com/wiki/688848696.html
 #### 方法/步骤
 用画图软件打开待处理的图片。
 ![step-01.jpg](/upload_image/use-paint-to-make-pixelate/step-01.jpg)
-
-<!-- more -->
 
 选中工具栏最上面的选定工具，选定要马赛克的部分。
 ![step-02.png](/upload_image/use-paint-to-make-pixelate/step-02.png)

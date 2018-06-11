@@ -10,8 +10,10 @@ tags: Windows
 
 <!-- more -->
 
-#### 清除并重建windows 10图标缓存
-##### 方法1
+<ol>
+
+#### <li> 清除并重建windows 10图标缓存
+##### <li> 方法1
 http://www.w10zj.com/Win10xy/Win10yh_971.html
 http://www.xitonghe.com/jiaocheng/Windows10-7637.html
 ```
@@ -25,7 +27,7 @@ start explorer
 pause
 ```
 
-##### 方法2
+##### <li> 方法2
 https://www.windows10.pro/ie4uinit-show/
 https://www.ithome.com/html/win10/235140.htm
 ```
@@ -34,7 +36,7 @@ Win + R 快捷键调出“运行”对话框，输入如下命令：
 ie4uinit -show
 ```
 
-#### 清除并重建windows 7图标缓存
+#### <li> 清除并重建windows 7图标缓存
 https://www.nenew.net/win7-iconcache.html
 http://www.epinv.com/post/7428.html
 ```
