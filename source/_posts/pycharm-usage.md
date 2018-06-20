@@ -28,6 +28,11 @@ http://www.jianshu.com/p/23e52f7b8ec7
 11. cmd + enter			当前光标前新建一行
 ```
 
+##### 格式化代码
+```
+ctrl + alt + L			注意L为大写
+```
+
 ##### 调试
 ```
 1. ctrl + shift + r		运行模式执行当前程序
