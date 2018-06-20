@@ -10,7 +10,9 @@ tags: jenkins
 ```
 1. 先安装插件：Locale plugin
 
-2. 配置：jienkins->【系统管理】->【系统设置】->【Locale】，输入：zh_CN，并勾上Ignore browser preference and force this language to all users. 这里还有很多语言，比如：en_US等都是国际化标志。
+2. 配置：jienkins->【系统管理】->【系统设置】->【Locale】，输入：zh_CN，
+并勾上Ignore browser preference and force this language to all users.
+这里还有很多语言，比如：en_US等都是国际化标志。
 ```
 
 <!-- more -->
@@ -174,6 +176,13 @@ http://debugtalk.com/post/make-Jenkins-Console-Output-Colorful/
 python -u script.py
 ```
 
+##### Jenkins的日志中出现"xml parser error on line 1 前言中不允许有内容"错误
+```
+问题描述: Jenkins在windows环境下运行时间过久后，会在windows操作系统的临时文件夹下生成很多临时性的文件，导致Jenkins启动过慢。
+并且在解析生成的xunit xml报告时，会在命令行打印"xml parser error on line 1 前言中不允许有内容"错误，并导致build的结果是failure。
+解决: ccleaner软件清除不必要的临时文件，该错误不再出现，并且Jenkins的启动速度提高了
+```
+
 ##### 配置备份
 https://wiki.jenkins.io/display/JENKINS/Administering+Jenkins#AdministeringJenkins-Moving%2Fcopying%2Frenamingjobs
 https://stackoverflow.com/questions/8424228/export-import-jobs-in-jenkins
@@ -237,7 +246,8 @@ JENKINS_HOME
 
 备份和恢复非常简单，就是简单的copy Jenkins的目录就好了：
 
-All the settings, build logs, artifact archives are stored under the JENKINS_HOME directory. Simply archive this directory to make a back up. Similarly, restoring the data is just replacing the contents of the JENKINS_HOME directory from a back up.
+All the settings, build logs, artifact archives are stored under the JENKINS_HOME directory. Simply archive this directory to make a back up.
+Similarly, restoring the data is just replacing the contents of the JENKINS_HOME directory from a back up.
 ```
 http://www.tinygroup.org/docs/1862982733741657197
 

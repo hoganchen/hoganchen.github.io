@@ -107,7 +107,7 @@ sudo apt-get install git
 ```
 
 #### github添加username.github.io的库
-我添加的库为hoganchen.github.io，以下都以我添加的库来说明，可自行修改为对应的库名称
+github创建一个新库，库名称为"用户名.github.io"，例如我添加的库为hoganchen.github.io，以下都以我添加的库来说明，可自行修改为对应的库名称，用户名是你的github用户名哦！千万别弄错了，不然访问不到的！
 
 #### 安装hexo博客
 https://hexo.io/zh-cn/docs/index.html
@@ -244,6 +244,36 @@ deploy:
   branch: master
 ```
 
+##### 新建文章并发布
+```
+cd hoganchen.github.io/
+# 新建文章
+hexo n "new archive"
+然后在source/_posts目录下找到new archive.md文件并编辑保存
+
+# 生成静态网页
+hexo g
+
+# 启动预览服务(下面命令执行后，可在浏览器中输入http://127.0.0.1:4000查看预览)
+hexo s
+
+# 如果预览效果可以，即可开始部署到github pages上，命令执行后，输入github的用户名和密码即可完成上传远程库，
+# 在_config.yml中Deployment section中配置的为https方式，每次都需要输入用户名和密码，也可以参考相关文档，修改为ssh方式
+hexo d
+
+# 修改为ssh方式的deployment可参考如下，https和ssh的切换，
+# 可参考https://hoganchen.github.io/2018/06/11/git-operation-manual/链接中"Github ssh和https访问切换"的描述
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  # repo: https://github.com/hoganchen/hoganchen.github.io.git
+  repo: git@github.com:hoganchen/hoganchen.github.io.git
+  branch: master
+
+```
+
 ##### 相关命令
 https://hexo.io/zh-cn/docs/commands.html
 https://segmentfault.com/a/1190000002632530
@@ -259,12 +289,13 @@ hexo clean ##清除缓存 网页正常情况下可以忽略此条命令
 ```
 
 ##### github相关操作
+git命令行连接远程库的相关操作
 https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013752340242354807e192f02a44359908df8a5643103a000
 http://www.ruanyifeng.com/blog/2014/06/git_remote.html
 https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8
 https://blog.csdn.net/u013372487/article/details/52925960
 
-在上述操作中，deploy的分支为master，然而也需要把原始的md, 图片等文件git管理起来，这时在github上hoganchen.github.io库上再创建一个分支为hexo，并在setting中把hexo设置为默认分支
+在上述操作中(修改_config.yml中Deployment section相关信息)，设置的deploy的分支为master，然而也需要把原始的md, 图片等文件git管理起来，这时在github上hoganchen.github.io库上再创建一个分支为hexo，并在setting中把hexo设置为默认分支
 ![github-hexo-branch.PNG](/upload_image/hexo-with-github-pages/github-hexo-branch.PNG)
 ![github-hexo-branch-as-default-branch.PNG](/upload_image/hexo-with-github-pages/github-hexo-branch-as-default-branch.PNG)
 
