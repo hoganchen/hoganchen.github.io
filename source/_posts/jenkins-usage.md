@@ -183,6 +183,10 @@ python -u script.py
 解决: ccleaner软件清除不必要的临时文件，该错误不再出现，并且Jenkins的启动速度提高了
 ```
 
+##### Jenkins查看workspace的文件
+http://localhost:8080/job/Jenkins_Build_Test/ws/
+![conf9.png](/upload_image/jenkins-usage/jenkins_ws.png)
+
 ##### 配置备份
 https://wiki.jenkins.io/display/JENKINS/Administering+Jenkins#AdministeringJenkins-Moving%2Fcopying%2Frenamingjobs
 https://stackoverflow.com/questions/8424228/export-import-jobs-in-jenkins
