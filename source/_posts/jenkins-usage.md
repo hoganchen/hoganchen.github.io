@@ -183,6 +183,16 @@ python -u script.py
 解决: ccleaner软件清除不必要的临时文件，该错误不再出现，并且Jenkins的启动速度提高了
 ```
 
+##### jenkins中subversion由于服务器时间不一致导致无法更新到最新svn的解决方法
+似乎该方法也能解决svn update冲突的问题
+https://blog.csdn.net/bjnihao/article/details/50685479
+```
+在jenkins中svn链接中增加@HEAD，可以不用理会服务器时间，直接更新到最新的版本
+
+例如
+https://192.168.0.100:18080/svn/WEB/trunk/项目名称@HEAD
+```
+
 ##### Jenkins查看workspace的文件
 http://localhost:8080/job/Jenkins_Build_Test/ws/
 ![conf9.png](/upload_image/jenkins-usage/jenkins_ws.png)
