@@ -325,6 +325,7 @@ git push origin hexo
 以上操作会把原始数据上传到hexo分支，而hexo d也会把生产的静态网站上传到master分支，这时就可以用一个仓库的2个分支完美管理博客内容，并可以在不同的电脑之间进行写作。
 
 在新的电脑上，除了不需要hexo init hoganchen.github.io命令外，别的命令都需要，归纳如下:
+以下所有的操作都是在hexo branch下，master分支只是用于保存发布的blog
 sudo apt-get update
 sudo apt-get install git
 sudo apt-get install nodejs
