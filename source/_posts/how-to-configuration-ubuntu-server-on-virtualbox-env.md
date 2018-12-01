@@ -54,7 +54,8 @@ sudo mount /dev/cdrom /mnt/cdrom
 
 cd cdrom
 sudo bash VBoxLinuxAdditions.run
-sudo reboot
+关机并设置共享目录
+sudo halt -p
 ```
 
 ##### <li> 设置共享文件夹
@@ -80,16 +81,47 @@ sudo umount -f /mnt/shared
 注意事项
 共享文件夹的名称千万不要和挂载点的名称相同。比如，上面的挂载点是/mnt/shared，如果共享文件夹的名字也是shared的话，在挂载的时候就会出现如下的错误信息：/sbin/mount.vboxsf: mounting failed with the error: Protocol error
 
-实际配置
+自用Ubuntu上的实际配置
 cd /mnt
 sudo mkdir share
 sudo mount -t vboxsf Ubuntu /mnt/share
+
+sudo vi /etc/fstab
 /etc/fstab添加如下语句
 Ubuntu /mnt/share vboxsf rw,gid=100,uid=1000,auto 0 0
 ```
 
 ##### <li> 安装mysql server
 ```
+由于系统源中的mysql版本过低，所以需要先去mysql官网下载apt源的deb包
+
+1. 下载mysql的Ubuntu版本的deb包
+https://dev.mysql.com/downloads/mysql/
+
+2. 安装deb包，并根据需求选择mysql的版本和附加包，
+sudo dpkg -i mysql-apt-config_0.8.11-1_all.deb
+
+3. 在ubuntu 14.04.5安装mysql apt源的deb包出错的解决方法
+hogan@ubuntu:/mnt/share/tools$ sudo dpkg -i mysql-apt-config_0.8.11-1_all.deb
+dpkg-deb: error: archive 'mysql-apt-config_0.8.11-1_all.deb' has premature member 'control.tar.xz' before 'control.tar.gz', giving up
+dpkg: error processing archive mysql-apt-config_0.8.11-1_all.deb (--install):
+ subprocess dpkg-deb --control returned error exit status 2
+Errors were encountered while processing:
+ mysql-apt-config_0.8.11-1_all.deb
+
+解决方法:
+https://askubuntu.com/questions/982748/dpkg-error-when-installing-nmap
+Removing APT cache
+hogan@ubuntu:/mnt/share/tools$ sudo apt-get clean && sudo apt-get autoclean
+Updating APT
+hogan@ubuntu:/mnt/share/tools$ sudo apt-get update
+If there's available software to upgrade then run
+hogan@ubuntu:/mnt/share/tools$ sudo apt-get upgrade
+再次安装deb包
+sudo dpkg -i mysql-apt-config_0.8.11-1_all.deb
+
+4. 更新源并安装mysql
+sudo apt-get update
 sudo apt-cache search mysql | grep server
 sudo apt-cache search mysql-server
 sudo apt-get install mysql-server
