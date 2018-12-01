@@ -328,9 +328,10 @@ git push origin hexo
 以下所有的操作都是在hexo branch下，master分支只是用于保存发布的blog
 设置nodejs的ppa源(参考https://hoganchen.github.io/2018/06/09/hexo-with-github-pages/#%E5%AE%89%E8%A3%85nodejs%E5%92%8Cnpm)
 sudo apt-get update
-apt-get install npm
 sudo apt-get install git
 sudo apt-get install nodejs
+# 通过添加ppa源，然后通过sudo apt-get install nodejs方式安装nodejs的同时，npm同时也会被安装
+# sudo apt-get install npm
 sudo npm install -g hexo-cli
 
 git clone https://github.com/hoganchen/hoganchen.github.io.git
