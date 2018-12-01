@@ -63,7 +63,7 @@ https://www.cnblogs.com/lidabo/p/5317024.html
 http://www.cnblogs.com/linjiqin/p/3615477.html
 ```
 virtualbox设置
-设置--共享文件夹--设置目录(固定分配勾选，注意把自动挂载选项去掉)
+设置--共享文件夹--设置目录(固定分配勾选，注意把自动挂载选项去掉，Ubuntu不能勾选自动挂载，Windows可以勾选自动挂载)
 
 ubuntu设置
 cd /mnt
