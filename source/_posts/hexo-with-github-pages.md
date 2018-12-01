@@ -334,7 +334,7 @@ sudo apt-get install nodejs
 # sudo apt-get install npm
 sudo npm install -g hexo-cli
 
-# 注意以下操作都不能加sudo，否则会导致读写权限问题
+# 注意以下操作都不能加sudo，否则会导致读写权限问题，如已使用sudo操作，删除用户目录下的.config和.npm目录，然后重新clone即可
 git clone https://github.com/hoganchen/hoganchen.github.io.git
 cd hoganchen.github.io.git
 npm install
