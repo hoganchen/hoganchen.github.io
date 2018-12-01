@@ -146,6 +146,8 @@ sudo apt-get install package - - reinstall 重新安装包
 sudo apt-get -f install 修复安装"-f = ——fix-missing"
 sudo apt-get remove package 删除包
 sudo apt-get remove package - - purge 删除包，包括删除配置文件等
+sudo apt-get purge package 删除包，包括删除配置文件等，与上条命令等价
+sudo apt-get autoremove 卸载所有自动安装且不再使用的软件包
 sudo apt-get update 更新源
 sudo apt-get upgrade 更新已安装的包
 sudo apt-get dist-upgrade 升级系统
