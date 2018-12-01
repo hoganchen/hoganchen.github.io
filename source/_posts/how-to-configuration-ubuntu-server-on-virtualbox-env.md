@@ -31,6 +31,59 @@ vi authorized_keys
 
 <!-- more -->
 
+##### <li> 配置sudo免密码
+https://askubuntu.com/questions/147241/execute-sudo-without-password
+https://blog.csdn.net/wxqee/article/details/72718869
+https://www.linuxidc.com/Linux/2016-12/139018.htm
+https://blog.csdn.net/javensun/article/details/7582341
+https://www.jb51.net/os/Ubuntu/63313.html
+```
+sudo visudo
+
+# 在文件末尾添加如下语句，USER替换为不需要输入密码的用户名
+$USER ALL=(ALL) NOPASSWD: ALL
+
+# 上面的命令其实是修改了/etc/sudoers文件，所以也可以直接编辑这个文件
+sudo vi /etc/sudoers
+添加如下语句
+$USER ALL=(ALL) NOPASSWD: ALL
+
+hogan@ubuntu:/etc$ cat /etc/sudoers
+cat: /etc/sudoers: Permission denied
+hogan@ubuntu:/etc$ sudo cat /etc/sudoers
+#
+# This file MUST be edited with the 'visudo' command as root.
+#
+# Please consider adding local content in /etc/sudoers.d/ instead of
+# directly modifying this file.
+#
+# See the man page for details on how to write a sudoers file.
+#
+Defaults        env_reset
+Defaults        mail_badpass
+Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+# Host alias specification
+
+# User alias specification
+
+# Cmnd alias specification
+
+# User privilege specification
+root    ALL=(ALL:ALL) ALL
+
+# Members of the admin group may gain root privileges
+%admin ALL=(ALL) ALL
+
+# Allow members of group sudo to execute any command
+%sudo   ALL=(ALL:ALL) ALL
+
+# See sudoers(5) for more information on "#include" directives:
+
+#includedir /etc/sudoers.d
+$hogan ALL=(ALL) NOPASSWD: ALL
+```
+
 ##### <li> 备份并替换ubuntu源
 ```
 cd /etc/apt/
@@ -136,6 +189,15 @@ alias conda='~/anaconda3/bin/conda'
 alias toshare='cd /mnt/share'
 alias updatemysql='cd /mnt/share/codes/python/stcksql; condapython update_mysql_data.py'
 ```
+
+##### <li> Ubuntu Server只安装安全更新(未试验)
+https://linux.cn/article-8060-1.html
+https://yq.aliyun.com/articles/113684
+https://blog.ghostry.cn/server/753.html
+https://ox0spy.github.io/post/configuration/debian-ubuntu-automatic-security-updates/
+http://blog.topspeedsnail.com/archives/10299
+https://www.howtoing.com/install-security-updates-ubuntu-debian/
+https://www.cplusplus.me/2443.html
 
 ##### <li> apt命令参考
 ```
