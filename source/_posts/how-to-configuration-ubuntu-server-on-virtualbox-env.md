@@ -190,7 +190,7 @@ alias toshare='cd /mnt/share'
 alias updatemysql='cd /mnt/share/codes/python/stcksql; condapython update_mysql_data.py'
 ```
 
-##### <li> Ubuntu Server只安装安全更新(未试验)
+##### <li> Ubuntu Server只安装安全更新(未验证)
 https://linux.cn/article-8060-1.html
 https://yq.aliyun.com/articles/113684
 https://blog.ghostry.cn/server/753.html
