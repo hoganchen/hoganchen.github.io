@@ -41,12 +41,12 @@ https://www.jb51.net/os/Ubuntu/63313.html
 sudo visudo
 
 # 在文件末尾添加如下语句，USER替换为不需要输入密码的用户名
-$USER ALL=(ALL) NOPASSWD: ALL
+USER ALL=(ALL) NOPASSWD: ALL
 
 # 上面的命令其实是修改了/etc/sudoers文件，所以也可以直接编辑这个文件
 sudo vi /etc/sudoers
 添加如下语句
-$USER ALL=(ALL) NOPASSWD: ALL
+USER ALL=(ALL) NOPASSWD: ALL
 
 hogan@ubuntu:/etc$ cat /etc/sudoers
 cat: /etc/sudoers: Permission denied
@@ -81,7 +81,7 @@ root    ALL=(ALL:ALL) ALL
 # See sudoers(5) for more information on "#include" directives:
 
 #includedir /etc/sudoers.d
-$hogan ALL=(ALL) NOPASSWD: ALL
+hogan ALL=(ALL) NOPASSWD: ALL
 ```
 
 ##### <li> 备份并替换ubuntu源
