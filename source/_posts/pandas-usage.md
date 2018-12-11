@@ -372,10 +372,323 @@ df.loc['Row_sum'] = df.apply(lambda x: x.sum())
 2        0.542788  0.207708  0.651379 -0.656214  0.507595  1.253256
 3       -0.249410  0.131549 -2.198480 -0.437407  1.628228 -1.125520
 Row_sum  0.461987  0.225310 -1.769627 -1.592595  1.652828 -1.022097
+```
+
 
 判断某列是否有空值
-
+https://stackoverflow.com/questions/29530232/how-to-check-if-any-value-is-nan-in-a-pandas-dataframe
+https://blog.csdn.net/cc_jjj/article/details/78879839
+https://blog.csdn.net/Guo_ya_nan/article/details/81013510
+9.4.4 Boolean Reductions(pandas.v0.23.4.pdf, P596)
+You can apply the reductions: empty, any(), all(), and bool() to provide a way to summarize a boolean result.
 ```
+import tushare as ts
+import pandas
+
+k_df = ts.get_k_data('600000')
+k_df = k_df.tail(10)
+
+k_df_column = list(k_df)
+k_df_column.insert(0, k_df_column.pop(k_df_column.index(k_df.columns[-1])))  # 把最后一行弹出插入第一行
+k_df = k_df[k_df_column]
+
+k_df['price_change'] = k_df['close'].diff()
+k_df['p_change'] = k_df['close'].pct_change() * 100
+
+print(k_df)
+
+ma_list = [5, 10, 20, 60, 250]
+
+# 移动平均数
+for ma in ma_list:
+    k_df['ma' + str(ma)] = k_df['close'].rolling(ma).mean()
+
+# 移动平均数
+for ma in ma_list:
+    k_df['v_ma' + str(ma)] = k_df['volume'].rolling(ma).mean()
+print(k_df)
+
+# 判断是否有空值的行
+# print(pandas.isnull(k_df))
+# print(k_df.isna())
+# print(k_df[k_df.isnull().values==True])
+print(k_df['code'].notnull().all())
+print(k_df.isna().any())
+print(k_df.isna().any().any())
+print(k_df.isnull().any().any())
+print(k_df.isnull().sum().any())
+print(k_df.isnull().any().sum())  # 空行的数目
+
+
+Output:
+       code        date   open  close   high    low    volume  price_change  \
+631  600000  2018-11-28  10.56  10.58  10.62  10.50  183396.0           NaN   
+632  600000  2018-11-29  10.64  10.63  10.75  10.54  206856.0          0.05   
+633  600000  2018-11-30  10.65  10.71  10.75  10.62  285726.0          0.08   
+634  600000  2018-12-03  10.99  11.02  11.05  10.84  430490.0          0.31   
+635  600000  2018-12-04  11.00  11.08  11.08  10.97  208112.0          0.06   
+636  600000  2018-12-05  10.99  11.00  11.10  10.96  254912.0         -0.08   
+637  600000  2018-12-06  10.82  10.90  10.93  10.82  235979.0         -0.10   
+638  600000  2018-12-07  10.94  10.89  11.03  10.88  105805.0         -0.01   
+639  600000  2018-12-10  10.77  10.83  10.90  10.77  159275.0         -0.06   
+640  600000  2018-12-11  10.84  10.73  10.90  10.69  153033.0         -0.10   
+
+     p_change  
+631       NaN  
+632  0.472590  
+633  0.752587  
+634  2.894491  
+635  0.544465  
+636 -0.722022  
+637 -0.909091  
+638 -0.091743  
+639 -0.550964  
+640 -0.923361  
+       code        date   open  close   high    low    volume  price_change  \
+631  600000  2018-11-28  10.56  10.58  10.62  10.50  183396.0           NaN   
+632  600000  2018-11-29  10.64  10.63  10.75  10.54  206856.0          0.05   
+633  600000  2018-11-30  10.65  10.71  10.75  10.62  285726.0          0.08   
+634  600000  2018-12-03  10.99  11.02  11.05  10.84  430490.0          0.31   
+635  600000  2018-12-04  11.00  11.08  11.08  10.97  208112.0          0.06   
+636  600000  2018-12-05  10.99  11.00  11.10  10.96  254912.0         -0.08   
+637  600000  2018-12-06  10.82  10.90  10.93  10.82  235979.0         -0.10   
+638  600000  2018-12-07  10.94  10.89  11.03  10.88  105805.0         -0.01   
+639  600000  2018-12-10  10.77  10.83  10.90  10.77  159275.0         -0.06   
+640  600000  2018-12-11  10.84  10.73  10.90  10.69  153033.0         -0.10   
+
+     p_change     ma5    ma10  ma20  ma60  ma250     v_ma5    v_ma10  v_ma20  \
+631       NaN     NaN     NaN   NaN   NaN    NaN       NaN       NaN     NaN   
+632  0.472590     NaN     NaN   NaN   NaN    NaN       NaN       NaN     NaN   
+633  0.752587     NaN     NaN   NaN   NaN    NaN       NaN       NaN     NaN   
+634  2.894491     NaN     NaN   NaN   NaN    NaN       NaN       NaN     NaN   
+635  0.544465  10.804     NaN   NaN   NaN    NaN  262916.0       NaN     NaN   
+636 -0.722022  10.888     NaN   NaN   NaN    NaN  277219.2       NaN     NaN   
+637 -0.909091  10.942     NaN   NaN   NaN    NaN  283043.8       NaN     NaN   
+638 -0.091743  10.978     NaN   NaN   NaN    NaN  247059.6       NaN     NaN   
+639 -0.550964  10.940     NaN   NaN   NaN    NaN  192816.6       NaN     NaN   
+640 -0.923361  10.870  10.837   NaN   NaN    NaN  181800.8  222358.4     NaN   
+
+     v_ma60  v_ma250  
+631     NaN      NaN  
+632     NaN      NaN  
+633     NaN      NaN  
+634     NaN      NaN  
+635     NaN      NaN  
+636     NaN      NaN  
+637     NaN      NaN  
+638     NaN      NaN  
+639     NaN      NaN  
+640     NaN      NaN  
+True
+code            False
+date            False
+open            False
+close           False
+high            False
+low             False
+volume          False
+price_change     True
+p_change         True
+ma5              True
+ma10             True
+ma20             True
+ma60             True
+ma250            True
+v_ma5            True
+v_ma10           True
+v_ma20           True
+v_ma60           True
+v_ma250          True
+dtype: bool
+True
+True
+True
+12
+```
+
+
+##### 空值填充
+```
+df.dropna()  # 删除含有空值的行或列
+df.fillna()  # 填充空值
+
+15.5.1 Filling missing values: fillna (pandas.v0.23.4.pdf. P817)
+To remind you, these are the available filling methods:
+Method                                                Action
+pad / ffill                                           Fill values forward
+bfill / backfill                                      Fill values backward
+With time series data, using pad/ffill is extremely common so that the “last known value” is available at every time point.
+ffill() is equivalent to fillna(method='ffill') and bfill() is equivalent to fillna(method='bfill')
+
+
+import tushare as ts
+import pandas
+
+k_df = ts.get_k_data('600000')
+
+k_df = k_df.tail(10)
+
+k_df_column = list(k_df)
+k_df_column.insert(0, k_df_column.pop(k_df_column.index(k_df.columns[-1])))  # 把最后一行弹出插入第一行
+k_df = k_df[k_df_column]
+
+k_df['price_change'] = k_df['close'].diff()
+k_df['p_change'] = k_df['close'].pct_change() * 100
+
+print(k_df)
+
+ma_list = [5, 10, 20, 60, 250]
+
+for ma in ma_list:
+    k_df['ma' + str(ma)] = k_df['close'].rolling(ma).mean()
+
+for ma in ma_list:
+    k_df['v_ma' + str(ma)] = k_df['volume'].rolling(ma).mean()
+
+print(k_df)
+
+# 后值填充(往前填充)
+k_df = k_df.fillna(method='bfill')
+
+print(k_df)
+
+# 如果一列都是nan值，后值或者前值填充都是nan值，所以需要默认填充为0
+k_df = k_df.fillna(0)
+
+print(k_df)
+
+
+Output:
+       code        date   open  close   high    low    volume  price_change  \
+631  600000  2018-11-28  10.56  10.58  10.62  10.50  183396.0           NaN   
+632  600000  2018-11-29  10.64  10.63  10.75  10.54  206856.0          0.05   
+633  600000  2018-11-30  10.65  10.71  10.75  10.62  285726.0          0.08   
+634  600000  2018-12-03  10.99  11.02  11.05  10.84  430490.0          0.31   
+635  600000  2018-12-04  11.00  11.08  11.08  10.97  208112.0          0.06   
+636  600000  2018-12-05  10.99  11.00  11.10  10.96  254912.0         -0.08   
+637  600000  2018-12-06  10.82  10.90  10.93  10.82  235979.0         -0.10   
+638  600000  2018-12-07  10.94  10.89  11.03  10.88  105805.0         -0.01   
+639  600000  2018-12-10  10.77  10.83  10.90  10.77  159275.0         -0.06   
+640  600000  2018-12-11  10.84  10.72  10.90  10.69  172342.0         -0.11   
+
+     p_change  
+631       NaN  
+632  0.472590  
+633  0.752587  
+634  2.894491  
+635  0.544465  
+636 -0.722022  
+637 -0.909091  
+638 -0.091743  
+639 -0.550964  
+640 -1.015697  
+       code        date   open  close   high    low    volume  price_change  \
+631  600000  2018-11-28  10.56  10.58  10.62  10.50  183396.0           NaN   
+632  600000  2018-11-29  10.64  10.63  10.75  10.54  206856.0          0.05   
+633  600000  2018-11-30  10.65  10.71  10.75  10.62  285726.0          0.08   
+634  600000  2018-12-03  10.99  11.02  11.05  10.84  430490.0          0.31   
+635  600000  2018-12-04  11.00  11.08  11.08  10.97  208112.0          0.06   
+636  600000  2018-12-05  10.99  11.00  11.10  10.96  254912.0         -0.08   
+637  600000  2018-12-06  10.82  10.90  10.93  10.82  235979.0         -0.10   
+638  600000  2018-12-07  10.94  10.89  11.03  10.88  105805.0         -0.01   
+639  600000  2018-12-10  10.77  10.83  10.90  10.77  159275.0         -0.06   
+640  600000  2018-12-11  10.84  10.72  10.90  10.69  172342.0         -0.11   
+
+     p_change     ma5    ma10  ma20  ma60  ma250     v_ma5    v_ma10  v_ma20  \
+631       NaN     NaN     NaN   NaN   NaN    NaN       NaN       NaN     NaN   
+632  0.472590     NaN     NaN   NaN   NaN    NaN       NaN       NaN     NaN   
+633  0.752587     NaN     NaN   NaN   NaN    NaN       NaN       NaN     NaN   
+634  2.894491     NaN     NaN   NaN   NaN    NaN       NaN       NaN     NaN   
+635  0.544465  10.804     NaN   NaN   NaN    NaN  262916.0       NaN     NaN   
+636 -0.722022  10.888     NaN   NaN   NaN    NaN  277219.2       NaN     NaN   
+637 -0.909091  10.942     NaN   NaN   NaN    NaN  283043.8       NaN     NaN   
+638 -0.091743  10.978     NaN   NaN   NaN    NaN  247059.6       NaN     NaN   
+639 -0.550964  10.940     NaN   NaN   NaN    NaN  192816.6       NaN     NaN   
+640 -1.015697  10.868  10.836   NaN   NaN    NaN  185662.6  224289.3     NaN   
+
+     v_ma60  v_ma250  
+631     NaN      NaN  
+632     NaN      NaN  
+633     NaN      NaN  
+634     NaN      NaN  
+635     NaN      NaN  
+636     NaN      NaN  
+637     NaN      NaN  
+638     NaN      NaN  
+639     NaN      NaN  
+640     NaN      NaN  
+       code        date   open  close   high    low    volume  price_change  \
+631  600000  2018-11-28  10.56  10.58  10.62  10.50  183396.0          0.05   
+632  600000  2018-11-29  10.64  10.63  10.75  10.54  206856.0          0.05   
+633  600000  2018-11-30  10.65  10.71  10.75  10.62  285726.0          0.08   
+634  600000  2018-12-03  10.99  11.02  11.05  10.84  430490.0          0.31   
+635  600000  2018-12-04  11.00  11.08  11.08  10.97  208112.0          0.06   
+636  600000  2018-12-05  10.99  11.00  11.10  10.96  254912.0         -0.08   
+637  600000  2018-12-06  10.82  10.90  10.93  10.82  235979.0         -0.10   
+638  600000  2018-12-07  10.94  10.89  11.03  10.88  105805.0         -0.01   
+639  600000  2018-12-10  10.77  10.83  10.90  10.77  159275.0         -0.06   
+640  600000  2018-12-11  10.84  10.72  10.90  10.69  172342.0         -0.11   
+
+     p_change     ma5    ma10  ma20  ma60  ma250     v_ma5    v_ma10  v_ma20  \
+631  0.472590  10.804  10.836   NaN   NaN    NaN  262916.0  224289.3     NaN   
+632  0.472590  10.804  10.836   NaN   NaN    NaN  262916.0  224289.3     NaN   
+633  0.752587  10.804  10.836   NaN   NaN    NaN  262916.0  224289.3     NaN   
+634  2.894491  10.804  10.836   NaN   NaN    NaN  262916.0  224289.3     NaN   
+635  0.544465  10.804  10.836   NaN   NaN    NaN  262916.0  224289.3     NaN   
+636 -0.722022  10.888  10.836   NaN   NaN    NaN  277219.2  224289.3     NaN   
+637 -0.909091  10.942  10.836   NaN   NaN    NaN  283043.8  224289.3     NaN   
+638 -0.091743  10.978  10.836   NaN   NaN    NaN  247059.6  224289.3     NaN   
+639 -0.550964  10.940  10.836   NaN   NaN    NaN  192816.6  224289.3     NaN   
+640 -1.015697  10.868  10.836   NaN   NaN    NaN  185662.6  224289.3     NaN   
+
+     v_ma60  v_ma250  
+631     NaN      NaN  
+632     NaN      NaN  
+633     NaN      NaN  
+634     NaN      NaN  
+635     NaN      NaN  
+636     NaN      NaN  
+637     NaN      NaN  
+638     NaN      NaN  
+639     NaN      NaN  
+640     NaN      NaN  
+       code        date   open  close   high    low    volume  price_change  \
+631  600000  2018-11-28  10.56  10.58  10.62  10.50  183396.0          0.05   
+632  600000  2018-11-29  10.64  10.63  10.75  10.54  206856.0          0.05   
+633  600000  2018-11-30  10.65  10.71  10.75  10.62  285726.0          0.08   
+634  600000  2018-12-03  10.99  11.02  11.05  10.84  430490.0          0.31   
+635  600000  2018-12-04  11.00  11.08  11.08  10.97  208112.0          0.06   
+636  600000  2018-12-05  10.99  11.00  11.10  10.96  254912.0         -0.08   
+637  600000  2018-12-06  10.82  10.90  10.93  10.82  235979.0         -0.10   
+638  600000  2018-12-07  10.94  10.89  11.03  10.88  105805.0         -0.01   
+639  600000  2018-12-10  10.77  10.83  10.90  10.77  159275.0         -0.06   
+640  600000  2018-12-11  10.84  10.72  10.90  10.69  172342.0         -0.11   
+
+     p_change     ma5    ma10  ma20  ma60  ma250     v_ma5    v_ma10  v_ma20  \
+631  0.472590  10.804  10.836   0.0   0.0    0.0  262916.0  224289.3     0.0   
+632  0.472590  10.804  10.836   0.0   0.0    0.0  262916.0  224289.3     0.0   
+633  0.752587  10.804  10.836   0.0   0.0    0.0  262916.0  224289.3     0.0   
+634  2.894491  10.804  10.836   0.0   0.0    0.0  262916.0  224289.3     0.0   
+635  0.544465  10.804  10.836   0.0   0.0    0.0  262916.0  224289.3     0.0   
+636 -0.722022  10.888  10.836   0.0   0.0    0.0  277219.2  224289.3     0.0   
+637 -0.909091  10.942  10.836   0.0   0.0    0.0  283043.8  224289.3     0.0   
+638 -0.091743  10.978  10.836   0.0   0.0    0.0  247059.6  224289.3     0.0   
+639 -0.550964  10.940  10.836   0.0   0.0    0.0  192816.6  224289.3     0.0   
+640 -1.015697  10.868  10.836   0.0   0.0    0.0  185662.6  224289.3     0.0   
+
+     v_ma60  v_ma250  
+631     0.0      0.0  
+632     0.0      0.0  
+633     0.0      0.0  
+634     0.0      0.0  
+635     0.0      0.0  
+636     0.0      0.0  
+637     0.0      0.0  
+638     0.0      0.0  
+639     0.0      0.0  
+640     0.0      0.0  
+```
+
 
 ##### 获取某一行的值
 https://pandas.pydata.org/pandas-docs/stable/indexing.html
@@ -1159,6 +1472,38 @@ http://www.cnblogs.com/splended/p/5229699.html
 https://tracholar.github.io/wiki/python/pandas.html
 https://www.zybuluo.com/ds17/note/806790
 
+##### pandas汇总统计
+https://blog.csdn.net/pipisorry/article/details/25625799
+```
+描述和汇总统计
+
+方法                                     说明
+count                      非NA值的数量
+describe                  针对Series或各DataFrame列计算汇总统计
+min,max                 计算最小值和最大值
+argmin,argmax        计算能够获取到最小值和最大值的索引位置（整数)
+idxmin,idxmax         计算能够获取到最小值和最大值的索引值
+quantile                   计算样本的分位数（0到 1）
+sum                        值的总和
+mean                      值的平均数， a.mean() 默认对每一列的数据求平均值；若加上参数a.mean(1)则对每一行求平均值
+media                      值的算术中位数（50%分位数)
+mad                         根据平均值计算平均绝对离差
+var                          样本值的方差
+std                        样本值的标准差
+skew                     样本值的偏度（三阶矩）
+kurt                       样本值的峰度（四阶矩）
+cumsum                 样本值的累计和
+cummin,cummax    样本值的累计最大值和累计最小
+cumprod                样本值的累计积
+diff                        计算一阶差分（对时间序列很有用)
+pct_change            计算百分数变化
+--------------------- 
+作者：-柚子皮- 
+来源：CSDN 
+原文：https://blog.csdn.net/pipisorry/article/details/25625799 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+```
+
 ##### Pandas速查手册中文版
 https://zhuanlan.zhihu.com/p/25630700
 ```
@@ -1238,6 +1583,7 @@ https://zhuanlan.zhihu.com/p/25630700
 
     df.columns = ['a','b','c']：重命名列名
     pd.isnull()：检查DataFrame对象中的空值，并返回一个Boolean数组
+    pd.isna()：检查DataFrame对象中的空值，并返回一个Boolean数组
     pd.notnull()：检查DataFrame对象中的非空值，并返回一个Boolean数组
     df.dropna()：删除所有包含空值的行
     df.dropna(axis=1)：删除所有包含空值的列
