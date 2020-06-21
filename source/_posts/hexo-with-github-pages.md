@@ -324,8 +324,12 @@ git push origin hexo
 
 以上操作会把原始数据上传到hexo分支，而hexo d也会把生产的静态网站上传到master分支，这时就可以用一个仓库的2个分支完美管理博客内容，并可以在不同的电脑之间进行写作。
 
+注意：git的所有操作其实都是在hexo分支下进行，master分支只是用于发布内容的git管理，即hexo d提交到master分支中
+
+
 在新的电脑上，除了不需要hexo init hoganchen.github.io命令外，别的命令都需要，归纳如下:
 以下所有的操作都是在hexo branch下，master分支只是用于保存发布的blog
+
 设置nodejs的ppa源(参考https://hoganchen.github.io/2018/06/09/hexo-with-github-pages/#%E5%AE%89%E8%A3%85nodejs%E5%92%8Cnpm)
 sudo apt-get update
 sudo apt-get install git
@@ -360,6 +364,7 @@ hexo g
 hexo s
 hexo d
 
+# 新电脑上，是没有.deploy_git目录的，这时需要执行hexo d命令即可生成.deployer-git目录，并提醒没有配置git账号的email和user，再次执行如下命令即可
 cd .deploy_git/
 git config user.email "hogan.chen@ymail.com"
 git config user.name "hogan chen"
