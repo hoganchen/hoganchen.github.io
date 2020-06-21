@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="C&C++," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="原码，反码和补码http://www.itwendao.com/article/detail/8172.htmlhttps://yq.aliyun.com/wenji/72426http://blog.csdn.net/liushuijinger/article/details/7429197https://www.cnblogs.com/zhangziqiu/archive/2011/03/">
+<meta name="keywords" content="C&amp;C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言问题记录">
+<meta property="og:url" content="http://yoursite.com/2018/06/11/c-program-language-usage/index.html">
+<meta property="og:site_name" content="Hogan&#39;s Blog">
+<meta property="og:description" content="原码，反码和补码http://www.itwendao.com/article/detail/8172.htmlhttps://yq.aliyun.com/wenji/72426http://blog.csdn.net/liushuijinger/article/details/7429197https://www.cnblogs.com/zhangziqiu/archive/2011/03/">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-06-21T04:16:35.275Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C语言问题记录">
+<meta name="twitter:description" content="原码，反码和补码http://www.itwendao.com/article/detail/8172.htmlhttps://yq.aliyun.com/wenji/72426http://blog.csdn.net/liushuijinger/article/details/7429197https://www.cnblogs.com/zhangziqiu/archive/2011/03/">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/11/c-program-language-usage/"/>
+
+
+
+
+
+  <title>C语言问题记录 | Hogan's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hogan's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/c-program-language-usage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">C语言问题记录</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-11T15:40:47+08:00">
+                2018-06-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ol>
+
+<h5 id="原码，反码和补码"><a href="#原码，反码和补码" class="headerlink" title="原码，反码和补码"></a>原码，反码和补码</h5><p><a href="http://www.itwendao.com/article/detail/8172.html" target="_blank" rel="noopener">http://www.itwendao.com/article/detail/8172.html</a><br><a href="https://yq.aliyun.com/wenji/72426" target="_blank" rel="noopener">https://yq.aliyun.com/wenji/72426</a><br><a href="http://blog.csdn.net/liushuijinger/article/details/7429197" target="_blank" rel="noopener">http://blog.csdn.net/liushuijinger/article/details/7429197</a><br><a href="https://www.cnblogs.com/zhangziqiu/archive/2011/03/30/ComputerCode.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhangziqiu/archive/2011/03/30/ComputerCode.html</a><br><a href="http://blog.chinaunix.net/uid-29603939-id-4216336.html" target="_blank" rel="noopener">http://blog.chinaunix.net/uid-29603939-id-4216336.html</a><br><a href="http://blog.sina.com.cn/s/blog_6b87c7eb010186mp.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_6b87c7eb010186mp.html</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">我们知道在计算机系统中，数值一律用补码来表示（存储）。主要原因是使用补码，可以将符号位和其它位统一处理；同时，减法也可按加法来处理。另外，两个用补码表示的数相加时，如果最高位（符号位）有进位，则进位被舍弃。</span><br><span class="line"></span><br><span class="line">补码表示法（two&apos;s complement representation）可以防止0的机器数重码，同时又解决了原码和反码无法表示－8的问题，这样就极大的简化了计算机的硬件设计。</span><br><span class="line"></span><br><span class="line">什么是数制？用来表示数值的规则，如十进制，二进制．</span><br><span class="line"></span><br><span class="line">机器数</span><br><span class="line"></span><br><span class="line">用二进制的形式来表示数;最高位为符号位,1表示负数,0表示正数.</span><br><span class="line"></span><br><span class="line">如:  1----&gt;00000001;-1----&gt;1000 0001</span><br><span class="line"></span><br><span class="line">真值</span><br><span class="line"></span><br><span class="line">从上面我们知道了机器数是计算机用来表示数的一种形式，但是用于最高位是符号位。这样就出现这样情况，1000 0001表示的真正数值为1，而不是129.这样我们把一个机器数表示的真正的实际的意义的值称之为真值。</span><br><span class="line"></span><br><span class="line">原码、反码、补码</span><br><span class="line"></span><br><span class="line">总体上来讲原码反码补码都是计算机本身用来存储数的一种方式。</span><br><span class="line">原码</span><br><span class="line"></span><br><span class="line">规则：符号位+真值的绝对值</span><br><span class="line"></span><br><span class="line">如：[+1]原码=0000 0001；</span><br><span class="line"></span><br><span class="line">[-1]原码=1000 0001；</span><br><span class="line">反码</span><br><span class="line"></span><br><span class="line">规则：正数反码为本身</span><br><span class="line"></span><br><span class="line">负数反码为原码的取反，但符号位不变</span><br><span class="line"></span><br><span class="line">如：[+1]原码=[+1]反码=0000 0001；</span><br><span class="line"></span><br><span class="line">[-1]原码=1000 0001=[-1]反码=1111 1110;</span><br><span class="line">补码</span><br><span class="line"></span><br><span class="line">规则：正数补码为本身</span><br><span class="line"></span><br><span class="line">负数补码为原码的反码的基础之上加1</span><br><span class="line"></span><br><span class="line">如：[+1]原码=[+1]补码；</span><br><span class="line"></span><br><span class="line">[-1]原码=1000 0001=[-1]反码=1111 1110=[-1]补码=1111 1111；</span><br><span class="line"></span><br><span class="line">为何会出现三种表示方式？</span><br><span class="line"></span><br><span class="line">通过上面三种我们得到正数1在各种情况下都是一致的：[+1]原\反\补码=0000 00001；</span><br><span class="line"></span><br><span class="line">而反码不是一致的。</span><br><span class="line"></span><br><span class="line">在计算机内部，为了将运算变得简单。将符号位也投入到运算之中来，这样不需要计算机去分析符号位的作用。但是我们发现</span><br><span class="line"></span><br><span class="line">[+1]原码=0000 0001+[-1]原码=1000 0001=0000 00001=1；而不是0，这样一来就出现了错误。如何解决这个问题呢？</span><br><span class="line"></span><br><span class="line">为了解决这个问题，反码出现了</span><br><span class="line"></span><br><span class="line">[+1]原码+[-1]原码=1000 0001=[+1]反码=0000 0001+[-1]反码=1111 1110=0000 0000（反码）=0000 0000 （原码）=-0；</span><br><span class="line"></span><br><span class="line">这样一来解决了原码之间运算的问题，但是问题又出现了-0=1000 0000（原码）；+0=0000 0000 （原码）；这样在计算机看来不一样。是没有意义的。</span><br><span class="line"></span><br><span class="line">[+1]原码+[-1]原码=1000 0001=[+1]补码=0000 0001+[-1]补码=1111 1111=0000 0000（补码）=[0000 0000](原码)</span><br><span class="line"></span><br><span class="line">这样用[0000 0000](原码)表示0就不会出现问题了。</span><br><span class="line"></span><br><span class="line">总的来说，在整数中，原码和补码、反码都是一样的，对于负数反码在符号位不变的情况下各位取反所得；补码为反码基础上加1.而原码补码反码的出现都是为了满足在计算机在运算过程更加简单和便捷而出现的。</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h5 id="浮点数在内存中存放格式"><a href="#浮点数在内存中存放格式" class="headerlink" title="浮点数在内存中存放格式"></a>浮点数在内存中存放格式</h5><p><a href="http://blog.sina.com.cn/s/blog_77abbf390100qwun.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_77abbf390100qwun.html</a><br><a href="https://www.pediy.com/kssd/pediy03/forum669.htm" target="_blank" rel="noopener">https://www.pediy.com/kssd/pediy03/forum669.htm</a><br><a href="https://www.2cto.com/kf/201708/672079.html" target="_blank" rel="noopener">https://www.2cto.com/kf/201708/672079.html</a><br><a href="http://blog.csdn.net/PfanAya/article/details/5770005" target="_blank" rel="noopener">http://blog.csdn.net/PfanAya/article/details/5770005</a><br><a href="https://yq.aliyun.com/ziliao/123603" target="_blank" rel="noopener">https://yq.aliyun.com/ziliao/123603</a><br><a href="http://blog.csdn.net/hdutigerkin/article/details/7663454" target="_blank" rel="noopener">http://blog.csdn.net/hdutigerkin/article/details/7663454</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">对于大小为32-bit的浮点数（32-bit为单精度，64-bit浮点数为双精度，80-bit为扩展精度浮点数），</span><br><span class="line">1、其第31 bit为符号位，为0则表示正数，反之为复数，其读数值用s表示；</span><br><span class="line">2、第30～23 bit为幂数，其读数值用e表示；</span><br><span class="line">3、第22～0 bit共23 bit作为系数，视为二进制纯小数，假定该小数的十进制值为x；</span><br><span class="line"></span><br><span class="line">则按照规定，该浮点数的值用十进制表示为：</span><br><span class="line">＝ (-1)^s  * (1 + x) * 2^(e - 127)</span><br><span class="line"></span><br><span class="line">对于49E48E68来说，</span><br><span class="line">1、其第31 bit为0，即s = 0</span><br><span class="line">2、第30～23 bit依次为100 1001 1，读成十进制就是147，即e = 147。</span><br><span class="line">3、第22～0 bit依次为110 0100 1000 1110 0110 1000，也就是二进制的纯小数0.110 0100 1000 1110 0110 1000，其十进制形式为0.78559589385986328125，即x = 0.78559589385986328125。</span><br><span class="line"></span><br><span class="line">这样，该浮点数的十进制表示</span><br><span class="line">=　(-1)^s  * (1 + x) * 2^(e - 127)</span><br><span class="line">=　(-1)^0  * (1+ 0.78559589385986328125) * 2^(147-127)</span><br><span class="line">= 1872333</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">任何数据在内存中都是以二进制的形式存储的，例如一个short型数据1156，其二进制表示形式为00000100 10000100。则在Intel CPU架构的系统中，存放方式为  10000100(低地址单元) 00000100(高地址单元)，因为Intel CPU的架构是小端模式。但是对于浮点数在内存是如何存储的?目前所有的C/C++编译器都是采用IEEE所制定的标准浮点格式，即二进制科学表示法。</span><br><span class="line">在二进制科学表示法中，S=M*2^N 主要由三部分构成：符号位+阶码(N)+尾数(M)。对于float型数据，其二进制有32位，其中符号位1位，阶码8位，尾数23位；对于double型数据，其二进制为64位，符号位1位，阶码11位，尾数52位。</span><br><span class="line">                31        30-23       22-0</span><br><span class="line">float       符号位     阶码        尾数</span><br><span class="line">                63        62-52       51-0</span><br><span class="line">double    符号位     阶码        尾数</span><br><span class="line">符号位：0表示正，1表示负</span><br><span class="line">阶码：这里阶码采用移码表示，对于float型数据其规定偏置量为127,阶码有正有负，对于8位二进制，则其表示范围为-128-127，double型规定为1023，其表示范围为-1024-1023。比如对于float型数据，若阶码的真实值为2，则加上127后为129，其阶码表示形式为10000010</span><br><span class="line">尾数:有效数字位，即部分二进制位(小数点后面的二进制位)，因为规定M的整数部分恒为1，所以这个1就不进行存储了。</span><br><span class="line">下面举例说明：</span><br><span class="line">float型数据125.5转换为标准浮点格式</span><br><span class="line">125二进制表示形式为1111101，小数部分表示为二进制为 1，则125.5二进制表示为1111101.1，由于规定尾数的整数部分恒为1，则表示为1.1111011*2^6，阶码为6，加上127为133，则表示为10000101，而对于尾数将整数部分1去掉，为1111011，在其后面补0使其位数达到23位，则为11110110000000000000000</span><br><span class="line">则其二进制表示形式为</span><br><span class="line">0 10000101 11110110000000000000000，则在内存中存放方式为：</span><br><span class="line">00000000   低地址</span><br><span class="line">00000000</span><br><span class="line">11111011</span><br><span class="line">01000010   高地址</span><br><span class="line">而反过来若要根据二进制形式求算浮点数如0 10000101 11110110000000000000000</span><br><span class="line">由于符号为为0，则为正数。阶码为133-127=6，尾数为11110110000000000000000，则其真实尾数为1.1111011。所以其大小为</span><br><span class="line">1.1111011*2^6，将小数点右移6位，得到1111101.1，而1111101的十进制为125，0.1的十进制为1*2^(-1)=0.5，所以其大小为125.5。</span><br><span class="line">同理若将float型数据0.5转换为二进制形式</span><br><span class="line">0.5的二进制形式为0.1，由于规定正数部分必须为1，将小数点右移1位，则为1.0*2^(-1)，其阶码为-1+127=126，表示为01111110，而尾数1.0去掉整数部分为0，补齐0到23位00000000000000000000000，则其二进制表示形式为</span><br><span class="line">0 01111110 00000000000000000000000</span><br><span class="line">由上分析可知float型数据最大表示范围为1.11111111111111111111111*2^127=3.4*10^38</span><br><span class="line">对于double型数据情况类似，只不过其阶码为11位，偏置量为1023，尾数为52位。</span><br><span class="line"></span><br><span class="line">测试程序：</span><br><span class="line">复制代码 代码如下:</span><br><span class="line"></span><br><span class="line">/*测试浮点型数据在内存中存放方式  2011.10.2*/</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main(int argc, char *argv[])</span><br><span class="line">&#123;</span><br><span class="line">    float a=125.5;</span><br><span class="line">    char *p=(char *)&amp;a;</span><br><span class="line">    printf(&quot;%d\n&quot;,*p);</span><br><span class="line">    printf(&quot;%d\n&quot;,*(p+1));</span><br><span class="line">    printf(&quot;%d\n&quot;,*(p+2));</span><br><span class="line">    printf(&quot;%d\n&quot;,*(p+3));</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">输出结果为：</span><br><span class="line">0</span><br><span class="line">0</span><br><span class="line">-5</span><br><span class="line">66</span><br><span class="line"></span><br><span class="line">在上面已经知道float型125.5在内存中存放方式为：</span><br><span class="line">00000000   低地址</span><br><span class="line">00000000</span><br><span class="line">11111011</span><br><span class="line">01000010   高地址</span><br><span class="line">因此对于p和p+1指向的单元，其中存储的二进制数表示的十进制整数为0；</span><br><span class="line">而对于p+2指向的单元，由于为char型指针，为带符号的数据类型，因此11111011，符号位为1，则为负数，由于在内存中二进制是以补码存储的，所以其真值为-5.</span><br><span class="line">对于p+3指向的单元，01000010，为正数，则其大小为66。上面程序输出结果验证了其正确性。</span><br></pre></td></tr></table></figure></p>
+<h5 id="C数组初始化"><a href="#C数组初始化" class="headerlink" title="C数组初始化"></a>C数组初始化</h5><p><a href="http://blog.csdn.net/sibylle/article/details/2026915" target="_blank" rel="noopener">http://blog.csdn.net/sibylle/article/details/2026915</a><br><a href="http://lib.csdn.net/article/c/19784" target="_blank" rel="noopener">http://lib.csdn.net/article/c/19784</a><br><a href="http://www.cnblogs.com/youxin/p/3235817.html" target="_blank" rel="noopener">http://www.cnblogs.com/youxin/p/3235817.html</a><br><a href="http://www.cnblogs.com/Harley-Quinn/p/6766705.html" target="_blank" rel="noopener">http://www.cnblogs.com/Harley-Quinn/p/6766705.html</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">int a[100] = &#123;0&#125;; // 第一个元素初始化为0，后面的元素进行默认初始化，为0</span><br><span class="line">int a[100] = &#123;1, 2, 3, 4&#125;; //前四个元素依次初始化为1,2,3,4；后面的所有元素进行默认初始化，为0</span><br><span class="line">int a[] = &#123;1,2,3,4,5&#125;; // 1, 2, 3, 4, 5</span><br><span class="line">int chr[] = &#123;&apos;a&apos;, &apos;b&apos;, &apos;c&apos;&#125;; // a, b, c, \0</span><br><span class="line"></span><br><span class="line">初始化值的个数可少于数组元素个数.当初始化值的个数少于数组元素个数时,前面的按序初始化相应值, 后面的初始化为0(全局或静态数组)或为不确定值(局部数组).</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">一直以为 int a[256]=&#123;0&#125;;是把a的所有元素初始化为0，int a[256]=&#123;1&#125;;是把a所有的元素初始化为1.</span><br><span class="line">调试的时查看内存发现不是那么一回事，翻了一下《The C++ Programming Language》总算有定论。PDF的竟然不然复制，就把它这章翻译了，如下</span><br><span class="line"></span><br><span class="line">5.2.1   数组初始化</span><br><span class="line">数组可以用一个列值来初始化，例如</span><br><span class="line">         int v1[] =&#123;1,2,3,4&#125;;</span><br><span class="line">         char v2[]=&#123;&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,0&#125;;</span><br><span class="line">当数组定义时没有指定大小，当初始化采用列表初始化了，那么数组的大小由初始化时列表元素个数决定。所以v1和v2分别为 int[4] 和char[4]类型。如果明确指定了数组大小，当在初始化时指定的元素个数超过这个大小就会产生错误。例如：</span><br><span class="line">         char   v3[2] =&#123;&apos;a&apos;,&apos;b&apos;,0&#125;;   //错误：太多的初始化值了</span><br><span class="line">         char   v3[3] =&#123;&apos;a&apos;,&apos;b&apos;,0&#125;;   //正确</span><br><span class="line"></span><br><span class="line">如果初始化时指定的的元素个数比数组大小少，剩下的元素都回被初始化为   0。例如</span><br><span class="line">         int   v5[8]=&#123;1,2,3,4&#125;;</span><br><span class="line">等价于</span><br><span class="line">          int   v5[8]=&#123;1,2,3,4,0,0,0,0&#125;;</span><br><span class="line"></span><br><span class="line">注意没有如下形式的数组赋值：</span><br><span class="line">         void f()</span><br><span class="line">         &#123;</span><br><span class="line">             v4=&#123;&apos;c&apos;,&apos;d&apos;,0&#125;;   //错误：不是数组赋值</span><br><span class="line">         &#125;</span><br><span class="line">如果你想这样的复制的话，请使用 vector(16章第三节) 或者 valarray（22章第四节）。</span><br><span class="line">        字符数组可以方便地采用字符串直接初始化（参考第五章 2.2小节）</span><br><span class="line">         译注： 就是 这样啦   char   alpha []=&quot;abcdefghijklmn&quot;;</span><br><span class="line"></span><br><span class="line">*/</span><br></pre></td></tr></table></figure></p>
+<h5 id="结构体成员赋值"><a href="#结构体成员赋值" class="headerlink" title="结构体成员赋值"></a>结构体成员赋值</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">struct CMUnitTestState &#123;</span><br><span class="line">    const ListNode *check_point; /* Check point of the test if there&apos;s a setup function. */</span><br><span class="line">    const struct CMUnitTest *test; /* Point to array element in the tests we get passed */</span><br><span class="line">    void *state; /* State associated with the test */</span><br><span class="line">    const char *error_message; /* The error messages by the test */</span><br><span class="line">    enum CMUnitTestStatus status; /* PASSED, FAILED, ABORT ... */</span><br><span class="line">    double runtime; /* Time calculations */</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">/* Setup cmocka test array */</span><br><span class="line">for (i = 0; i &lt; num_tests; i++) &#123;</span><br><span class="line">    if (tests[i].name != NULL &amp;&amp;</span><br><span class="line">        (tests[i].test_func != NULL</span><br><span class="line">         || tests[i].setup_func != NULL</span><br><span class="line">         || tests[i].teardown_func != NULL)) &#123;</span><br><span class="line">        cm_tests[i] = (struct CMUnitTestState) &#123;</span><br><span class="line">            .test = &amp;tests[i],</span><br><span class="line">            .status = CM_TEST_NOT_STARTED,</span><br><span class="line">            .state = NULL,</span><br><span class="line">        &#125;;</span><br><span class="line">        total_tests++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="C语言实现变长数组"><a href="#C语言实现变长数组" class="headerlink" title="C语言实现变长数组"></a>C语言实现变长数组</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">typedef struct</span><br><span class="line">&#123;</span><br><span class="line">    int data_len;</span><br><span class="line">    char data[];</span><br><span class="line">&#125;data_buf;</span><br><span class="line"></span><br><span class="line">typedef struct</span><br><span class="line">&#123;</span><br><span class="line">    int data_len;</span><br><span class="line">    char data[0];</span><br><span class="line">&#125;data_buf;</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+<h5 id="特殊符号”-、-”"><a href="#特殊符号”-、-”" class="headerlink" title="特殊符号”#、##”"></a>特殊符号”#、##”</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">http://www.cnblogs.com/Anker/p/3418792.html</span><br><span class="line">http://blog.csdn.net/acs713/article/details/6891837</span><br><span class="line">http://www.cnblogs.com/welkinwalker/archive/2012/03/30/2424844.html</span><br><span class="line"></span><br><span class="line">（1）#</span><br><span class="line"></span><br><span class="line">  When you put a # before an argument in a preprocessor  macro, the preprocessor turns that argument into a character array.</span><br><span class="line"></span><br><span class="line">  在一个宏中的参数前面使用一个#,预处理器会把这个参数转换为一个字符数组</span><br><span class="line"></span><br><span class="line">  简化理解：#是“字符串化”的意思，出现在宏定义中的#是把跟在后面的参数转换成一个字符串</span><br><span class="line"></span><br><span class="line">\#define ERROR_LOG(module)   fprintf(stderr,&quot;error: &quot;#module&quot;\n&quot;)</span><br><span class="line"></span><br><span class="line">ERROR_LOG(&quot;add&quot;); 转换为 fprintf(stderr,&quot;error: &quot;add&quot;\n&quot;);</span><br><span class="line"></span><br><span class="line">ERROR_LOG(devied =0); 转换为 fprintf(stderr,&quot;error: devied=0\n&quot;);</span><br><span class="line"></span><br><span class="line">（2）##</span><br><span class="line"></span><br><span class="line">  “##”是一种分隔连接方式，它的作用是先分隔，然后进行强制连接。</span><br><span class="line"></span><br><span class="line">  在普通的宏定义中，预处理器一般把空格解释成分段标志，对于每一段和前面比较，相同的就被替换。但是这样做的结果是，被替换段之间存在一些空格。如果我们不希望出现这些空格，就可以通过添加一些##来替代空格。</span><br><span class="line"></span><br><span class="line">1 #define TYPE1(type,name)   type name_##type##_type</span><br><span class="line">2 #define TYPE2(type,name)   type name##_##type##_type</span><br><span class="line"></span><br><span class="line">TYPE1(int, c); 转换为：int 　name_int_type ; (因为##号将后面分为 name_ 、type 、 _type三组，替换后强制连接)</span><br><span class="line">TYPE2(int, d);转换为： int 　d_int_type ; (因为##号将后面分为 name、_、type 、_type四组，替换后强制连接)</span><br></pre></td></tr></table></figure>
+<h5 id="strstr和strchr的区别"><a href="#strstr和strchr的区别" class="headerlink" title="strstr和strchr的区别"></a>strstr和strchr的区别</h5><p><a href="http://blog.csdn.net/wusuopubupt/article/details/38741015" target="_blank" rel="noopener">http://blog.csdn.net/wusuopubupt/article/details/38741015</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">通过函数的定义来区分：</span><br><span class="line"></span><br><span class="line">1.strstr:</span><br><span class="line"></span><br><span class="line">[cpp] view plain copy</span><br><span class="line"></span><br><span class="line">    char *strstr(const char *haystack, const char *needle)</span><br><span class="line"></span><br><span class="line">可见，strstr函数搜索的是一个const char*型的数据，即字符串常量</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">2.strchr:</span><br><span class="line"></span><br><span class="line">[cpp] view plain copy</span><br><span class="line"></span><br><span class="line">    char *strchr(const char *str, int c)</span><br><span class="line"></span><br><span class="line">而strchr搜索的是一个int型的数据，即字符</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">3.strrchr</span><br><span class="line"></span><br><span class="line">[cpp] view plain copy</span><br><span class="line"></span><br><span class="line">    char *strrchr(const char *str, int c)</span><br><span class="line"></span><br><span class="line">另外，strrchr返回字符c在字符串str中最后出现的位置</span><br></pre></td></tr></table></figure></p>
+<h5 id="FILE-LINE-and-func"><a href="#FILE-LINE-and-func" class="headerlink" title="__FILE__, __LINE__ and __func__"></a>__FILE__, __LINE__ and __func__</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br></pre></td><td class="code"><pre><span class="line">https://gcc.gnu.org/onlinedocs/cpp/Standard-Predefined-Macros.html</span><br><span class="line"></span><br><span class="line">3.7.1 Standard Predefined Macros</span><br><span class="line"></span><br><span class="line">The standard predefined macros are specified by the relevant language standards, so they are available with all compilers that implement those standards. Older compilers may not provide all of them. Their names all start with double underscores.</span><br><span class="line"></span><br><span class="line">__FILE__</span><br><span class="line"></span><br><span class="line">    This macro expands to the name of the current input file, in the form of a C string constant. This is the path by which the preprocessor opened the file, not the short name specified in ‘#include’ or as the input file name argument. For example, &quot;/usr/local/include/myheader.h&quot; is a possible expansion of this macro.</span><br><span class="line">__LINE__</span><br><span class="line"></span><br><span class="line">    This macro expands to the current input line number, in the form of a decimal integer constant. While we call it a predefined macro, it’s a pretty strange macro, since its “definition” changes with each new line of source code.</span><br><span class="line"></span><br><span class="line">__FILE__ and __LINE__ are useful in generating an error message to report an inconsistency detected by the program; the message can state the source line at which the inconsistency was detected. For example,</span><br><span class="line"></span><br><span class="line">fprintf (stderr, &quot;Internal error: &quot;</span><br><span class="line">                 &quot;negative string length &quot;</span><br><span class="line">                 &quot;%d at %s, line %d.&quot;,</span><br><span class="line">         length, __FILE__, __LINE__);</span><br><span class="line"></span><br><span class="line">An ‘#include’ directive changes the expansions of __FILE__ and __LINE__ to correspond to the included file. At the end of that file, when processing resumes on the input file that contained the ‘#include’ directive, the expansions of __FILE__ and __LINE__ revert to the values they had before the ‘#include’ (but __LINE__ is then incremented by one as processing moves to the line after the ‘#include’).</span><br><span class="line"></span><br><span class="line">A ‘#line’ directive changes __LINE__, and may change __FILE__ as well. See Line Control.</span><br><span class="line"></span><br><span class="line">C99 introduced __func__, and GCC has provided __FUNCTION__ for a long time. Both of these are strings containing the name of the current function (there are slight semantic differences; see the GCC manual). Neither of them is a macro; the preprocessor does not know the name of the current function. They tend to be useful in conjunction with __FILE__ and __LINE__, though.</span><br><span class="line"></span><br><span class="line">__DATE__</span><br><span class="line"></span><br><span class="line">    This macro expands to a string constant that describes the date on which the preprocessor is being run. The string constant contains eleven characters and looks like &quot;Feb 12 1996&quot;. If the day of the month is less than 10, it is padded with a space on the left.</span><br><span class="line"></span><br><span class="line">    If GCC cannot determine the current date, it will emit a warning message (once per compilation) and __DATE__ will expand to &quot;??? ?? ????&quot;.</span><br><span class="line">__TIME__</span><br><span class="line"></span><br><span class="line">    This macro expands to a string constant that describes the time at which the preprocessor is being run. The string constant contains eight characters and looks like &quot;23:59:01&quot;.</span><br><span class="line"></span><br><span class="line">    If GCC cannot determine the current time, it will emit a warning message (once per compilation) and __TIME__ will expand to &quot;??:??:??&quot;.</span><br><span class="line">__STDC__</span><br><span class="line"></span><br><span class="line">    In normal operation, this macro expands to the constant 1, to signify that this compiler conforms to ISO Standard C. If GNU CPP is used with a compiler other than GCC, this is not necessarily true; however, the preprocessor always conforms to the standard unless the -traditional-cpp option is used.</span><br><span class="line"></span><br><span class="line">    This macro is not defined if the -traditional-cpp option is used.</span><br><span class="line"></span><br><span class="line">    On some hosts, the system compiler uses a different convention, where __STDC__ is normally 0, but is 1 if the user specifies strict conformance to the C Standard. CPP follows the host convention when processing system header files, but when processing user files __STDC__ is always 1. This has been reported to cause problems; for instance, some versions of Solaris provide X Windows headers that expect __STDC__ to be either undefined or 1. See Invocation.</span><br><span class="line">__STDC_VERSION__</span><br><span class="line"></span><br><span class="line">    This macro expands to the C Standard’s version number, a long integer constant of the form yyyymmL where yyyy and mm are the year and month of the Standard version. This signifies which version of the C Standard the compiler conforms to. Like __STDC__, this is not necessarily accurate for the entire implementation, unless GNU CPP is being used with GCC.</span><br><span class="line"></span><br><span class="line">    The value 199409L signifies the 1989 C standard as amended in 1994, which is the current default; the value 199901L signifies the 1999 revision of the C standard. Support for the 1999 revision is not yet complete.</span><br><span class="line"></span><br><span class="line">    This macro is not defined if the -traditional-cpp option is used, nor when compiling C++ or Objective-C.</span><br><span class="line">__STDC_HOSTED__</span><br><span class="line"></span><br><span class="line">    This macro is defined, with value 1, if the compiler’s target is a hosted environment. A hosted environment has the complete facilities of the standard C library available.</span><br><span class="line">__cplusplus</span><br><span class="line"></span><br><span class="line">    This macro is defined when the C++ compiler is in use. You can use __cplusplus to test whether a header is compiled by a C compiler or a C++ compiler. This macro is similar to __STDC_VERSION__, in that it expands to a version number. Depending on the language standard selected, the value of the macro is 199711L for the 1998 C++ standard, 201103L for the 2011 C++ standard, 201402L for the 2014 C++ standard, or an unspecified value strictly larger than 201402L for the experimental languages enabled by -std=c++1z and -std=gnu++1z.</span><br><span class="line">__OBJC__</span><br><span class="line"></span><br><span class="line">    This macro is defined, with value 1, when the Objective-C compiler is in use. You can use __OBJC__ to test whether a header is compiled by a C compiler or an Objective-C compiler.</span><br><span class="line">__ASSEMBLER__</span><br><span class="line"></span><br><span class="line">    This macro is defined with value 1 when preprocessing assembly language.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http://www.oschina.net/question/249672_59411</span><br><span class="line">#ifndef _debug_H_</span><br><span class="line">#define _debug_H_</span><br><span class="line"></span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdarg.h&gt;</span><br><span class="line"></span><br><span class="line">#ifndef UNDEBUG_FILE</span><br><span class="line">#define DEBUG_FLAG 1</span><br><span class="line">#else</span><br><span class="line">#define DEBUG_FLAG 0</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">#if (DEBUG_FLAG == 1)</span><br><span class="line"></span><br><span class="line">static unsigned int __sdebug_time = 0;</span><br><span class="line">#define  __debug_Msg_Size 1024</span><br><span class="line">static char __pdebug_Msg[__debug_Msg_Size];</span><br><span class="line">//注意下面的__attribute__不是C标准。。。。</span><br><span class="line">static void __debug_info(const char *prefix,const char *fmt, ...) __attribute__((format (printf, 2, 3)));</span><br><span class="line">#define __NEXT_DBG_TIME() do&#123;sdebug_time++;&#125;while(0)</span><br><span class="line">#define __PRINT_POS() do &#123;fprintf(stderr,&quot;%s(%d)&#123;%s&#125;&quot;,__FILE__,__LINE__,__func__);&#125;while(0)</span><br><span class="line">#define __FUNC_LOG() do&#123;__PRINT_POS();fprintf(stderr,&quot;: t = %d &quot;,__sdebug_time++);&#125; while(0)</span><br><span class="line">#define __FUNC_LOGn() do&#123;__FUNC_LOG();fprintf(stderr,&quot;\n&quot;);&#125; while(0)</span><br><span class="line">#define __PRINT_POS_exp(exp) do&#123;__PRINT_POS();fprintf(stderr,&quot;| (%s):&quot;,#exp);&#125;while(0)</span><br><span class="line">#define __PRINT_POS_P_exp(prefix,exp) do&#123;__PRINT_POS();fprintf(stderr,&quot;|&lt;%s&gt; (%s):&quot;,prefix,#exp);&#125;while(0)</span><br><span class="line">#define __PRINT_POS_expn(exp)  do&#123;__PRINT_POS_exp(exp);fprintf(stderr,&quot;\n&quot;);&#125;while(0)</span><br><span class="line">#define __PRINT_POS_P_expn(prefix,exp) do&#123;__PRINT_POS_P_exp(prefix,exp);fprintf(stderr,&quot;\n&quot;);&#125;while(0)</span><br><span class="line">#define __ASSERT(exp) do&#123;if (exp)&#123;&#125;else&#123;__PRINT_POS_P_expn(&quot;ASSERT ERROR&quot;,exp);&#125;&#125;while (0)</span><br><span class="line">#define __ASSERT_EXIT(exp) do&#123;if (exp)&#123;&#125;else&#123;__PRINT_POS_P_expn(&quot;ASSERT ERROR&quot;,exp);exit(1);&#125;&#125;while (0)</span><br><span class="line"></span><br><span class="line">#define __debug_info_LOG(exp,PREFIX,fmt,...) do&#123;if (exp)&#123;__PRINT_POS_P_exp(PREFIX,exp);__debug_info(PREFIX,fmt,__VA_ARGS__);&#125;&#125;while (0)</span><br><span class="line"></span><br><span class="line">#define __ASSERT_LOG(exp,fmt,...) __debug_info_LOG(exp,&quot;ASSERT!&quot;,fmt,__VA_ARGS__)</span><br><span class="line">#define __ERROR_LOG(exp,fmt,...) __debug_info_LOG(exp,&quot;ERROR!&quot;,fmt,__VA_ARGS__)</span><br><span class="line">define __BEFORE_LOG(N,fmt,...)  do &#123;__debug_info_LOG((N) &lt; __sdebug_time,&quot;BEFORE!&quot;,fmt,__VA_ARGS__);__NEXT_DBG_TIME()&#125;while(0)</span><br><span class="line">#define __AFTER_LOG(N,fmt,...) do &#123;__debug_info_LOG((N) &gt;= __sdebug_time,&quot;AFTER!&quot;,fmt,__VA_ARGS__); __NEXT_DBG_TIME();&#125;while(0)</span><br><span class="line">static void __debug_info(const char *prefix,const char *fmt, ...) &#123;</span><br><span class="line">	va_list params;</span><br><span class="line">	va_start(params, fmt);</span><br><span class="line">	__ASSERT_EXIT((__pdebug_Msg) &amp;&amp; (__pdebug_Msg_Size ));</span><br><span class="line">	vsnprintf(__pdebug_Msg, __pdebug_Msg_Size, fmt, params);</span><br><span class="line">	if (prefix)&#123;</span><br><span class="line">		fprintf(stderr, &quot; %s %s\n&quot;, prefix, __pdebug_Msg);</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		fprintf(stderr, &quot; %s\n&quot;, __pdebug_Msg);</span><br><span class="line">	&#125;</span><br><span class="line">	va_end(params);</span><br><span class="line">&#125;</span><br><span class="line">#else</span><br><span class="line">#define __NOP do&#123;&#125;while(0)</span><br><span class="line">#define __NEXT_DEBUG_TIME() __NOP</span><br><span class="line">#define __FUNC_LOGn() __NOP</span><br><span class="line">#define __FUNC_LOG() __NOP</span><br><span class="line">#define __PRINT_POS_Sn(exp)  __NOP</span><br><span class="line">#define __PRINT_POS_S(exp) __NOP</span><br><span class="line">#define __ASSERT(exp) __NOP</span><br><span class="line">#define __ASSERT_EXIT(exp) __NOP</span><br><span class="line">#define __debug_info_LOG(exp,PREFIX,fmt,...) __NOP</span><br><span class="line">#define __ASSERT_LOG(exp,fmt,...) __NOP</span><br><span class="line">#define __ERROR_LOG(exp,fmt,...) __NOP</span><br><span class="line">#define __BEFORE_LOG(N,fmt,...) __NOP</span><br><span class="line">#define __AFTER_LOG(N,fmt,...) __NOP</span><br><span class="line"></span><br><span class="line">#endif</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<h5 id="do-…-while-0"><a href="#do-…-while-0" class="headerlink" title="do{…}while(0)"></a>do{…}while(0)</h5><p><a href="http://www.cnblogs.com/lizhenghn/p/3674430.html" target="_blank" rel="noopener">http://www.cnblogs.com/lizhenghn/p/3674430.html</a></p>
+<ol>
+<li>代码中的do{}while(0)可避免使用goto语句</li>
+<li>宏定义中的do{}while(0)可帮助定义复杂的宏以避免错误</li>
+<li><p>避免由空宏引起的警告</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define EMPTYMICRO do&#123;&#125;while(0)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>定义单一的函数块来完成复杂的操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">  如果你有一个复杂的函数，变量很多，而且你不想要增加新的函数，可以使用do&#123;...&#125;while(0)，将你的代码写在里面，里面可以定义变量而不用考虑变量名会同函数之前或者之后的重复。</span><br><span class="line"></span><br><span class="line">  这种情况应该是指一个变量多处使用（但每处的意义还不同），我们可以在每个do-while中缩小作用域。</span><br><span class="line">int key;</span><br><span class="line">string value;</span><br><span class="line">int func()</span><br><span class="line">&#123;</span><br><span class="line">    int key = GetKey();</span><br><span class="line">    string value = GetValue();</span><br><span class="line">    dosomething for key,value;</span><br><span class="line">    do&#123;</span><br><span class="line">        int key;string value;</span><br><span class="line">        dosomething for this key,value;</span><br><span class="line">    &#125;while(0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="空语句"><a href="#空语句" class="headerlink" title="空语句"></a>空语句</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if (condition)</span><br><span class="line">&#123;</span><br><span class="line">	;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="gcc-Wl-option-and-Link-wrap-option"><a href="#gcc-Wl-option-and-Link-wrap-option" class="headerlink" title="gcc -Wl option and Link wrap option"></a>gcc -Wl option and Link wrap option</h5><p><a href="https://gcc.gnu.org/onlinedocs/gcc-7.1.0/gcc/Link-Options.html" target="_blank" rel="noopener">https://gcc.gnu.org/onlinedocs/gcc-7.1.0/gcc/Link-Options.html</a><br><a href="https://sourceware.org/binutils/docs/ld/Options.html" target="_blank" rel="noopener">https://sourceware.org/binutils/docs/ld/Options.html</a></p>
+<p>hogan@ubuntu:/tmp/chef_wrap$ gcc -o waiter_test_wrap chef.c waiter_test_wrap.c -Wl,–wrap,chef_cook -lcmocka<br>hogan@ubuntu:/tmp/chef_wrap$ gcc -o waiter_test_wrap chef.c waiter_test_wrap.c -Wl,–wrap=chef_cook -lcmocka<br>hogan@ubuntu:~/share/framework/cmocka/example/chef_wrap$ gcc -o waiter_test_wrap waiter_test_wrap.c chef.c -lcmocka -Wl,–wrap=chef_cook</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">Wl:	 	Link Options</span><br><span class="line"></span><br><span class="line">-Wl,option</span><br><span class="line"></span><br><span class="line">    Pass option as an option to the linker. If option contains commas, it is split into multiple options at the commas. You can use this syntax to pass an argument to the option. For example, -Wl,-Map,output.map passes -Map output.map to the linker. When using the GNU linker, you can also get the same effect with -Wl,-Map=output.map.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">--wrap=symbol</span><br><span class="line">    Use a wrapper function for symbol. Any undefined reference to symbol will be resolved to __wrap_symbol. Any undefined reference to __real_symbol will be resolved to symbol.</span><br><span class="line"></span><br><span class="line">    This can be used to provide a wrapper for a system function. The wrapper function should be called __wrap_symbol. If it wishes to call the system function, it should call __real_symbol.</span><br><span class="line"></span><br><span class="line">    Here is a trivial example:</span><br><span class="line"></span><br><span class="line">    void *</span><br><span class="line">    __wrap_malloc (size_t c)</span><br><span class="line">    &#123;</span><br><span class="line">        printf (&quot;malloc called with %zu\n&quot;, c);</span><br><span class="line">        return __real_malloc (c);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    If you link other code with this file using --wrap malloc, then all calls to malloc will call the function __wrap_malloc instead. The call to __real_malloc in __wrap_malloc will call the real malloc function.</span><br><span class="line"></span><br><span class="line">    You may wish to provide a __real_malloc function as well, so that links without the --wrap option will succeed. If you do this, you should not put the definition of __real_malloc in the same file as __wrap_malloc; if you do, the assembler may resolve the call before the linker has a chance to wrap it to malloc.</span><br></pre></td></tr></table></figure>
+<h5 id="大小端转换的宏"><a href="#大小端转换的宏" class="headerlink" title="大小端转换的宏"></a>大小端转换的宏</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">typedef unsigned short int uint16;</span><br><span class="line">typedef unsigned long int uint32;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#define BigLittleSwap16(A)        ((((uint16)(A) &amp; 0xff00) &gt;&gt; 8) | \</span><br><span class="line">                                   (((uint16)(A) &amp; 0x00ff) &lt;&lt; 8))</span><br><span class="line"></span><br><span class="line">#define BigLittleSwap32(A)        ((((uint32)(A) &amp; 0xff000000) &gt;&gt; 24) | \</span><br><span class="line">                                   (((uint32)(A) &amp; 0x00ff0000) &gt;&gt; 8) | \</span><br><span class="line">                                   (((uint32)(A) &amp; 0x0000ff00) &lt;&lt; 8) | \</span><br><span class="line">                                   (((uint32)(A) &amp; 0x000000ff) &lt;&lt; 24))</span><br></pre></td></tr></table></figure>
+<h5 id="一段代码判断大小端"><a href="#一段代码判断大小端" class="headerlink" title="一段代码判断大小端"></a>一段代码判断大小端</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">//通过共用体检测CPU的大小端模式</span><br><span class="line">int checkCPU()</span><br><span class="line">&#123;</span><br><span class="line">    short int test = 0x1234;</span><br><span class="line"></span><br><span class="line">    if( *((char *)&amp;test) == 0x12 )     //低地址存放高字节, 则是大端模式</span><br><span class="line">        return 1;</span><br><span class="line">    else</span><br><span class="line">        return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main( int argc, char * argv[] )</span><br><span class="line">&#123;</span><br><span class="line">    /* 1 通过共用体判断大小端模式 */</span><br><span class="line">    if( checkCPU() )</span><br><span class="line">        printf(&quot;Big endian.\n\n&quot;);</span><br><span class="line">    else</span><br><span class="line">        printf(&quot;Little endian.\n\n&quot;);</span><br><span class="line"></span><br><span class="line">    /* 2 用十六进制整型数据判断大小端模式 */</span><br><span class="line">    short int a = 0x1234;</span><br><span class="line">    char x0 , x1, x2;</span><br><span class="line"></span><br><span class="line">    x0 = ( (char *)&amp;a )[0];</span><br><span class="line">    x1 = ( (char *)&amp;a )[1];</span><br><span class="line">    printf( &quot;x0=[%c], x1=[%c]\n&quot;, x0, x1 );</span><br><span class="line">    if( x0 == 0x34 &amp;&amp; x1 == 0x12 )</span><br><span class="line">        printf(&quot;Little endian.\n\n&quot;);</span><br><span class="line">    else</span><br><span class="line">        printf(&quot;Big endian.\n\n&quot;);</span><br><span class="line"></span><br><span class="line">    /* 3 用字符数组判断大小端模式 */</span><br><span class="line">    char b[] = &quot;abc&quot;;</span><br><span class="line">    x0 = b[0];</span><br><span class="line">    x1 = b[1];</span><br><span class="line">    x2 = b[2];</span><br><span class="line">    printf( &quot;x0=[%c], x1=[%c], x2=[%c]\n&quot;, x0, x1, x2 );</span><br><span class="line">    if( x0 == &apos;a&apos; &amp;&amp; x1 == &apos;b&apos; &amp;&amp; x2 == &apos;c&apos; )</span><br><span class="line">        printf(&quot;Little endian.\n&quot;);</span><br><span class="line">    else</span><br><span class="line">        printf(&quot;Big endian.\n&quot;);</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="GCC编译动态链接库"><a href="#GCC编译动态链接库" class="headerlink" title="GCC编译动态链接库"></a>GCC编译动态链接库</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc stub.c -fPIC -shared -o libstub.so</span><br></pre></td></tr></table></figure>
+<h5 id="结构体初始化"><a href="#结构体初始化" class="headerlink" title="结构体初始化"></a>结构体初始化</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">struct point &#123;</span><br><span class="line">	int x;</span><br><span class="line">	int y;</span><br><span class="line">	int z;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">struct point p = &#123;.x = 3, .y = 4, .z = 5&#125;;</span><br></pre></td></tr></table></figure>
+<h5 id="数组名取地址"><a href="#数组名取地址" class="headerlink" title="数组名取地址"></a>数组名取地址</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">在C语言中，对数组名取地址，得到的地址也是数组第一个元素的地址，如果对这个地址执行+1操作，这个+1的步长是整个数组的长度。即对整个数组取地址。可以对比结构体指针理解。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Code:</span><br><span class="line">    #include&lt;stdio.h&gt;</span><br><span class="line">    int main()</span><br><span class="line">    &#123;</span><br><span class="line">        int a[10];</span><br><span class="line"></span><br><span class="line">        printf(&quot;a:/t%p/n&quot;, a);</span><br><span class="line">        printf(&quot;&amp;a:/t%p/n&quot;, &amp;a);</span><br><span class="line">        printf(&quot;a+1:/t%p/n&quot;, a+1);</span><br><span class="line">        printf(&quot;&amp;a+1:/t%p/n&quot;, &amp;a+1);</span><br><span class="line"></span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">大家可以编译运行一下，我的输出的结果是：</span><br><span class="line">Code:</span><br><span class="line"></span><br><span class="line">    /*</span><br><span class="line">    a:          0012FF20</span><br><span class="line">    &amp;a:         0012FF20</span><br><span class="line">    a+1:        0012FF24</span><br><span class="line">    &amp;a+1:       0012FF48</span><br></pre></td></tr></table></figure></ol>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C-C/" rel="tag"># C&C++</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/11/bash-usage/" rel="next" title="Bash使用问题记录">
+                <i class="fa fa-chevron-left"></i> Bash使用问题记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/11/c-plus-plus-program-language-usage/" rel="prev" title="C++语言问题记录">
+                C++语言问题记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Hogan Chen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#原码，反码和补码"><span class="nav-number">1.</span> <span class="nav-text">原码，反码和补码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#浮点数在内存中存放格式"><span class="nav-number">2.</span> <span class="nav-text">浮点数在内存中存放格式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#C数组初始化"><span class="nav-number">3.</span> <span class="nav-text">C数组初始化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#结构体成员赋值"><span class="nav-number">4.</span> <span class="nav-text">结构体成员赋值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#C语言实现变长数组"><span class="nav-number">5.</span> <span class="nav-text">C语言实现变长数组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#特殊符号”-、-”"><span class="nav-number">6.</span> <span class="nav-text">特殊符号”#、##”</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#strstr和strchr的区别"><span class="nav-number">7.</span> <span class="nav-text">strstr和strchr的区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#FILE-LINE-and-func"><span class="nav-number">8.</span> <span class="nav-text">__FILE__, __LINE__ and __func__</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#do-…-while-0"><span class="nav-number">9.</span> <span class="nav-text">do{…}while(0)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#空语句"><span class="nav-number">10.</span> <span class="nav-text">空语句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#gcc-Wl-option-and-Link-wrap-option"><span class="nav-number">11.</span> <span class="nav-text">gcc -Wl option and Link wrap option</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#大小端转换的宏"><span class="nav-number">12.</span> <span class="nav-text">大小端转换的宏</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#一段代码判断大小端"><span class="nav-number">13.</span> <span class="nav-text">一段代码判断大小端</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#GCC编译动态链接库"><span class="nav-number">14.</span> <span class="nav-text">GCC编译动态链接库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#结构体初始化"><span class="nav-number">15.</span> <span class="nav-text">结构体初始化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数组名取地址"><span class="nav-number">16.</span> <span class="nav-text">数组名取地址</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hogan Chen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

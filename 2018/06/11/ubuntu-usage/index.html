@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Linux," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Ubuntu入门教程http://wiki.ubuntu.org.cn/Ubuntu%E6%A1%8C%E9%9D%A2%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97https://help.ubuntu.com/http://wiki.ubuntu.org.cn/%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8%E6%8C%87%E5%BC%">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu使用问题记录">
+<meta property="og:url" content="http://yoursite.com/2018/06/11/ubuntu-usage/index.html">
+<meta property="og:site_name" content="Hogan&#39;s Blog">
+<meta property="og:description" content="Ubuntu入门教程http://wiki.ubuntu.org.cn/Ubuntu%E6%A1%8C%E9%9D%A2%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97https://help.ubuntu.com/http://wiki.ubuntu.org.cn/%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8%E6%8C%87%E5%BC%">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/upload_image/ubuntu-usage/language_support.png">
+<meta property="og:image" content="http://yoursite.com/upload_image/ubuntu-usage/im-config.png">
+<meta property="og:image" content="http://yoursite.com/upload_image/ubuntu-usage/input_method_configuration.png">
+<meta property="og:image" content="http://yoursite.com/upload_image/ubuntu-usage/add_input_method.png">
+<meta property="og:image" content="http://yoursite.com/upload_image/ubuntu-usage/text_entry.png">
+<meta property="og:updated_time" content="2020-06-21T04:16:35.279Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ubuntu使用问题记录">
+<meta name="twitter:description" content="Ubuntu入门教程http://wiki.ubuntu.org.cn/Ubuntu%E6%A1%8C%E9%9D%A2%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97https://help.ubuntu.com/http://wiki.ubuntu.org.cn/%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8%E6%8C%87%E5%BC%">
+<meta name="twitter:image" content="http://yoursite.com/upload_image/ubuntu-usage/language_support.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/11/ubuntu-usage/"/>
+
+
+
+
+
+  <title>ubuntu使用问题记录 | Hogan's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hogan's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/ubuntu-usage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ubuntu使用问题记录</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-11T16:36:20+08:00">
+                2018-06-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ol>
+
+<h5 id="Ubuntu入门教程"><a href="#Ubuntu入门教程" class="headerlink" title="Ubuntu入门教程"></a>Ubuntu入门教程</h5><p><a href="http://wiki.ubuntu.org.cn/Ubuntu%E6%A1%8C%E9%9D%A2%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97" target="_blank" rel="noopener">http://wiki.ubuntu.org.cn/Ubuntu%E6%A1%8C%E9%9D%A2%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97</a><br><a href="https://help.ubuntu.com/" target="_blank" rel="noopener">https://help.ubuntu.com/</a><br><a href="http://wiki.ubuntu.org.cn/%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8%E6%8C%87%E5%BC%95" target="_blank" rel="noopener">http://wiki.ubuntu.org.cn/%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8%E6%8C%87%E5%BC%95</a><br><a href="http://teliute.org/linux/TeUbt/lesson3/lesson3.html" target="_blank" rel="noopener">http://teliute.org/linux/TeUbt/lesson3/lesson3.html</a></p>
+<a id="more"></a>
+<h5 id="Ubuntu快捷键"><a href="#Ubuntu快捷键" class="headerlink" title="Ubuntu快捷键"></a>Ubuntu快捷键</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">长按super(win)键即可显示系统快捷键图</span><br></pre></td></tr></table></figure>
+<h5 id="Ubuntu快速显示桌面"><a href="#Ubuntu快速显示桌面" class="headerlink" title="Ubuntu快速显示桌面"></a>Ubuntu快速显示桌面</h5><p><a href="http://blog.csdn.net/yelangjueqi/article/details/55098099" target="_blank" rel="noopener">http://blog.csdn.net/yelangjueqi/article/details/55098099</a><br><a href="http://blog.csdn.net/u010454729/article/details/45061359" target="_blank" rel="noopener">http://blog.csdn.net/u010454729/article/details/45061359</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">常用快捷方式总结：</span><br><span class="line"></span><br><span class="line">1, 直接点击左边的dock,但是只对程序单窗口时有效</span><br><span class="line">2, 多窗口时，双击左边的dock才能是该程序所有窗口平铺(这个也不错)</span><br><span class="line">3, alt + tab 配合上下左右键</span><br><span class="line">4, alt + `   单程序切换窗口</span><br><span class="line"></span><br><span class="line">5, win+w平铺(这个也不错)</span><br><span class="line"></span><br><span class="line">6, 鼠标移动到左边的dock应用图标上，然后“滚动鼠标的滑轮”，会一个一个把最小化的应用窗口切换出来(功能等同于”　alt + ` “)</span><br><span class="line"></span><br><span class="line">7, win + tab按键，按键切换dock应用</span><br><span class="line"></span><br><span class="line">8, Alt + F: 打开应用程序菜单</span><br><span class="line">9, 开启多个工作区：设置--系统设置--外观--行为: A &quot;开启工作区&quot;打钩　B 添加到”显示桌面“图标到启动器打钩</span><br><span class="line"></span><br><span class="line">10, ”win + D“ 或 &quot;ctrl + win + D&quot;桌面和应用窗口切换</span><br><span class="line"></span><br><span class="line">11, 查看当前系统已经设置的快捷键：设置--系统设置--键盘--快捷键</span><br></pre></td></tr></table></figure>
+<h5 id="Ubuntu显示隐藏目录"><a href="#Ubuntu显示隐藏目录" class="headerlink" title="Ubuntu显示隐藏目录"></a>Ubuntu显示隐藏目录</h5><p><a href="https://www.ubuntudoc.com/show-hidden-files-folders-ubuntu/?lang=zh" target="_blank" rel="noopener">https://www.ubuntudoc.com/show-hidden-files-folders-ubuntu/?lang=zh</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl + H</span><br></pre></td></tr></table></figure></p>
+<h5 id="Ubuntu安装护眼程序Typing-Break"><a href="#Ubuntu安装护眼程序Typing-Break" class="headerlink" title="Ubuntu安装护眼程序Typing Break"></a>Ubuntu安装护眼程序Typing Break</h5><p><a href="https://askubuntu.com/questions/63999/how-can-i-install-typing-break" target="_blank" rel="noopener">https://askubuntu.com/questions/63999/how-can-i-install-typing-break</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">11.10</span><br><span class="line"></span><br><span class="line">Gnome 3 developers have dropped this from gnome-control-center with a recommendation that it be repackaged and available as a separate application. A launchpad wishlist item was requested.</span><br><span class="line"></span><br><span class="line">An alternative in for typing break is workrave. It is now available as a backport:</span><br><span class="line"></span><br><span class="line">sudo apt-get install workrave</span><br><span class="line"></span><br><span class="line">You need to white-list this application to appear in the Unity indicator-applet. Read this question if you want a more detailed explanation about what to do.</span><br><span class="line">12.04</span><br><span class="line"></span><br><span class="line">An enterprising developer has resurrected DrWright for Precise. The package is available from a PPA:</span><br><span class="line"></span><br><span class="line">sudo add-apt-repository ppa:drwright/stable</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install drwright</span><br><span class="line"></span><br><span class="line">12.10,13.10,14.04</span><br><span class="line"></span><br><span class="line">Note, that for 12.10,13.10,14.04 ppa is not up to date, so you have to use precise repositories:</span><br><span class="line"></span><br><span class="line">deb http://ppa.launchpad.net/drwright/stable/ubuntu precise main</span><br><span class="line">deb-src http://ppa.launchpad.net/drwright/stable/ubuntu precise main</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Uubntu 14中，执行add-apt-repository命令后， 修改/etc/apt/sources.list.d/drwright-stable-trusty.list文件内容如下，然后执行update操作，并install，但是在系统设置中也没有type break的设置，待重启验证(不能work)</span><br><span class="line">hogan@ubuntu:/etc/apt/sources.list.d$ cat drwright-stable-trusty.list</span><br><span class="line">deb http://ppa.launchpad.net/drwright/stable/ubuntu precise main</span><br><span class="line"># deb-src http://ppa.launchpad.net/drwright/stable/ubuntu precise main</span><br><span class="line"># deb http://ppa.launchpad.net/drwright/stable/ubuntu trusty main</span><br><span class="line"># deb-src http://ppa.launchpad.net/drwright/stable/ubuntu trusty main</span><br></pre></td></tr></table></figure></p>
+<h5 id="Ubuntu安装Flux色温调节软件"><a href="#Ubuntu安装Flux色温调节软件" class="headerlink" title="Ubuntu安装Flux色温调节软件"></a>Ubuntu安装Flux色温调节软件</h5><p><a href="http://blog.csdn.net/gatieme/article/details/62922164" target="_blank" rel="noopener">http://blog.csdn.net/gatieme/article/details/62922164</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">安装GUI</span><br><span class="line">sudo add-apt-repository ppa:nathan-renniewaldock/flux</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install fluxgui</span><br><span class="line"></span><br><span class="line">安装守护进程</span><br><span class="line">wget https://justgetflux.com/linux/xflux64.tgz</span><br><span class="line">tar -zxvf xflux64.tgz</span><br><span class="line">sudo cp xflux /usr/bin</span><br><span class="line"></span><br><span class="line">打开fluxgui配置经纬度即可</span><br></pre></td></tr></table></figure></p>
+<h5 id="Eyerest-and-workrave"><a href="#Eyerest-and-workrave" class="headerlink" title="Eyerest and workrave"></a>Eyerest and workrave</h5><p><a href="http://blog.csdn.net/gevolution90/article/details/8579069" target="_blank" rel="noopener">http://blog.csdn.net/gevolution90/article/details/8579069</a><br><a href="http://forum.ubuntu.com.cn/viewtopic.php?f=137&amp;t=392969" target="_blank" rel="noopener">http://forum.ubuntu.com.cn/viewtopic.php?f=137&amp;t=392969</a><br><a href="https://github.com/zlbruce/eyerest" target="_blank" rel="noopener">https://github.com/zlbruce/eyerest</a></p>
+<h5 id="Ubuntu安装build-essential"><a href="#Ubuntu安装build-essential" class="headerlink" title="Ubuntu安装build-essential"></a>Ubuntu安装build-essential</h5><p><a href="http://www.cnblogs.com/bing-yu12/p/6384447.html" target="_blank" rel="noopener">http://www.cnblogs.com/bing-yu12/p/6384447.html</a><br><a href="http://blog.163.com/zhangjinqing1234@126/blog/static/307302602009538137113" target="_blank" rel="noopener">http://blog.163.com/zhangjinqing1234@126/blog/static/307302602009538137113</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">linux操作系统上面开发程序， 光有了gcc是不行的，它还需要一个build-essential软件包，作用是提供编译程序必须软件包的列表信息</span><br><span class="line">也就是说 编译程序有了这个软件包，它才知道头文件在哪，才知道库函数在哪，还会下载依赖的软件包，最后才组成一个开发环境</span><br><span class="line">当然build-essential包安装时需要的依赖包，有些你用不上</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install build-essential</span><br></pre></td></tr></table></figure></p>
+<h5 id="Ubuntu安装JRE"><a href="#Ubuntu安装JRE" class="headerlink" title="Ubuntu安装JRE"></a>Ubuntu安装JRE</h5><p><a href="https://linux.cn/article-3792-1.html" target="_blank" rel="noopener">https://linux.cn/article-3792-1.html</a><br><a href="http://zh.wikihow.com/%E5%9C%A8Ubuntu-Linux%E4%B8%8A%E5%AE%89%E8%A3%85Oracle-Java" target="_blank" rel="noopener">http://zh.wikihow.com/%E5%9C%A8Ubuntu-Linux%E4%B8%8A%E5%AE%89%E8%A3%85Oracle-Java</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">1. 查看Java版本</span><br><span class="line">java -version</span><br><span class="line"></span><br><span class="line">2. 如出现以下错误，则表示没有安装jre</span><br><span class="line">    The program ‘java’ can be found in the following packages:</span><br><span class="line">    * default-jre</span><br><span class="line">    * gcj-4.6-jre-headless</span><br><span class="line">    * openjdk-6-jre-headless</span><br><span class="line">    * gcj-4.5-jre-headless</span><br><span class="line">    * openjdk-7-jre-headless</span><br><span class="line">    Try: sudo apt-get install</span><br><span class="line"></span><br><span class="line">3. 安装Oracle JDK</span><br><span class="line">    sudo add-apt-repository ppa:webupd8team/java</span><br><span class="line">    sudo apt-get update</span><br><span class="line">    sudo apt-get install oracle-java8-installer</span><br><span class="line">    sudo apt-get install oracle-java8-set-default</span><br></pre></td></tr></table></figure></p>
+<h5 id="ubuntu安装JDK"><a href="#ubuntu安装JDK" class="headerlink" title="ubuntu安装JDK"></a>ubuntu安装JDK</h5><p><a href="http://topspeedsnail.com/ubuntu16-install-java-jdk/" target="_blank" rel="noopener">http://topspeedsnail.com/ubuntu16-install-java-jdk/</a><br><a href="http://www.cnblogs.com/a2211009/p/4265225.html" target="_blank" rel="noopener">http://www.cnblogs.com/a2211009/p/4265225.html</a><br><a href="http://zh.wikihow.com/%E5%9C%A8Ubuntu-Linux%E4%B8%8A%E5%AE%89%E8%A3%85Oracle-Java" target="_blank" rel="noopener">http://zh.wikihow.com/%E5%9C%A8Ubuntu-Linux%E4%B8%8A%E5%AE%89%E8%A3%85Oracle-Java</a><br><a href="https://www.linuxdashen.com/ubuntu%E5%AE%89%E8%A3%85oracle-java8%E4%BB%A5%E5%8F%8A%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E6%AD%A3%E7%A1%AE%E8%AE%BE%E7%BD%AE%E6%96%B9%E6%B3%95" target="_blank" rel="noopener">https://www.linuxdashen.com/ubuntu%E5%AE%89%E8%A3%85oracle-java8%E4%BB%A5%E5%8F%8A%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E6%AD%A3%E7%A1%AE%E8%AE%BE%E7%BD%AE%E6%96%B9%E6%B3%95</a><br><a href="https://wiki.ubuntu.com.cn/Java%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE" target="_blank" rel="noopener">https://wiki.ubuntu.com.cn/Java%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:webupd8team/java</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">sudo apt-get install oracle-java8-installer</span><br><span class="line"></span><br><span class="line"># 设置Java环境变量，可选，不是必要</span><br><span class="line">sudo apt-get install oracle-java8-set-default</span><br></pre></td></tr></table></figure></p>
+<h5 id="apt命令"><a href="#apt命令" class="headerlink" title="apt命令"></a>apt命令</h5><p><a href="https://linux.cn/article-7364-1.html" target="_blank" rel="noopener">https://linux.cn/article-7364-1.html</a><br><a href="https://my.oschina.net/junn/blog/138803" target="_blank" rel="noopener">https://my.oschina.net/junn/blog/138803</a><br><a href="http://www.cnblogs.com/indiepop/archive/2011/11/10/2244903.html" target="_blank" rel="noopener">http://www.cnblogs.com/indiepop/archive/2011/11/10/2244903.html</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">更新本地数据库</span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">安装软件包</span><br><span class="line">sudo apt-get install &lt;package&gt;</span><br><span class="line"></span><br><span class="line">查找软件包</span><br><span class="line">sudo apt-cache search &lt;package&gt;</span><br><span class="line"></span><br><span class="line">更新已安装的包</span><br><span class="line">sudo apt-get upgrade</span><br><span class="line"></span><br><span class="line">升级系统</span><br><span class="line">sudo apt-get dist-upgrade</span><br><span class="line"></span><br><span class="line">删除软件包</span><br><span class="line">sudo apt-get remove &lt;package&gt;</span><br><span class="line"></span><br><span class="line">删除软件包，包括删除配置文件</span><br><span class="line">sudo apt-get remove --purge &lt;package&gt;</span><br><span class="line">sudo apt-get purge &lt;package&gt;</span><br></pre></td></tr></table></figure></p>
+<h5 id="Ubuntu侧边栏图标"><a href="#Ubuntu侧边栏图标" class="headerlink" title="Ubuntu侧边栏图标"></a>Ubuntu侧边栏图标</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">侧边栏图标位于~/.local/share/applications，可修改，可删除，解决新老版本交替使用的问题</span><br></pre></td></tr></table></figure>
+<h5 id="Eclipse加上侧边栏图标"><a href="#Eclipse加上侧边栏图标" class="headerlink" title="Eclipse加上侧边栏图标"></a>Eclipse加上侧边栏图标</h5><p><a href="https://my.oschina.net/secyaher/blog/274490" target="_blank" rel="noopener">https://my.oschina.net/secyaher/blog/274490</a><br><a href="http://blog.csdn.net/sgzy001/article/details/51901344" target="_blank" rel="noopener">http://blog.csdn.net/sgzy001/article/details/51901344</a><br><a href="http://blog.csdn.net/ustczwc/article/details/9005142" target="_blank" rel="noopener">http://blog.csdn.net/ustczwc/article/details/9005142</a><br><a href="https://www.jianshu.com/p/0209d5d04216" target="_blank" rel="noopener">https://www.jianshu.com/p/0209d5d04216</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">hogan@ubuntu:~/.local/share/applications$ pwd</span><br><span class="line">/home/hogan/.local/share/applications</span><br><span class="line">hogan@ubuntu:~/.local/share/applications$ cat eclipse.desktop</span><br><span class="line">[Desktop Entry]</span><br><span class="line">Encoding=UTF-8</span><br><span class="line">Version=1.0</span><br><span class="line">Type=Application</span><br><span class="line">Name=Eclipse Launcher</span><br><span class="line">Icon=eclipse</span><br><span class="line">Path=/home/hogan/Downloads/eclipse</span><br><span class="line">Exec=/home/hogan/Downloads/eclipse/eclipse/eclipse</span><br><span class="line"># Exec=/home/hogan/Downloads/eclipse/eclipse/eclipse %U</span><br><span class="line">StartupNotify=false</span><br><span class="line">StartupWMClass=Eclipse</span><br><span class="line">OnlyShowIn=Unity;</span><br><span class="line">X-UnityGenerated=true</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">本文将讲述如何将eclipse快捷方式添加到左侧快捷栏</span><br><span class="line"></span><br><span class="line">1. sudo vim /usr/share/applications/eclipse.desktop</span><br><span class="line"></span><br><span class="line">2.添加如下内容到eclipse.desktop中</span><br><span class="line"></span><br><span class="line">[Desktop Entry]</span><br><span class="line">Encoding=UTF-8</span><br><span class="line">Name=Eclipse</span><br><span class="line">Comment=Eclipse IDE</span><br><span class="line">Exec=/home/hunter/tools/adt-bundle/eclipse/eclipse</span><br><span class="line">Icon=/home/hunter/tools/adt-bundle/eclipse/icon.xpm</span><br><span class="line">Terminal=false</span><br><span class="line">StartupNotify=true</span><br><span class="line">Type=Application</span><br><span class="line">Categories=Application;Development;</span><br><span class="line"></span><br><span class="line">其中/home/hunter/tools/adt-bundle/eclipse/为eclipse所在路径</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">3.修改权限</span><br><span class="line"></span><br><span class="line">sudo chmod a+x /usr/share/applications/eclipse.desktop</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">4.将图标拖到左边导航栏</span><br><span class="line"></span><br><span class="line">cd /usr/share/applications/</span><br><span class="line"></span><br><span class="line">nautilus .</span><br><span class="line"></span><br><span class="line">找到eclipse图标，拖到左侧</span><br></pre></td></tr></table></figure></p>
+<h5 id="Ubuntu免密码sudo"><a href="#Ubuntu免密码sudo" class="headerlink" title="Ubuntu免密码sudo"></a>Ubuntu免密码sudo</h5><p><a href="http://www.jianshu.com/p/5d02428f313d" target="_blank" rel="noopener">http://www.jianshu.com/p/5d02428f313d</a><br><a href="http://blog.csdn.net/cor_twi/article/details/44679839" target="_blank" rel="noopener">http://blog.csdn.net/cor_twi/article/details/44679839</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/sudoers.d</span><br><span class="line"></span><br><span class="line">sudo touch nopasswd4sudo</span><br><span class="line"></span><br><span class="line">sudo vi nopasswd4sudo</span><br><span class="line"></span><br><span class="line">输入 yourusername ALL=(ALL) NOPASSWD : ALL</span><br><span class="line"></span><br><span class="line">ESC :wq!</span><br></pre></td></tr></table></figure></p>
+<h5 id="Ubuntu命令行或脚本连接断开wifi"><a href="#Ubuntu命令行或脚本连接断开wifi" class="headerlink" title="Ubuntu命令行或脚本连接断开wifi"></a>Ubuntu命令行或脚本连接断开wifi</h5><p><a href="https://linux.cn/article-4015-1.html" target="_blank" rel="noopener">https://linux.cn/article-4015-1.html</a><br><a href="https://www.deadend.me/2016/08/13/ubuntu-14-04-connect-wifi-via-command-line/" target="_blank" rel="noopener">https://www.deadend.me/2016/08/13/ubuntu-14-04-connect-wifi-via-command-line/</a><br><a href="https://gxnotes.com/article/17300.html" target="_blank" rel="noopener">https://gxnotes.com/article/17300.html</a><br><a href="https://gxnotes.com/article/13806.html" target="_blank" rel="noopener">https://gxnotes.com/article/13806.html</a><br><a href="http://www.jianshu.com/p/4d0fb1d4e055" target="_blank" rel="noopener">http://www.jianshu.com/p/4d0fb1d4e055</a><br><a href="https://wenqixiang.com/linux-wireless-configuration-in-terminal-command-line/" target="_blank" rel="noopener">https://wenqixiang.com/linux-wireless-configuration-in-terminal-command-line/</a></p>
+<p><a href="https://askubuntu.com/questions/522842/ubuntu-14-04-connect-to-a-wifi-network-using-command-line" target="_blank" rel="noopener">https://askubuntu.com/questions/522842/ubuntu-14-04-connect-to-a-wifi-network-using-command-line</a><br><a href="https://askubuntu.com/questions/461825/connect-to-wifi-from-command-line" target="_blank" rel="noopener">https://askubuntu.com/questions/461825/connect-to-wifi-from-command-line</a></p>
+<p><a href="https://askubuntu.com/questions/461825/connect-to-wifi-from-command-line" target="_blank" rel="noopener">https://askubuntu.com/questions/461825/connect-to-wifi-from-command-line</a><br><a href="https://askubuntu.com/questions/294257/connect-to-wifi-network-through-ubuntu-terminal" target="_blank" rel="noopener">https://askubuntu.com/questions/294257/connect-to-wifi-network-through-ubuntu-terminal</a><br><a href="https://askubuntu.com/questions/522842/ubuntu-14-04-connect-to-a-wifi-network-using-command-line" target="_blank" rel="noopener">https://askubuntu.com/questions/522842/ubuntu-14-04-connect-to-a-wifi-network-using-command-line</a><br><a href="https://askubuntu.com/questions/138472/how-do-i-connect-to-a-wpa-wifi-network-using-the-command-line" target="_blank" rel="noopener">https://askubuntu.com/questions/138472/how-do-i-connect-to-a-wpa-wifi-network-using-the-command-line</a></p>
+<p><a href="https://stackoverflow.com/questions/29361296/command-line-connect-to-wireless-network-does-not-work-on-ubuntu-10-04" target="_blank" rel="noopener">https://stackoverflow.com/questions/29361296/command-line-connect-to-wireless-network-does-not-work-on-ubuntu-10-04</a><br><a href="https://stackoverflow.com/questions/21662351/connect-wifi-with-python-or-linux-terminal" target="_blank" rel="noopener">https://stackoverflow.com/questions/21662351/connect-wifi-with-python-or-linux-terminal</a><br><a href="https://stackoverflow.com/questions/32530988/programmatically-connecting-to-a-wifi-network-in-linux" target="_blank" rel="noopener">https://stackoverflow.com/questions/32530988/programmatically-connecting-to-a-wifi-network-in-linux</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">启动、关闭WiFi</span><br><span class="line"></span><br><span class="line"># 启动</span><br><span class="line">nmcli nm wifi on</span><br><span class="line"></span><br><span class="line"># 关闭</span><br><span class="line">nmcli nm wifi off</span><br><span class="line"></span><br><span class="line">连接、断开WiFi</span><br><span class="line"></span><br><span class="line"># 连接</span><br><span class="line">nmcli d wifi connect &lt;WiFiSSID&gt; password &lt;WiFiPassword&gt; iface &lt;WiFiInterface&gt;</span><br><span class="line">nmcli c down id &lt;SavedWiFiConn&gt;</span><br><span class="line"></span><br><span class="line"># 断开</span><br><span class="line">nmcli d disconnect iface &lt;WiFiInterface&gt;</span><br><span class="line">nmcli c up id &lt;SavedWiFiConn&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Ubuntu 16.04</span><br><span class="line"></span><br><span class="line">##disconnect</span><br><span class="line">nmcli d disconnect &lt;WifiInterface&gt;</span><br><span class="line"></span><br><span class="line">##connect</span><br><span class="line">nmcli d connect &lt;WifiInterface&gt;</span><br><span class="line"></span><br><span class="line">Another way:</span><br><span class="line"></span><br><span class="line">##disconnect</span><br><span class="line">nmcli c down &lt;SavedWiFiConn&gt;</span><br><span class="line"></span><br><span class="line">##connect</span><br><span class="line">nmcli c up &lt;SavedWiFiConn&gt;</span><br><span class="line"></span><br><span class="line">Ubuntu 15.10 &amp; previous</span><br><span class="line"></span><br><span class="line">##disconnect</span><br><span class="line">nmcli d disconnect iface &lt;WifiInterface&gt;</span><br><span class="line"></span><br><span class="line">##connect</span><br><span class="line">nmcli d wifi connect &lt;WiFiSSID&gt; password &lt;WiFiPassword&gt; iface &lt;WifiInterface&gt;</span><br><span class="line"></span><br><span class="line">Another way:</span><br><span class="line"></span><br><span class="line">##disconnect:</span><br><span class="line">nmcli c down id &lt;SavedWiFiConn&gt;</span><br><span class="line"></span><br><span class="line">##connect:</span><br><span class="line">nmcli c up id &lt;SavedWiFiConn&gt;</span><br></pre></td></tr></table></figure></p>
+<h5 id="bc除法精度问题"><a href="#bc除法精度问题" class="headerlink" title="bc除法精度问题"></a>bc除法精度问题</h5><p><a href="http://codingstandards.iteye.com/blog/793734" target="_blank" rel="noopener">http://codingstandards.iteye.com/blog/793734</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">hogan@ubuntu:~$ bc</span><br><span class="line">bc 1.06.95</span><br><span class="line">Copyright 1991-1994, 1997, 1998, 2000, 2004, 2006 Free Software Foundation, Inc.</span><br><span class="line">This is free software with ABSOLUTELY NO WARRANTY.</span><br><span class="line">For details type `warranty&apos;.</span><br><span class="line">69 / 4</span><br><span class="line">17</span><br><span class="line">69 / 4.0</span><br><span class="line">17</span><br><span class="line">69 / 4</span><br><span class="line">17</span><br><span class="line"></span><br><span class="line">scale=2</span><br><span class="line">69 / 4</span><br><span class="line">17.25</span><br><span class="line">100 / 5</span><br><span class="line">20.00</span><br></pre></td></tr></table></figure></p>
+<h5 id="ubuntu使用ibus或者fcitx框架输入法"><a href="#ubuntu使用ibus或者fcitx框架输入法" class="headerlink" title="ubuntu使用ibus或者fcitx框架输入法"></a>ubuntu使用ibus或者fcitx框架输入法</h5><p>Ubuntu默认安装了ibus和fcitx的输入法框架，而且默认的输入法框架为ibus</p>
+<ol>
+<li><p>设置fcitx输入法框架<br>System Settings -&gt; Language Support，添加中文语言，并修改keyboard input method system为fcitx<br><img src="/upload_image/ubuntu-usage/language_support.png" alt="language_support.png"></p>
+<p> 也可以通过终端启动im-config切换输入法框架，点击OK按钮，再点击Yes按钮，将fcitx设为默认的输入法框架，最后点击OK。<br><img src="/upload_image/ubuntu-usage/im-config.png" alt="im-config.png"></p>
+</li>
+<li><p>打开终端，并运行fcitx-configtool<br><img src="/upload_image/ubuntu-usage/input_method_configuration.png" alt="input_method_configuration.png"></p>
+</li>
+<li><p>点击右下角的+图标添加新的输入法，并取消“only show current language”，在下边搜索框搜索需要添加的输入法<br><img src="/upload_image/ubuntu-usage/add_input_method.png" alt="add_input_method.png"></p>
+</li>
+<li><p>重启系统生效</p>
+</li>
+<li><p>如果 Fcitx 没有随桌面环境自动启动，或者您想修改下 Fcitx 启动参数，请用桌面环境提供的自动启动工具配置，或者直接编辑用户目录~/.config/autostart/ 下的 fcitx-autostart.desktop 文件以确认自动启动是否被禁用。如果用户目录下的文件并不存在，您可以复制自动启动文件 /etc/xdg/autostart/fcitx-autostart.desktop 到用户目录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cp /etc/xdg/autostart/fcitx-autostart.desktop ~/.config/autostart/</span><br><span class="line"></span><br><span class="line">如果您使用的桌面环境并不自动支持 XDG, 请在您使用的启动脚本里面添加：</span><br><span class="line"></span><br><span class="line"> fcitx</span><br><span class="line"></span><br><span class="line">以实现自动启动。</span><br><span class="line"></span><br><span class="line">注意: 当 iBus 等其它输入法程序同时启动且开启了 Xim 支持时, 可能会害 Fcitx 启动不了，请确保已禁用了其它输入法程序的自动启动。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可在text entry添加中文，可省略该操作<br>System Settings -&gt; Text Entry<br><img src="/upload_image/ubuntu-usage/text_entry.png" alt="text_entry.png"></p>
+</li>
+<li><p>由于Fcitx易于崩溃，明明切换到了搜狗拼音输入法，但是还是只能输入英文字符。可通过如下shell脚本重启</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#! /bin/bash</span><br><span class="line"></span><br><span class="line"># pidof fcitx | xargs kill -9</span><br><span class="line"># pidof sogou-qimpanel | xargs kill -9</span><br><span class="line"></span><br><span class="line">killall -9 fcitx</span><br><span class="line">killall -9 sogou-qimpanel</span><br><span class="line"></span><br><span class="line">rm -rf ~/.config/SogouPY</span><br><span class="line">rm -rf ~/.config/SogouPY.users</span><br><span class="line">rm -rf ~/.config/sogou-qimpanel</span><br><span class="line"></span><br><span class="line">nohup fcitx &gt; /dev/null 2&gt;&amp;1 &amp;</span><br><span class="line">nohup sogou-qimpanel &gt; /dev/null 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Fcitx如果不能开机自启<br>fcitx 不能开机自启，是因为 fctix 在安装时未能在/etc/xdg/autostart/ 目录下添加开机自动启动配置文件。</p>
+<p> 解决方法:<br> 1). Ctrl + Alt + T 打开终端，输入fcitx –version ，然后终端会显示你安装的版本号。<br> 在fcitx官网上下载你对应版本的 fcitx 安装包，比如说我对应的版本为fcitx-4.2.9.1.tar.xz<br> 解压后，在目录./fcitx-4.2.X.X/data/ 你可以找到一个名为 fcitx-autostart.desktop.in 重命名为 fcitx-autostart.desktop 然后拷贝到 /etc/xdg/autostart/ 目录下，重启你会发现右上角有输入法的选项了。</p>
+<p> 2). 把下面这段代码粘贴到根目录的.xprofile文件中（如果不存在这个文件，则新建一个。<br> cd  ~/<br> sudo vim .xprofile</p>
+<p> 输入如下内容，保存退出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export LC_ALL=zh_CN.utf8</span><br><span class="line">export XMODIFIERS=@im=fcitx</span><br><span class="line">export QT_IM_MODULE=xim</span><br><span class="line">export GTK_IM_MODULE=xim</span><br><span class="line">fcitx -d</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>参考链接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">https://wiki.archlinux.org/index.php/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</span><br><span class="line">https://www.linuxdashen.com/ubuntu%E5%AE%89%E8%A3%85%E8%B0%B7%E6%AD%8C%E6%8B%BC%E9%9F%B3%E8%BE%93%E5%85%A5%E6%B3%95%EF%BC%88fcitx%E8%BE%93%E5%85%A5%E6%B3%95%E6%A1%86%E6%9E%B6%EF%BC%89</span><br><span class="line">http://jingyan.baidu.com/article/4b07be3c60da3f48b380f3f0.html</span><br><span class="line">http://jingyan.baidu.com/article/adc815134f4b92f722bf7350.html</span><br><span class="line">http://blog.csdn.net/rflyee/article/details/9472579</span><br><span class="line">http://blog.csdn.net/tecn14/article/details/24784047</span><br><span class="line">https://my.oschina.net/eechen/blog/224291</span><br><span class="line">https://www.findhao.net/res/786</span><br><span class="line">http://www.xbatu.com/node/251</span><br><span class="line">http://yuenshome.space/?p=4378</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="ubuntu手动更新"><a href="#ubuntu手动更新" class="headerlink" title="ubuntu手动更新"></a>ubuntu手动更新</h5><p><a href="http://www.jb51.net/os/Ubuntu/397838.html" target="_blank" rel="noopener">http://www.jb51.net/os/Ubuntu/397838.html</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Dash中搜索update， software updater或软件更新器</span><br></pre></td></tr></table></figure></p>
+<h5 id="sudo-apt-get-update错误"><a href="#sudo-apt-get-update错误" class="headerlink" title="sudo apt-get update错误"></a>sudo apt-get update错误</h5><p><a href="http://blog.csdn.net/u013038461/article/details/39519449" target="_blank" rel="noopener">http://blog.csdn.net/u013038461/article/details/39519449</a><br><a href="http://forum.ubuntu.com.cn/viewtopic.php?f=48&amp;t=462924" target="_blank" rel="noopener">http://forum.ubuntu.com.cn/viewtopic.php?f=48&amp;t=462924</a></p>
+<p><a href="http://www.voidcn.com/article/p-wkhqksva-pp.html" target="_blank" rel="noopener">http://www.voidcn.com/article/p-wkhqksva-pp.html</a><br><a href="http://www.cppblog.com/deercoder/archive/2011/10/19/158705.html" target="_blank" rel="noopener">http://www.cppblog.com/deercoder/archive/2011/10/19/158705.html</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">运行命令 sudo apt-get update 出现错误：</span><br><span class="line"></span><br><span class="line">GPG error: http://archive.ubuntu.com trusty-updates InRelease: Clearsigned file isn&apos;t valid, got &apos;NODATA&apos; (does the network require authentication?)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">解决方法：</span><br><span class="line">sudo apt-get clean</span><br><span class="line"></span><br><span class="line">sudo mv /var/lib/apt/lists  /var/lib/apt/lists.broke</span><br><span class="line"></span><br><span class="line">sudo mkdir -p /var/lib/apt/lists/partial</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">方法来自：http://askubuntu.com/a/512173/198920，该方法对本人的电脑有效。</span><br><span class="line"></span><br><span class="line">要是无效的话，还可以参考http://forum.ubuntu.org.cn/viewtopic.php?f=48&amp;t=464134</span><br></pre></td></tr></table></figure></p>
+<h5 id="Wine安装"><a href="#Wine安装" class="headerlink" title="Wine安装"></a>Wine安装</h5><p><a href="http://wiki.ubuntu.org.cn/Wine" target="_blank" rel="noopener">http://wiki.ubuntu.org.cn/Wine</a><br><a href="https://wiki.winehq.org/Main_Page" target="_blank" rel="noopener">https://wiki.winehq.org/Main_Page</a><br><a href="https://www.ibm.com/developerworks/cn/linux/l-wine/" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/linux/l-wine/</a><br><a href="https://zh.wikihow.com/%E5%9C%A8Ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%AE%89%E8%A3%85Wine" target="_blank" rel="noopener">https://zh.wikihow.com/%E5%9C%A8Ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%AE%89%E8%A3%85Wine</a><br><a href="https://wiki.archlinux.org/index.php/Wine_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)" target="_blank" rel="noopener">https://wiki.archlinux.org/index.php/Wine_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</a><br><a href="http://blog.csdn.net/Lina_ACM/article/details/65627249" target="_blank" rel="noopener">http://blog.csdn.net/Lina_ACM/article/details/65627249</a><br><a href="https://linux.cn/thread-3436-1-1.html" target="_blank" rel="noopener">https://linux.cn/thread-3436-1-1.html</a><br><a href="https://lado.me/2017/04/27/wine-run-windows-program-on-linux/" target="_blank" rel="noopener">https://lado.me/2017/04/27/wine-run-windows-program-on-linux/</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">安装源中的wine</span><br><span class="line"></span><br><span class="line">sudo apt-get install wine&lt;/PPA&gt;</span><br><span class="line">因为版本比较旧，所以通常不用，改用PPA中的wine。</span><br><span class="line"></span><br><span class="line">==安装最新版 wine==</span><br><span class="line"></span><br><span class="line">ubuntu 官方自带了 wine ，但是推荐用 winehq 官方提供的最新版本 wine ，新版本解决了很多以前显得麻烦的问题。</span><br><span class="line"></span><br><span class="line">PPA地址：https://launchpad.net/~wine/+archive/ubuntu/wine-builds</span><br><span class="line">&lt;pre&gt;sudo add-apt-repository ppa:wine/wine-builds</span><br><span class="line"></span><br><span class="line">（这里应该在（ubuntu14.10）“设置→软件和更新→其他软件”里给上面的那个地址打对勾）然后安装：</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install wine</span><br><span class="line">sudo apt-get install wine-devel</span><br><span class="line">sudo apt-get install wine-staging</span><br><span class="line"></span><br><span class="line">上面install命令是三选一，要注意，若安装 wine 包是老的稳定版，新开发版本是 wine-devel ，经常有不少优化和修正。</span><br><span class="line"></span><br><span class="line">如果愿意安装比 devel 稍微更 devel 的 staging 版本的话，可以试试 wine-staging。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">1、安装源</span><br><span class="line">      sudo add-apt-repository ppa:wine/wine-builds</span><br><span class="line">      sudo apt-get update</span><br><span class="line">2、安装wine</span><br><span class="line">     sudo apt-get install --install-recommends wine-staging</span><br><span class="line">     sudo apt-get install winehq-staging</span><br><span class="line">3、卸载wine</span><br><span class="line">     1).卸载wine主程序，在终端里输入：</span><br><span class="line">       sudo apt-get remove --purge wine</span><br><span class="line">     2).然后删除wine的目录文件：</span><br><span class="line">       rm -r ~/.wine</span><br><span class="line">     3).卸载残留不用的软件包：</span><br><span class="line">       sudo apt-get autoremove</span><br></pre></td></tr></table></figure></p>
+<h5 id="Wine使用"><a href="#Wine使用" class="headerlink" title="Wine使用"></a>Wine使用</h5><p><a href="http://wiki.ubuntu.org.cn/UbuntuHelp:Wine/zh" target="_blank" rel="noopener">http://wiki.ubuntu.org.cn/UbuntuHelp:Wine/zh</a><br><a href="https://lado.me/2017/04/27/wine-run-windows-program-on-linux/" target="_blank" rel="noopener">https://lado.me/2017/04/27/wine-run-windows-program-on-linux/</a><br><a href="http://wiki.ubuntu.org.cn/Wine%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B" target="_blank" rel="noopener">http://wiki.ubuntu.org.cn/Wine%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B</a><br><a href="http://wiki.ubuntu.org.cn/Wine%E6%93%8D%E4%BD%9C%E6%8A%80%E5%B7%A7" target="_blank" rel="noopener">http://wiki.ubuntu.org.cn/Wine%E6%93%8D%E4%BD%9C%E6%8A%80%E5%B7%A7</a><br><a href="http://forum.ubuntu.org.cn/viewtopic.php?t=72933" target="_blank" rel="noopener">http://forum.ubuntu.org.cn/viewtopic.php?t=72933</a><br><a href="http://ghoulich.xninja.org/2016/08/09/install-and-use-wine-on-centos/" target="_blank" rel="noopener">http://ghoulich.xninja.org/2016/08/09/install-and-use-wine-on-centos/</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Ubuntu系统中，侧边栏最上面的图标叫dash快速启动，而整个侧边栏叫launcher，可在侧边栏的任意图标上右键，有unlock from launchers选项，通过Wine安装好的应用程序都可以在Dash中搜索到，这时只需要将搜索到图标拖放到launcher上即可，也可以通过运行命令行运行后，在侧边栏上右键单击并选择lock to launcher即可，对非Wine安装的应用程序也可以如此操作添加到侧边栏快速启动。</span><br><span class="line"></span><br><span class="line">Wine的桌面快捷方式为.desktop的文件，位于~/Desktop目录下，格式如下：</span><br><span class="line">hogan@ubuntu:~/Desktop$ pwd</span><br><span class="line">/home/hogan/Desktop</span><br><span class="line">hogan@ubuntu:~/Desktop$ ls</span><br><span class="line">Notepad++ (copy).desktop  Source Insight 3.desktop  Source Insight 4.0.desktop</span><br><span class="line">hogan@ubuntu:~/Desktop$ cat Source\ Insight\ 4.0.desktop</span><br><span class="line">[Desktop Entry]</span><br><span class="line">Name=Source Insight 4.0</span><br><span class="line">Exec=env WINEPREFIX=&quot;/home/hogan/.wine&quot; wine C:\\\\Program\\ Files\\ \\(x86\\)\\\\Source\\ Insight\\ 4.0\\\\sourceinsight4.exe</span><br><span class="line">Type=Application</span><br><span class="line">StartupNotify=true</span><br><span class="line">Icon=1E94_NewShortcut11_9B96954BC5A741EBA38089DC96765DF7.0</span><br><span class="line">hogan@ubuntu:~/Desktop$</span><br></pre></td></tr></table></figure></p>
+<h5 id="Ubuntu添加桌面快捷方式"><a href="#Ubuntu添加桌面快捷方式" class="headerlink" title="Ubuntu添加桌面快捷方式"></a>Ubuntu添加桌面快捷方式</h5><p><a href="https://www.ibm.com/developerworks/cn/linux/l-cn-dtef/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/linux/l-cn-dtef/index.html</a><br><a href="http://www.flakor.cn/2014-11-26-796.html" target="_blank" rel="noopener">http://www.flakor.cn/2014-11-26-796.html</a></p>
+<p><a href="https://my.oschina.net/Obahua/blog/110612" target="_blank" rel="noopener">https://my.oschina.net/Obahua/blog/110612</a><br><a href="http://www.cnblogs.com/librena/p/6726489.html" target="_blank" rel="noopener">http://www.cnblogs.com/librena/p/6726489.html</a><br><a href="https://www.techforgeek.info/ubuntu_desktop_file.html" target="_blank" rel="noopener">https://www.techforgeek.info/ubuntu_desktop_file.html</a><br><a href="https://linux.cn/article-2289-1.html" target="_blank" rel="noopener">https://linux.cn/article-2289-1.html</a><br><a href="http://www.jb51.net/os/Ubuntu/84222.html" target="_blank" rel="noopener">http://www.jb51.net/os/Ubuntu/84222.html</a><br><a href="http://blog.csdn.net/golden1314521/article/details/32179811" target="_blank" rel="noopener">http://blog.csdn.net/golden1314521/article/details/32179811</a><br><a href="https://www.jianshu.com/p/0209d5d04216" target="_blank" rel="noopener">https://www.jianshu.com/p/0209d5d04216</a></p>
+<h5 id="Ubuntu添加快捷方式到dash或launcher"><a href="#Ubuntu添加快捷方式到dash或launcher" class="headerlink" title="Ubuntu添加快捷方式到dash或launcher"></a>Ubuntu添加快捷方式到dash或launcher</h5><p><a href="https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html" target="_blank" rel="noopener">https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html</a><br><a href="https://my.oschina.net/Obahua/blog/110612" target="_blank" rel="noopener">https://my.oschina.net/Obahua/blog/110612</a><br><a href="http://blog.csdn.net/johnnycode/article/details/17848291" target="_blank" rel="noopener">http://blog.csdn.net/johnnycode/article/details/17848291</a><br><a href="http://www.cnblogs.com/librena/p/6726489.html" target="_blank" rel="noopener">http://www.cnblogs.com/librena/p/6726489.html</a><br><a href="http://hahaya.github.io/add-software-ico-to-launcher/" target="_blank" rel="noopener">http://hahaya.github.io/add-software-ico-to-launcher/</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">经常在Ubuntu下安装绿色软件，之前只能将快捷方式放到桌面上，感觉不方便。</span><br><span class="line"></span><br><span class="line">其实设置很简单，总结一下，好脑子不如烂笔头！</span><br><span class="line"></span><br><span class="line">1.在 /usr/share/applications 目录下增加 sublime.desktop 文件，注意权限！</span><br><span class="line">[plain] view plain copy</span><br><span class="line"></span><br><span class="line">    $ sudo vim /usr/share/applications/sublime_test.desktop</span><br><span class="line"></span><br><span class="line">2.添加如下内容，然后保存。</span><br><span class="line"></span><br><span class="line">[plain] view plain copy</span><br><span class="line"></span><br><span class="line">    [Desktop Entry</span><br><span class="line">    Name=Sublime Text 2</span><br><span class="line">    Type=Application</span><br><span class="line">    Terminal=false</span><br><span class="line">    Comment=Edit text files</span><br><span class="line">    Exec=/home/john/Dev/SublimeText2/sublime_text %F</span><br><span class="line">    Icon=/home/john/Dev/SublimeText2/Icon/48x48/sublime_text.png</span><br><span class="line"></span><br><span class="line">3.搞定，直接在Dash中检索sublime 然后将图标拖到 Launcher 上即可。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">特别注意（配置建议！）：</span><br><span class="line"></span><br><span class="line">1、配置信息中路径不要使用引号(最好不要有空格)。</span><br><span class="line"></span><br><span class="line">2、复制以上代码时注意每行末尾不要有空格。</span><br></pre></td></tr></table></figure></p>
+<h5 id="wine安装程序桌面快捷方式备份"><a href="#wine安装程序桌面快捷方式备份" class="headerlink" title="wine安装程序桌面快捷方式备份"></a>wine安装程序桌面快捷方式备份</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Source Insight</span><br><span class="line">command: env WINEPREFIX=&quot;/home/hogan/.wine&quot; wine C:\\Program\ Files\ \(x86\)\\Source\ Insight\ 3\\Insight3.exe</span><br><span class="line"></span><br><span class="line">Source Insight 4.0</span><br><span class="line">command: env WINEPREFIX=&quot;/home/hogan/.wine&quot; wine C:\\Program\ Files\ \(x86\)\\Source\ Insight\ 4.0\\sourceinsight4.exe</span><br><span class="line"></span><br><span class="line">Notepad++</span><br><span class="line">正确任务栏图标(Notepad++图标)</span><br><span class="line">command: env WINEPREFIX=&quot;/home/hogan/.wine&quot; wine C:\\Program\ Files\ \(x86\)\\Notepad++\\notepad++.exe</span><br><span class="line"></span><br><span class="line">错误任务栏图标(wine launcher启动的应用程序图标，显示为红酒杯图标，所有通过在命令行执行&quot;wine &lt;program name&gt;&quot;启动的程序都是红酒杯图标，而通过wine安装应用程序时创建的桌面快捷方式，通过快捷方式启动后，任务栏的图标为程序的原始图标)</span><br><span class="line">command: env WINEPREFIX=&quot;/home/hogan/.wine&quot; wine C:\\windows\\command\\start.exe /Unix /home/hogan/.wine/dosdevices/c:/users/Public/Desktop/Notepad++.lnk</span><br><span class="line"></span><br><span class="line">欧路词典</span><br><span class="line">command: env WINEPREFIX=&quot;/home/hogan/.wine&quot; wine C:\\Program\ Files\ \(x86\)\\eudic\\eudic.exe</span><br></pre></td></tr></table></figure>
+<h5 id="Wine卸载软件"><a href="#Wine卸载软件" class="headerlink" title="Wine卸载软件"></a>Wine卸载软件</h5><p><a href="http://forum.ubuntu.org.cn/viewtopic.php?t=65231" target="_blank" rel="noopener">http://forum.ubuntu.org.cn/viewtopic.php?t=65231</a><br><a href="http://blog.csdn.net/ustczwc/article/details/8956231" target="_blank" rel="noopener">http://blog.csdn.net/ustczwc/article/details/8956231</a><br><a href="http://blog.csdn.net/tongxxhaha/article/details/76875188" target="_blank" rel="noopener">http://blog.csdn.net/tongxxhaha/article/details/76875188</a><br><a href="http://www.cnblogs.com/jackchiang/p/4072621.html" target="_blank" rel="noopener">http://www.cnblogs.com/jackchiang/p/4072621.html</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">1. 命令行方式</span><br><span class="line">到程序的目录里面</span><br><span class="line">~/.wine/drive_c/Program Files/*****</span><br><span class="line">wine 卸载程序名.exe</span><br><span class="line"></span><br><span class="line">2. GUI方式</span><br><span class="line">命令行输入wine uninstaller，然后GUI方式卸载软件</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> 很多朋友尝试在Ubuntu中用wine安装exe格式的应用程序，但经常遇到装完之后启动程序就崩溃、或者根本无法启动、无法使用的情况，于是想立即把安装的程序卸载，可是在wine中却找不到卸载exe软件的方式，今天就给大家分享一下wine卸载exe软件的两个方法：</span><br><span class="line"></span><br><span class="line">1、删除法</span><br><span class="line"></span><br><span class="line">　　Ubuntu系统安装的软件会分布在很多不同的目录，即使使用wine模拟windows安装也会如此；</span><br><span class="line"></span><br><span class="line">　　wine会在/home下的用户名目录生成三个隐藏的文件夹 .wine、.local、.config ，默认是看不到的，通过按快捷键 ctrl+H 才能显示出来，进入 .wine 文件夹可以看到 drive_c 文件夹，这是wine自动生成的虚拟 C盘，里面有类似windows系统盘的目录结构，在里面找到需要卸载的软件文件夹删除；</span><br><span class="line"></span><br><span class="line">　　接着找到/home/用户名目录/.local/share/applications/wine/Programs，将软件对应的文件删除；</span><br><span class="line"></span><br><span class="line">　　最后/home/用户名目录/.config/menus/applications-merged，将软件对应的文件删除；</span><br><span class="line"></span><br><span class="line">　　如果您没有找到如上的文件夹，只需要按 ctrl+F 搜索软件名，把搜索结果中的文件夹和文件删除就可以。</span><br><span class="line"></span><br><span class="line">2、命令行</span><br><span class="line"></span><br><span class="line">　　如果您觉得上述方法比较繁琐，还可以通过在终端输入wine命令来卸载软件，但需要该软件含有类似 uninstall.exe 的卸载程序；</span><br><span class="line"></span><br><span class="line">　　ctrl+alt+T打开终端，cd进入软件uninstall.exe所在的目录，输入wine uninstall.exe 即可执行卸载程序，Ubuntu对字符大小写要求很严格，若在终端中手动输入请您务必区分大小写；</span><br><span class="line"></span><br><span class="line">　　如果您想删掉所有.exe格式的软件，可以使用 wine uninstaller 命令。</span><br><span class="line"></span><br><span class="line">　　如果您觉得wine不好用，想要卸载，可以执行 sudo apt-get remove --purge wine 即可卸载wine；</span><br><span class="line"></span><br><span class="line">　　如果您发现已卸载软件的图标还存在于dash中，可进入/home/用户名目录/Desktop ，删除对应的图标即可。</span><br><span class="line"></span><br><span class="line">deb格式软件的卸载：</span><br><span class="line"></span><br><span class="line">　　顺道写上如何卸载deb格式的文件同时删除配置文件：sudo dpkg -p 文件名，输入以后回车即可。</span><br></pre></td></tr></table></figure></p>
+<h5 id="Ubuntu桌面图标不显示"><a href="#Ubuntu桌面图标不显示" class="headerlink" title="Ubuntu桌面图标不显示"></a>Ubuntu桌面图标不显示</h5><p><a href="https://www.coder4.com/archives/4307" target="_blank" rel="noopener">https://www.coder4.com/archives/4307</a><br><a href="http://www.oschina.net/question/54100_9404" target="_blank" rel="noopener">http://www.oschina.net/question/54100_9404</a><br><a href="http://www.it610.com/article/4462067.htm" target="_blank" rel="noopener">http://www.it610.com/article/4462067.htm</a><br><a href="http://forum.ubuntu.org.cn/viewtopic.php?t=472401" target="_blank" rel="noopener">http://forum.ubuntu.org.cn/viewtopic.php?t=472401</a><br><a href="http://www.th7.cn/system/lin/201709/227486.shtml" target="_blank" rel="noopener">http://www.th7.cn/system/lin/201709/227486.shtml</a><br><a href="http://blog.csdn.net/ch_dq/article/details/60578941" target="_blank" rel="noopener">http://blog.csdn.net/ch_dq/article/details/60578941</a><br><a href="http://sourcedigit.com/13322-fix-unity-freezes-login-ubuntu-14-10-utopic-unicorn/" target="_blank" rel="noopener">http://sourcedigit.com/13322-fix-unity-freezes-login-ubuntu-14-10-utopic-unicorn/</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">如题。升级到14.04后，原先通过gconf-editor设置的方法失效了。</span><br><span class="line"></span><br><span class="line">实际上，14.04转而使用dconf-editor了。。</span><br><span class="line">sudo apt-get install dconf-editor</span><br><span class="line"></span><br><span class="line">然后找到：</span><br><span class="line"></span><br><span class="line">org.gnome.nautilus.desktop</span><br><span class="line"></span><br><span class="line">这下面的值分别代表了图标，不解释了，找到需要的设置为true即可。</span><br></pre></td></tr></table></figure></p>
+<h5 id="工具推荐"><a href="#工具推荐" class="headerlink" title="工具推荐"></a>工具推荐</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">1. 串口工具</span><br><span class="line">cutecom</span><br><span class="line"></span><br><span class="line">2. 网络监测</span><br><span class="line">nethogs</span><br><span class="line"></span><br><span class="line">3. 网络监听</span><br><span class="line">netcat / nc</span><br><span class="line"></span><br><span class="line">4. 网络调试</span><br><span class="line">tracepath</span><br><span class="line"></span><br><span class="line">5. socket调试工具</span><br><span class="line">http://www.hangge.com/blog/cache/detail_1328.html</span><br><span class="line">https://www.zendstudio.net/archives/tcp-udp-socket-toolkit/</span><br><span class="line"></span><br><span class="line">sockettest</span><br><span class="line">http://sockettest.sourceforge.net/</span><br><span class="line">https://github.com/akshath/SocketTest</span><br><span class="line"></span><br><span class="line">Hercules</span><br><span class="line">http://www.hw-group.com/products/hercules/index_en.html</span><br><span class="line">https://stackoverflow.com/questions/515328/good-tool-for-testing-socket-connections</span><br><span class="line"></span><br><span class="line">sokit</span><br><span class="line">https://github.com/sinpolib/sokit</span><br><span class="line"></span><br><span class="line">6. TCP/UDP test tool</span><br><span class="line">http://www.simplecomtools.com/productcart/pc/viewCategories.asp?idCategory=5</span><br><span class="line"></span><br><span class="line">7. SocketSniffer</span><br><span class="line">http://www.nirsoft.net/utils/socket_sniffer.html</span><br></pre></td></tr></table></figure>
+<h5 id="bashrc-backup"><a href="#bashrc-backup" class="headerlink" title=".bashrc backup"></a>.bashrc backup</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br></pre></td><td class="code"><pre><span class="line">hogan@ubuntu:~$ cat .bashrc</span><br><span class="line"># ~/.bashrc: executed by bash(1) for non-login shells.</span><br><span class="line"># see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)</span><br><span class="line"># for examples</span><br><span class="line"></span><br><span class="line"># If not running interactively, don&apos;t do anything</span><br><span class="line">case $- in</span><br><span class="line">    *i*) ;;</span><br><span class="line">      *) return;;</span><br><span class="line">esac</span><br><span class="line"></span><br><span class="line"># don&apos;t put duplicate lines or lines starting with space in the history.</span><br><span class="line"># See bash(1) for more options</span><br><span class="line">HISTCONTROL=ignoreboth</span><br><span class="line"></span><br><span class="line"># append to the history file, don&apos;t overwrite it</span><br><span class="line">shopt -s histappend</span><br><span class="line"></span><br><span class="line"># for setting history length see HISTSIZE and HISTFILESIZE in bash(1)</span><br><span class="line">HISTSIZE=1000</span><br><span class="line">HISTFILESIZE=2000</span><br><span class="line"></span><br><span class="line"># check the window size after each command and, if necessary,</span><br><span class="line"># update the values of LINES and COLUMNS.</span><br><span class="line">shopt -s checkwinsize</span><br><span class="line"></span><br><span class="line"># If set, the pattern &quot;**&quot; used in a pathname expansion context will</span><br><span class="line"># match all files and zero or more directories and subdirectories.</span><br><span class="line">#shopt -s globstar</span><br><span class="line"></span><br><span class="line"># make less more friendly for non-text input files, see lesspipe(1)</span><br><span class="line">[ -x /usr/bin/lesspipe ] &amp;&amp; eval &quot;$(SHELL=/bin/sh lesspipe)&quot;</span><br><span class="line"></span><br><span class="line"># set variable identifying the chroot you work in (used in the prompt below)</span><br><span class="line">if [ -z &quot;$&#123;debian_chroot:-&#125;&quot; ] &amp;&amp; [ -r /etc/debian_chroot ]; then</span><br><span class="line">    debian_chroot=$(cat /etc/debian_chroot)</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"># set a fancy prompt (non-color, unless we know we &quot;want&quot; color)</span><br><span class="line">case &quot;$TERM&quot; in</span><br><span class="line">    xterm-color) color_prompt=yes;;</span><br><span class="line">esac</span><br><span class="line"></span><br><span class="line"># uncomment for a colored prompt, if the terminal has the capability; turned</span><br><span class="line"># off by default to not distract the user: the focus in a terminal window</span><br><span class="line"># should be on the output of commands, not on the prompt</span><br><span class="line">#force_color_prompt=yes</span><br><span class="line"></span><br><span class="line">if [ -n &quot;$force_color_prompt&quot; ]; then</span><br><span class="line">    if [ -x /usr/bin/tput ] &amp;&amp; tput setaf 1 &gt;&amp;/dev/null; then</span><br><span class="line">	# We have color support; assume it&apos;s compliant with Ecma-48</span><br><span class="line">	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such</span><br><span class="line">	# a case would tend to support setf rather than setaf.)</span><br><span class="line">	color_prompt=yes</span><br><span class="line">    else</span><br><span class="line">	color_prompt=</span><br><span class="line">    fi</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [ &quot;$color_prompt&quot; = yes ]; then</span><br><span class="line">    PS1=&apos;$&#123;debian_chroot:+($debian_chroot)&#125;\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ &apos;</span><br><span class="line">else</span><br><span class="line">    PS1=&apos;$&#123;debian_chroot:+($debian_chroot)&#125;\u@\h:\w\$ &apos;</span><br><span class="line">fi</span><br><span class="line">unset color_prompt force_color_prompt</span><br><span class="line"></span><br><span class="line"># If this is an xterm set the title to user@host:dir</span><br><span class="line">case &quot;$TERM&quot; in</span><br><span class="line">xterm*|rxvt*)</span><br><span class="line">    PS1=&quot;\[\e]0;$&#123;debian_chroot:+($debian_chroot)&#125;\u@\h: \w\a\]$PS1&quot;</span><br><span class="line">    ;;</span><br><span class="line">*)</span><br><span class="line">    ;;</span><br><span class="line">esac</span><br><span class="line"></span><br><span class="line"># enable color support of ls and also add handy aliases</span><br><span class="line">if [ -x /usr/bin/dircolors ]; then</span><br><span class="line">    test -r ~/.dircolors &amp;&amp; eval &quot;$(dircolors -b ~/.dircolors)&quot; || eval &quot;$(dircolors -b)&quot;</span><br><span class="line">    alias ls=&apos;ls --color=auto&apos;</span><br><span class="line">    #alias dir=&apos;dir --color=auto&apos;</span><br><span class="line">    #alias vdir=&apos;vdir --color=auto&apos;</span><br><span class="line"></span><br><span class="line">    alias grep=&apos;grep --color=auto&apos;</span><br><span class="line">    alias fgrep=&apos;fgrep --color=auto&apos;</span><br><span class="line">    alias egrep=&apos;egrep --color=auto&apos;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"># some more ls aliases</span><br><span class="line">alias ll=&apos;ls -alF&apos;</span><br><span class="line">alias la=&apos;ls -A&apos;</span><br><span class="line">alias l=&apos;ls -CF&apos;</span><br><span class="line"></span><br><span class="line"># Add an &quot;alert&quot; alias for long running commands.  Use like so:</span><br><span class="line">#   sleep 10; alert</span><br><span class="line">alias alert=&apos;notify-send --urgency=low -i &quot;$([ $? = 0 ] &amp;&amp; echo terminal || echo error)&quot; &quot;$(history|tail -n1|sed -e &apos;\&apos;&apos;s/^\s*[0-9]\+\s*//;s/[;&amp;|]\s*alert$//&apos;\&apos;&apos;)&quot;&apos;</span><br><span class="line"></span><br><span class="line"># Alias definitions.</span><br><span class="line"># You may want to put all your additions into a separate file like</span><br><span class="line"># ~/.bash_aliases, instead of adding them here directly.</span><br><span class="line"># See /usr/share/doc/bash-doc/examples in the bash-doc package.</span><br><span class="line"></span><br><span class="line">if [ -f ~/.bash_aliases ]; then</span><br><span class="line">    . ~/.bash_aliases</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"># enable programmable completion features (you don&apos;t need to enable</span><br><span class="line"># this, if it&apos;s already enabled in /etc/bash.bashrc and /etc/profile</span><br><span class="line"># sources /etc/bash.bashrc).</span><br><span class="line">if ! shopt -oq posix; then</span><br><span class="line">  if [ -f /usr/share/bash-completion/bash_completion ]; then</span><br><span class="line">    . /usr/share/bash-completion/bash_completion</span><br><span class="line">  elif [ -f /etc/bash_completion ]; then</span><br><span class="line">    . /etc/bash_completion</span><br><span class="line">  fi</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"># start up jenkins</span><br><span class="line"># if [[ ! $(ps -ewwf | grep &quot;java -jar jenkins.war&quot; | grep -v grep) ]]; then</span><br><span class="line">#     cd ~/Downloads/jenkins/</span><br><span class="line">#     nohup java -jar jenkins.war &gt; /tmp/jenkins.log 2&gt;&amp;1 &amp;</span><br><span class="line">#     cd ~</span><br><span class="line"># fi</span><br><span class="line"></span><br><span class="line"># user define alias</span><br><span class="line">alias totest=&apos;cd ~/share/XXX_Develop/code/test&apos;</span><br><span class="line">alias towork=&apos;cd ~/Projects/XXX_SW/00_SW/00_SW_DEV/misc/&apos;</span><br><span class="line">alias pyshare=&apos;python -m SimpleHTTPServer&apos;</span><br><span class="line">alias tojenkins=&apos;ssh hogan@173.17.54.56&apos;</span><br><span class="line"></span><br><span class="line"># added by Anaconda3 4.4.0 installer</span><br><span class="line">#export PATH=&quot;/home/hogan/anaconda3/bin:$PATH&quot;</span><br><span class="line">alias condapython=&apos;/home/hogan/anaconda3/bin/python&apos;</span><br><span class="line">alias condajupyter=&apos;/home/hogan/anaconda3/bin/jupyter&apos;</span><br><span class="line">alias condapip=&apos;/home/hogan/anaconda3/bin/pip&apos;</span><br><span class="line">alias conda=&apos;/home/hogan/anaconda3/bin/conda&apos;</span><br><span class="line">alias pyinstaller=&apos;/home/hogan/anaconda3/bin/pyinstaller&apos;</span><br><span class="line"></span><br><span class="line"># 忽略重复的命令</span><br><span class="line"># export HISTCONTROL=ignoredups</span><br><span class="line"># export HISTCONTROL=ignoreboth:erasedups</span><br><span class="line">export HISTCONTROL=ignoredups:erasedups</span><br><span class="line"># 忽略由冒号分割的这些命令</span><br><span class="line">export HISTIGNORE=&quot;[   ]*:&amp;:bg:fg:exit&quot;</span><br><span class="line"># 设置保存历史命令的文件大小</span><br><span class="line">export HISTFILESIZE=1000000000</span><br><span class="line"># 保存历史命令条数</span><br><span class="line">export HISTSIZE=100000</span><br><span class="line"># 追加history而不是覆盖</span><br><span class="line">shopt -s histappend</span><br><span class="line"># bash每执行完一条命令，都要显示一个新的提示符，而在显示提示符的同时，会执行保存在环境变量PROMPT_COMMAND里面的命令</span><br><span class="line">PROMPT_COMMAND=&quot;history -a; $PROMPT_COMMAND&quot;</span><br><span class="line"></span><br><span class="line"># Add new path variable for coverage tools</span><br><span class="line">PATH=$PATH:/home/hogan/XXX_Develop/tools/cov_tools</span><br><span class="line"></span><br><span class="line"># Add new path variable for coverage tools</span><br><span class="line"># PATH=$PATH:/home/hogan/.jenkins/workspace/XXX_Unit_Test/tools/cov_tools</span><br></pre></td></tr></table></figure>
+<p></p>
+</ol>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/11/sublime-usage/" rel="next" title="sublime使用问题记录">
+                <i class="fa fa-chevron-left"></i> sublime使用问题记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/11/vscode-usage/" rel="prev" title="vscode使用问题记录">
+                vscode使用问题记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Hogan Chen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#Ubuntu入门教程"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu入门教程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Ubuntu快捷键"><span class="nav-number">2.</span> <span class="nav-text">Ubuntu快捷键</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Ubuntu快速显示桌面"><span class="nav-number">3.</span> <span class="nav-text">Ubuntu快速显示桌面</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Ubuntu显示隐藏目录"><span class="nav-number">4.</span> <span class="nav-text">Ubuntu显示隐藏目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Ubuntu安装护眼程序Typing-Break"><span class="nav-number">5.</span> <span class="nav-text">Ubuntu安装护眼程序Typing Break</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Ubuntu安装Flux色温调节软件"><span class="nav-number">6.</span> <span class="nav-text">Ubuntu安装Flux色温调节软件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Eyerest-and-workrave"><span class="nav-number">7.</span> <span class="nav-text">Eyerest and workrave</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Ubuntu安装build-essential"><span class="nav-number">8.</span> <span class="nav-text">Ubuntu安装build-essential</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Ubuntu安装JRE"><span class="nav-number">9.</span> <span class="nav-text">Ubuntu安装JRE</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ubuntu安装JDK"><span class="nav-number">10.</span> <span class="nav-text">ubuntu安装JDK</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#apt命令"><span class="nav-number">11.</span> <span class="nav-text">apt命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Ubuntu侧边栏图标"><span class="nav-number">12.</span> <span class="nav-text">Ubuntu侧边栏图标</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Eclipse加上侧边栏图标"><span class="nav-number">13.</span> <span class="nav-text">Eclipse加上侧边栏图标</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Ubuntu免密码sudo"><span class="nav-number">14.</span> <span class="nav-text">Ubuntu免密码sudo</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Ubuntu命令行或脚本连接断开wifi"><span class="nav-number">15.</span> <span class="nav-text">Ubuntu命令行或脚本连接断开wifi</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bc除法精度问题"><span class="nav-number">16.</span> <span class="nav-text">bc除法精度问题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ubuntu使用ibus或者fcitx框架输入法"><span class="nav-number">17.</span> <span class="nav-text">ubuntu使用ibus或者fcitx框架输入法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ubuntu手动更新"><span class="nav-number">18.</span> <span class="nav-text">ubuntu手动更新</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sudo-apt-get-update错误"><span class="nav-number">19.</span> <span class="nav-text">sudo apt-get update错误</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Wine安装"><span class="nav-number">20.</span> <span class="nav-text">Wine安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Wine使用"><span class="nav-number">21.</span> <span class="nav-text">Wine使用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Ubuntu添加桌面快捷方式"><span class="nav-number">22.</span> <span class="nav-text">Ubuntu添加桌面快捷方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Ubuntu添加快捷方式到dash或launcher"><span class="nav-number">23.</span> <span class="nav-text">Ubuntu添加快捷方式到dash或launcher</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#wine安装程序桌面快捷方式备份"><span class="nav-number">24.</span> <span class="nav-text">wine安装程序桌面快捷方式备份</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Wine卸载软件"><span class="nav-number">25.</span> <span class="nav-text">Wine卸载软件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Ubuntu桌面图标不显示"><span class="nav-number">26.</span> <span class="nav-text">Ubuntu桌面图标不显示</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#工具推荐"><span class="nav-number">27.</span> <span class="nav-text">工具推荐</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bashrc-backup"><span class="nav-number">28.</span> <span class="nav-text">.bashrc backup</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hogan Chen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

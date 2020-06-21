@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Ubuntu," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="配置ssh访问12345678910111213141516171819virtualbox设置设置--网络--端口转发--端口转发规则ssh tcp 127.0.0.1 22 10.0.2.15 22如果是多台虚拟机，则修改端口转发规则为ssh tcp 127.0.0.1 22 10.0.2.15 22ssh tcp 127.0.0.1 2222 10.0.2.15 22ssh tcp 1">
+<meta name="keywords" content="Ubuntu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Virtualbox中安装Ubuntu Server版本">
+<meta property="og:url" content="http://yoursite.com/2018/11/25/how-to-configuration-ubuntu-server-on-virtualbox-env/index.html">
+<meta property="og:site_name" content="Hogan&#39;s Blog">
+<meta property="og:description" content="配置ssh访问12345678910111213141516171819virtualbox设置设置--网络--端口转发--端口转发规则ssh tcp 127.0.0.1 22 10.0.2.15 22如果是多台虚拟机，则修改端口转发规则为ssh tcp 127.0.0.1 22 10.0.2.15 22ssh tcp 127.0.0.1 2222 10.0.2.15 22ssh tcp 1">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-06-21T04:16:35.275Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Virtualbox中安装Ubuntu Server版本">
+<meta name="twitter:description" content="配置ssh访问12345678910111213141516171819virtualbox设置设置--网络--端口转发--端口转发规则ssh tcp 127.0.0.1 22 10.0.2.15 22如果是多台虚拟机，则修改端口转发规则为ssh tcp 127.0.0.1 22 10.0.2.15 22ssh tcp 127.0.0.1 2222 10.0.2.15 22ssh tcp 1">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/11/25/how-to-configuration-ubuntu-server-on-virtualbox-env/"/>
+
+
+
+
+
+  <title>Virtualbox中安装Ubuntu Server版本 | Hogan's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hogan's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/25/how-to-configuration-ubuntu-server-on-virtualbox-env/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Virtualbox中安装Ubuntu Server版本</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-25T23:53:06+08:00">
+                2018-11-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ol>
+
+<h5 id="配置ssh访问"><a href="#配置ssh访问" class="headerlink" title=" 配置ssh访问"></a><li> 配置ssh访问</li></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">virtualbox设置</span><br><span class="line">设置--网络--端口转发--端口转发规则</span><br><span class="line">ssh tcp 127.0.0.1 22 10.0.2.15 22</span><br><span class="line"></span><br><span class="line">如果是多台虚拟机，则修改端口转发规则为</span><br><span class="line">ssh tcp 127.0.0.1 22 10.0.2.15 22</span><br><span class="line">ssh tcp 127.0.0.1 2222 10.0.2.15 22</span><br><span class="line">ssh tcp 127.0.0.1 2223 10.0.2.15 22</span><br><span class="line">ssh tcp 127.0.0.1 2224 10.0.2.15 22</span><br><span class="line">......</span><br><span class="line"></span><br><span class="line">putty</span><br><span class="line">hogan@127.0.0.1 22</span><br><span class="line"></span><br><span class="line">ubuntu免输入密码</span><br><span class="line">cd ~</span><br><span class="line">mkdir .ssh</span><br><span class="line">cd .ssh</span><br><span class="line">vi authorized_keys</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h5 id="配置sudo免密码"><a href="#配置sudo免密码" class="headerlink" title=" 配置sudo免密码"></a><li> 配置sudo免密码</li></h5><p><a href="https://askubuntu.com/questions/147241/execute-sudo-without-password" target="_blank" rel="noopener">https://askubuntu.com/questions/147241/execute-sudo-without-password</a><br><a href="https://blog.csdn.net/wxqee/article/details/72718869" target="_blank" rel="noopener">https://blog.csdn.net/wxqee/article/details/72718869</a><br><a href="https://www.linuxidc.com/Linux/2016-12/139018.htm" target="_blank" rel="noopener">https://www.linuxidc.com/Linux/2016-12/139018.htm</a><br><a href="https://blog.csdn.net/javensun/article/details/7582341" target="_blank" rel="noopener">https://blog.csdn.net/javensun/article/details/7582341</a><br><a href="https://www.jb51.net/os/Ubuntu/63313.html" target="_blank" rel="noopener">https://www.jb51.net/os/Ubuntu/63313.html</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">sudo visudo</span><br><span class="line"></span><br><span class="line"># 在文件末尾添加如下语句，USER替换为不需要输入密码的用户名</span><br><span class="line">USER ALL=(ALL) NOPASSWD: ALL</span><br><span class="line"></span><br><span class="line"># 上面的命令其实是修改了/etc/sudoers文件，所以也可以直接编辑这个文件</span><br><span class="line">sudo vi /etc/sudoers</span><br><span class="line">添加如下语句</span><br><span class="line">USER ALL=(ALL) NOPASSWD: ALL</span><br><span class="line"></span><br><span class="line">hogan@ubuntu:/etc$ cat /etc/sudoers</span><br><span class="line">cat: /etc/sudoers: Permission denied</span><br><span class="line">hogan@ubuntu:/etc$ sudo cat /etc/sudoers</span><br><span class="line">#</span><br><span class="line"># This file MUST be edited with the &apos;visudo&apos; command as root.</span><br><span class="line">#</span><br><span class="line"># Please consider adding local content in /etc/sudoers.d/ instead of</span><br><span class="line"># directly modifying this file.</span><br><span class="line">#</span><br><span class="line"># See the man page for details on how to write a sudoers file.</span><br><span class="line">#</span><br><span class="line">Defaults        env_reset</span><br><span class="line">Defaults        mail_badpass</span><br><span class="line">Defaults        secure_path=&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;</span><br><span class="line"></span><br><span class="line"># Host alias specification</span><br><span class="line"></span><br><span class="line"># User alias specification</span><br><span class="line"></span><br><span class="line"># Cmnd alias specification</span><br><span class="line"></span><br><span class="line"># User privilege specification</span><br><span class="line">root    ALL=(ALL:ALL) ALL</span><br><span class="line"></span><br><span class="line"># Members of the admin group may gain root privileges</span><br><span class="line">%admin ALL=(ALL) ALL</span><br><span class="line"></span><br><span class="line"># Allow members of group sudo to execute any command</span><br><span class="line">%sudo   ALL=(ALL:ALL) ALL</span><br><span class="line"></span><br><span class="line"># See sudoers(5) for more information on &quot;#include&quot; directives:</span><br><span class="line"></span><br><span class="line">#includedir /etc/sudoers.d</span><br><span class="line">hogan ALL=(ALL) NOPASSWD: ALL</span><br></pre></td></tr></table></figure></p>
+<h5 id="备份并替换ubuntu源"><a href="#备份并替换ubuntu源" class="headerlink" title=" 备份并替换ubuntu源"></a><li> 备份并替换ubuntu源</li></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/apt/</span><br><span class="line">sudo cp sources.list sources.list.orig</span><br><span class="line">sudo vi sources.list</span><br><span class="line">查找所有cn.archive.ubuntu.com，并替换为mirrors.163.com</span><br><span class="line">:%s/cn.archive.ubuntu.com/mirrors.163.com/g</span><br></pre></td></tr></table></figure>
+<h5 id="更新并安装build-essential"><a href="#更新并安装build-essential" class="headerlink" title=" 更新并安装build-essential"></a><li> 更新并安装build-essential</li></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install build-essential</span><br></pre></td></tr></table></figure>
+<h5 id="安装virtualbox增强工具"><a href="#安装virtualbox增强工具" class="headerlink" title=" 安装virtualbox增强工具"></a><li> 安装virtualbox增强工具</li></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cd /mnt/</span><br><span class="line">sudo mkdir cdrom</span><br><span class="line">sudo mount /dev/cdrom /mnt/cdrom</span><br><span class="line"></span><br><span class="line">cd cdrom</span><br><span class="line">sudo bash VBoxLinuxAdditions.run</span><br><span class="line">关机并设置共享目录</span><br><span class="line">sudo halt -p</span><br></pre></td></tr></table></figure>
+<h5 id="设置共享文件夹"><a href="#设置共享文件夹" class="headerlink" title=" 设置共享文件夹"></a><li> 设置共享文件夹</li></h5><p><a href="https://www.cnblogs.com/lidabo/p/5317024.html" target="_blank" rel="noopener">https://www.cnblogs.com/lidabo/p/5317024.html</a><br><a href="http://www.cnblogs.com/linjiqin/p/3615477.html" target="_blank" rel="noopener">http://www.cnblogs.com/linjiqin/p/3615477.html</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">virtualbox设置</span><br><span class="line">设置--共享文件夹--设置目录(固定分配勾选，注意把自动挂载选项去掉，Ubuntu不能勾选自动挂载，Windows可以勾选自动挂载)</span><br><span class="line"></span><br><span class="line">ubuntu设置</span><br><span class="line">cd /mnt</span><br><span class="line">sudo mkdir shared</span><br><span class="line">sudo mount -t vboxsf share /mnt/shared</span><br><span class="line"></span><br><span class="line">其中&quot;share&quot;是之前创建的共享文件夹的名字。OK，现在Ubuntu和主机可以互传文件了。</span><br><span class="line"></span><br><span class="line">要想自动挂载的话，可以在/etc/fstab中添加一项</span><br><span class="line">share /mnt/shared vboxsf rw,gid=100,uid=1000,auto 0 0</span><br><span class="line"></span><br><span class="line">卸载的话使用下面的命令：</span><br><span class="line">sudo umount -f /mnt/shared</span><br><span class="line"></span><br><span class="line">注意事项</span><br><span class="line">共享文件夹的名称千万不要和挂载点的名称相同。比如，上面的挂载点是/mnt/shared，如果共享文件夹的名字也是shared的话，在挂载的时候就会出现如下的错误信息：/sbin/mount.vboxsf: mounting failed with the error: Protocol error</span><br><span class="line"></span><br><span class="line">自用Ubuntu上的实际配置</span><br><span class="line">cd /mnt</span><br><span class="line">sudo mkdir share</span><br><span class="line">sudo mount -t vboxsf Ubuntu /mnt/share</span><br><span class="line"></span><br><span class="line">sudo vi /etc/fstab</span><br><span class="line">/etc/fstab添加如下语句</span><br><span class="line">Ubuntu /mnt/share vboxsf rw,gid=100,uid=1000,auto 0 0</span><br><span class="line"></span><br><span class="line">*****20200621 update*****</span><br><span class="line">在实际使用中，因为系统调用fstab的时候，Virtualbox的共享目录的模块还没有加载，所以每次加载都会失败</span><br><span class="line">以下是ubuntu 16上实际使用方式</span><br><span class="line">1. 设置--共享文件夹--设置目录(固定分配勾选，注意把自动挂载选项去掉，Ubuntu不能勾选自动挂载，Ubuntu不能勾选自动挂载，Ubuntu不能勾选自动挂载，重要的事说三遍。。。</span><br><span class="line"></span><br><span class="line">2. 修改/etc/rc.local，把mount的语句加在rc.local中，rc.local是最后执行的开机启动任务，所以这时候virtualbox的相关模块已启动，不会导致加载失败的问题，值得注意的是，一定要把virtualbox设置中的自动挂载去掉</span><br><span class="line">hogan@ubuntu:~$ cat /etc/rc.local</span><br><span class="line">#!/bin/sh -e</span><br><span class="line">#</span><br><span class="line"># rc.local</span><br><span class="line">#</span><br><span class="line"># This script is executed at the end of each multiuser runlevel.</span><br><span class="line"># Make sure that the script will &quot;exit 0&quot; on success or any other</span><br><span class="line"># value on error.</span><br><span class="line">#</span><br><span class="line"># In order to enable or disable this script just change the execution</span><br><span class="line"># bits.</span><br><span class="line">#</span><br><span class="line"># By default this script does nothing.</span><br><span class="line"></span><br><span class="line">mount -t vboxsf ubuntu /mnt/share</span><br><span class="line">mount -t vboxsf codes /mnt/repository</span><br><span class="line">exit 0</span><br></pre></td></tr></table></figure></p>
+<h5 id="安装mysql-server"><a href="#安装mysql-server" class="headerlink" title=" 安装mysql server"></a><li> 安装mysql server</li></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">由于系统源中的mysql版本过低，所以需要先去mysql官网下载apt源的deb包</span><br><span class="line"></span><br><span class="line">1. 下载mysql的Ubuntu版本的deb包</span><br><span class="line">https://dev.mysql.com/downloads/mysql/</span><br><span class="line"></span><br><span class="line">2. 安装deb包，并根据需求选择mysql的版本和附加包，</span><br><span class="line">sudo dpkg -i mysql-apt-config_0.8.11-1_all.deb</span><br><span class="line"></span><br><span class="line">3. 在ubuntu 14.04.5安装mysql apt源的deb包出错的解决方法</span><br><span class="line">hogan@ubuntu:/mnt/share/tools$ sudo dpkg -i mysql-apt-config_0.8.11-1_all.deb</span><br><span class="line">dpkg-deb: error: archive &apos;mysql-apt-config_0.8.11-1_all.deb&apos; has premature member &apos;control.tar.xz&apos; before &apos;control.tar.gz&apos;, giving up</span><br><span class="line">dpkg: error processing archive mysql-apt-config_0.8.11-1_all.deb (--install):</span><br><span class="line"> subprocess dpkg-deb --control returned error exit status 2</span><br><span class="line">Errors were encountered while processing:</span><br><span class="line"> mysql-apt-config_0.8.11-1_all.deb</span><br><span class="line"></span><br><span class="line">解决方法:</span><br><span class="line">https://askubuntu.com/questions/982748/dpkg-error-when-installing-nmap</span><br><span class="line">Removing APT cache</span><br><span class="line">hogan@ubuntu:/mnt/share/tools$ sudo apt-get clean &amp;&amp; sudo apt-get autoclean</span><br><span class="line">Updating APT</span><br><span class="line">hogan@ubuntu:/mnt/share/tools$ sudo apt-get update</span><br><span class="line">If there&apos;s available software to upgrade then run</span><br><span class="line">hogan@ubuntu:/mnt/share/tools$ sudo apt-get upgrade</span><br><span class="line">再次安装deb包</span><br><span class="line">sudo dpkg -i mysql-apt-config_0.8.11-1_all.deb</span><br><span class="line"></span><br><span class="line">4. 更新源并安装mysql</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-cache search mysql | grep server</span><br><span class="line">sudo apt-cache search mysql-server</span><br><span class="line">sudo apt-get install mysql-server</span><br></pre></td></tr></table></figure>
+<h5 id="bashrc设置"><a href="#bashrc设置" class="headerlink" title=" .bashrc设置"></a><li> .bashrc设置</li></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">alias condapython=&apos;~/anaconda3/bin/python&apos;</span><br><span class="line">alias condapip=&apos;~/anaconda3/bin/pip&apos;</span><br><span class="line">alias conda=&apos;~/anaconda3/bin/conda&apos;</span><br><span class="line"></span><br><span class="line">alias toshare=&apos;cd /mnt/share&apos;</span><br><span class="line">alias updatemysql=&apos;cd /mnt/share/codes/python/stcksql; condapython update_mysql_data.py&apos;</span><br><span class="line"></span><br><span class="line">*****20200621 update*****</span><br><span class="line"># go env</span><br><span class="line">export GOROOT=~/go</span><br><span class="line">export GOPATH=$HOME/gopath</span><br><span class="line">export PATH=$PATH:$GOROOT/bin:$GOPATH/bin</span><br><span class="line"></span><br><span class="line"># user alias</span><br><span class="line">alias torepo=&apos;cd /mnt/repository&apos;</span><br><span class="line">alias tocode=&apos;cd /mnt/repository/github/codes&apos;</span><br><span class="line">alias tostck=&apos;cd /mnt/repository/github/codes/python/stcksql&apos;</span><br><span class="line">alias updata=&apos;cd ~/bin; nohup bash mysql_update &gt; /dev/null 2&gt;&amp;1 &amp;&apos;</span><br><span class="line"></span><br><span class="line"># added by Anaconda3 installer</span><br><span class="line">export PATH=&quot;/home/hogan/anaconda3/bin:$PATH&quot;</span><br></pre></td></tr></table></figure>
+<h5 id="mysql-update"><a href="#mysql-update" class="headerlink" title=" mysql_update"></a><li> mysql_update</li></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">hogan@ubuntu:~$ cat bin/mysql_update</span><br><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line">cd /mnt/repository/github/codes/python/stcksql</span><br><span class="line"></span><br><span class="line"># ~/anaconda3/bin/python update_hist_data.py &gt; update_hist_data_`date &quot;+%Y%m%d%H%M%S&quot;`.log 2&gt;&amp;1</span><br><span class="line">~/anaconda3/bin/python update_hist_data.py &gt; update_hist_data.log 2&gt;&amp;1</span><br><span class="line">sleep 10</span><br><span class="line"></span><br><span class="line"># ~/anaconda3/bin/python update_extend_hist_data.py &gt; update_extend_hist_data_`date &quot;+%Y%m%d%H%M%S&quot;`.log 2&gt;&amp;1</span><br><span class="line">~/anaconda3/bin/python update_extend_hist_data.py &gt; update_extend_hist_data.log 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
+<h5 id="桥接网络设置"><a href="#桥接网络设置" class="headerlink" title=" 桥接网络设置"></a><li> 桥接网络设置</li></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不知道是否路由器的原因，桥接网络有时候不能获取IP地址，但是这时候重启Host电脑，然后再打开虚拟机启动guest，就能够获取IP了，如果还不行，可以在桥接网络设置，混杂模式切换试试</span><br></pre></td></tr></table></figure>
+<h5 id="Ubuntu-Server只安装安全更新-未验证"><a href="#Ubuntu-Server只安装安全更新-未验证" class="headerlink" title=" Ubuntu Server只安装安全更新(未验证)"></a><li> Ubuntu Server只安装安全更新(未验证)</li></h5><p><a href="https://linux.cn/article-8060-1.html" target="_blank" rel="noopener">https://linux.cn/article-8060-1.html</a><br><a href="https://yq.aliyun.com/articles/113684" target="_blank" rel="noopener">https://yq.aliyun.com/articles/113684</a><br><a href="https://blog.ghostry.cn/server/753.html" target="_blank" rel="noopener">https://blog.ghostry.cn/server/753.html</a><br><a href="https://ox0spy.github.io/post/configuration/debian-ubuntu-automatic-security-updates/" target="_blank" rel="noopener">https://ox0spy.github.io/post/configuration/debian-ubuntu-automatic-security-updates/</a><br><a href="http://blog.topspeedsnail.com/archives/10299" target="_blank" rel="noopener">http://blog.topspeedsnail.com/archives/10299</a><br><a href="https://www.howtoing.com/install-security-updates-ubuntu-debian/" target="_blank" rel="noopener">https://www.howtoing.com/install-security-updates-ubuntu-debian/</a><br><a href="https://www.cplusplus.me/2443.html" target="_blank" rel="noopener">https://www.cplusplus.me/2443.html</a></p>
+<h5 id="apt命令参考"><a href="#apt命令参考" class="headerlink" title=" apt命令参考"></a><li> apt命令参考</li></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">apt-cache search package 搜索包</span><br><span class="line">apt-cache show package 获取包的相关信息，如说明、大小、版本等</span><br><span class="line">sudo apt-get install package 安装包</span><br><span class="line">sudo apt-get install package - - reinstall 重新安装包</span><br><span class="line">sudo apt-get -f install 修复安装&quot;-f = ——fix-missing&quot;</span><br><span class="line">sudo apt-get remove package 删除包</span><br><span class="line">sudo apt-get remove package - - purge 删除包，包括删除配置文件等</span><br><span class="line">sudo apt-get purge package 删除包，包括删除配置文件等，与上条命令等价</span><br><span class="line">sudo apt-get autoremove 卸载所有自动安装且不再使用的软件包</span><br><span class="line">sudo apt-get update 更新源</span><br><span class="line">sudo apt-get upgrade 更新已安装的包</span><br><span class="line">sudo apt-get dist-upgrade 升级系统</span><br><span class="line">sudo apt-get dselect-upgrade 使用 dselect 升级</span><br><span class="line">apt-cache depends package 了解使用依赖</span><br><span class="line">apt-cache rdepends package 是查看该包被哪些包依赖</span><br><span class="line">sudo apt-get build-dep package 安装相关的编译环境</span><br><span class="line">apt-get source package 下载该包的源代码</span><br><span class="line">sudo apt-get clean &amp;&amp; sudo apt-get autoclean 清理无用的包</span><br><span class="line">sudo apt-get check 检查是否有损坏的依赖</span><br></pre></td></tr></table></figure>
+</ol>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/04/find-file-number-with-type/" rel="next" title="Bat查找某种类型的文件">
+                <i class="fa fa-chevron-left"></i> Bat查找某种类型的文件
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Hogan Chen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#配置ssh访问"><span class="nav-number">1.</span> <span class="nav-text"> 配置ssh访问</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置sudo免密码"><span class="nav-number">2.</span> <span class="nav-text"> 配置sudo免密码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#备份并替换ubuntu源"><span class="nav-number">3.</span> <span class="nav-text"> 备份并替换ubuntu源</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#更新并安装build-essential"><span class="nav-number">4.</span> <span class="nav-text"> 更新并安装build-essential</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装virtualbox增强工具"><span class="nav-number">5.</span> <span class="nav-text"> 安装virtualbox增强工具</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置共享文件夹"><span class="nav-number">6.</span> <span class="nav-text"> 设置共享文件夹</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装mysql-server"><span class="nav-number">7.</span> <span class="nav-text"> 安装mysql server</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bashrc设置"><span class="nav-number">8.</span> <span class="nav-text"> .bashrc设置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#mysql-update"><span class="nav-number">9.</span> <span class="nav-text"> mysql_update</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#桥接网络设置"><span class="nav-number">10.</span> <span class="nav-text"> 桥接网络设置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Ubuntu-Server只安装安全更新-未验证"><span class="nav-number">11.</span> <span class="nav-text"> Ubuntu Server只安装安全更新(未验证)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#apt命令参考"><span class="nav-number">12.</span> <span class="nav-text"> apt命令参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hogan Chen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

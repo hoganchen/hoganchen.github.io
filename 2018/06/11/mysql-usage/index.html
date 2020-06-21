@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Window安装mysql 5.7.19压缩包https://my.oschina.net/u/2557245/blog/876028http://www.jianshu.com/p/b601097ef5c9http://www.phperz.com/article/16/0703/231878.htmlhttp://blog.csdn.net/tanghong1996/article/det">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql使用问题记录">
+<meta property="og:url" content="http://yoursite.com/2018/06/11/mysql-usage/index.html">
+<meta property="og:site_name" content="Hogan&#39;s Blog">
+<meta property="og:description" content="Window安装mysql 5.7.19压缩包https://my.oschina.net/u/2557245/blog/876028http://www.jianshu.com/p/b601097ef5c9http://www.phperz.com/article/16/0703/231878.htmlhttp://blog.csdn.net/tanghong1996/article/det">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-06-21T04:16:35.275Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mysql使用问题记录">
+<meta name="twitter:description" content="Window安装mysql 5.7.19压缩包https://my.oschina.net/u/2557245/blog/876028http://www.jianshu.com/p/b601097ef5c9http://www.phperz.com/article/16/0703/231878.htmlhttp://blog.csdn.net/tanghong1996/article/det">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/11/mysql-usage/"/>
+
+
+
+
+
+  <title>mysql使用问题记录 | Hogan's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hogan's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/mysql-usage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">mysql使用问题记录</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-11T16:12:49+08:00">
+                2018-06-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ol>
+
+<h5 id="Window安装mysql-5-7-19压缩包"><a href="#Window安装mysql-5-7-19压缩包" class="headerlink" title="Window安装mysql 5.7.19压缩包"></a>Window安装mysql 5.7.19压缩包</h5><p><a href="https://my.oschina.net/u/2557245/blog/876028" target="_blank" rel="noopener">https://my.oschina.net/u/2557245/blog/876028</a><br><a href="http://www.jianshu.com/p/b601097ef5c9" target="_blank" rel="noopener">http://www.jianshu.com/p/b601097ef5c9</a><br><a href="http://www.phperz.com/article/16/0703/231878.html" target="_blank" rel="noopener">http://www.phperz.com/article/16/0703/231878.html</a><br><a href="http://blog.csdn.net/tanghong1996/article/details/71330666" target="_blank" rel="noopener">http://blog.csdn.net/tanghong1996/article/details/71330666</a><br><a href="http://www.bkjia.com/Mysql/1198992.html" target="_blank" rel="noopener">http://www.bkjia.com/Mysql/1198992.html</a><br><a href="http://www.bkjia.com/Mysql/1221297.html" target="_blank" rel="noopener">http://www.bkjia.com/Mysql/1221297.html</a><br><a href="http://www.cnblogs.com/ldybyz/p/7138444.html" target="_blank" rel="noopener">http://www.cnblogs.com/ldybyz/p/7138444.html</a><br><a href="http://www.2cto.com/database/201707/660725.html" target="_blank" rel="noopener">http://www.2cto.com/database/201707/660725.html</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">1. 解压缩压缩包</span><br><span class="line"></span><br><span class="line">2. 设置环境变量</span><br><span class="line">新建MYSQL_HOME变量值为刚才下载解压缩后的自定义目录的bin目录下</span><br><span class="line">如：</span><br><span class="line">MYSQL_HOME: D:\Codes\mysql-5.7.19-winx64</span><br><span class="line">PATH环境变量添加Mysql的路径: %MYSQL_HOME%\bin</span><br><span class="line"></span><br><span class="line">3. 以管理员身份运行命令提示符</span><br><span class="line">cd D:\Codes\mysql-5.7.19-winx64\bin</span><br><span class="line"></span><br><span class="line">4. 安装myql</span><br><span class="line">mysqld install</span><br><span class="line"></span><br><span class="line">5. 初始化data目录</span><br><span class="line">https://dev.mysql.com/doc/refman/5.7/en/data-directory-initialization-mysqld.html</span><br><span class="line"></span><br><span class="line">mysqld --initialize --console</span><br><span class="line">mysqld --initialize-insecure --console</span><br><span class="line"></span><br><span class="line">从5.7.6版开始，Zip压缩包不再提供data目录，所以也不会有MySQL系统数据库的数据文件，我们需要使用mysqld --initialize或者--initialize-insecure对数据库进行初始化</span><br><span class="line"></span><br><span class="line">--initialize：初始化时会随机生成一个root用户密码，改密码会以日志的方式打印出来，如果控制台没有密码可能记录在日志文件下，在Windows上可以使用--console选项把信息打印到控制台。使用mysqld –initialize方法安装会生成一个随机字符串组成的密码，这个密码在错误日志&lt;mysql解压目录&gt;\data\&lt;计算机用户名&gt;.err中可以找到。</span><br><span class="line"></span><br><span class="line">--initialize-insecure：不会生成随机密码，但是在登录服务器是可以使用--skip-password跳过密码输入：mysql -u root --skip-password。</span><br><span class="line"></span><br><span class="line">6. 启动mysql服务</span><br><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h5 id="Window卸载mysql"><a href="#Window卸载mysql" class="headerlink" title="Window卸载mysql"></a>Window卸载mysql</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">以下命令都在cmd中执行，cmd需要以管理员身份运行，即找到cmd程序的路径，然后右键单击选择以管理员身份运行即可，cmd程序的路径为：C:\Windows\System32</span><br><span class="line"></span><br><span class="line">1. 停止服务</span><br><span class="line">net stop mysql</span><br><span class="line"></span><br><span class="line">2. 删除服务</span><br><span class="line">mysqld --remove mysql</span><br><span class="line">sc delete mysql</span><br><span class="line"></span><br><span class="line">3. 删除文件夹</span><br><span class="line"></span><br><span class="line">4. 删除注册表</span><br><span class="line">HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\Eventlog\Application\MySQL 目录删除</span><br><span class="line">HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Services\Eventlog\Application\MySQL 目录删除</span><br><span class="line">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Eventlog\Application\MySQL 目录删除</span><br><span class="line"></span><br><span class="line">注册表中的ControlSet001、ControlSet002不一定是001和002，可能是ControlSet005、006之类，删除的时候都删除就可以 。</span><br></pre></td></tr></table></figure>
+<h5 id="数据库备份与恢复"><a href="#数据库备份与恢复" class="headerlink" title="数据库备份与恢复"></a>数据库备份与恢复</h5><p><a href="http://www.cnblogs.com/zhoujinyi/p/5684903.html" target="_blank" rel="noopener">http://www.cnblogs.com/zhoujinyi/p/5684903.html</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. 备份</span><br><span class="line">hogan@ubuntu:/tmp$ mysqlpump -uroot -p&apos;rO0t@stck5ql*&apos; -h127.0.0.1 --single-transaction --default-character-set=utf8 --default-parallelism=5 -B stock | gzip &gt; ./stck_db_hp.sql.gz</span><br><span class="line"></span><br><span class="line">2. 恢复</span><br><span class="line">hogan@ubuntu:/tmp$ gzip -d stck_db.sql.gz</span><br><span class="line">hogan@ubuntu:/tmp$ mysql -u root -p&apos;rO0t@stck5ql*&apos; &lt; /tmp/stck_db.sql</span><br></pre></td></tr></table></figure>
+<h5 id="Mysql忘记密码"><a href="#Mysql忘记密码" class="headerlink" title="Mysql忘记密码"></a>Mysql忘记密码</h5><p><a href="https://www.skyf.org/reset-mysql579-root-password/" target="_blank" rel="noopener">https://www.skyf.org/reset-mysql579-root-password/</a><br><a href="https://my.oschina.net/shf/blog/545684" target="_blank" rel="noopener">https://my.oschina.net/shf/blog/545684</a><br><a href="http://blog.csdn.net/stubbornness1219/article/details/53445904" target="_blank" rel="noopener">http://blog.csdn.net/stubbornness1219/article/details/53445904</a><br><a href="http://blog.csdn.net/u013378306/article/details/50466073" target="_blank" rel="noopener">http://blog.csdn.net/u013378306/article/details/50466073</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">http://www.cnblogs.com/yuxc/archive/2012/07/25/2607587.html</span><br><span class="line">可能不适用于5.7</span><br><span class="line"></span><br><span class="line">1、结束当前正在运行的mysql进程。</span><br><span class="line"># /etc/init.d/mysql stop</span><br><span class="line"></span><br><span class="line">2、用mysql安全模式运行并跳过权限验证。</span><br><span class="line"># /usr/bin/mysqld_safe --skip-grant-tables</span><br><span class="line"></span><br><span class="line">3、重开一个终端以root身份登录mysql。</span><br><span class="line"># mysql -u root</span><br><span class="line"></span><br><span class="line">4、修改root用户口令。</span><br><span class="line">mysql&gt; use mysql;</span><br><span class="line">Reading table information for completion of table and column namesYou can turn off this feature to get a quicker startup with -A</span><br><span class="line">Database changed</span><br><span class="line"></span><br><span class="line">mysql&gt; update user set Password = PASSWORD(&apos;root&apos;) where User =&apos;root&apos;;</span><br><span class="line">Query OK, 3 rows affected (0.00 sec)</span><br><span class="line">Rows matched: 3  Changed: 3  Warnings: 0</span><br><span class="line"></span><br><span class="line">mysql&gt; exit</span><br><span class="line"></span><br><span class="line">5、结束mysql安全模式，用正常模式运行mysql。</span><br><span class="line"># /etc/init.d/mysql restart</span><br><span class="line"></span><br><span class="line">6、试试你新修改的口令</span><br><span class="line">mysql&gt; show grants for &apos;root&apos;@&apos;127.0.0.1&apos;;</span><br><span class="line">mysql&gt; flush privileges；</span><br><span class="line">mysql&gt; quit</span><br></pre></td></tr></table></figure>
+<h5 id="Mysql虚拟表"><a href="#Mysql虚拟表" class="headerlink" title="Mysql虚拟表"></a>Mysql虚拟表</h5><p><a href="http://yypiao.iteye.com/blog/2359859" target="_blank" rel="noopener">http://yypiao.iteye.com/blog/2359859</a><br><a href="http://www.cnblogs.com/jevo/p/3262227.html" target="_blank" rel="noopener">http://www.cnblogs.com/jevo/p/3262227.html</a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1405" target="_blank" rel="noopener">http://www.nowamagic.net/librarys/veda/detail/1405</a><br><a href="http://2853725.blog.51cto.com/2843725/1394430" target="_blank" rel="noopener">http://2853725.blog.51cto.com/2843725/1394430</a></p>
+<h5 id="临时表"><a href="#临时表" class="headerlink" title="临时表"></a>临时表</h5><p><a href="http://blog.sae.sina.com.cn/archives/4096" target="_blank" rel="noopener">http://blog.sae.sina.com.cn/archives/4096</a><br><a href="http://www.runoob.com/mysql/mysql-temporary-tables.html" target="_blank" rel="noopener">http://www.runoob.com/mysql/mysql-temporary-tables.html</a></p>
+<h5 id="Mysql慢查询"><a href="#Mysql慢查询" class="headerlink" title="Mysql慢查询"></a>Mysql慢查询</h5><p><a href="http://www.jianshu.com/p/7529a0fbf088" target="_blank" rel="noopener">http://www.jianshu.com/p/7529a0fbf088</a><br><a href="https://tech.meituan.com/mysql-index.html" target="_blank" rel="noopener">https://tech.meituan.com/mysql-index.html</a><br><a href="https://www.kancloud.cn/thinkphp/mysql-design-optimalize/39320" target="_blank" rel="noopener">https://www.kancloud.cn/thinkphp/mysql-design-optimalize/39320</a><br><a href="https://flyerboy.github.io/2016/12/23/mysql_slow/" target="_blank" rel="noopener">https://flyerboy.github.io/2016/12/23/mysql_slow/</a><br><a href="http://www.cnblogs.com/ggjucheng/archive/2012/11/11/2765237.html" target="_blank" rel="noopener">http://www.cnblogs.com/ggjucheng/archive/2012/11/11/2765237.html</a></p>
+<h5 id="Mysql排序"><a href="#Mysql排序" class="headerlink" title="Mysql排序"></a>Mysql排序</h5><p><a href="http://www.runoob.com/mysql/mysql-order-by.html" target="_blank" rel="noopener">http://www.runoob.com/mysql/mysql-order-by.html</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">语法</span><br><span class="line"></span><br><span class="line">以下是 SQL SELECT 语句使用 ORDER BY 子句将查询数据排序后再返回数据：</span><br><span class="line"></span><br><span class="line">SELECT field1, field2,...fieldN table_name1, table_name2...</span><br><span class="line">ORDER BY field1, [field2...] [ASC [DESC]]</span><br><span class="line"></span><br><span class="line">    你可以使用任何字段来作为排序的条件，从而返回排序后的查询结果。</span><br><span class="line">    你可以设定多个字段来排序。</span><br><span class="line">    你可以使用 ASC 或 DESC 关键字来设置查询结果是按升序或降序排列。 默认情况下，它是按升序排列。</span><br><span class="line">    你可以添加 WHERE...LIKE 子句来设置条件。</span><br><span class="line"></span><br><span class="line">select * from basics_data where pe &gt; 0 and pb &gt; 0 order by pb limit 10;</span><br><span class="line"></span><br><span class="line">两个字段升序，默认情况下，它是按升序排列</span><br><span class="line">select * from basics_data where pe &gt; 0 and pb &gt; 0 order by pb, pe limit 10;</span><br><span class="line"></span><br><span class="line">一个字段升序，一个字段降序</span><br><span class="line">select * from basics_data where pe &gt; 0 and pb &gt; 0 order by pb, pe desc limit 10;</span><br></pre></td></tr></table></figure></p>
+<h5 id="Mysql更新字段"><a href="#Mysql更新字段" class="headerlink" title="Mysql更新字段"></a>Mysql更新字段</h5><p><a href="http://www.runoob.com/mysql/mysql-alter.html" target="_blank" rel="noopener">http://www.runoob.com/mysql/mysql-alter.html</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">更改字段属性not null为null</span><br><span class="line"></span><br><span class="line">alter table basics_data modify area varchar(4);</span><br><span class="line">alter table area_data modify area varchar(6);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">修改字段属性为not null</span><br><span class="line">alter table basics_data modify area varchar(4) not null default &quot;&quot;;</span><br><span class="line">alter table area_data modify area varchar(6) not null default &quot;&quot;;</span><br><span class="line"></span><br><span class="line">修改默认值</span><br><span class="line">mysql&gt; alter table hist_day_data alter turnover set default 0;</span><br><span class="line">mysql&gt; alter table hist_week_data alter turnover set default 0;</span><br><span class="line">mysql&gt; alter table hist_month_data alter turnover set default 0;</span><br></pre></td></tr></table></figure></p>
+<h5 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h5><p><a href="http://www.runoob.com/mysql/mysql-delete-query.html" target="_blank" rel="noopener">http://www.runoob.com/mysql/mysql-delete-query.html</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; delete from k_week_data where date = &apos;2017-09-21&apos;;</span><br><span class="line">Query OK, 2938 rows affected (1.87 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; select * from k_week_data where date = &apos;2017-09-21&apos;;</span><br><span class="line">Empty set (10.51 sec)</span><br></pre></td></tr></table></figure></p>
+<h5 id="Mysql索引"><a href="#Mysql索引" class="headerlink" title="Mysql索引"></a>Mysql索引</h5><p><a href="http://wiki.jikexueyuan.com/project/mysql/indexes.html" target="_blank" rel="noopener">http://wiki.jikexueyuan.com/project/mysql/indexes.html</a><br><a href="http://www.runoob.com/mysql/mysql-index.html" target="_blank" rel="noopener">http://www.runoob.com/mysql/mysql-index.html</a><br><a href="https://read01.com/78Ojo4.html" target="_blank" rel="noopener">https://read01.com/78Ojo4.html</a><br><a href="http://www.cnblogs.com/hustcat/archive/2009/10/28/1591648.html" target="_blank" rel="noopener">http://www.cnblogs.com/hustcat/archive/2009/10/28/1591648.html</a><br><a href="https://segmentfault.com/a/1190000003072424" target="_blank" rel="noopener">https://segmentfault.com/a/1190000003072424</a><br><a href="https://tech.meituan.com/mysql-index.html" target="_blank" rel="noopener">https://tech.meituan.com/mysql-index.html</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">数据库查询是数据库的最主要功能之一。我们都希望查询数据的速度能尽可能的快，因此数据库系统的设计者会从查询算法的角度进行优化。最基本的查询算法当然是顺序查找（linear search），这种复杂度为O(n)的算法在数据量很大时显然是糟糕的，好在计算机科学的发展提供了很多更优秀的查找算法，例如二分查找（binary search）、二叉树查找（binary tree search）等。如果稍微分析一下会发现，每种查找算法都只能应用于特定的数据结构之上，例如二分查找要求被检索数据有序，而二叉树查找只能应用于二叉查找树上，但是数据本身的组织结构不可能完全满足各种数据结构（例如，理论上不可能同时将两列都按顺序进行组织），所以，在数据之外，数据库系统还维护着满足特定查找算法的数据结构，这些数据结构以某种方式引用（指向）数据，这样就可以在这些数据结构上实现高级查找算法。这种数据结构，就是索引。</span><br><span class="line"></span><br><span class="line">索引是在MYSQL的存储引擎层中实现的，而不是在服务层实现的。所以每种存储引擎的索引都不一定完全相同，也不是所有的存储引擎都支持所有的索引类型。MYSQL目前提供了一下4种索引。</span><br><span class="line"></span><br><span class="line">    B-Tree 索引：最常见的索引类型，大部分引擎都支持B树索引。</span><br><span class="line">    HASH 索引：只有Memory引擎支持，使用场景简单。</span><br><span class="line">    R-Tree 索引(空间索引)：空间索引是MyISAM的一种特殊索引类型，主要用于地理空间数据类型。</span><br><span class="line">    Full-text (全文索引)：全文索引也是MyISAM的一种特殊索引类型，主要用于全文索引，InnoDB从MYSQL5.6版本提供对全文索引的支持。</span><br><span class="line"></span><br><span class="line">B-TREE索引类型</span><br><span class="line">普通索引</span><br><span class="line">    这是最基本的索引类型，而且它没有唯一性之类的限制。普通索引可以通过以下几种方式创建：</span><br><span class="line">    （1）创建索引: CREATE INDEX 索引名 ON 表名(列名1，列名2,...);</span><br><span class="line">    （2）修改表: ALTER TABLE 表名ADD INDEX 索引名 (列名1，列名2,...);</span><br><span class="line">    （3）创建表时指定索引：CREATE TABLE 表名 ( [...], INDEX 索引名 (列名1，列名 2,...) );</span><br><span class="line"></span><br><span class="line">UNIQUE索引</span><br><span class="line">    表示唯一的，不允许重复的索引，如果该字段信息保证不会重复例如身份证号用作索引时，可设置为unique：</span><br><span class="line">    （1）创建索引：CREATE UNIQUE INDEX 索引名 ON 表名(列的列表);</span><br><span class="line">    （2）修改表：ALTER TABLE 表名ADD UNIQUE 索引名 (列的列表);</span><br><span class="line">    （3）创建表时指定索引：CREATE TABLE 表名( [...], UNIQUE 索引名 (列的列表) );</span><br><span class="line"></span><br><span class="line">主键：PRIMARY KEY索引</span><br><span class="line">    主键是一种唯一性索引，但它必须指定为“PRIMARY KEY”。</span><br><span class="line">    （1）主键一般在创建表的时候指定：“CREATE TABLE 表名( [...], PRIMARY KEY (列的列表) ); ”。</span><br><span class="line">    （2）但是，我们也可以通过修改表的方式加入主键：“ALTER TABLE 表名ADD PRIMARY KEY (列的列表); ”。</span><br><span class="line">    每个表只能有一个主键。 （主键相当于聚合索引，是查找最快的索引）</span><br><span class="line">    注：不能用CREATE INDEX语句创建PRIMARY KEY索引</span><br><span class="line"></span><br><span class="line">为表添加索引，可以采用4种语句。</span><br><span class="line">    ALTER TABLE tbl_name ADD PRIMARY KEY (column_list) 该语句添加一个主键。意味着索引值必须是唯一的，不能为 NULL。</span><br><span class="line">    ALTER TABLE tbl_name ADD UNIQUE index_name (column_list) 该语句为必须唯一的值（除了 NULL 值之外，NULL 值可以多次出现）创建索引。</span><br><span class="line">    ALTER TABLE tbl_name ADD INDEX index_name (column_list) 语句为可能多次出现的值创建一般索引。</span><br><span class="line">    ALTER TABLE tbl_name ADD FULLTEXT index_name (column_list) 语句创建专用于文本搜索的 FULLTEXT 索引。</span><br></pre></td></tr></table></figure>
+<h5 id="MySQL函数"><a href="#MySQL函数" class="headerlink" title="MySQL函数"></a>MySQL函数</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">查询结果求平均值</span><br><span class="line"></span><br><span class="line">mysql&gt; select avg(open), avg(close), avg(high), avg(low), max(high), min(low) from hist_day_data where code = &apos;600000&apos; and date &gt;= &apos;2017-10-09&apos;;</span><br><span class="line"></span><br><span class="line">mysql&gt; select avg(open) as openavg, avg(close), avg(high), avg(low), max(high), min(low) from hist_day_data where code = &apos;600000&apos; and date &gt;= &apos;2017-10-09&apos;;</span><br></pre></td></tr></table></figure>
+<h5 id="查看警告信息"><a href="#查看警告信息" class="headerlink" title="查看警告信息"></a>查看警告信息</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show warnings;</span><br></pre></td></tr></table></figure></ol>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/11/markdown-usage/" rel="next" title="markdown使用问题记录">
+                <i class="fa fa-chevron-left"></i> markdown使用问题记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/11/pandas-usage/" rel="prev" title="pandas使用问题记录">
+                pandas使用问题记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Hogan Chen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#Window安装mysql-5-7-19压缩包"><span class="nav-number">1.</span> <span class="nav-text">Window安装mysql 5.7.19压缩包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Window卸载mysql"><span class="nav-number">2.</span> <span class="nav-text">Window卸载mysql</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数据库备份与恢复"><span class="nav-number">3.</span> <span class="nav-text">数据库备份与恢复</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Mysql忘记密码"><span class="nav-number">4.</span> <span class="nav-text">Mysql忘记密码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Mysql虚拟表"><span class="nav-number">5.</span> <span class="nav-text">Mysql虚拟表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#临时表"><span class="nav-number">6.</span> <span class="nav-text">临时表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Mysql慢查询"><span class="nav-number">7.</span> <span class="nav-text">Mysql慢查询</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Mysql排序"><span class="nav-number">8.</span> <span class="nav-text">Mysql排序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Mysql更新字段"><span class="nav-number">9.</span> <span class="nav-text">Mysql更新字段</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#删除数据"><span class="nav-number">10.</span> <span class="nav-text">删除数据</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Mysql索引"><span class="nav-number">11.</span> <span class="nav-text">Mysql索引</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#MySQL函数"><span class="nav-number">12.</span> <span class="nav-text">MySQL函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看警告信息"><span class="nav-number">13.</span> <span class="nav-text">查看警告信息</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hogan Chen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="软件工程中的几个阶段http://www.cnblogs.com/wattone/archive/2010/02/09/1666662.htmlhttp://www.voidcn.com/article/p-dfwqnfes-oz.html12345678910111213141516171819202122232425262728293031323334353637383940软件工程导论作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件工程中的几个阶段">
+<meta property="og:url" content="http://yoursite.com/2018/06/11/software-engineering-document/index.html">
+<meta property="og:site_name" content="Hogan&#39;s Blog">
+<meta property="og:description" content="软件工程中的几个阶段http://www.cnblogs.com/wattone/archive/2010/02/09/1666662.htmlhttp://www.voidcn.com/article/p-dfwqnfes-oz.html12345678910111213141516171819202122232425262728293031323334353637383940软件工程导论作">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-06-21T04:16:35.279Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软件工程中的几个阶段">
+<meta name="twitter:description" content="软件工程中的几个阶段http://www.cnblogs.com/wattone/archive/2010/02/09/1666662.htmlhttp://www.voidcn.com/article/p-dfwqnfes-oz.html12345678910111213141516171819202122232425262728293031323334353637383940软件工程导论作">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/11/software-engineering-document/"/>
+
+
+
+
+
+  <title>软件工程中的几个阶段 | Hogan's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hogan's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/software-engineering-document/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">软件工程中的几个阶段</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-11T16:27:35+08:00">
+                2018-06-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ol>
+
+<h5 id="软件工程中的几个阶段"><a href="#软件工程中的几个阶段" class="headerlink" title="软件工程中的几个阶段"></a>软件工程中的几个阶段</h5><p><a href="http://www.cnblogs.com/wattone/archive/2010/02/09/1666662.html" target="_blank" rel="noopener">http://www.cnblogs.com/wattone/archive/2010/02/09/1666662.html</a><br><a href="http://www.voidcn.com/article/p-dfwqnfes-oz.html" target="_blank" rel="noopener">http://www.voidcn.com/article/p-dfwqnfes-oz.html</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">软件工程导论作为软件工程中非常重要的一门课程，而其中的图又是其重中之重，初学者往往对其各种图搞的晕头转向，我在这里简单的对软件工程中个阶段用到的各种图做一个小小的总结，希望对大家能有帮助。</span><br><span class="line"></span><br><span class="line">　　软件工程导论中一般把软件的开发分为八个阶段：１.问题定义 ２.可行性研究 ３.需求分析 ４.总体设计（概要设计） ５.详细设计 ６.编码和单元测试 ７.综合测试 ８.软件维护</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">　　一，项目计划阶段。（也可以说是可行性分析阶段）</span><br><span class="line"></span><br><span class="line">　　　　确定了一个软件以目前的条件可以完成，主要是经济，技术和社会条件，撰写可行性分析报告。需求方和开发方共同探讨项目中的问题的解决方案；需要的资金，人力，物力；社会方面的影响，例如是否符合法律等；对项目的进度和预期效益进行估计。</span><br><span class="line"></span><br><span class="line">　　二，项目需求分析阶段。</span><br><span class="line"></span><br><span class="line">　　　　对用户需求进行分析。将用户的需求用逻辑的软件工程语言表达出来，设计好功能和数据库模型，编写成软件需求设计书。这个阶段要注意的是行业的术语以及行业规则，开发的软件难免遇到不同行业，我们不是那个行业里面的人，所以对用户所在行业的需求分析的时候要正确理解他们的术语和规则。当需求得到用户确认后记得让用户签字。最后提醒一点，需求的变更在项目中很频繁，必须做好需求变更计划用以项目正常进行。</span><br><span class="line"></span><br><span class="line">　　三，项目设计阶段。</span><br><span class="line"></span><br><span class="line">　　　　概要设计就是设计软件的结构，包括组成模块，模块的层次结构，模块的调用关系，每个模块的功能等等。同时，还要设计该项目的应用系统的总体数据结构和数据库结构，即应用系统要存储什么数据，这些数据是什么样的结构，它们之间有什么关系。</span><br><span class="line"></span><br><span class="line">　　　　详细设计阶段就是为每个模块完成的功能进行具体的描述，要把功能描述转变为精确的、结构化的过程描述。</span><br><span class="line">　　　　概要设计阶段通常得到软件结构图。</span><br><span class="line">　　　　详细设计阶段常用的描述方式有：流程图、N-S图、PAD图、伪代码等。</span><br><span class="line"></span><br><span class="line">　　四，编码阶段。</span><br><span class="line"></span><br><span class="line">　　　　为程序员分配好编码任务，将软件的设计具体为软件代码。这里注意的是编码语言，工具，环境和编码规范。统一，标准的编码规范可让程序可读和易维护。</span><br><span class="line"></span><br><span class="line">　　五，软件测试阶段。</span><br><span class="line"></span><br><span class="line">　　　　软件测试就是利用测试工具按照测试方案和流程对产品进行功能和性能测试，甚至根据需要编写不同的测试工具，设计和维护测试系统，对测试方案可能出</span><br><span class="line"></span><br><span class="line">现的问题进行分析和评估。执行测试用例后，需要跟踪故障，以确保开发的产品适合需求。</span><br><span class="line"></span><br><span class="line">　　　　测试，目的是以较小的代价发现尽可能多的错误。要实现这个目标的关键在于设计一套出色的测试用例。如何才能设计出一套出色的测试用例，关键在于理解测试方法。不同的测试方法有不同的测试用例设计方法。两种常用的测试方法是白盒法测试对象是源程序，依据的是程序内部的的逻辑结构来发现软件的编程错误、结构错误和数据错误。结构错误包括逻辑、数据流、初始化等错误。用例设计的关键是以较少的用例覆盖尽可能多的内部程序逻辑结果。白盒法和黑盒法依据的是软件的功能或软件行为描述，发现软件的接口、功能和结构错误。其中接口错误包括内部/外部接口、资源管理、集成化以及系统错误。</span><br><span class="line"></span><br><span class="line">　　六，维护阶段。</span><br><span class="line"></span><br><span class="line">　　　　对软件正式交付使用过程中出现的软件的bug进行修复，调整软件以适应正式环境，编写软件的维护报告。</span><br><span class="line"></span><br><span class="line">          传说中的------------------------------------------------------------------------------------------------------------------分割线</span><br><span class="line"></span><br><span class="line">　　　　以上是我在搜索软件工程方面的资料时候简单的描述了软件工程的阶段。但是个人感觉很多项目在正式过程中只有四个阶段，即需求分析，软件设计，编码，测试，这是最重要的四个阶段。计划阶段和维护阶段没有，也不能说没有，只是这2个阶段应该说不明显。写这个资料目的一个温习下以前学的软件工程方面的东西，另外一个由于准备写点个人的东西所以准备下文档留备用。对于写文档我比较头痛，主要是没有这方面的经验，写的不多，感觉项目文档中很多东西有点鸡肋。希望各位有经验的老鸟能帮忙提点下有关这个方面的实践经验。</span><br></pre></td></tr></table></figure></p>
+</ol>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/11/python-usage-example/" rel="next" title="Python使用示例">
+                <i class="fa fa-chevron-left"></i> Python使用示例
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/11/stock-learning/" rel="prev" title="股票学习记录">
+                股票学习记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Hogan Chen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#软件工程中的几个阶段"><span class="nav-number">1.</span> <span class="nav-text">软件工程中的几个阶段</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hogan Chen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Bash," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="多行注释 &amp;amp; here document123456789101112131415161718https://stackoverflow.com/questions/27201004/line-54-warning-here-document-at-line-42-delimited-by-end-of-file-wanted-eofhttps://stackoverflow.com/">
+<meta name="keywords" content="Bash">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bash使用问题记录">
+<meta property="og:url" content="http://yoursite.com/2018/06/11/bash-usage/index.html">
+<meta property="og:site_name" content="Hogan&#39;s Blog">
+<meta property="og:description" content="多行注释 &amp;amp; here document123456789101112131415161718https://stackoverflow.com/questions/27201004/line-54-warning-here-document-at-line-42-delimited-by-end-of-file-wanted-eofhttps://stackoverflow.com/">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-06-21T04:16:35.275Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bash使用问题记录">
+<meta name="twitter:description" content="多行注释 &amp;amp; here document123456789101112131415161718https://stackoverflow.com/questions/27201004/line-54-warning-here-document-at-line-42-delimited-by-end-of-file-wanted-eofhttps://stackoverflow.com/">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/11/bash-usage/"/>
+
+
+
+
+
+  <title>Bash使用问题记录 | Hogan's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hogan's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/bash-usage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Bash使用问题记录</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-11T15:31:24+08:00">
+                2018-06-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ol>
+
+<h5 id="多行注释-amp-here-document"><a href="#多行注释-amp-here-document" class="headerlink" title="多行注释 &amp; here document"></a>多行注释 &amp; here document</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">https://stackoverflow.com/questions/27201004/line-54-warning-here-document-at-line-42-delimited-by-end-of-file-wanted-eof</span><br><span class="line">https://stackoverflow.com/questions/18660798/here-document-gives-unexpected-end-of-file-error</span><br><span class="line"></span><br><span class="line">: &lt;&lt;EOF</span><br><span class="line">......code line</span><br><span class="line">......code line</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">: &lt;&lt; EOF</span><br><span class="line">......code line</span><br><span class="line">......code line</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">或者如下，&lt;&lt;号后的-表示去除匹配行的&lt;tab&gt;键，注意，后面一个EOF必须以一个或者多个tab键对齐，如果EOF前面是空格，会去找以&lt;tab&gt;对齐的EOF</span><br><span class="line">            : &lt;&lt;-EOF</span><br><span class="line">            ......code line</span><br><span class="line">            ......code line</span><br><span class="line">&lt;tab&gt;&lt;tab&gt;EOF</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h5 id="命令与变量"><a href="#命令与变量" class="headerlink" title="命令与变量"></a>命令与变量</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">命令执行结果可以用`cmd`，也可以用$(cmd)</span><br><span class="line">变量的引用需要用$&#123;variable&#125;</span><br><span class="line"></span><br><span class="line">for dirlist in $(ls $&#123;workdir&#125;)</span><br><span class="line">test_path=`pwd` or test_path=$(pwd)</span><br><span class="line">test_path=$(dirname $(dirname $(pwd)))/code/test</span><br><span class="line">cd $&#123;test_path&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="空语句"><a href="#空语句" class="headerlink" title="空语句"></a>空语句</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">： # 冒号</span><br></pre></td></tr></table></figure>
+<h5 id="unary-operator-expected-error"><a href="#unary-operator-expected-error" class="headerlink" title="unary operator expected error"></a>unary operator expected error</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">如果$2为空，执行如下语句，会得到unary operator expected error</span><br><span class="line">if [ &apos;gcovr&apos; = $2 ]</span><br><span class="line">then</span><br><span class="line">    LCOV_FALG=0</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">修改为:</span><br><span class="line">if [[ &apos;gcovr&apos; = $2 ]]</span><br><span class="line">then</span><br><span class="line">    LCOV_FALG=0</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<h5 id="bash脚本不需要命令输出"><a href="#bash脚本不需要命令输出" class="headerlink" title="bash脚本不需要命令输出"></a>bash脚本不需要命令输出</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">which ls &gt; /dev/null</span><br></pre></td></tr></table></figure>
+<h5 id="命令行循环语句"><a href="#命令行循环语句" class="headerlink" title="命令行循环语句"></a>命令行循环语句</h5><p><a href="http://blog.csdn.net/column/details/wanbash.html" target="_blank" rel="noopener">http://blog.csdn.net/column/details/wanbash.html</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">while :; do ls -lrth; sleep 2; done</span><br><span class="line">while true; do ls -lrth; sleep 2; done</span><br><span class="line">while [ 1 ]; do ls -lrth; sleep 2; done</span><br><span class="line">while [ 0 ]; do ls -lrth; sleep 2; done</span><br><span class="line"></span><br><span class="line">循环复制文件</span><br><span class="line">for i in &#123;10..20&#125;; do cp test_log.txt HTC_test_$&#123;i&#125;.txt; done</span><br><span class="line"></span><br><span class="line">循环执行测试</span><br><span class="line">rm -rf st_main.log; for i in &#123;1..10&#125;; do condapython -u st_main.py &gt;&gt; ./st_main.log 2&gt;&amp;1; done</span><br><span class="line">for i in &#123;1..10&#125;; do condapython -u st_main.py &gt;&gt; ./st_main_$(date &apos;+%Y%m%d%H%M&apos;).log 2&gt;&amp;1; done</span><br><span class="line">datetime=$(date &apos;+%Y%m%d%H%M&apos;); for i in &#123;1..10&#125;; do condapython -u st_main.py &gt;&gt; ./st_main_$&#123;datetime&#125;.log 2&gt;&amp;1; done</span><br><span class="line"></span><br><span class="line">tail -f $(ls -rth | tail -1)</span><br><span class="line"></span><br><span class="line">命令行循环语句</span><br><span class="line">hogan@ubuntu:~/Docs/codes/python/practise$ for i in 1 2 3 4 5 6 7 8 9 10; do ls; done</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">hogan@ubuntu:~/Docs/codes/python/practise$ for i in $(seq 10); do ls; done</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">hogan@ubuntu:~/Docs/codes/python/practise$ for i in &#123;1..10&#125;; do ls; done</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">hogan@ubuntu:~/Docs/codes/python/practise$ for((i=0; i&lt;=10; i++)); do ls; done</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">calc_prime.py  lintcode_001.py  lintcode_k_point.py  prime_number.py</span><br><span class="line">hogan@ubuntu:~/Docs/codes/python/practise$</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">命令行检查多个目录git状态</span><br><span class="line">for file in $(ls); do cd $&#123;file&#125;; echo -e &quot;enter the $&#123;file&#125; folder...&quot;; git st; cd ..; done</span><br></pre></td></tr></table></figure></p>
+<h5 id="获取脚本名字和脚本路径"><a href="#获取脚本名字和脚本路径" class="headerlink" title="获取脚本名字和脚本路径"></a>获取脚本名字和脚本路径</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">basename $0 # 脚本名字</span><br><span class="line">dirname $0 #脚本路径</span><br></pre></td></tr></table></figure>
+<h5 id="Shell变量作用域"><a href="#Shell变量作用域" class="headerlink" title="Shell变量作用域"></a>Shell变量作用域</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line">(1)Shell脚本中定义的变量是global的，其作用域从被定义的地方开始，到shell结束或</span><br><span class="line">被显示删除的地方为止。</span><br><span class="line"></span><br><span class="line">例1：脚本变量的作用域</span><br><span class="line">#!/bin/bash</span><br><span class="line">#define the function ltx_func</span><br><span class="line">ltx_func()</span><br><span class="line">&#123;</span><br><span class="line">    echo $v1</span><br><span class="line">    #modify the variable v1</span><br><span class="line">    v1=200</span><br><span class="line">&#125;</span><br><span class="line">#define the variable v1</span><br><span class="line">v1=100</span><br><span class="line">#call the function ltx_func</span><br><span class="line">ltx_func</span><br><span class="line">echo $v1</span><br><span class="line"></span><br><span class="line">结果：</span><br><span class="line">100</span><br><span class="line">200</span><br><span class="line">解析：脚本变量v1的作用域从被定义的地方开始，到shell结束。调用函数ltx_func的地方在变量v1的作用域内，所以能够访问并修改变量v1。</span><br><span class="line"></span><br><span class="line">(2)Shell函数定义的变量默认是global的，其作用域从“函数被调用时执行变量定义的地方”开始，到shell结束或被显示删除处为止。函数定义的变量可以被显示定义成local的，其作用域局限于函数内。但请注意，函数的参数是local的。</span><br><span class="line"></span><br><span class="line">例2：函数定义的global变量</span><br><span class="line">#!/bin/bash</span><br><span class="line">#define the function ltx_func</span><br><span class="line">ltx_func()</span><br><span class="line">&#123;</span><br><span class="line">    #define the variable v2</span><br><span class="line">    v2=200</span><br><span class="line">&#125;</span><br><span class="line">#call the function ltx_func</span><br><span class="line">ltx_func</span><br><span class="line">echo $v2</span><br><span class="line"></span><br><span class="line">结果：</span><br><span class="line">200</span><br><span class="line">解析：函数变量v2默认是global的，其作用域从“函数被调用时执行变量定义的地方”开始，到shell结束为止。注意，不是从定义函数的地方开始，而是从调用函数的地方开始。打印命令在变量v2的作用域内，所以能够访问变量v2。</span><br><span class="line"></span><br><span class="line">例3：函数定义的local变量</span><br><span class="line">#!/bin/bash</span><br><span class="line">#define the function ltx_func</span><br><span class="line">ltx_func()</span><br><span class="line">&#123;</span><br><span class="line">    #define the local variable v2</span><br><span class="line">    local v2=200</span><br><span class="line">&#125;</span><br><span class="line">#call the function ltx_func</span><br><span class="line">ltx_func</span><br><span class="line">echo $v2</span><br><span class="line"></span><br><span class="line">结果：</span><br><span class="line">（空）</span><br><span class="line">解析：函数变量v2显示定义为local的，其作用域局限于函数内。打印命令在函数外，不在变量v2的作用域内，所以能够不能访问变量v2。</span><br><span class="line"></span><br><span class="line">例4：函数参数是local变量</span><br><span class="line">#!/bin/bash</span><br><span class="line">#define the function ltx_func</span><br><span class="line">ltx_func()</span><br><span class="line">&#123;</span><br><span class="line">    echo &quot;param 1: $1&quot;</span><br><span class="line">&#125;</span><br><span class="line">#call the function ltx_func</span><br><span class="line">ltx_func 100</span><br><span class="line"></span><br><span class="line">结果：</span><br><span class="line">100</span><br><span class="line">解析：函数参数是local的，通过位置变量来访问。打印命令输出函数的第一个参数。</span><br><span class="line"></span><br><span class="line">(3)如果同名，Shell函数定义的local变量会屏蔽脚本定义的global变量。</span><br><span class="line"></span><br><span class="line">例5：同名local变量屏蔽global变量</span><br><span class="line">#!/bin/bash</span><br><span class="line">#define the function ltx_func</span><br><span class="line">ltx_func()</span><br><span class="line">&#123;</span><br><span class="line">    echo $v1</span><br><span class="line">    #define the local variable v1</span><br><span class="line">    local v1=200</span><br><span class="line">    echo $v1</span><br><span class="line">&#125;</span><br><span class="line">#define the global variable v1</span><br><span class="line">v1=200</span><br><span class="line">#call the function ltx_func</span><br><span class="line">ltx_func</span><br><span class="line">echo $v1</span><br><span class="line"></span><br><span class="line">结果：</span><br><span class="line">100</span><br><span class="line">200</span><br><span class="line">100</span><br><span class="line">解析：global变量v1的作用域从被定义的地方开始，到shell结束。调用函数ltx_func的地方在变量v1的作用域内，所以能够变量v1。函数又定义了同名的local变量v1，同名local变量屏蔽global变量，所以函数第二次打印访问的是local变量。退出函数后再次打印v1，此时函数定义的local变量已经消失，访问的是global变量。</span><br><span class="line"></span><br><span class="line">来源  http://blog.csdn.net/ltx19860420/article/details/5570902</span><br></pre></td></tr></table></figure>
+<h5 id="删除变量和函数"><a href="#删除变量和函数" class="headerlink" title="删除变量和函数"></a>删除变量和函数</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unset variable_nameaa</span><br><span class="line">unset function_name</span><br></pre></td></tr></table></figure>
+<h5 id="命令执行结果以及变量赋值"><a href="#命令执行结果以及变量赋值" class="headerlink" title="命令执行结果以及变量赋值"></a>命令执行结果以及变量赋值</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">current_path=`pwd`</span><br><span class="line">current_path=$(pwd)</span><br><span class="line"></span><br><span class="line">dup_current_path=$&#123;current_path&#125;</span><br><span class="line">dup_current_path=$current_path</span><br><span class="line"></span><br><span class="line">new_relative_path=&quot;/tools&quot;</span><br><span class="line">new_path=$&#123;current_path&#125;$&#123;new_relative_path&#125;</span><br><span class="line">new_path=&quot;$&#123;current_path&#125;/tools&quot;</span><br><span class="line"></span><br><span class="line"># 以上命令的执行结果存放在变量中，只保存标准输出，标准错误输出不会保存在变量中，标准输出和标准错误输出保存变量可采用以下的方式</span><br><span class="line">gitout=$(git pull --rebase 2&gt;&amp;1)</span><br></pre></td></tr></table></figure>
+<h5 id="查看当前shell"><a href="#查看当前shell" class="headerlink" title="查看当前shell"></a>查看当前shell</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -p $$</span><br></pre></td></tr></table></figure>
+<h5 id="cut命令"><a href="#cut命令" class="headerlink" title="cut命令"></a>cut命令</h5><p><a href="https://www.ibm.com/support/knowledgecenter/zh/ssw_aix_72/com.ibm.aix.cmds1/cut.htm#cut__row-d3e151685" target="_blank" rel="noopener">https://www.ibm.com/support/knowledgecenter/zh/ssw_aix_72/com.ibm.aix.cmds1/cut.htm#cut__row-d3e151685</a><br><a href="http://blog.csdn.net/Frozen_fish/article/details/2260804" target="_blank" rel="noopener">http://blog.csdn.net/Frozen_fish/article/details/2260804</a><br><a href="http://www.cnblogs.com/dong008259/archive/2011/12/09/2282679.html" target="_blank" rel="noopener">http://www.cnblogs.com/dong008259/archive/2011/12/09/2282679.html</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">cut 命令从文件的每一行剪切字节、字符和字段并将这些字节、字符和字段写至标准输出。</span><br><span class="line">如果不指定 File 参数，cut 命令将读取标准输入。必须指定 -b、-c 或 -f 标志之一。</span><br><span class="line"></span><br><span class="line">主要参数</span><br><span class="line">-b ：以字节为单位进行分割。这些字节位置将忽略多字节字符边界，除非也指定了 -n 标志。</span><br><span class="line">-c ：以字符为单位进行分割。</span><br><span class="line">-d ：自定义分隔符，默认为制表符。</span><br><span class="line">-f  ：与-d一起使用，指定显示哪个区域。</span><br><span class="line">-n ：取消分割多字节字符。仅和 -b 标志一起使用。如果字符的最后一个字节落在由 -b 标志的 List 参数指示的&lt;br /&gt;范围之内，该字符将被写出；否则，该字符将被排除。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">命令用法：</span><br><span class="line">       cut -b list [-n] [file ...]</span><br><span class="line">       cut -c list [file ...]</span><br><span class="line">       cut -f list [-d delim][-s][file ...]</span><br><span class="line"></span><br><span class="line">上面的-b、-c、-f分别表示字节、字符、字段（即byte、character、field）；</span><br><span class="line">list表示-b、-c、-f操作范围，-n常常表示具体数字；</span><br><span class="line">file表示的自然是要操作的文本文件的名称；</span><br><span class="line">delim（英文全写：delimiter）表示分隔符，默认情况下为TAB；</span><br><span class="line">-s表示不包括那些不含分隔符的行（这样有利于去掉注释和标题）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">上面三种方式中，表示从指定的范围中提取字节（-b）、或字符（-c）、或字段（-f）。</span><br><span class="line"></span><br><span class="line">范围的表示方法：</span><br><span class="line"></span><br><span class="line">N		只有第N项</span><br><span class="line">N-		从第N项一直到行尾</span><br><span class="line">N-M		从第N项到第M项(包括M)</span><br><span class="line">-M		从一行的开始到第M项(包括M)</span><br><span class="line">-		从一行的开始到结束的所有项</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">用途</span><br><span class="line"></span><br><span class="line">帮助分割文件的行。</span><br><span class="line">语法</span><br><span class="line"></span><br><span class="line">cut &#123;  -b List [  -n ] |  -c List |  -f List [  -s ] [  -d Character ] &#125; [ File ... ]</span><br><span class="line">描述</span><br><span class="line"></span><br><span class="line">cut 命令从文件的每一行剪切字节、字符和字段并将这些字节、字符和字段写至标准输出。如果不指定 File 参数，cut 命令将读取标准输入。</span><br><span class="line"></span><br><span class="line">必须指定 -b、-c 或 -f 标志之一。List 参数为一个以逗号分隔、以空格分隔或连字符分隔的整数的列表（顺序递增）。连字符分隔符表示范围。以下条目是 List 参数的一些示例，它可以用来指代字节、字符或字段：</span><br><span class="line"></span><br><span class="line">1,4,7</span><br><span class="line">1-3,8</span><br><span class="line">-5,10</span><br><span class="line">3-</span><br><span class="line"></span><br><span class="line">其中 -5 为从第一个到第五个的简写形式，3- 为从第三个到最后一个的简写形式。</span><br><span class="line"></span><br><span class="line">如果将 cut 命令用于字段，那么由 List 参数指定的字段的长度可以从字段到字段，从行到行发生变化。字段定界字符（比如制表符）的位置，确定字段长度。</span><br><span class="line"></span><br><span class="line">您还可以使用 grep 命令来对一个文件进行水平剪切，和使用 paste 命令来将文件复原。要更改文件中列的次序，使用 cut 和 paste 命令。</span><br><span class="line">标志</span><br><span class="line">项目 	描述</span><br><span class="line">-b List 	指定字节位置。这些字节位置将忽略多字节字符边界，除非也指定了 -n 标志。</span><br><span class="line">-c List 	指定字符位置。例如，如果您指定 -c 1-72，cut 命令将写出文件每一行的前 72 个字符。</span><br><span class="line">-d Character 	使用 Character 变量指定的字符作为指定 -f 标志时的字段定界符。您必须在对 shell 有特殊意义的字符（比如空格字符）上加上引号。</span><br><span class="line">-f List 	指定文件中设想被定界字符（缺省情况下为制表符）隔开的字段的列表。例如，如果您指定 -f 1,7，cut 命令将仅写出每个行的第一和第七个字段。如果行中不包含字段定界符，cut 命令将通过它们而不对其进行任何操作（对表格的副标题有用），除非指定了 -s 标志。</span><br><span class="line">-n 	取消分割多字节字符。仅和 -b 标志一起使用。如果字符的最后一个字节落在由 -b 标志的 List 变量指示的范围之内，该字符将被写出；否则，该字符将被排除。</span><br><span class="line">-s 	取消不包含定界符的行。仅和 -f 标志一起使用。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">echo &quot;Hello world&quot; | cut -c 1</span><br><span class="line">H</span><br><span class="line">echo &quot;Hello world&quot; | cut -c 1-</span><br><span class="line">Hello world</span><br><span class="line">echo &quot;Hello world&quot; | cut -c -2</span><br><span class="line">He</span><br><span class="line">echo &quot;Hello world&quot; | cut -c 1-3,5,8</span><br><span class="line">Heloo</span><br><span class="line"></span><br><span class="line">ifconfig wlan0 | grep &apos;inet addr&apos; | awk &apos;&#123;print $2&#125;&apos; | cut -c 6-</span><br><span class="line">173.17.40.143</span><br></pre></td></tr></table></figure></p>
+<h5 id="tr命令"><a href="#tr命令" class="headerlink" title="tr命令"></a>tr命令</h5><p><a href="http://man.linuxde.net/tr" target="_blank" rel="noopener">http://man.linuxde.net/tr</a><br><a href="http://www.runoob.com/linux/linux-comm-tr.html" target="_blank" rel="noopener">http://www.runoob.com/linux/linux-comm-tr.html</a><br><a href="https://www.ibm.com/support/knowledgecenter/zh/ssw_aix_61/com.ibm.aix.cmds5/tr.htm" target="_blank" rel="noopener">https://www.ibm.com/support/knowledgecenter/zh/ssw_aix_61/com.ibm.aix.cmds5/tr.htm</a><br><a href="http://bijian1013.iteye.com/blog/2358792" target="_blank" rel="noopener">http://bijian1013.iteye.com/blog/2358792</a> (一句话脚本获取IP地址)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">tr命令可以对来自标准输入的字符进行替换、压缩和删除。它可以将一组字符变成另一组字符，经常用来编写优美的单行命令，作用很强大。</span><br><span class="line">语法</span><br><span class="line">tr(选项)(参数)</span><br><span class="line"></span><br><span class="line">选项</span><br><span class="line">-c或——complerment：取代所有不属于第一字符集的字符；</span><br><span class="line">-d或——delete：删除所有属于第一字符集的字符；</span><br><span class="line">-s或--squeeze-repeats：把连续重复的字符以单独一个字符表示；</span><br><span class="line">-t或--truncate-set1：先删除第一字符集较第二字符集多出的字符。</span><br><span class="line"></span><br><span class="line">参数</span><br><span class="line">字符集1：指定要转换或删除的原字符集。当执行转换操作时，必须使用参数“字符集2”指定转换的目标字符集。但执行删除操作时，不需要参数“字符集2”；</span><br><span class="line">字符集2：指定要转换成的目标字符集。</span><br><span class="line"></span><br><span class="line">来自: http://man.linuxde.net/tr</span><br><span class="line"></span><br><span class="line">ifconfig wlan0 | grep &apos;inet addr&apos; | awk &apos;&#123;print $2&#125;&apos; | tr -d &apos;addr:&apos;</span><br><span class="line">173.17.40.143</span><br></pre></td></tr></table></figure></p>
+<h5 id="Sed命令"><a href="#Sed命令" class="headerlink" title="Sed命令"></a>Sed命令</h5><p>参考:<br><a href="http://sed.sourceforge.net/sed1line_zh-CN.html" target="_blank" rel="noopener">http://sed.sourceforge.net/sed1line_zh-CN.html</a><br><a href="https://www.zhukun.net/archives/6975" target="_blank" rel="noopener">https://www.zhukun.net/archives/6975</a><br><a href="http://coolshell.cn/articles/9104.html" target="_blank" rel="noopener">http://coolshell.cn/articles/9104.html</a><br><a href="https://www.ibm.com/support/knowledgecenter/zh/ssw_aix_61/com.ibm.aix.cmds5/sed.htm" target="_blank" rel="noopener">https://www.ibm.com/support/knowledgecenter/zh/ssw_aix_61/com.ibm.aix.cmds5/sed.htm</a><br><a href="http://bbs.chinaunix.net/thread-63273-1-1.html" target="_blank" rel="noopener">http://bbs.chinaunix.net/thread-63273-1-1.html</a><br><a href="http://bbs.chinaunix.net/thread-605570-1-1.html" target="_blank" rel="noopener">http://bbs.chinaunix.net/thread-605570-1-1.html</a><br><a href="http://wiki.jikexueyuan.com/project/unix/regular-expressions.html" target="_blank" rel="noopener">http://wiki.jikexueyuan.com/project/unix/regular-expressions.html</a><br><a href="http://wiki.jikexueyuan.com/project/shell-learning/sed-search-and-replace.html" target="_blank" rel="noopener">http://wiki.jikexueyuan.com/project/shell-learning/sed-search-and-replace.html</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">hogan@ubuntu:~$ temp=/home/test/; var=aa</span><br><span class="line">hogan@ubuntu:~$ echo $var</span><br><span class="line">aa</span><br><span class="line">hogan@ubuntu:~$ echo $temp</span><br><span class="line">/home/test/</span><br><span class="line">hogan@ubuntu:~$ echo $temp | sed &apos;s/\//$var/g&apos;</span><br><span class="line">$varhome$vartest$var</span><br><span class="line">hogan@ubuntu:~$ echo $temp | sed &quot;s/\//$var/g&quot;</span><br><span class="line">aahomeaatestaa</span><br><span class="line">hogan@ubuntu:~$ echo $temp | sed &quot;s/\//\$var/g&quot;</span><br><span class="line">$varhome$vartest$var</span><br><span class="line">hogan@ubuntu:~$ echo $temp | sed &quot;s/.*$/&amp;$var/g&quot;</span><br><span class="line">/home/test/aa</span><br><span class="line">hogan@ubuntu:~$ echo $temp | sed &quot;s/^.*$/&amp;$var/g&quot;</span><br><span class="line">/home/test/aa</span><br><span class="line">hogan@ubuntu:~$ echo $temp | sed &quot;s/$/&amp;$var/g&quot;</span><br><span class="line">/home/test/aa</span><br><span class="line">hogan@ubuntu:~$ echo $temp | sed &quot;s/^/&amp;$var/g&quot;</span><br><span class="line">aa/home/test/</span><br><span class="line">hogan@ubuntu:~$ echo &quot;&lt;/td&gt;Hello World&quot; | sed &quot;s/&lt;[^&gt;]\+&gt;//g&quot;</span><br><span class="line">Hello World</span><br><span class="line"></span><br><span class="line">ifconfig wlan0 | grep &apos;inet addr&apos; | awk &apos;&#123;print $2&#125;&apos; | sed &apos;s/addr://g&apos;</span><br><span class="line">173.17.40.143</span><br><span class="line"></span><br><span class="line">hogan@ubuntu:~$ ifconfig wlan0</span><br><span class="line">wlan0     Link encap:Ethernet  HWaddr e5:b4:19:6c:5e:8d</span><br><span class="line">          inet addr:173.17.40.143  Bcast:173.17.40.255  Mask:255.255.255.0</span><br><span class="line">          inet6 addr: fe80::e6b3:18ff:fe6b:5d8c/64 Scope:Link</span><br><span class="line">          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1</span><br><span class="line">          RX packets:307829 errors:0 dropped:8 overruns:0 frame:0</span><br><span class="line">          TX packets:86929 errors:0 dropped:0 overruns:0 carrier:0</span><br><span class="line">          collisions:0 txqueuelen:1000</span><br><span class="line">          RX bytes:64552812 (64.5 MB)  TX bytes:20122109 (20.1 MB)</span><br><span class="line"></span><br><span class="line">hogan@ubuntu:~$ ifconfig wlan0 | sed -n &apos;/inet addr/s/^[^:]*:\([0-9.]\&#123;7,15\&#125;\).*/\1/p&apos;</span><br><span class="line">173.17.40.143</span><br></pre></td></tr></table></figure>
+<h5 id="bash不同引号区别"><a href="#bash不同引号区别" class="headerlink" title="bash不同引号区别"></a>bash不同引号区别</h5><p><a href="http://www.igigo.net/post/archives/128" target="_blank" rel="noopener">http://www.igigo.net/post/archives/128</a></p>
+<h5 id="bash正则表达式"><a href="#bash正则表达式" class="headerlink" title="bash正则表达式"></a>bash正则表达式</h5><p><a href="https://www.ibm.com/developerworks/cn/education/aix/au-unixtips3/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/education/aix/au-unixtips3/index.html</a><br><a href="http://wiki.jikexueyuan.com/project/linux-command/chap20.html" target="_blank" rel="noopener">http://wiki.jikexueyuan.com/project/linux-command/chap20.html</a><br><a href="http://blog.csdn.net/hittata/article/details/8911117" target="_blank" rel="noopener">http://blog.csdn.net/hittata/article/details/8911117</a><br><a href="https://www.jianshu.com/p/49d5ee46de47" target="_blank" rel="noopener">https://www.jianshu.com/p/49d5ee46de47</a><br><a href="https://blog.zengrong.net/post/1563.html" target="_blank" rel="noopener">https://blog.zengrong.net/post/1563.html</a><br><a href="http://yidao620c.iteye.com/blog/1879755" target="_blank" rel="noopener">http://yidao620c.iteye.com/blog/1879755</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">字符集 	说明</span><br><span class="line">[:alnum:] 	字母数字字符。在 ASCII 中，等价于：[A-Za-z0-9]</span><br><span class="line">[:word:] 	与[:alnum:]相同, 但增加了下划线字符。</span><br><span class="line">[:alpha:] 	字母字符。在 ASCII 中，等价于：[A-Za-z]</span><br><span class="line">[:blank:] 	包含空格和 tab 字符。</span><br><span class="line">[:cntrl:] 	ASCII 的控制码。包含了0到31，和127的 ASCII 字符。</span><br><span class="line">[:digit:] 	数字0到9</span><br><span class="line">[:graph:] 	可视字符。在 ASCII 中，它包含33到126的字符。</span><br><span class="line">[:lower:] 	小写字母。</span><br><span class="line">[:punct:] 	标点符号字符。在 ASCII 中，等价于：</span><br><span class="line">[:print:] 	可打印的字符。在[:graph:]中的所有字符，再加上空格字符。</span><br><span class="line">[:space:] 	空白字符，包括空格，tab，回车，换行，vertical tab, 和 form feed.在 ASCII 中， 等价于：[ \t\r\n\v\f]</span><br><span class="line">[:upper:] 	大写字母。</span><br><span class="line">[:xdigit:] 	用来表示十六进制数字的字符。在 ASCII 中，等价于：[0-9A-Fa-f]</span><br></pre></td></tr></table></figure></p>
+<h5 id="bash按行读取命令输出"><a href="#bash按行读取命令输出" class="headerlink" title="bash按行读取命令输出"></a>bash按行读取命令输出</h5><p><a href="http://gohom.win/2015/08/16/readlineBash/" target="_blank" rel="noopener">http://gohom.win/2015/08/16/readlineBash/</a><br><a href="https://linux.cn/article-6119-1.html" target="_blank" rel="noopener">https://linux.cn/article-6119-1.html</a></p>
+<p><a href="http://blog.csdn.net/stormbjm/article/details/19173011" target="_blank" rel="noopener">http://blog.csdn.net/stormbjm/article/details/19173011</a><br><a href="https://fukun.org/archives/01282174.html" target="_blank" rel="noopener">https://fukun.org/archives/01282174.html</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line">Bash中按行读取和处理</span><br><span class="line"></span><br><span class="line">Bash的处理文档能力肯定是不如python友好了.但是要是能用Bash来处理, 那也是十分赞的. Bash还能配合awk, sed等一起操作, 用熟了应该不比python差.但是python的扩展库多,语言友好, bash就限定在那几个程序了…好吧, 那还是要学好的.</span><br><span class="line">for + cat 循环读取</span><br><span class="line"></span><br><span class="line">使用cat 再for的缺点是, 要是有空格/tab, 就不会按行处理! 因为分隔符默认是空格,tab,换行! 这个问题再6-26号生日的博客中提及过了. 有两种写法去处理. 这里举例说明:</span><br><span class="line"></span><br><span class="line">#! /bin/bash --login</span><br><span class="line"></span><br><span class="line"># Backup the IFS</span><br><span class="line">OLDIFS=$IFS</span><br><span class="line"># Method 1:</span><br><span class="line">IFS=&quot;</span><br><span class="line">&quot;</span><br><span class="line"># Method 2:</span><br><span class="line">IFS=$&apos;\n&apos;</span><br><span class="line"></span><br><span class="line">echo &gt; ambertype.log</span><br><span class="line">for dir in `cat $1`</span><br><span class="line">do</span><br><span class="line">mol2pqr.sh $&#123;dir&#125;.mol2 pqrt no amber mbondi</span><br><span class="line"></span><br><span class="line">for line in $(cat $&#123;dir&#125;.pqrt)</span><br><span class="line">do</span><br><span class="line">if [[ $&#123;line:0:4&#125; == &quot;ATOM&quot; || $&#123;line:0:6&#125; == &quot;HETATM&quot; ]];then</span><br><span class="line">echo $&#123;line:78:10&#125; &gt;&gt; ambertype.log</span><br><span class="line">fi</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">done</span><br><span class="line"></span><br><span class="line"># Set back the IFS</span><br><span class="line">IFS=$OLDIFS</span><br><span class="line"></span><br><span class="line">这个脚本是操作文件内序号来读取文件,并提取行内信息的. 如果不设置IFS,读取结果是空白! 因为按空格和换行分隔了每个项…</span><br><span class="line">while read 循环读取</span><br><span class="line"></span><br><span class="line">比较常用的方法, 但有缺陷: 由于IFS定界符的原因, 多个定界符会合为一个进行处理. 要是使用重定义定界符的方法可以避免. 可以使用重定向输入或管道的方法进行,重定向的效率和速度更快!</span><br><span class="line"></span><br><span class="line"># testfile:</span><br><span class="line">#1   2  3</span><br><span class="line">#4 5  6</span><br><span class="line"></span><br><span class="line"># -r取消反义, 按实际显示行来输入</span><br><span class="line"># 将每行内容给line, 要是line1 line2 line3则根据定界符分隔每行赋给每个变量</span><br><span class="line">while read -r line</span><br><span class="line">do</span><br><span class="line">    echo $line</span><br><span class="line">done &lt; $testfile</span><br><span class="line"># 返回</span><br><span class="line">#1 2 3</span><br><span class="line">#4 5 6</span><br><span class="line"></span><br><span class="line">IFS=$&apos;\n&apos;</span><br><span class="line"># 或者用管道</span><br><span class="line">cat $testfile | while read -r line</span><br><span class="line">do</span><br><span class="line">    echo $line</span><br><span class="line">done</span><br><span class="line">#返回</span><br><span class="line">#1   2  3</span><br><span class="line">#4 5  6</span><br><span class="line"></span><br><span class="line">也可以使用文件句柄的方法指明输入:</span><br><span class="line"></span><br><span class="line">#! /bin/bash</span><br><span class="line">afile=$1</span><br><span class="line">bfile=$2</span><br><span class="line"># 将afile文件与bfile中的每行内容拼接起来.</span><br><span class="line"># 注意因为两个都要为真, 因此一个文件读完后循环将停止, 即使另一文件没读完.</span><br><span class="line">while read -u3 i &amp;&amp; read -u4 j;do</span><br><span class="line">echo $i $j</span><br><span class="line">done 3&lt;$afile 4&lt;$bfile</span><br><span class="line"></span><br><span class="line">还有人这么做重定向..使用输入3接受标准输入,再使用文件内容重定向给标准输入(相当于保存了内容到输入3),然后再将输入3传给标准输入作为read的输入…(就不能直接0&lt;$FILENAME写后面么..经测试,还真不行..)</span><br><span class="line"></span><br><span class="line">#! /bin/bash</span><br><span class="line">exec 3&lt;&amp;0</span><br><span class="line">exec 0&lt;$FILENAME</span><br><span class="line">while read line</span><br><span class="line">do</span><br><span class="line">echo $line</span><br><span class="line">done</span><br><span class="line">exec 0&lt;&amp;3</span><br><span class="line"></span><br><span class="line">使用自定义函数</span><br><span class="line"></span><br><span class="line">这里使用特殊的大写字母作为变量传递.</span><br><span class="line"></span><br><span class="line">function while_read_LINE_bottm()&#123;</span><br><span class="line">OLDIFS=$IFS</span><br><span class="line">IFS=$&apos;\n&apos;</span><br><span class="line">While read LINE</span><br><span class="line">do</span><br><span class="line">echo $LINE</span><br><span class="line">done  &lt; $FILENAME</span><br><span class="line">IFS=$OLDIFS</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">如题，将某命令的输出结果赋值给一个变量 a</span><br><span class="line"></span><br><span class="line">如果使用 echo $a 输出变量，则变量中的 换行都会被忽略掉，所有内容输出到一行</span><br><span class="line"></span><br><span class="line">而使用 echo &quot;$a&quot;  可正常输出变量中的换行</span><br><span class="line"></span><br><span class="line">当我们要将命令的输出保存到一个变量，再对每一行遍历进行某些操作时不能使用</span><br><span class="line">    for item in &quot;$a&quot;; do</span><br><span class="line">        ## do something</span><br><span class="line">    done</span><br><span class="line"></span><br><span class="line">语法,这样取到的变量 item  不是$a 中的一行，而是以空格分隔的一个个字符串</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">这种情况可以使用以下语法解决</span><br><span class="line">    echo &quot;$a&quot; | while read i</span><br><span class="line">    do</span><br><span class="line">		## do something</span><br><span class="line">    done</span><br></pre></td></tr></table></figure></p>
+<h5 id="Bash-Shell-解析路径获取文件名和目录名"><a href="#Bash-Shell-解析路径获取文件名和目录名" class="headerlink" title="Bash Shell 解析路径获取文件名和目录名"></a>Bash Shell 解析路径获取文件名和目录名</h5><p><a href="http://blog.csdn.net/wzy_1988/article/details/40590747" target="_blank" rel="noopener">http://blog.csdn.net/wzy_1988/article/details/40590747</a><br><a href="http://blog.csdn.net/ljianhui/article/details/43128465" target="_blank" rel="noopener">http://blog.csdn.net/ljianhui/article/details/43128465</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">前言</span><br><span class="line">还是今天再写一个自动化打包脚本，用到了从路径名中获取最后的文件名。这里记录一下实现过程。当然，最后我也会给出官方的做法。（ps：很囧，实现完了才发现原来Bash Shell有现成的函数）</span><br><span class="line"></span><br><span class="line">获取文件名</span><br><span class="line">假设给定的路径名为：</span><br><span class="line">[plain] view plain copy</span><br><span class="line"></span><br><span class="line">    /tmp/csdn/zhengyi/test/zhengyi.txt</span><br><span class="line"></span><br><span class="line">awk解法</span><br><span class="line">用“/”做分隔符，然后打印出最后的那一部分。实现代码如下：</span><br><span class="line">[plain] view plain copy</span><br><span class="line"></span><br><span class="line">    resFile=`echo /tmp/csdn/zhengyi/test/adb.log | awk -F &quot;/&quot; &apos;&#123;print $NF&#125;&apos;`</span><br><span class="line"></span><br><span class="line">官方解法(basename)</span><br><span class="line">Bash Shell本身提供了basename命令，可以直接获取路径名最后的文件名，实现代码如下：</span><br><span class="line">[plain] view plain copy</span><br><span class="line"></span><br><span class="line">    resFile=`basename /tmp/csdn/zhengyi/test/adb.log`</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">获取目录名</span><br><span class="line">官方解法(dirname)</span><br><span class="line">Bash Shell本身提供了dirname命令，特别方便，可以直接获取路径对应的目录名，实现代码如下：</span><br><span class="line">[plain] view plain copy</span><br><span class="line"></span><br><span class="line">    dirPath=`dirname /tmp/csdn/zhengyi/test/adb.log`</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">awk解法</span><br><span class="line">可以灵活的使用分隔符，混合正则表达式：</span><br><span class="line">[plain] view plain copy</span><br><span class="line"></span><br><span class="line">    dirPath=`echo /tmp/csdn/zhengyi/test/adb.log | awk -F &apos;/[^/]*$&apos; &apos;&#123;print $1&#125;&apos;`</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">awk+for循环的方法：</span><br><span class="line">[plain] view plain copy</span><br><span class="line"></span><br><span class="line">    echo /tmp/csdn/zhengyi/test/adb.log | awk &apos;BEGIN&#123;res=&quot;&quot;; FS=&quot;/&quot;;&#125;&#123; for(i=2;i&lt;=NF-1;i++) res=(res&quot;/&quot;$i);&#125; END&#123;print res&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="bash字符串操作"><a href="#bash字符串操作" class="headerlink" title="bash字符串操作"></a>bash字符串操作</h5><p><a href="https://my.oschina.net/aiguozhe/blog/41557" target="_blank" rel="noopener">https://my.oschina.net/aiguozhe/blog/41557</a><br><a href="http://blog.wtlucky.com/blog/2013/05/02/start-write-shell/" target="_blank" rel="noopener">http://blog.wtlucky.com/blog/2013/05/02/start-write-shell/</a></p>
+<h5 id="bash数组"><a href="#bash数组" class="headerlink" title="bash数组"></a>bash数组</h5><p><a href="https://blog.zengrong.net/post/1518.html" target="_blank" rel="noopener">https://blog.zengrong.net/post/1518.html</a><br><a href="https://blog.zengrong.net/post/1591.html" target="_blank" rel="noopener">https://blog.zengrong.net/post/1591.html</a><br><a href="https://nicesu.gitbooks.io/shell-guide/content/chapter4/46.html" target="_blank" rel="noopener">https://nicesu.gitbooks.io/shell-guide/content/chapter4/46.html</a><br><a href="http://blog.csdn.net/qq_31821675/article/details/74331607" target="_blank" rel="noopener">http://blog.csdn.net/qq_31821675/article/details/74331607</a></p>
+<h5 id="sed命令"><a href="#sed命令" class="headerlink" title="sed命令"></a>sed命令</h5><p><a href="http://sed.sourceforge.net/sed1line_zh-CN.html" target="_blank" rel="noopener">http://sed.sourceforge.net/sed1line_zh-CN.html</a><br><a href="https://www.ibm.com/developerworks/cn/education/aix/au-unixtips3/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/education/aix/au-unixtips3/index.html</a><br><a href="https://zhengheng.me/2015/11/12/sed-course/" target="_blank" rel="noopener">https://zhengheng.me/2015/11/12/sed-course/</a><br><a href="https://coolshell.cn/articles/9104.html" target="_blank" rel="noopener">https://coolshell.cn/articles/9104.html</a><br><a href="http://wiki.jikexueyuan.com/project/shell-learning/sed-search-and-replace.html" target="_blank" rel="noopener">http://wiki.jikexueyuan.com/project/shell-learning/sed-search-and-replace.html</a><br><a href="http://wiki.jikexueyuan.com/project/unix/regular-expressions.html" target="_blank" rel="noopener">http://wiki.jikexueyuan.com/project/unix/regular-expressions.html</a><br><a href="http://www.runoob.com/linux/linux-comm-sed.html" target="_blank" rel="noopener">http://www.runoob.com/linux/linux-comm-sed.html</a><br><a href="http://man.linuxde.net/sed" target="_blank" rel="noopener">http://man.linuxde.net/sed</a><br><a href="https://www.ibm.com/support/knowledgecenter/zh/ssw_aix_61/com.ibm.aix.cmds5/sed.htm" target="_blank" rel="noopener">https://www.ibm.com/support/knowledgecenter/zh/ssw_aix_61/com.ibm.aix.cmds5/sed.htm</a><br><a href="http://huchaowei.com/2017/05/24/Linux%20sed%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/" target="_blank" rel="noopener">http://huchaowei.com/2017/05/24/Linux%20sed%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/</a></p>
+<h5 id="sed命令unknown-option-to-‘s’解决办法"><a href="#sed命令unknown-option-to-‘s’解决办法" class="headerlink" title="sed命令unknown option to ‘s’解决办法"></a>sed命令unknown option to ‘s’解决办法</h5><p><a href="http://hadesmo.com/2015/07/20/sed.html" target="_blank" rel="noopener">http://hadesmo.com/2015/07/20/sed.html</a><br><a href="https://stackoverflow.com/questions/9366816/sed-unknown-option-to-s" target="_blank" rel="noopener">https://stackoverflow.com/questions/9366816/sed-unknown-option-to-s</a><br><a href="http://blog.csdn.net/qq1124794084/article/details/76419464" target="_blank" rel="noopener">http://blog.csdn.net/qq1124794084/article/details/76419464</a></p>
+<h5 id="diff命令"><a href="#diff命令" class="headerlink" title="diff命令"></a>diff命令</h5><p><a href="http://www.ruanyifeng.com/blog/2012/08/how_to_read_diff.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2012/08/how_to_read_diff.html</a></p>
+<h5 id="grep命令"><a href="#grep命令" class="headerlink" title="grep命令"></a>grep命令</h5><p><a href="http://www.cnblogs.com/ggjucheng/archive/2013/01/13/2856896.html" target="_blank" rel="noopener">http://www.cnblogs.com/ggjucheng/archive/2013/01/13/2856896.html</a><br><a href="http://mufool.com/2016/07/13/linux-grep/" target="_blank" rel="noopener">http://mufool.com/2016/07/13/linux-grep/</a><br><a href="https://www.teakki.com/p/57e237d4104112321cd7c91e" target="_blank" rel="noopener">https://www.teakki.com/p/57e237d4104112321cd7c91e</a><br><a href="https://linuxstory.org/grep-regular-expressions/" target="_blank" rel="noopener">https://linuxstory.org/grep-regular-expressions/</a><br><a href="https://linux.cn/article-6941-1.html" target="_blank" rel="noopener">https://linux.cn/article-6941-1.html</a><br><a href="https://www.ibm.com/support/knowledgecenter/zh/ssw_aix_61/com.ibm.aix.cmds2/grep.htm" target="_blank" rel="noopener">https://www.ibm.com/support/knowledgecenter/zh/ssw_aix_61/com.ibm.aix.cmds2/grep.htm</a><br><a href="http://www.runoob.com/linux/linux-comm-grep.html" target="_blank" rel="noopener">http://www.runoob.com/linux/linux-comm-grep.html</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git st | grep -E &quot;(Untracked files)|(Changes not staged for commit)&quot;</span><br><span class="line">git st | grep -E &quot;Untracked files|Changes not staged for commit&quot;</span><br><span class="line">git st | grep -e &quot;Untracked files&quot; -e &quot;Changes not staged for commit&quot;</span><br></pre></td></tr></table></figure></p>
+<h5 id="bash参数和参数扩展"><a href="#bash参数和参数扩展" class="headerlink" title="bash参数和参数扩展"></a>bash参数和参数扩展</h5><p><a href="https://www.ibm.com/developerworks/cn/linux/l-bash-parameters.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/linux/l-bash-parameters.html</a><br><a href="http://blog.51cto.com/huangyandong/1281327" target="_blank" rel="noopener">http://blog.51cto.com/huangyandong/1281327</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">(1). 传递参数</span><br><span class="line"></span><br><span class="line">   $0,$1,$2.......$N  :都是位置参数，其中$0可以表示为脚本名称(若在函数中调用则表示函数名称)。</span><br><span class="line"></span><br><span class="line">   $* 和 $@ : 都表示除$0外的所有参数，两者在不用双引号包含时是1、一样的，也就是$*和$@是等价的，使用在双引号中扩展则不同，$*表示所有参数都作为1个单词，且受IFS特殊变量的影响(即所有参数由IFS进行分割连接)，而$@把</span><br><span class="line"></span><br><span class="line">每个参数都扩展为1个单词即&quot;$@&quot;等价于&quot;$1&quot; &quot;$2&quot; ...&quot;$N&quot;.</span><br><span class="line"></span><br><span class="line">   $# :表示参数数量(不含$0)</span><br><span class="line"></span><br><span class="line">注:Shell 脚本处理参数的方式与函数处理参数的方式相同。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">(2).获取参数的子集(子字符串)</span><br><span class="line"></span><br><span class="line">   一般形式: $&#123;参数名称:开始位置:长度&#125;</span><br><span class="line"></span><br><span class="line">   注:开始位置和长度为整数，且从0开始</span><br><span class="line"></span><br><span class="line">   实例: x=&quot;hello world&quot;;</span><br><span class="line"></span><br><span class="line">         echo $&#123;x:6:5&#125;  #输出world</span><br><span class="line"></span><br><span class="line">(3).获取变量值的长度</span><br><span class="line"></span><br><span class="line">   一般形式:$&#123;#变量名称&#125;</span><br><span class="line"></span><br><span class="line">   实例: x=&quot;hello world&quot;;</span><br><span class="line"></span><br><span class="line">         echo $&#123;#x&#125; #输出11</span><br><span class="line"></span><br><span class="line">(4).模式匹配(可以使用通配符)</span><br><span class="line"></span><br><span class="line">   [1].从左开始删除:</span><br><span class="line"></span><br><span class="line">       $&#123;变量名#要删除的字&#125;   #表示从左边开始删除最短的匹配要删除的字</span><br><span class="line"></span><br><span class="line">       $&#123;变量名##要删除的字&#125;  #表示从左边开始删除最长的匹配要删除的字</span><br><span class="line"></span><br><span class="line">       实例:  x=&quot;a1e b1e c2 d3 e4&quot;</span><br><span class="line"></span><br><span class="line">              echo $&#123;x#*1&#125;  #则将a1删除,输出为 e b1e c2 d3 e4</span><br><span class="line"></span><br><span class="line">              echo $&#123;x##*1&#125; #则删除a1e b1,输出为e c2 d3 e4</span><br><span class="line"></span><br><span class="line">   [2].从右开始删除</span><br><span class="line"></span><br><span class="line">       $&#123;变量名%要删除的字&#125;   #表示从右边开始删除最短的匹配要删除的字</span><br><span class="line"></span><br><span class="line">       $&#123;变量名%%要删除的字&#125;  #表示从右边开始删除最长的匹配要删除的字</span><br><span class="line"></span><br><span class="line">       实例: x=&quot;a1e b1e c2 d3 e4&quot;</span><br><span class="line"></span><br><span class="line">             echo $&#123;x%1*&#125; #则删除1e c2 d3 e4，输出为a1e b</span><br><span class="line"></span><br><span class="line">             echo $&#123;x%%1*&#125;#则删除1e b1e c2 d3 e4,输出为a</span><br><span class="line"></span><br><span class="line">   [3].替换字符</span><br><span class="line"></span><br><span class="line">       $&#123;变量名/要替换的字/新字&#125; #将变量值中指定的字替换为新字，只做1次替换</span><br><span class="line"></span><br><span class="line">       $&#123;变量名//要替换的字/新字&#125; #将变量值中指定的字替换为新字，做所有替换</span><br><span class="line"></span><br><span class="line">       实例: x=&quot;a1e b1e c2 d3 e4&quot;</span><br><span class="line"></span><br><span class="line">             echo $&#123;x/1/one&#125; #输出aonee b1e c2 d3 e4</span><br><span class="line"></span><br><span class="line">             echo $&#123;x//1/one&#125;#输出为aonee bonee c2 d3 e4</span><br><span class="line"></span><br><span class="line">(5).设置默认值</span><br><span class="line"></span><br><span class="line">   $&#123;变量名:-默认值&#125;  若指定的变量为空或者没有设置，则shell扩展默认值并替换结果，但是指定变量名的值没有更改。</span><br><span class="line"></span><br><span class="line">       例如: a=$&#123;b:-Val1&#125;  #则变量$a的值为Val1而变量b还是没有设置</span><br><span class="line"></span><br><span class="line">   $&#123;变量名:+默认值&#125;  若指定的变量值设置且不为空则shell扩展默认值并替换结果，但是指定的变量值没有改变。</span><br><span class="line"></span><br><span class="line">       例如:  b=&apos;val1&apos;; a=$&#123;b:+val2&#125;  #则$a值为val2而$b值为val1</span><br><span class="line"></span><br><span class="line">   $&#123;变量名:=默认值&#125;  若指定的变量为空或者没有设置，则shell扩展默认值并替换结果，且指定变量名的值也更改为默认值。</span><br><span class="line"></span><br><span class="line">       实例: a=$&#123;b:=val1&#125; #则$a为val1且$b为val1</span><br><span class="line"></span><br><span class="line">   $&#123;变量名:?默认值&#125; 若指定的变量为空或者没有设置，则shell扩展默认值并将结果写入标准错误中。可用于判断变量b是否为空，若为空则错误输出指定的信息。</span><br><span class="line"></span><br><span class="line">       实例:a=$&#123;b:?&#125; #则shell中错误输出-bash: b: error</span><br></pre></td></tr></table></figure></p>
+<h5 id="shell内置变量"><a href="#shell内置变量" class="headerlink" title="shell内置变量"></a>shell内置变量</h5><p><a href="http://blog.csdn.net/gaoming655/article/details/7238695s" target="_blank" rel="noopener">http://blog.csdn.net/gaoming655/article/details/7238695s</a><br><a href="http://blog.csdn.net/ljianhui/article/details/43128465" target="_blank" rel="noopener">http://blog.csdn.net/ljianhui/article/details/43128465</a><br><a href="https://www.gnu.org/software/bash/manual/bashref.html#Special-Parameters" target="_blank" rel="noopener">https://www.gnu.org/software/bash/manual/bashref.html#Special-Parameters</a><br><a href="http://wiki.jikexueyuan.com/project/linux-command/chap33.html" target="_blank" rel="noopener">http://wiki.jikexueyuan.com/project/linux-command/chap33.html</a><br><a href="http://www.runoob.com/linux/linux-shell-passing-arguments.html" target="_blank" rel="noopener">http://www.runoob.com/linux/linux-shell-passing-arguments.html</a><br><a href="http://coney.github.io/2013/07/parse-cli-arguments-in-shell-script/" target="_blank" rel="noopener">http://coney.github.io/2013/07/parse-cli-arguments-in-shell-script/</a><br>变量     | 含义<br>——–|——–<br>&#36;0      | 脚本名字<br>&#36;1      | 位置参数 #1<br>&#36;2 - $9 | 位置参数 #2 - #9<br>&#36;{10}   | 位置参数 #10<br>&#36;#      | 位置参数的个数<br>&#36;&#42;      | 所有的位置参数(作为单个字符串) &#42; (&#42; 必须被引用起来, 否则默认为”&#36;&#64;”. )<br>&#36;&#64;      | 所有的位置参数(每个都作为独立的字符串)<br>&#36;&#123;#&#42;&#125; | 传递到脚本中的命令行参数的个数<br>&#36;&#123;#&#64;&#125; | 传递到脚本中的命令行参数的个数<br>&#36;&#63;      | 命令执行结果的返回值<br>&#36;&#36;      | 脚本的进程ID(PID)<br>&#36;-      | 传递到脚本中的标志(使用set)<br>&#36;_      | 之前命令的最后一个参数<br>&#36;&#33;      | 运行在后台的最后一个作业的进程ID(PID)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$* 与 $@ 区别：</span><br><span class="line"></span><br><span class="line">    相同点：都是引用所有参数。</span><br><span class="line">    不同点：只有在双引号中体现出来。假设在脚本运行时写了三个参数 1、2、3，，则 &quot; * &quot; 等价于 &quot;1 2 3&quot;（传递了一个参数），而 &quot;@&quot; 等价于 &quot;1&quot; &quot;2&quot; &quot;3&quot;（传递了三个参数）。</span><br></pre></td></tr></table></figure>
+<h5 id="Shell脚本调试技巧"><a href="#Shell脚本调试技巧" class="headerlink" title="Shell脚本调试技巧"></a>Shell脚本调试技巧</h5><p><a href="http://coolshell.cn/articles/1379.html" target="_blank" rel="noopener">http://coolshell.cn/articles/1379.html</a><br><a href="https://www.ibm.com/developerworks/cn/linux/l-cn-shell-debug/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/linux/l-cn-shell-debug/index.html</a><br><a href="http://bbs.chinaunix.net/forum.php?mod=viewthread&amp;tid=1356019" target="_blank" rel="noopener">http://bbs.chinaunix.net/forum.php?mod=viewthread&amp;tid=1356019</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">1. 跟踪脚本执行</span><br><span class="line">bash -x script_name</span><br><span class="line">#! /bin/bash -x</span><br><span class="line"></span><br><span class="line">2. 跟踪输入行号</span><br><span class="line">export PS4=&apos;+$&#123;BASH_SOURCE&#125;:$&#123;LINENO&#125;:$&#123;FUNCNAME[0]&#125;: &apos;</span><br><span class="line">export PS4=&apos;+$&#123;FUNCNAME[0]&#125;:$&#123;LINENO&#125;: &apos;</span><br><span class="line">export PS4=&apos;+$&#123;LINENO&#125;: &apos;</span><br><span class="line"></span><br><span class="line">3. 调试部分脚本(set command)</span><br><span class="line">#!/bin/bash</span><br><span class="line">echo &quot;Hello $USER,&quot;</span><br><span class="line">set -x</span><br><span class="line">echo &quot;Today is $(date %Y-%m-%d)&quot;</span><br><span class="line">set +x</span><br><span class="line"></span><br><span class="line">4. 日志输出控制</span><br><span class="line">_log() &#123;</span><br><span class="line">    if [ &quot;$_DEBUG&quot; == &quot;true&quot; ]; then</span><br><span class="line">        echo 1&gt;&amp;2 &quot;$@&quot;</span><br><span class="line">    fi</span><br><span class="line">&#125;</span><br><span class="line">5.</span><br></pre></td></tr></table></figure></p>
+<h5 id="Linux的script命令——隐藏在终端的记录器"><a href="#Linux的script命令——隐藏在终端的记录器" class="headerlink" title="Linux的script命令——隐藏在终端的记录器"></a>Linux的script命令——隐藏在终端的记录器</h5><p><a href="http://blog.jobbole.com/70563/" target="_blank" rel="noopener">http://blog.jobbole.com/70563/</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">script是将终端会话制成打印稿的命令。对于想重现终端输入输出历史的人来说，十分管用。而且，这些记录还能被保存或打印。</span><br><span class="line"></span><br><span class="line">一般地，我们可以通过在终端上敲入script来启动它。敲击ctrl+d或exit，可以停止记录。你会发现写入记录是发生在停止之后的。</span><br></pre></td></tr></table></figure></p>
+<h5 id="Grep匹配中括号"><a href="#Grep匹配中括号" class="headerlink" title="Grep匹配中括号"></a>Grep匹配中括号</h5><p><a href="https://regexr.com/" target="_blank" rel="noopener">https://regexr.com/</a><br><a href="https://regex101.com/" target="_blank" rel="noopener">https://regex101.com/</a></p>
+<p><a href="http://www.regular-expressions.info/" target="_blank" rel="noopener">http://www.regular-expressions.info/</a><br><a href="https://www.gitbook.com/book/luke0922/learnregularexpressionin30minutes/details" target="_blank" rel="noopener">https://www.gitbook.com/book/luke0922/learnregularexpressionin30minutes/details</a></p>
+<p><a href="https://stackoverflow.com/questions/30044199/how-can-i-match-square-bracket-in-regex-with-grep" target="_blank" rel="noopener">https://stackoverflow.com/questions/30044199/how-can-i-match-square-bracket-in-regex-with-grep</a><br><a href="https://stackoverflow.com/questions/928072/whats-the-regular-expression-that-matches-a-square-bracket" target="_blank" rel="noopener">https://stackoverflow.com/questions/928072/whats-the-regular-expression-that-matches-a-square-bracket</a><br><a href="http://teliute.org/linux/abs-3.9.1/x13673.html" target="_blank" rel="noopener">http://teliute.org/linux/abs-3.9.1/x13673.html</a><br><a href="http://www.cnblogs.com/zeweiwu/p/5485711.html" target="_blank" rel="noopener">http://www.cnblogs.com/zeweiwu/p/5485711.html</a><br><a href="http://wubinary.blog.51cto.com/8570032/1362549" target="_blank" rel="noopener">http://wubinary.blog.51cto.com/8570032/1362549</a><br><a href="http://bbs.chinaunix.net/thread-3563141-1-1.html" target="_blank" rel="noopener">http://bbs.chinaunix.net/thread-3563141-1-1.html</a><br><a href="http://kuanghy.github.io/2015/10/26/grep-regex" target="_blank" rel="noopener">http://kuanghy.github.io/2015/10/26/grep-regex</a><br><a href="http://www.infoq.com/cn/news/2011/01/regular-expressions-1" target="_blank" rel="noopener">http://www.infoq.com/cn/news/2011/01/regular-expressions-1</a><br><a href="http://www.cftea.com/c/2010/08/5hwu2a5er4wbimkf.asp" target="_blank" rel="noopener">http://www.cftea.com/c/2010/08/5hwu2a5er4wbimkf.asp</a><br><a href="https://ask.helplib.com/335235" target="_blank" rel="noopener">https://ask.helplib.com/335235</a><br><a href="http://www.cnblogs.com/hustskyking/p/how-regular-expressions-work.html" target="_blank" rel="noopener">http://www.cnblogs.com/hustskyking/p/how-regular-expressions-work.html</a><br><a href="http://www.jarjar.cn/regular-expression-quick-start/" target="_blank" rel="noopener">http://www.jarjar.cn/regular-expression-quick-start/</a></p>
+<p><a href="https://linuxstory.org/grep-regular-expressions/" target="_blank" rel="noopener">https://linuxstory.org/grep-regular-expressions/</a><br><a href="https://www.ibm.com/support/knowledgecenter/zh/ssw_aix_61/com.ibm.aix.cmds2/grep.htm" target="_blank" rel="noopener">https://www.ibm.com/support/knowledgecenter/zh/ssw_aix_61/com.ibm.aix.cmds2/grep.htm</a><br><a href="https://linux.cn/article-2250-1.html" target="_blank" rel="noopener">https://linux.cn/article-2250-1.html</a><br><a href="https://linux.cn/article-5453-1.html" target="_blank" rel="noopener">https://linux.cn/article-5453-1.html</a><br><a href="http://www.runoob.com/linux/linux-comm-grep.html" target="_blank" rel="noopener">http://www.runoob.com/linux/linux-comm-grep.html</a><br><a href="http://www.oracle.com/technetwork/cn/topics/calish-find-096463-zhs.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/cn/topics/calish-find-096463-zhs.html</a><br><a href="https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/Linux" target="_blank" rel="noopener">https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/Linux</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">hogan@ubuntu:~$ echo &quot;fdsl[]&quot; | grep -Eo &quot;[][ a-z]+&quot;</span><br><span class="line">fdsl[]</span><br><span class="line"></span><br><span class="line">hogan@ubuntu:~/ebook$ find . -type f | sed &apos;s/.*\///g&apos; | grep -E &quot;[][&#125;&#123;]&quot;</span><br><span class="line">[www.java1234.com]LINUX SHELL脚本攻略(第二版).pdf</span><br><span class="line">[测试之美].Beautiful.Testing.文字版.pdf</span><br><span class="line">[www.eimhe.com][计算机软件测试（原书第二版）].Cem.Kaner等.pdf</span><br><span class="line">[www.eimhe.com]敏捷软件测试：测试人员与敏捷团队的实践指南_.pdf</span><br><span class="line">[www.eimhe.com]笑傲测试-软件测试流程方法与实施.pdf</span><br><span class="line">[www.eimhe.com]Web入侵安全测试与对策.pdf</span><br><span class="line">[www.eimhe.com]软件测试新技术与实践.pdf</span><br><span class="line">[www.eimhe.com]《软件安全测试艺术》ch01.pdf</span><br><span class="line">[www.eimhe.com]web应用性能测试指南.pdf</span><br></pre></td></tr></table></figure></p>
+<h5 id="Linux命令备份"><a href="#Linux命令备份" class="headerlink" title="Linux命令备份"></a>Linux命令备份</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">查找文件名中的特殊字符</span><br><span class="line">hogan@ubuntu:~/knowledge$ find ./ -name &quot;*</span><br><span class="line">&gt; *&quot;</span><br><span class="line">hogan@ubuntu:~/knowledge$ find ./ -name &quot;* *&quot;</span><br><span class="line">hogan@ubuntu:~/Downloads$ find ./ -name &quot;*[\ \</span><br><span class="line">&gt; ]*&quot;</span><br><span class="line"></span><br><span class="line">查找window系统不允许的特殊文件名</span><br><span class="line">hogan@ubuntu:~$ find ./ -name &quot;*[\\\:\*\?\&quot;\&lt;\&gt;\|</span><br><span class="line">&gt; ]*&quot;</span><br><span class="line"></span><br><span class="line">中文特殊字符</span><br><span class="line">hogan@ubuntu:~$ find ./ -name &quot;*[\ \\\:\：\*\?\&quot;\“\”\&lt;\&gt;\《\》\|</span><br><span class="line">&gt; ]*&quot;</span><br><span class="line">中文特殊字符</span><br><span class="line">hogan@ubuntu:~$ find ./ -name &quot;*[\ \\\/\:\：\*\?\&quot;\“\”\&lt;\&gt;\《\》\|</span><br><span class="line">&gt; ]*&quot;</span><br><span class="line">中文特殊字符</span><br><span class="line">hogan@ubuntu:~/ebook$ find . -type f | sed &apos;s/.*\///g&apos; | grep -E &quot;[][\\\/\:\*\?\&quot;\&lt;\&gt;\|\`\~)(&#125;&#123;;\&apos;\,\～ （）【】、；：‘’“”，。《》？ -]&quot;</span><br><span class="line"></span><br><span class="line">重复文件查找</span><br><span class="line">for file in $(find . -path ./.git -prune -o -print); do if [ -f $&#123;file&#125; ]; then md5sum $&#123;file&#125;; fi done &gt; /tmp/md5.log</span><br><span class="line">cat /tmp/md5.log | sort | uniq -D -w 33</span><br><span class="line"></span><br><span class="line">time  find . \! -type d -exec md5sum &apos;&#123;&#125;&apos; &apos;;&apos; | sort | uniq -D -w 33</span><br><span class="line"></span><br><span class="line">文件大小排序</span><br><span class="line">du -a -m ebook/ | sort -n</span><br><span class="line"></span><br><span class="line">Find查找(忽略test_result目录，然后查找特定后缀名文件)</span><br><span class="line">http://blog.csdn.net/pcyph/article/details/41683383</span><br><span class="line">使用find命令在linux系统中查找文件时，有时需要忽略某些目录，可以使用 -prune 参数来进行过滤。</span><br><span class="line">不过必须注意：要忽略的路径参数要紧跟着搜索的路径之后，否则该参数无法起作用。</span><br><span class="line">find ./ -path &quot;./test_result/*&quot; -prune -o -regextype posix-extended -regex &quot;.*\.(gcno|gcda)&quot; -print</span><br><span class="line"></span><br><span class="line">find命令实现tree命令</span><br><span class="line">find . -print | sed -e &apos;s;[^/]*/;|____;g;s;____|; |;g&apos; &gt; structure.txt</span><br><span class="line"></span><br><span class="line">find ebook -print | sed -e &apos;s;[^/]*/;│── ;g;s;── │;   │;g&apos; &gt; structure.txt</span><br></pre></td></tr></table></figure>
+<h5 id="time命令查看命令执行时间"><a href="#time命令查看命令执行时间" class="headerlink" title="time命令查看命令执行时间"></a>time命令查看命令执行时间</h5><p><a href="http://www.runoob.com/linux/linux-comm-time.html" target="_blank" rel="noopener">http://www.runoob.com/linux/linux-comm-time.html</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">time  find . \! -type d -exec md5sum &apos;&#123;&#125;&apos; &apos;;&apos; | sort | uniq -D -w 33</span><br><span class="line"></span><br><span class="line">time命令结果有三行组成：real、user和sys。CPU用时被划分为user和sys两块。</span><br><span class="line"></span><br><span class="line">real值表示从程序开始到程序执行结束时所消耗的时间，包括CPU的用时。</span><br><span class="line"></span><br><span class="line">user值表示程序本身，以及它所调用的库中的子例程使用的时间。</span><br><span class="line"></span><br><span class="line">sys是由程序直接或间接调用的系统调用执行的时间。</span><br></pre></td></tr></table></figure></p>
+<h5 id="crontab详解"><a href="#crontab详解" class="headerlink" title="crontab详解"></a>crontab详解</h5><p><a href="http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/crontab.html" target="_blank" rel="noopener">http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/crontab.html</a><br><a href="http://linux.vbird.org/linux_basic/0430cron.php" target="_blank" rel="noopener">http://linux.vbird.org/linux_basic/0430cron.php</a><br><a href="http://www.cnblogs.com/b028/archive/2011/01/07/1930243.html" target="_blank" rel="noopener">http://www.cnblogs.com/b028/archive/2011/01/07/1930243.html</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line">crontab的文件格式</span><br><span class="line"></span><br><span class="line">分 时 日 月 星期 要运行的命令</span><br><span class="line"></span><br><span class="line">    第1列分钟0～59</span><br><span class="line">    第2列小时0～23（0表示子夜）</span><br><span class="line">    第3列日1～31</span><br><span class="line">    第4列月1～12</span><br><span class="line">    第5列星期0～7（0和7表示星期天）</span><br><span class="line">    第6列要运行的命令</span><br><span class="line"></span><br><span class="line">0,15,30,45 18-06 * * * /bin/echo &apos;date&apos; &gt; /dev/console</span><br><span class="line"></span><br><span class="line">使用实例</span><br><span class="line">实例1：每1分钟执行一次myCommand</span><br><span class="line"></span><br><span class="line">* * * * * myCommand</span><br><span class="line"></span><br><span class="line">实例2：每小时的第3和第15分钟执行</span><br><span class="line"></span><br><span class="line">3,15 * * * * myCommand</span><br><span class="line"></span><br><span class="line">实例3：在上午8点到11点的第3和第15分钟执行</span><br><span class="line"></span><br><span class="line">3,15 8-11 * * * myCommand</span><br><span class="line"></span><br><span class="line">实例4：每隔两天的上午8点到11点的第3和第15分钟执行</span><br><span class="line"></span><br><span class="line">3,15 8-11 */2  *  * myCommand</span><br><span class="line"></span><br><span class="line">实例5：每周一上午8点到11点的第3和第15分钟执行</span><br><span class="line"></span><br><span class="line">3,15 8-11 * * 1 myCommand</span><br><span class="line"></span><br><span class="line">实例6：每晚的21:30重启smb</span><br><span class="line"></span><br><span class="line">30 21 * * * /etc/init.d/smb restart</span><br><span class="line"></span><br><span class="line">实例7：每月1、10、22日的4 : 45重启smb</span><br><span class="line"></span><br><span class="line">45 4 1,10,22 * * /etc/init.d/smb restart</span><br><span class="line"></span><br><span class="line">实例8：每周六、周日的1 : 10重启smb</span><br><span class="line"></span><br><span class="line">10 1 * * 6,0 /etc/init.d/smb restart</span><br><span class="line"></span><br><span class="line">实例9：每天18 : 00至23 : 00之间每隔30分钟重启smb</span><br><span class="line"></span><br><span class="line">0,30 18-23 * * * /etc/init.d/smb restart</span><br><span class="line"></span><br><span class="line">实例10：每星期六的晚上11 : 00 pm重启smb</span><br><span class="line"></span><br><span class="line">0 23 * * 6 /etc/init.d/smb restart</span><br><span class="line"></span><br><span class="line">实例11：每一小时重启smb</span><br><span class="line"></span><br><span class="line">* */1 * * * /etc/init.d/smb restart</span><br><span class="line"></span><br><span class="line">实例12：晚上11点到早上7点之间，每隔一小时重启smb</span><br><span class="line"></span><br><span class="line">0 23-7 * * * /etc/init.d/smb restart</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">預設情況下，任何使用者只要不被列入 /etc/cron.deny 當中，那麼他就可以直接下達『 crontab -e 』去編輯自己的例行性命令了！整個過程就如同上面提到的，會進入 vi 的編輯畫面， 然後以一個工作一行來編輯，編輯完畢之後輸入『 :wq 』儲存後離開 vi 就可以了！ 而每項工作 (每行) 的格式都是具有六個欄位，這六個欄位的意義為：</span><br><span class="line">代表意義	分鐘	小時 	日期	月份	週	指令</span><br><span class="line">數字範圍	0-59	0-23	1-31	1-12	0-7 	呀就指令啊</span><br><span class="line"></span><br><span class="line">比較有趣的是那個『週』喔！週的數字為 0 或 7 時，都代表『星期天』的意思！另外，還有一些輔助的字符，大概有底下這些：</span><br><span class="line">特殊字符	代表意義</span><br><span class="line">*(星號)	代表任何時刻都接受的意思！舉例來說，範例一內那個日、月、週都是 * ， 就代表著『不論何月、何日的禮拜幾的 12:00 都執行後續指令』的意思！</span><br><span class="line">,(逗號)	代表分隔時段的意思。舉例來說，如果要下達的工作是 3:00 與 6:00 時，就會是：</span><br><span class="line"></span><br><span class="line">    0 3,6 * * * command</span><br><span class="line"></span><br><span class="line">時間參數還是有五欄，不過第二欄是 3,6 ，代表 3 與 6 都適用！</span><br><span class="line">-(減號)	代表一段時間範圍內，舉例來說， 8 點到 12 點之間的每小時的 20 分都進行一項工作：</span><br><span class="line"></span><br><span class="line">    20 8-12 * * * command</span><br><span class="line"></span><br><span class="line">仔細看到第二欄變成 8-12 喔！代表 8,9,10,11,12 都適用的意思！</span><br><span class="line">/n(斜線)	那個 n 代表數字，亦即是『每隔 n 單位間隔』的意思，例如每五分鐘進行一次，則：</span><br><span class="line"></span><br><span class="line">    */5 * * * * command</span><br><span class="line"></span><br><span class="line">很簡單吧！用 * 與 /5 來搭配，也可以寫成 0-59/5 ，相同意思！</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">hogan@ubuntu:~$ crontab -l</span><br><span class="line"># Edit this file to introduce tasks to be run by cron.</span><br><span class="line">#</span><br><span class="line"># Each task to run has to be defined through a single line</span><br><span class="line"># indicating with different fields when the task will be run</span><br><span class="line"># and what command to run for the task</span><br><span class="line">#</span><br><span class="line"># To define the time you can provide concrete values for</span><br><span class="line"># minute (m), hour (h), day of month (dom), month (mon),</span><br><span class="line"># and day of week (dow) or use &apos;*&apos; in these fields (for &apos;any&apos;).#</span><br><span class="line"># Notice that tasks will be started based on the cron&apos;s system</span><br><span class="line"># daemon&apos;s notion of time and timezones.</span><br><span class="line">#</span><br><span class="line"># Output of the crontab jobs (including errors) is sent through</span><br><span class="line"># email to the user the crontab file belongs to (unless redirected).</span><br><span class="line">#</span><br><span class="line"># For example, you can run a backup of all your user accounts</span><br><span class="line"># at 5 a.m every week with:</span><br><span class="line"># 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/</span><br><span class="line">#</span><br><span class="line"># For more information see the manual pages of crontab(5) and cron(8)</span><br><span class="line">#</span><br><span class="line"># m h  dom mon dow   command</span><br><span class="line">0 23 * * 1-5 cd /home/hogan/Documents/Docs/practice/python/stcksql/; /home/hogan/anaconda3/bin/python update_hist_data.py &gt; update.log 2&gt;&amp;1 &amp;</span><br><span class="line">0 0 * * 1-5 cd /home/hogan/Documents/Docs/practice/python/stcksql/; /home/hogan/anaconda3/bin/python stck3.py &gt; stck3.log 2&gt;&amp;1 &amp;</span><br><span class="line">0 1 * * 1-5 cd /home/hogan/Documents/Docs/practice/python/stcksql/; /home/hogan/anaconda3/bin/python get_today_data3.py &gt; get_today_data3.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure></p>
+<h5 id="watch周期性的方式执行给定的指令"><a href="#watch周期性的方式执行给定的指令" class="headerlink" title="watch周期性的方式执行给定的指令"></a>watch周期性的方式执行给定的指令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">watch -n 1 -d &quot;netstat -nalt | grep 20000&quot;</span><br><span class="line"></span><br><span class="line">while :; do netstat -nal | grep 20000; echo -e &quot;\n\n&quot;; sleep 1; done</span><br></pre></td></tr></table></figure>
+<h5 id="Tcpdump命令行格式"><a href="#Tcpdump命令行格式" class="headerlink" title="Tcpdump命令行格式"></a>Tcpdump命令行格式</h5><p><a href="http://www.cnblogs.com/yc_sunniwell/archive/2010/07/05/1771563.html" target="_blank" rel="noopener">http://www.cnblogs.com/yc_sunniwell/archive/2010/07/05/1771563.html</a><br><a href="http://linuxwiki.github.io/NetTools/tcpdump.html" target="_blank" rel="noopener">http://linuxwiki.github.io/NetTools/tcpdump.html</a><br><a href="http://blog.csdn.net/hzhsan/article/details/43445787" target="_blank" rel="noopener">http://blog.csdn.net/hzhsan/article/details/43445787</a><br><a href="https://www.ibm.com/support/knowledgecenter/zh/ssw_aix_71/com.ibm.aix.cmds5/tcpdump.htm" target="_blank" rel="noopener">https://www.ibm.com/support/knowledgecenter/zh/ssw_aix_71/com.ibm.aix.cmds5/tcpdump.htm</a></p>
+<p><a href="http://www.what21.com/article/b_linux_1488875255218.html" target="_blank" rel="noopener">http://www.what21.com/article/b_linux_1488875255218.html</a><br><a href="https://linux.cn/article-3967-1.html" target="_blank" rel="noopener">https://linux.cn/article-3967-1.html</a><br><a href="https://www.cnblogs.com/ggjucheng/archive/2012/01/14/2322659.html" target="_blank" rel="noopener">https://www.cnblogs.com/ggjucheng/archive/2012/01/14/2322659.html</a><br><a href="http://blog.csdn.net/hzhsan/article/details/43445787" target="_blank" rel="noopener">http://blog.csdn.net/hzhsan/article/details/43445787</a><br><a href="http://man.linuxde.net/tcpdump" target="_blank" rel="noopener">http://man.linuxde.net/tcpdump</a><br><a href="http://cizixs.com/2015/03/12/tcpdump-introduction" target="_blank" rel="noopener">http://cizixs.com/2015/03/12/tcpdump-introduction</a><br><a href="http://weibo.com/ttarticle/p/show?id=2309351002704062303971614470" target="_blank" rel="noopener">http://weibo.com/ttarticle/p/show?id=2309351002704062303971614470</a><br><a href="http://blog.csdn.net/lishuhuakai/article/details/73136636" target="_blank" rel="noopener">http://blog.csdn.net/lishuhuakai/article/details/73136636</a><br><a href="http://pytool.com/2016/01/12/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4-2016-01-01-Linux%E5%91%BD%E4%BB%A4-Tcpdump/" target="_blank" rel="noopener">http://pytool.com/2016/01/12/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4-2016-01-01-Linux%E5%91%BD%E4%BB%A4-Tcpdump/</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br></pre></td><td class="code"><pre><span class="line">sudo tcpdump -i lo -x -vv port 20000</span><br><span class="line"></span><br><span class="line">sudo tcpdump -i lo tcp port 20000 -X</span><br><span class="line">sudo tcpdump -i lo tcp port 20000 -XX</span><br><span class="line">sudo tcpdump -i lo tcp port 20000 -nSA</span><br><span class="line"></span><br><span class="line">只获取syn报文</span><br><span class="line">https://linux.cn/article-3967-1.html</span><br><span class="line"></span><br><span class="line">sudo tcpdump -i wlan0 &apos;tcp[13] = 2&apos; -nSA</span><br><span class="line">sudo tcpdump -i wlan0 &quot;tcp[tcpflags] &amp; (tcp-syn) != 0&quot;</span><br><span class="line"></span><br><span class="line">tcpdump采用命令行方式，它的命令格式为：</span><br><span class="line">    　　tcpdump [ -adeflnNOpqStvx ] [ -c 数量 ] [ -F 文件名 ]</span><br><span class="line">　　　　　　　　　　[ -i 网络接口 ] [ -r 文件名] [ -s snaplen ]</span><br><span class="line">　　　　　　　　　　[ -T 类型 ] [ -w 文件名 ] [表达式 ]</span><br><span class="line"></span><br><span class="line">(1). tcpdump的选项介绍</span><br><span class="line"></span><br><span class="line">     -a 　　　将网络地址和广播地址转变成名字；</span><br><span class="line">　　　-d 　　　将匹配信息包的代码以人们能够理解的汇编格式给出；</span><br><span class="line">　　　-dd 　　 将匹配信息包的代码以c语言程序段的格式给出；</span><br><span class="line">　　　-ddd 　　将匹配信息包的代码以十进制的形式给出；</span><br><span class="line">　　　-e 　　　在输出行打印出数据链路层的头部信息；</span><br><span class="line">　　　-f 　　　将外部的Internet地址以数字的形式打印出来；</span><br><span class="line">　　　-l 　　　使标准输出变为缓冲行形式；</span><br><span class="line">　　　-n 　　　不把网络地址转换成名字；</span><br><span class="line">　　　-t 　　　在输出的每一行不打印时间戳；</span><br><span class="line">　　　-v 　　　输出一个稍微详细的信息，例如在ip包中可以包括ttl和服务类型的信息；</span><br><span class="line">　　　-vv 　　 输出详细的报文信息；</span><br><span class="line">　　　-c 　　　在收到指定的包的数目后，tcpdump就会停止；</span><br><span class="line">　　　-F 　　　从指定的文件中读取表达式,忽略其它的表达式；</span><br><span class="line">　　　-i 　　　指定监听的网络接口；</span><br><span class="line">　　　-r 　　　从指定的文件中读取包(这些包一般通过-w选项产生)；</span><br><span class="line">　　　-w 　　　直接将包写入文件中，并不分析和打印出来；</span><br><span class="line">　　　-T 　　　将监听到的包直接解释为指定的类型的报文，常见的类型有rpc （远程过程调用）和snmp（简单网络管理协议；）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">来自: http://man.linuxde.net/tcpdump</span><br><span class="line">-a：尝试将网络和广播地址转换成名称；</span><br><span class="line">-c&lt;数据包数目&gt;：收到指定的数据包数目后，就停止进行倾倒操作；</span><br><span class="line">-d：把编译过的数据包编码转换成可阅读的格式，并倾倒到标准输出；</span><br><span class="line">-dd：把编译过的数据包编码转换成C语言的格式，并倾倒到标准输出；</span><br><span class="line">-ddd：把编译过的数据包编码转换成十进制数字的格式，并倾倒到标准输出；</span><br><span class="line">-e：在每列倾倒资料上显示连接层级的文件头；</span><br><span class="line">-f：用数字显示网际网络地址；</span><br><span class="line">-F&lt;表达文件&gt;：指定内含表达方式的文件；</span><br><span class="line">-i&lt;网络界面&gt;：使用指定的网络截面送出数据包；</span><br><span class="line">-l：使用标准输出列的缓冲区；</span><br><span class="line">-n：不把主机的网络地址转换成名字；</span><br><span class="line">-nn：不要解析域名和端口</span><br><span class="line">-N：不列出域名；</span><br><span class="line">-O：不将数据包编码最佳化；</span><br><span class="line">-p：不让网络界面进入混杂模式；</span><br><span class="line">-q ：快速输出，仅列出少数的传输协议信息；</span><br><span class="line">-r&lt;数据包文件&gt;：从指定的文件读取数据包数据；</span><br><span class="line">-s&lt;数据包大小&gt;：设置每个数据包的大小；</span><br><span class="line">-S：用绝对而非相对数值列出TCP关联数；</span><br><span class="line">-t：在每列倾倒资料上不显示时间戳记；</span><br><span class="line">-tt： 在每列倾倒资料上显示未经格式化的时间戳记；</span><br><span class="line">-T&lt;数据包类型&gt;：强制将表达方式所指定的数据包转译成设置的数据包类型；</span><br><span class="line">-v：详细显示指令执行过程；</span><br><span class="line">-vv：更详细显示指令执行过程；</span><br><span class="line">-vvv：更更详细显示指令执行过程；</span><br><span class="line">-x：用十六进制字码列出数据包资料；</span><br><span class="line">-w&lt;数据包文件&gt;：把数据包数据写入指定的文件。</span><br><span class="line">-X：告诉tcpdump命令，需要把协议头和包内容都原原本本的显示出来（tcpdump会以16进制和ASCII的形式显示）;</span><br><span class="line">-XX：同 -X，但同时显示以太网头部。</span><br><span class="line">-A：只使用 ascii 打印报文的全部数据，不要和 -X 一起使用。截取 http 请求的时候可以用 sudo tcpdump -nSA port 80！</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">简单使用</span><br><span class="line">1. tcpdump -nS</span><br><span class="line">监听所有端口，直接显示 ip 地址。</span><br><span class="line"></span><br><span class="line">2. tcpdump -nnvvS</span><br><span class="line">显示更详细的数据报文，包括 tos, ttl, checksum 等。</span><br><span class="line"></span><br><span class="line">3. tcpdump -nnvvXS</span><br><span class="line">显示数据报的全部数据信息，用 hex 和 ascii 两列对比输出。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">来自: http://blog.csdn.net/lishuhuakai/article/details/73136636</span><br><span class="line">参数 	含义</span><br><span class="line">-A 	以ASCII格式打印出所有分组，通常用来抓取www的网页数据包数据。</span><br><span class="line">-c 	在收到指定的数量的分组后，tcpdump就会停止。</span><br><span class="line">-C 	在将一个原始分组写入文件之前，检查文件当前的大小是否超过了参数file_size 中指定的大小。如果超过了指定大小，则关闭当前文件，然后在打开一个新的文件。参数 file_size 的单位是兆字节（是1,000,000字节，而不是1,048,576字节）。</span><br><span class="line">-d 	将匹配信息包的代码以人们能够理解的汇编格式给出。</span><br><span class="line">-dd 	将匹配信息包的代码以c语言程序段的格式给出。</span><br><span class="line">-ddd 	将匹配信息包的代码以十进制的形式给出。</span><br><span class="line">-D 	打印出系统中所有可以用tcpdump截包的网络接口。</span><br><span class="line">-e 	在输出行打印出数据链路层的头部信息,也就是使用数据链路层的MAC数据包数据来显示.</span><br><span class="line">-f 	将外部的Internet地址以数字的形式打印出来。</span><br><span class="line">-F 	从指定的文件中读取表达式，忽略命令行中给出的表达式。</span><br><span class="line">-i 	指定监听的网络接口。</span><br><span class="line">-l 	使标准输出变为缓冲行形式，可以把数据导出到文件。</span><br><span class="line">-L 	列出网络接口的已知数据链路。</span><br><span class="line">-b 	在数据-链路层上选择协议，包括ip、arp、rarp、ipx都是这一层的。</span><br><span class="line">-n 	不把网络地址转换成名字。</span><br><span class="line">-nn 	不进行端口名称的转换。</span><br><span class="line">-N 	不输出主机名中的域名部分。例如，‘nic.ddn.mil‘只输出’nic‘。</span><br><span class="line">-t 	在输出的每一行不打印时间戳。</span><br><span class="line">-O 	不运行分组分组匹配（packet-matching）代码优化程序。</span><br><span class="line">-P 	不将网络接口设置成混杂模式。</span><br><span class="line">-q 	快速输出。只输出较少的协议信息。</span><br><span class="line">-r 	从指定的文件中读取包(这些包一般通过-w选项产生)。</span><br><span class="line">-S 	将tcp的序列号以绝对值形式输出，而不是相对值。</span><br><span class="line">-s 	从每个分组中读取最开始的snaplen个字节，而不是默认的68个字节。</span><br><span class="line">-T 	将监听到的包直接解释为指定的类型的报文，常见的类型有rpc远程过程调用）和snmp（简单网络管理协议)。</span><br><span class="line">-t 	不在每一行中输出时间戳。</span><br><span class="line">-tt 	在每一行中输出非格式化的时间戳</span><br><span class="line">-ttt 	输出本行和前面一行之间的时间差。</span><br><span class="line">-tttt 	在每一行中输出由date处理的默认格式的时间戳。</span><br><span class="line">-v 	输出一个稍微详细的信息，例如在ip包中可以包括ttl和服务类型的信息。</span><br><span class="line">-vv 	输出详细的报文信息。</span><br><span class="line">-w 	直接将分组写入文件中，而不是不分析并打印出来。</span><br><span class="line">-X 	可以列出16进制以及ASCII的数据包内容,对于监听数据包内容很有用.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">来自: http://cizixs.com/2015/03/12/tcpdump-introduction</span><br><span class="line">此外， TCP协议的三次握手过程，第一条就是 SYN 报文，这个可以通过 Flags [S] 看出。下面是常见的 TCP 报文的 Flags:</span><br><span class="line"></span><br><span class="line">    [S]： SYN（开始连接）</span><br><span class="line">    [.]: 没有 Flag</span><br><span class="line">    [P]: PSH（推送数据）</span><br><span class="line">    [F]: FIN （结束连接）</span><br><span class="line">    [R]: RST（重置连接）</span><br><span class="line"></span><br><span class="line">而第二条数据的 [S.] 表示 SYN-ACK，就是 SYN 报文的应答报文。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">来自: http://pytool.com/2016/01/12/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4-2016-01-01-Linux%E5%91%BD%E4%BB%A4-Tcpdump/</span><br><span class="line">TCP协议要建立连接要经过3次“握手”，截取的数据包也是从3次握手开始，可以看到前三个包的状态（Flags）分别是：</span><br><span class="line"></span><br><span class="line">[S]、[S.]、[.]</span><br><span class="line"></span><br><span class="line">首先是客户端向服务端发送一个10位的序号给服务端；服务端收到后把它+1再返回回去；客户端检查返回来的序号是对的，就返回给服务端一个1。根据上面的描述，知道这三个包满足：第一个包的seq+1=第二个包的ack；第三个包的ack=1</span><br><span class="line"></span><br><span class="line">连接建立了之后就是具体的数据交互了，tcpdump脚本加-X参数可以通过十六进制和ASCII方式显示出具体的数据内容，这里略过。</span><br><span class="line"></span><br><span class="line">TCP协议要断开连接要经过4次“挥手”，上面数据包的最后3条就是挥手的过程。细心的朋友会发现前面说的4次挥手，却只有3个包，这不是笔误。</span><br><span class="line"></span><br><span class="line">最后三个包的状态分别是：</span><br><span class="line"></span><br><span class="line">[F.]、[F.]、[.]</span><br><span class="line"></span><br><span class="line">首先是客户端发一个序号告诉服务器我要断开，服务器说行，服务器发回一个序号，说断开吧，客户端说：“断！”</span><br><span class="line"></span><br><span class="line">四次挥手之所以只能看到3个数据包是因为：ACK延迟发送机制。为了提高性能，TCP在收到ACK之后会攒起来而不是立即发送的，在几种情况下才会发送：</span><br><span class="line"></span><br><span class="line">1 超过MSS（可以理解为攒得太多了，放不下了）</span><br><span class="line">2 有FIN</span><br><span class="line">3 系统设置为禁用延迟（TCP_NODELAY）</span><br><span class="line"></span><br><span class="line">倒数第二条的前面应该还有一个ACK，因为不符合上述3条，所以被延迟（一般是40ms或者200ms）了，等到倒数第二条发出时符合条件了（有FIN）就一块发出来了，所以4次挥手只能看到3个包。如果系统禁用了延迟发送，就会看到4个包了。</span><br></pre></td></tr></table></figure></p>
+</ol>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Bash/" rel="tag"># Bash</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/11/ad-block-in-dd-wrt/" rel="next" title="DD-WRT设置广告过滤">
+                <i class="fa fa-chevron-left"></i> DD-WRT设置广告过滤
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/11/c-program-language-usage/" rel="prev" title="C语言问题记录">
+                C语言问题记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Hogan Chen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#多行注释-amp-here-document"><span class="nav-number">1.</span> <span class="nav-text">多行注释 &amp; here document</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#命令与变量"><span class="nav-number">2.</span> <span class="nav-text">命令与变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#空语句"><span class="nav-number">3.</span> <span class="nav-text">空语句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#unary-operator-expected-error"><span class="nav-number">4.</span> <span class="nav-text">unary operator expected error</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bash脚本不需要命令输出"><span class="nav-number">5.</span> <span class="nav-text">bash脚本不需要命令输出</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#命令行循环语句"><span class="nav-number">6.</span> <span class="nav-text">命令行循环语句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#获取脚本名字和脚本路径"><span class="nav-number">7.</span> <span class="nav-text">获取脚本名字和脚本路径</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Shell变量作用域"><span class="nav-number">8.</span> <span class="nav-text">Shell变量作用域</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#删除变量和函数"><span class="nav-number">9.</span> <span class="nav-text">删除变量和函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#命令执行结果以及变量赋值"><span class="nav-number">10.</span> <span class="nav-text">命令执行结果以及变量赋值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看当前shell"><span class="nav-number">11.</span> <span class="nav-text">查看当前shell</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cut命令"><span class="nav-number">12.</span> <span class="nav-text">cut命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#tr命令"><span class="nav-number">13.</span> <span class="nav-text">tr命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Sed命令"><span class="nav-number">14.</span> <span class="nav-text">Sed命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bash不同引号区别"><span class="nav-number">15.</span> <span class="nav-text">bash不同引号区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bash正则表达式"><span class="nav-number">16.</span> <span class="nav-text">bash正则表达式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bash按行读取命令输出"><span class="nav-number">17.</span> <span class="nav-text">bash按行读取命令输出</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bash-Shell-解析路径获取文件名和目录名"><span class="nav-number">18.</span> <span class="nav-text">Bash Shell 解析路径获取文件名和目录名</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bash字符串操作"><span class="nav-number">19.</span> <span class="nav-text">bash字符串操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bash数组"><span class="nav-number">20.</span> <span class="nav-text">bash数组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sed命令"><span class="nav-number">21.</span> <span class="nav-text">sed命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sed命令unknown-option-to-‘s’解决办法"><span class="nav-number">22.</span> <span class="nav-text">sed命令unknown option to ‘s’解决办法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#diff命令"><span class="nav-number">23.</span> <span class="nav-text">diff命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#grep命令"><span class="nav-number">24.</span> <span class="nav-text">grep命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bash参数和参数扩展"><span class="nav-number">25.</span> <span class="nav-text">bash参数和参数扩展</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#shell内置变量"><span class="nav-number">26.</span> <span class="nav-text">shell内置变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Shell脚本调试技巧"><span class="nav-number">27.</span> <span class="nav-text">Shell脚本调试技巧</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Linux的script命令——隐藏在终端的记录器"><span class="nav-number">28.</span> <span class="nav-text">Linux的script命令——隐藏在终端的记录器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Grep匹配中括号"><span class="nav-number">29.</span> <span class="nav-text">Grep匹配中括号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Linux命令备份"><span class="nav-number">30.</span> <span class="nav-text">Linux命令备份</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#time命令查看命令执行时间"><span class="nav-number">31.</span> <span class="nav-text">time命令查看命令执行时间</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#crontab详解"><span class="nav-number">32.</span> <span class="nav-text">crontab详解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#watch周期性的方式执行给定的指令"><span class="nav-number">33.</span> <span class="nav-text">watch周期性的方式执行给定的指令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Tcpdump命令行格式"><span class="nav-number">34.</span> <span class="nav-text">Tcpdump命令行格式</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hogan Chen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="C&C++," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="读写文件http://www.runoob.com/cplusplus/cpp-files-streams.htmlhttp://blog.csdn.net/kingstar158/article/details/6859379123456789101112131415161718192021222324252627282930313233343536373839404142434445464">
+<meta name="keywords" content="C&amp;C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++语言问题记录">
+<meta property="og:url" content="http://yoursite.com/2018/06/11/c-plus-plus-program-language-usage/index.html">
+<meta property="og:site_name" content="Hogan&#39;s Blog">
+<meta property="og:description" content="读写文件http://www.runoob.com/cplusplus/cpp-files-streams.htmlhttp://blog.csdn.net/kingstar158/article/details/6859379123456789101112131415161718192021222324252627282930313233343536373839404142434445464">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-06-21T04:16:35.275Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C++语言问题记录">
+<meta name="twitter:description" content="读写文件http://www.runoob.com/cplusplus/cpp-files-streams.htmlhttp://blog.csdn.net/kingstar158/article/details/6859379123456789101112131415161718192021222324252627282930313233343536373839404142434445464">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/11/c-plus-plus-program-language-usage/"/>
+
+
+
+
+
+  <title>C++语言问题记录 | Hogan's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hogan's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/c-plus-plus-program-language-usage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hogan Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hogan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">C++语言问题记录</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-11T15:45:46+08:00">
+                2018-06-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ol>
+
+<h5 id="读写文件"><a href="#读写文件" class="headerlink" title="读写文件"></a>读写文件</h5><p><a href="http://www.runoob.com/cplusplus/cpp-files-streams.html" target="_blank" rel="noopener">http://www.runoob.com/cplusplus/cpp-files-streams.html</a><br><a href="http://blog.csdn.net/kingstar158/article/details/6859379" target="_blank" rel="noopener">http://blog.csdn.net/kingstar158/article/details/6859379</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">到目前为止，我们已经使用了 iostream 标准库，它提供了 cin 和 cout 方法分别用于从标准输入读取流和向标准输出写入流。</span><br><span class="line"></span><br><span class="line">本教程介绍如何从文件读取流和向文件写入流。这就需要用到 C++ 中另一个标准库 fstream，它定义了三个新的数据类型：</span><br><span class="line">数据类型 	描述</span><br><span class="line">ofstream 	该数据类型表示输出文件流，用于创建文件并向文件写入信息。</span><br><span class="line">ifstream 	该数据类型表示输入文件流，用于从文件读取信息。</span><br><span class="line">fstream 	该数据类型通常表示文件流，且同时具有 ofstream 和 ifstream 两种功能，这意味着它可以创建文件，向文件写入信息，从文件读取信息。</span><br><span class="line"></span><br><span class="line">要在 C++ 中进行文件处理，必须在 C++ 源代码文件中包含头文件 &lt;iostream&gt; 和 &lt;fstream&gt;。</span><br><span class="line">打开文件</span><br><span class="line"></span><br><span class="line">在从文件读取信息或者向文件写入信息之前，必须先打开文件。ofstream 和 fstream 对象都可以用来打开文件进行写操作，如果只需要打开文件进行读操作，则使用 ifstream 对象。</span><br><span class="line"></span><br><span class="line">下面是 open() 函数的标准语法，open() 函数是 fstream、ifstream 和 ofstream 对象的一个成员。</span><br><span class="line"></span><br><span class="line">void open(const char *filename, ios::openmode mode);</span><br><span class="line"></span><br><span class="line">在这里，open() 成员函数的第一参数指定要打开的文件的名称和位置，第二个参数定义文件被打开的模式。</span><br><span class="line">模式标志 	描述</span><br><span class="line">ios::app 	追加模式。所有写入都追加到文件末尾。</span><br><span class="line">ios::ate 	文件打开后定位到文件末尾。</span><br><span class="line">ios::in 	打开文件用于读取。</span><br><span class="line">ios::out 	打开文件用于写入。</span><br><span class="line">ios::trunc 	如果该文件已经存在，其内容将在打开文件之前被截断，即把文件长度设为 0。</span><br><span class="line"></span><br><span class="line">您可以把以上两种或两种以上的模式结合使用。例如，如果您想要以写入模式打开文件，并希望截断文件，以防文件已存在，那么您可以使用下面的语法：</span><br><span class="line"></span><br><span class="line">ofstream outfile;</span><br><span class="line">outfile.open(&quot;file.dat&quot;, ios::out | ios::trunc );</span><br><span class="line"></span><br><span class="line">类似地，您如果想要打开一个文件用于读写，可以使用下面的语法：</span><br><span class="line"></span><br><span class="line">fstream  afile;</span><br><span class="line">afile.open(&quot;file.dat&quot;, ios::out | ios::in );</span><br><span class="line"></span><br><span class="line">关闭文件</span><br><span class="line"></span><br><span class="line">当 C++ 程序终止时，它会自动关闭刷新所有流，释放所有分配的内存，并关闭所有打开的文件。但程序员应该养成一个好习惯，在程序终止前关闭所有打开的文件。</span><br><span class="line"></span><br><span class="line">下面是 close() 函数的标准语法，close() 函数是 fstream、ifstream 和 ofstream 对象的一个成员。</span><br><span class="line"></span><br><span class="line">void close();</span><br><span class="line"></span><br><span class="line">写入文件</span><br><span class="line"></span><br><span class="line">在 C++ 编程中，我们使用流插入运算符（ &lt;&lt; ）向文件写入信息，就像使用该运算符输出信息到屏幕上一样。唯一不同的是，在这里您使用的是 ofstream 或 fstream 对象，而不是 cout 对象。</span><br><span class="line">读取文件</span><br><span class="line"></span><br><span class="line">在 C++ 编程中，我们使用流提取运算符（ &gt;&gt; ）从文件读取信息，就像使用该运算符从键盘输入信息一样。唯一不同的是，在这里您使用的是 ifstream 或 fstream 对象，而不是 cin 对象。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;fstream&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	string str(&quot;MS/SAM/NGIS/BV-03-C&quot;);</span><br><span class="line">    ofstream logfile;</span><br><span class="line"></span><br><span class="line">    while ((pos = str.find(&apos;/&apos;)) != str.npos)</span><br><span class="line">    &#123;</span><br><span class="line">        str.replace(pos, 1, &quot;_&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    string filename = str.append(&quot;.txt&quot;);</span><br><span class="line"></span><br><span class="line">    // logfile.open(filename.c_str(), ios::app);</span><br><span class="line">    logfile.open(filename.c_str(), ios::trunc);</span><br><span class="line">    logfile &lt;&lt; &quot;hello world&quot; &lt;&lt; endl;</span><br><span class="line">    logfile.close();</span><br><span class="line"></span><br><span class="line">    return 0；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h5 id="error-”cout-“-was-not-declared-in-this-scope"><a href="#error-”cout-“-was-not-declared-in-this-scope" class="headerlink" title="error :”cout “ was not declared in this scope"></a>error :”cout “ was not declared in this scope</h5><p><a href="http://blog.csdn.net/easonleelee/article/details/16930995" target="_blank" rel="noopener">http://blog.csdn.net/easonleelee/article/details/16930995</a><br><a href="http://www.jianshu.com/p/cda668a06bee" target="_blank" rel="noopener">http://www.jianshu.com/p/cda668a06bee</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line"></span><br><span class="line">int main(int argc, char *argv[])</span><br><span class="line">&#123;</span><br><span class="line">    std::cout &lt;&lt; &quot;hello world&quot; &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">or</span><br><span class="line"></span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main(int argc, char *argv[])</span><br><span class="line">&#123;</span><br><span class="line">     cout &lt;&lt; &quot;hello world&quot; &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="error-no-matching-function-for-call-to-‘std-basic-ifstream-open-std-string-amp"><a href="#error-no-matching-function-for-call-to-‘std-basic-ifstream-open-std-string-amp" class="headerlink" title="error: no matching function for call to ‘std::basic_ifstream::open(std::string&amp;)"></a>error: no matching function for call to ‘std::basic_ifstream<char>::open(std::string&amp;)</char></h5><p><a href="http://blog.csdn.net/alpine_climbing/article/details/51464358" target="_blank" rel="noopener">http://blog.csdn.net/alpine_climbing/article/details/51464358</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">原文地址：  http://blog.csdn.net/cs_zlg/article/details/8300124</span><br><span class="line"></span><br><span class="line">[cpp] view plain copy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    string filename = &quot;1.txt&quot;;</span><br><span class="line">    ifstream fin;</span><br><span class="line">    fin.open(filename);</span><br><span class="line"></span><br><span class="line">上述语句会产生如下错误：</span><br><span class="line"></span><br><span class="line">error: no matching function for call to &apos;std::basic_ifstream&lt;char&gt;::open(std::string&amp;)</span><br><span class="line"></span><br><span class="line">原因是C++的string类无法作为open的参数。</span><br><span class="line"></span><br><span class="line">解决方案：使用C的字符串。</span><br><span class="line"></span><br><span class="line">例：</span><br><span class="line"></span><br><span class="line">[cpp] view plain copy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    char filename[10];</span><br><span class="line">    strcpy(filename, &quot;1.txt&quot;);</span><br><span class="line">    ifstream fin;</span><br><span class="line">    fin.open(filename);</span><br></pre></td></tr></table></figure></p>
+<h5 id="visual-studio读写xml文件"><a href="#visual-studio读写xml文件" class="headerlink" title="visual studio读写xml文件"></a>visual studio读写xml文件</h5><p><a href="https://support.microsoft.com/zh-cn/help/815658/how-to-read-the-xml-data-from-a-file-by-using-visual-c" target="_blank" rel="noopener">https://support.microsoft.com/zh-cn/help/815658/how-to-read-the-xml-data-from-a-file-by-using-visual-c</a></p>
+<h5 id="string操作与char-和CString的转换"><a href="#string操作与char-和CString的转换" class="headerlink" title="string操作与char *和CString的转换"></a>string操作与char *和CString的转换</h5><p><a href="http://blog.csdn.net/luoweifu/article/details/20232379" target="_blank" rel="noopener">http://blog.csdn.net/luoweifu/article/details/20232379</a></p>
+<p><a href="http://www.runoob.com/cplusplus/cpp-strings.html" target="_blank" rel="noopener">http://www.runoob.com/cplusplus/cpp-strings.html</a><br><a href="http://blog.csdn.net/u010142437/article/details/30481123" target="_blank" rel="noopener">http://blog.csdn.net/u010142437/article/details/30481123</a><br><a href="http://blog.csdn.net/u011974987/article/details/52504486" target="_blank" rel="noopener">http://blog.csdn.net/u011974987/article/details/52504486</a><br><a href="http://blog.csdn.net/monkeyduck/article/details/23541073" target="_blank" rel="noopener">http://blog.csdn.net/monkeyduck/article/details/23541073</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">using std::cout;</span><br><span class="line">using std::endl;</span><br><span class="line">using std::string;</span><br><span class="line">int main(void)&#123;</span><br><span class="line">    string str1=&quot;We can insert a string&quot;;</span><br><span class="line">    string str2=&quot;a str into &quot;;</span><br><span class="line">         //在字符串指定位置前面插入指定字符串</span><br><span class="line">    cout &lt;&lt;str1.insert(14,str2)&lt;&lt;endl;</span><br><span class="line">    //在字符串指定位置前面插入指定字符串的子串（从指定索引开始的指定个数的字符）</span><br><span class="line">    cout &lt;&lt;str1.insert(14,str2,2,9)&lt;&lt;endl;</span><br><span class="line">    //插入指定字符串的前n个字符</span><br><span class="line">    cout &lt;&lt;str1.insert(14,&quot;test hello&quot;,5)&lt;&lt;endl;</span><br><span class="line">    //插入n个相同字符到字符串中</span><br><span class="line">    cout &lt;&lt;str1.insert(14,6,&apos;*&apos;)&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    //替换指定索引开始的指定长度的子串</span><br><span class="line">    cout &lt;&lt;str1.replace(3,3,&quot;may&quot;)&lt;&lt;endl;</span><br><span class="line">    //用给定字符串的指定子串来进行替换</span><br><span class="line">    //如下，实际上使用的是could来进行替换</span><br><span class="line">           cout &lt;&lt;str1.replace(3,3,&quot;can could&quot;,4,5)&lt;&lt;endl;</span><br><span class="line">    //使用给定字符串的前n个字符来进行替换：can</span><br><span class="line">    cout &lt;&lt;str1.replace(3,5,&quot;can could&quot;,3)&lt;&lt;endl;</span><br><span class="line">    //使用指定个数的重复字符来进行替换</span><br><span class="line">    cout &lt;&lt;str1.replace(3,3,5,&apos;*&apos;)&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    string word=&quot;We&quot;;</span><br><span class="line">    size_t index=str1.find(word);</span><br><span class="line">    if(index!=string::npos)</span><br><span class="line">    //删除指定索引开始的指定长度的字符</span><br><span class="line">    cout &lt;&lt;str1.erase(index,word.length())&lt;&lt;endl;</span><br><span class="line">    return 0;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">void main()</span><br><span class="line">&#123;</span><br><span class="line"> ////find函数返回类型 size_type</span><br><span class="line">string s(&quot;1a2b3c4d5e6f7g8h9i1a2b3c4d5e6f7g8ha9i&quot;);</span><br><span class="line">string flag;</span><br><span class="line">string::size_type position;</span><br><span class="line"></span><br><span class="line">//find 函数 返回jk 在s 中的下标位置</span><br><span class="line">position = s.find(&quot;jk&quot;);</span><br><span class="line"> if (position != s.npos)  //如果没找到，返回一个特别的标志c++中用npos表示，我这里npos取值是4294967295，</span><br><span class="line"> &#123;</span><br><span class="line">  cout &lt;&lt; &quot;position is : &quot; &lt;&lt; position &lt;&lt; endl;</span><br><span class="line"> &#125;</span><br><span class="line"> else</span><br><span class="line"> &#123;</span><br><span class="line">  cout &lt;&lt; &quot;Not found the flag&quot; + flag;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="c-中类对象作为参数都是值拷贝吗？"><a href="#c-中类对象作为参数都是值拷贝吗？" class="headerlink" title="c++中类对象作为参数都是值拷贝吗？"></a>c++中类对象作为参数都是值拷贝吗？</h5><p><a href="https://segmentfault.com/q/1010000004599429" target="_blank" rel="noopener">https://segmentfault.com/q/1010000004599429</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">++中参数的传递方式是值拷贝(by value)还是引用拷贝(by reference)取决于你的形参命名方式。</span><br><span class="line"></span><br><span class="line">示例一：按值传递。</span><br><span class="line"></span><br><span class="line">/* function declaration of transferring argument by value */</span><br><span class="line">void func(string s) &#123;</span><br><span class="line">    // operates on string object s</span><br><span class="line">    // note that here s is a copy of the string object you transferred in so any function-scope change will not affect invoker environment.</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* example usage of aforementioned function */</span><br><span class="line">string str;</span><br><span class="line">func(str);</span><br><span class="line">// after func call, str will keep the same</span><br><span class="line"></span><br><span class="line">示例二：按引用传递。</span><br><span class="line"></span><br><span class="line">/* function declaration */</span><br><span class="line">void func(string&amp; s) &#123;</span><br><span class="line">    // operate on string object s</span><br><span class="line">    // local change will be applied to the argument you transferred in</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* example usage */</span><br><span class="line">string str;</span><br><span class="line">func(str);</span><br><span class="line">// at this time, str will be changed with the modification func() made to it</span><br><span class="line"></span><br><span class="line">示例三：按常量引用传递（在实际的工作中，这种调用方式是最常被使用的，它可以有效减少string拷贝的内存和CPU时间消耗）。</span><br><span class="line"></span><br><span class="line">/* function declaration */</span><br><span class="line">void func(const string&amp; s) &#123;</span><br><span class="line">    // transfer in a read-only reference of string object s</span><br><span class="line">    // no copy will be made against s, neither any change allowed upon it</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* example usage */</span><br><span class="line">string str;</span><br><span class="line">func(str);</span><br><span class="line">// str is not supposed to be changed after func() invoke.</span><br></pre></td></tr></table></figure></p>
+<h5 id="String处理函数"><a href="#String处理函数" class="headerlink" title="String处理函数"></a>String处理函数</h5><p><a href="https://www.cnblogs.com/xFreedom/archive/2011/05/16/2048037.html" target="_blank" rel="noopener">https://www.cnblogs.com/xFreedom/archive/2011/05/16/2048037.html</a><br><a href="https://www.renfei.org/blog/introduction-to-cpp-string.html" target="_blank" rel="noopener">https://www.renfei.org/blog/introduction-to-cpp-string.html</a><br><a href="http://www.cnblogs.com/youxin/archive/2012/06/21/2558279.html" target="_blank" rel="noopener">http://www.cnblogs.com/youxin/archive/2012/06/21/2558279.html</a><br><a href="https://www.byvoid.com/zhs/blog/cpp-string" target="_blank" rel="noopener">https://www.byvoid.com/zhs/blog/cpp-string</a><br><a href="http://www.runoob.com/cplusplus/cpp-strings.html" target="_blank" rel="noopener">http://www.runoob.com/cplusplus/cpp-strings.html</a><br><a href="https://zh.wikipedia.org/wiki/String_(C%2B%2B%E6%A0%87%E5%87%86%E5%BA%93)" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/String_(C%2B%2B%E6%A0%87%E5%87%86%E5%BA%93)</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">1. 截取子串</span><br><span class="line">s.substr(pos, n)    截取s中从pos开始（包括0）的n个字符的子串，并返回</span><br><span class="line">s.substr(pos)        截取s中从从pos开始（包括0）到末尾的所有字符的子串，并返回</span><br><span class="line"></span><br><span class="line">2. 替换子串</span><br><span class="line">s.replace(pos, n, s1)    用s1替换s中从pos开始（包括0）的n个字符的子串</span><br><span class="line"></span><br><span class="line">3. 查找子串</span><br><span class="line">s.find(s1)         查找s中第一次出现s1的位置，并返回（包括0）</span><br><span class="line">s.rfind(s1)        查找s中最后次出现s1的位置，并返回（包括0）</span><br><span class="line">s.find_first_of(s1)       查找在s1中任意一个字符在s中第一次出现的位置，并返回（包括0）</span><br><span class="line">s.find_last_of(s1)       查找在s1中任意一个字符在s中最后一次出现的位置，并返回（包括0）</span><br><span class="line">s.fin_first_not_of(s1)         查找s中第一个不属于s1中的字符的位置，并返回（包括0）</span><br><span class="line">s.fin_last_not_of(s1)         查找s中最后一个不属于s1中的字符的位置，并返回（包括0）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">C++ string的size()和length()函数没有区别</span><br><span class="line">http://www.cnblogs.com/lakeone/p/4764577.html</span><br><span class="line"></span><br><span class="line"> C++标准库中的string中两者的源代码如下：</span><br><span class="line">  size_type   __CLR_OR_THIS_CALL   length()   const</span><br><span class="line">  &#123; //   return   length   of   sequence</span><br><span class="line">  return   (_Mysize);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  size_type   __CLR_OR_THIS_CALL   size()   const</span><br><span class="line">  &#123; //   return   length   of   sequence</span><br><span class="line">  return   (_Mysize);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">所以两者没有区别。</span><br><span class="line"></span><br><span class="line">length是因为沿用C语言的习惯而保留下来的，string类最初只有length，引入STL之后，为了兼容又加入了size，它是作为STL容器的属性存在的，便于符合STL的接口规则，以便用于STL的算法。</span><br><span class="line"></span><br><span class="line">string类的size()/length()方法返回的是字节数，不管是否有汉字。</span><br></pre></td></tr></table></figure></p>
+<h5 id="CString-LPCWSTR-string-char-等字符串格式的互相转换"><a href="#CString-LPCWSTR-string-char-等字符串格式的互相转换" class="headerlink" title="CString, LPCWSTR, string, char *等字符串格式的互相转换"></a>CString, LPCWSTR, string, char *等字符串格式的互相转换</h5><p><a href="http://xionghuilin.com/?p=621" target="_blank" rel="noopener">http://xionghuilin.com/?p=621</a><br><a href="https://www.kancloud.cn/wangshubo1989/string/100983" target="_blank" rel="noopener">https://www.kancloud.cn/wangshubo1989/string/100983</a><br><a href="https://social.msdn.microsoft.com/Forums/vstudio/en-US/901f3217-f667-485b-9bd8-83d6f7fe89d4/how-to-convert-lpcwstr-to-string" target="_blank" rel="noopener">https://social.msdn.microsoft.com/Forums/vstudio/en-US/901f3217-f667-485b-9bd8-83d6f7fe89d4/how-to-convert-lpcwstr-to-string</a><br><a href="http://www.cnblogs.com/foolboy/archive/2005/07/25/199869.html" target="_blank" rel="noopener">http://www.cnblogs.com/foolboy/archive/2005/07/25/199869.html</a><br><a href="https://stackoverflow.com/questions/5271461/vc-how-to-convert-a-cstring-into-lpcwstr" target="_blank" rel="noopener">https://stackoverflow.com/questions/5271461/vc-how-to-convert-a-cstring-into-lpcwstr</a><br><a href="https://stackoverflow.com/questions/27220/how-to-convert-stdstring-to-lpcwstr-in-c-unicode" target="_blank" rel="noopener">https://stackoverflow.com/questions/27220/how-to-convert-stdstring-to-lpcwstr-in-c-unicode</a><br><a href="https://blackfs.blogspot.jp/2015/01/convert-stdstring-to-lpcwstr-in-c.html" target="_blank" rel="noopener">https://blackfs.blogspot.jp/2015/01/convert-stdstring-to-lpcwstr-in-c.html</a><br><a href="http://wiki.jikexueyuan.com/project/visual-studio/1.html" target="_blank" rel="noopener">http://wiki.jikexueyuan.com/project/visual-studio/1.html</a><br><a href="http://blog.csdn.net/ezhou_liukai/article/details/13779091" target="_blank" rel="noopener">http://blog.csdn.net/ezhou_liukai/article/details/13779091</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">CString to string (unicode)</span><br><span class="line">// CString to string</span><br><span class="line">#if 0</span><br><span class="line">		// http://forums.codeguru.com/showthread.php?231155-C-String-How-to-convert-between-CString-and-std-string</span><br><span class="line">		CT2CA tempTestCase(testcase);</span><br><span class="line">		std::string casename(tempTestCase);</span><br><span class="line">#else</span><br><span class="line">		// https://www.codeproject.com/Tips/175043/Cplusplus-Converting-an-MFC-CString-to-a-std-str</span><br><span class="line">		// https://msdn.microsoft.com/en-us/library/awkwbzyc.aspx</span><br><span class="line">		// https://stackoverflow.com/questions/258050/how-to-convert-cstring-and-stdstring-stdwstring-to-each-other</span><br><span class="line">		std::string casename = CW2A(testcase.GetString());</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">        CString nodeText((char*)(_bstr_t)pXmlNode-&gt;text);</span><br><span class="line">        pixitParamNameStr = CW2A(nodeText.GetString());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">CString to char *(unicode)</span><br><span class="line">		// https://social.msdn.microsoft.com/Forums/vstudio/en-US/38c0e07f-853b-45da-aed4-c2ab6972daca/convert-cstring-to-char?forum=vcgeneral</span><br><span class="line">		// http://www.voidcn.com/article/p-ntawqvcn-ox.html</span><br><span class="line">		// http://blog.csdn.net/neverup_/article/details/5664733</span><br><span class="line">		// http://blog.sina.com.cn/s/blog_43eb83b90100gcub.html</span><br><span class="line">		// http://blog.sina.com.cn/s/blog_625eda0b0101a9ii.html</span><br><span class="line">		// http://www.cnblogs.com/junyuz/archive/2011/08/24/2151857.html</span><br><span class="line"></span><br><span class="line">		CString nodeText((char*)(_bstr_t)pXmlNode-&gt;text);</span><br><span class="line"></span><br><span class="line">		wchar_t* wCharString = nodeText.GetBuffer(nodeText.GetLength()+1);</span><br><span class="line">		size_t origsize = wcslen(wCharString) + 1;</span><br><span class="line">		size_t convertedChars = 0;</span><br><span class="line">		char *ncharStr = NULL;</span><br><span class="line">		ncharStr = (char *)malloc(origsize);</span><br><span class="line">		memset(ncharStr, 0, origsize);</span><br><span class="line">		wcstombs_s(&amp;convertedChars, ncharStr, origsize, wCharString , _TRUNCATE);</span><br><span class="line"></span><br><span class="line">		sscanf_s(ncharStr, &quot;%x&quot;, cmdValue);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">string to LPCWSTR(unicode)</span><br><span class="line">// https://stackoverflow.com/questions/27220/how-to-convert-stdstring-to-lpcwstr-in-c-unicode</span><br><span class="line">std::wstring s2ws(const std::string &amp; s)</span><br><span class="line">&#123;</span><br><span class="line">	int len;</span><br><span class="line">	int slength = (int)s.length() + 1;</span><br><span class="line">	len = MultiByteToWideChar(CP_ACP, 0, s.c_str(), slength, 0, 0);</span><br><span class="line">	wchar_t* buf = new wchar_t[len];</span><br><span class="line">	MultiByteToWideChar(CP_ACP, 0, s.c_str(), slength, buf, len);</span><br><span class="line">	std::wstring r(buf);</span><br><span class="line">	delete[] buf;</span><br><span class="line">	return r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">	std::string projectName;</span><br><span class="line"></span><br><span class="line">	LPCWSTR pszProjectName;</span><br><span class="line">	LPCWSTR pszParamName;</span><br><span class="line">	LPCWSTR pszNewParamValue;</span><br><span class="line"></span><br><span class="line">#if 1</span><br><span class="line">    // UNICODE mode</span><br><span class="line">    // https://blackfs.blogspot.jp/2015/01/convert-stdstring-to-lpcwstr-in-c.html</span><br><span class="line">    stemp = s2ws(projectName); // Temporary buffer is required</span><br><span class="line">    pszProjectName = stemp.c_str();</span><br><span class="line">#else</span><br><span class="line">    pszProjectName = projectName.c_str();</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">LPCWSTR to string(unicode)</span><br><span class="line">	std::string sDescStr;</span><br><span class="line">	unsigned int cmdValue = 0;</span><br><span class="line">	std::string sValType;</span><br><span class="line"></span><br><span class="line">	CString cDescStr(pszDescription);</span><br><span class="line">	wchar_t* wCharString = cDescStr.GetBuffer(cDescStr.GetLength()+1);</span><br><span class="line">	size_t origsize = wcslen(wCharString) + 1;</span><br><span class="line">	size_t convertedChars = 0;</span><br><span class="line">	char *ncharStr = NULL;</span><br><span class="line">	ncharStr = (char *)malloc(origsize);</span><br><span class="line">	memset(ncharStr, 0, origsize);</span><br><span class="line">	wcstombs_s(&amp;convertedChars, ncharStr, origsize, wCharString , _TRUNCATE);</span><br><span class="line"></span><br><span class="line">	sDescStr = std::string(ncharStr);</span><br></pre></td></tr></table></figure></p>
+<h5 id="string-to-LPCWSTR-C-unicode"><a href="#string-to-LPCWSTR-C-unicode" class="headerlink" title="string to LPCWSTR(C++ unicode)"></a>string to LPCWSTR(C++ unicode)</h5><p><a href="https://social.msdn.microsoft.com/Forums/fr-FR/0f749fd8-8a43-4580-b54b-fbf964d68375/convert-stdstring-to-lpcwstr-best-way-in-c?forum=Vsexpressvc" target="_blank" rel="noopener">https://social.msdn.microsoft.com/Forums/fr-FR/0f749fd8-8a43-4580-b54b-fbf964d68375/convert-stdstring-to-lpcwstr-best-way-in-c?forum=Vsexpressvc</a><br><a href="http://blackfs.blogspot.jp/2015/01/convert-stdstring-to-lpcwstr-in-c.html" target="_blank" rel="noopener">http://blackfs.blogspot.jp/2015/01/convert-stdstring-to-lpcwstr-in-c.html</a><br><a href="https://stackoverflow.com/questions/27220/how-to-convert-stdstring-to-lpcwstr-in-c-unicode" target="_blank" rel="noopener">https://stackoverflow.com/questions/27220/how-to-convert-stdstring-to-lpcwstr-in-c-unicode</a><br><a href="http://www.cplusplus.com/forum/windows/33029/" target="_blank" rel="noopener">http://www.cplusplus.com/forum/windows/33029/</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">std::wstring s2ws(const std::string&amp; s)</span><br><span class="line">&#123;</span><br><span class="line"> int len;</span><br><span class="line"> int slength = (int)s.length() + 1;</span><br><span class="line"> len = MultiByteToWideChar(CP_ACP, 0, s.c_str(), slength, 0, 0);</span><br><span class="line"> wchar_t* buf = new wchar_t[len];</span><br><span class="line"> MultiByteToWideChar(CP_ACP, 0, s.c_str(), slength, buf, len);</span><br><span class="line"> std::wstring r(buf);</span><br><span class="line"> delete[] buf;</span><br><span class="line"> return r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">std::string s;</span><br><span class="line"></span><br><span class="line">#ifdef UNICODE</span><br><span class="line">std::wstring stemp = s2ws(s); // Temporary buffer is required</span><br><span class="line">LPCWSTR result = stemp.c_str();</span><br><span class="line">#else</span><br><span class="line">LPCWSTR result = s.c_str();</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">std::wstring s2ws(const std::string&amp; s)</span><br><span class="line">&#123;</span><br><span class="line">    int len;</span><br><span class="line">    int slength = (int)s.length() + 1;</span><br><span class="line">    len = MultiByteToWideChar(CP_ACP, 0, s.c_str(), slength, 0, 0);</span><br><span class="line">    wchar_t* buf = new wchar_t[len];</span><br><span class="line">    MultiByteToWideChar(CP_ACP, 0, s.c_str(), slength, buf, len);</span><br><span class="line">    std::wstring r(buf);</span><br><span class="line">    delete[] buf;</span><br><span class="line">    return r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">std::wstring stemp = s2ws(myString);</span><br><span class="line">LPCWSTR result = stemp.c_str();</span><br></pre></td></tr></table></figure></p>
+<h5 id="unsigned-char-and-signed-char区别"><a href="#unsigned-char-and-signed-char区别" class="headerlink" title="unsigned char and signed char区别"></a>unsigned char and signed char区别</h5><p><a href="http://bbs.chinaunix.net/thread-4291073-1-1.html" target="_blank" rel="noopener">http://bbs.chinaunix.net/thread-4291073-1-1.html</a><br><a href="https://ask.helplib.com/c++/post_864391" target="_blank" rel="noopener">https://ask.helplib.com/c++/post_864391</a><br><a href="http://www.cnblogs.com/qytan36/archive/2010/09/27/1836569.html" target="_blank" rel="noopener">http://www.cnblogs.com/qytan36/archive/2010/09/27/1836569.html</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">pixel_data 是 vector的。</span><br><span class="line"></span><br><span class="line">当我做的时候 printf(&quot; 0x%1x&quot;, pixel_data[0] ) 我希望看到 0xf5 。</span><br><span class="line"></span><br><span class="line">但我得到 0xfffffff5，就好像我正在打印 4字节整数而不是 1字节。</span><br><span class="line"></span><br><span class="line">为什么我给了 printf 一个 char 来打印- 它只有 1字节，所以为什么 printf 打印 4？</span><br><span class="line"></span><br><span class="line">printf: 实现被封装在第三方API中，但只是想知道这是否是标准 printf的特性？</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">你可能得到一种良性的未定义的行为,因为 %x 修饰符预计 unsigned int 参数和 char 通常会被提升到一个 int 当传递给 varargs函数。</span><br><span class="line"></span><br><span class="line">你应该显式地将char转换为 unsigned int 以获得可以预测的结果：</span><br><span class="line"></span><br><span class="line">printf(&quot; 0x%1x&quot;, (unsigned)pixel_data[0] );</span><br><span class="line"></span><br><span class="line">请注意，一个的宽度不是非常有用。 它只指定要显示的最小位数，在任何情况下都需要至少一个数字。</span><br><span class="line"></span><br><span class="line">char 在你的平台上签名时，这里转换将把负 char 值转换为大的unsigned int 值( 比如 。 fffffff5 )。如果你想治疗时就零扩展字节值作为无符号值转换为 pixel_dataunsigned int 你应该使用 unsigned char, 或通过 unsigned char 演员或者使用屏蔽操作后推广。</span><br><span class="line"></span><br><span class="line">printf(&quot; 0x%x&quot;, (unsigned)(unsigned char)pixel_data[0] );</span><br><span class="line"></span><br><span class="line">或者</span><br><span class="line"></span><br><span class="line">printf(&quot; 0x%x&quot;, (unsigned)pixel_data[0] &amp; 0xffU );</span><br></pre></td></tr></table></figure></p>
+<h5 id="string比较"><a href="#string比较" class="headerlink" title="string比较"></a>string比较</h5><p><a href="http://bbs.csdn.net/topics/40135334" target="_blank" rel="noopener">http://bbs.csdn.net/topics/40135334</a><br><a href="https://www.cnblogs.com/xFreedom/archive/2011/05/16/2048037.html" target="_blank" rel="noopener">https://www.cnblogs.com/xFreedom/archive/2011/05/16/2048037.html</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">if (0 == sValType.compare(&quot;O&quot;))</span><br><span class="line">if (0 == sValType.compare(sValTypeTemp))</span><br><span class="line"></span><br><span class="line">http://blog.csdn.net/wisdom605768292/article/details/12076375</span><br><span class="line"></span><br><span class="line">string t1 = &quot;helloWorld&quot;;</span><br><span class="line">string t2 = &quot;helloWorld&quot;;</span><br><span class="line"></span><br><span class="line">if (t1 == t2)</span><br><span class="line">&#123;</span><br><span class="line">    printf(&quot;***t1 ,t2 是一样的\n&quot;);</span><br><span class="line">    printf(&quot;这是正确的\n&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if (t1.c_str() == t2.c_str())</span><br><span class="line">&#123;</span><br><span class="line">    printf(&quot;@@@t1 ,t2 是一样的\n&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if (strcmp(t1.c_str(),t2.c_str()) == 0)</span><br><span class="line">&#123;</span><br><span class="line">    printf(&quot;###t1 ,t2 是一样的\n&quot;);</span><br><span class="line">    printf(&quot;这是正确的\n&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="Vector使用"><a href="#Vector使用" class="headerlink" title="Vector使用"></a>Vector使用</h5><p><a href="http://blog.csdn.net/hancunai0017/article/details/7032383" target="_blank" rel="noopener">http://blog.csdn.net/hancunai0017/article/details/7032383</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">	vector(向量): C++中的一种数据结构,确切的说是一个类.它相当于一个动态的数组,当程序员无法知道自己需要的数组的规模多大时,用其来解决问题可以达到最大节约空间的目的.</span><br><span class="line"></span><br><span class="line">用法:</span><br><span class="line"></span><br><span class="line">1.文件包含:</span><br><span class="line"></span><br><span class="line">首先在程序开头处加上#include&lt;vector&gt;以包含所需要的类文件vector</span><br><span class="line"></span><br><span class="line">还有一定要加上using namespace std;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">2.变量声明:</span><br><span class="line"></span><br><span class="line">   2.1 例:声明一个int向量以替代一维的数组:vector &lt;int&gt; a;(等于声明了一个int数组a[],大小没有指定,可以动态的向里面添加删除)。</span><br><span class="line"></span><br><span class="line">   2.2 例:用vector代替二维数组.其实只要声明一个一维数组向量即可,而一个数组的名字其实代表的是它的首地址,所以只要声明一个地址的向量即可,即:vector &lt;int *&gt; a.同理想用向量代替三维数组也是一样,vector &lt;int**&gt;a;再往上面依此类推.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">3.具体的用法以及函数调用:</span><br><span class="line"></span><br><span class="line">3.1 如何得到向量中的元素?其用法和数组一样:</span><br><span class="line"></span><br><span class="line">例如:</span><br><span class="line"></span><br><span class="line">vector &lt;int *&gt; a</span><br><span class="line"></span><br><span class="line">int b = 5;</span><br><span class="line"></span><br><span class="line">a.push_back(b);//该函数下面有详解</span><br><span class="line"></span><br><span class="line">cout&lt;&lt;a[0];       //输出结果为5</span><br><span class="line"></span><br><span class="line">1.push_back   在数组的最后添加一个数据</span><br><span class="line">2.pop_back    去掉数组的最后一个数据</span><br><span class="line">3.at                得到编号位置的数据</span><br><span class="line">4.begin           得到数组头的指针</span><br><span class="line">5.end             得到数组的最后一个单元+1的指针</span><br><span class="line">6．front        得到数组头的引用</span><br><span class="line">7.back            得到数组的最后一个单元的引用</span><br><span class="line">8.max_size     得到vector最大可以是多大</span><br><span class="line">9.capacity       当前vector分配的大小</span><br><span class="line">10.size           当前使用数据的大小</span><br><span class="line">11.resize         改变当前使用数据的大小，如果它比当前使用的大，者填充默认值</span><br><span class="line">12.reserve      改变当前vecotr所分配空间的大小</span><br><span class="line">13.erase         删除指针指向的数据项</span><br><span class="line">14.clear          清空当前的vector</span><br><span class="line">15.rbegin        将vector反转后的开始指针返回(其实就是原来的end-1)</span><br><span class="line">16.rend          将vector反转构的结束指针返回(其实就是原来的begin-1)</span><br><span class="line">17.empty        判断vector是否为空</span><br><span class="line">18.swap         与另一个vector交换数据</span><br></pre></td></tr></table></figure></p>
+<h5 id="C-值传递，引用传递和指针传递"><a href="#C-值传递，引用传递和指针传递" class="headerlink" title="C++值传递，引用传递和指针传递"></a>C++值传递，引用传递和指针传递</h5><p><a href="http://blog.csdn.net/shhdgl/article/details/50212237" target="_blank" rel="noopener">http://blog.csdn.net/shhdgl/article/details/50212237</a><br><a href="http://www.cnblogs.com/skyseraph/archive/2010/10/25/1860032.html" target="_blank" rel="noopener">http://www.cnblogs.com/skyseraph/archive/2010/10/25/1860032.html</a><br><a href="http://blog.csdn.net/whzhaochao/article/details/12891329" target="_blank" rel="noopener">http://blog.csdn.net/whzhaochao/article/details/12891329</a><br><a href="http://www.cnblogs.com/yanlingyin/archive/2011/12/07/2278961.html" target="_blank" rel="noopener">http://www.cnblogs.com/yanlingyin/archive/2011/12/07/2278961.html</a><br><a href="https://www.zhihu.com/question/20632080" target="_blank" rel="noopener">https://www.zhihu.com/question/20632080</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">功能：学习 C++ 值传递、引用传递、指针传递</span><br><span class="line">时间：2015/12/7</span><br><span class="line">参考：http://blog.csdn.net/lby978232/article/details/8105688</span><br><span class="line">     http://www.cnblogs.com/skyseraph/archive/2010/10/25/1860032.html</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">//值传递</span><br><span class="line">void swap1(int x,int y)</span><br><span class="line">&#123;</span><br><span class="line">    int temp;</span><br><span class="line">    temp=x;</span><br><span class="line">    x=y;</span><br><span class="line">    y=temp;</span><br><span class="line">    cout&lt;&lt;&quot;do swap1：\t&quot;&lt;&lt;x&lt;&lt;&quot; * &quot;&lt;&lt;y&lt;&lt; &quot;\t值传递&quot; &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//引用传递</span><br><span class="line">void swap2(int &amp;x,int &amp;y)</span><br><span class="line">&#123;</span><br><span class="line">    int temp;</span><br><span class="line">    temp=x;</span><br><span class="line">    x=y;</span><br><span class="line">    y=temp;</span><br><span class="line">    cout&lt;&lt;&quot;do swap2\t&quot;&lt;&lt;x&lt;&lt;&quot; * &quot;&lt;&lt;y&lt;&lt; &quot;\t引用传递&quot; &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//指针传递：改变指针的间接引用</span><br><span class="line">void swap3(int *x,int *y)</span><br><span class="line">&#123;</span><br><span class="line">    int temp;</span><br><span class="line">    temp=*x;</span><br><span class="line">    *x=*y;</span><br><span class="line">    *y=temp;</span><br><span class="line">    cout&lt;&lt;&quot;do swap3\t&quot;&lt;&lt;*x&lt;&lt;&quot; * &quot;&lt;&lt;*y&lt;&lt; &quot;\t指针传递：改变指针的间接引用&quot; &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//指针传递：改变指针本身</span><br><span class="line">void swap4(int *x,int *y)</span><br><span class="line">&#123;</span><br><span class="line">    int *temp;</span><br><span class="line">    temp=x;</span><br><span class="line">    x=y;</span><br><span class="line">    y=temp;</span><br><span class="line">    cout&lt;&lt;&quot;do swap4\t&quot;&lt;&lt;*x&lt;&lt;&quot; * &quot;&lt;&lt;*y&lt;&lt; &quot;\t指针传递：改变指针本身&quot; &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">int main(int argc, char *argv[])</span><br><span class="line">&#123;</span><br><span class="line">    int a=5,b=10;</span><br><span class="line">    cout&lt;&lt;&quot;before do swap   &quot;&lt;&lt;a&lt;&lt;&quot; * &quot;&lt;&lt;b&lt;&lt;endl;</span><br><span class="line">    swap1(a,b);</span><br><span class="line">    cout&lt;&lt;&quot;after do swap    &quot;&lt;&lt;a&lt;&lt;&quot; * &quot;&lt;&lt;b&lt;&lt;endl;</span><br><span class="line">    cout&lt;&lt;&quot;---------------------------------------------------&quot;&lt;&lt;endl;</span><br><span class="line">    a=5,b=10;</span><br><span class="line">    cout&lt;&lt;&quot;before do swap   &quot;&lt;&lt;a&lt;&lt;&quot; * &quot;&lt;&lt;b&lt;&lt;endl;</span><br><span class="line">    swap2(a,b);</span><br><span class="line">    cout&lt;&lt;&quot;after do swap    &quot;&lt;&lt;a&lt;&lt;&quot; * &quot;&lt;&lt;b&lt;&lt;endl;</span><br><span class="line">    cout&lt;&lt;&quot;---------------------------------------------------&quot;&lt;&lt;endl;</span><br><span class="line">    a=5,b=10;</span><br><span class="line">    cout&lt;&lt;&quot;before do swap   &quot;&lt;&lt;a&lt;&lt;&quot; * &quot;&lt;&lt;b&lt;&lt;endl;</span><br><span class="line">    swap3(&amp;a,&amp;b);</span><br><span class="line">    cout&lt;&lt;&quot;after do swap    &quot;&lt;&lt;a&lt;&lt;&quot; * &quot;&lt;&lt;b&lt;&lt;endl;</span><br><span class="line">    cout&lt;&lt;&quot;---------------------------------------------------&quot;&lt;&lt;endl;</span><br><span class="line">    a=5,b=10;</span><br><span class="line">    cout&lt;&lt;&quot;before do swap   &quot;&lt;&lt;a&lt;&lt;&quot; * &quot;&lt;&lt;b&lt;&lt;endl;</span><br><span class="line">    swap4(&amp;a,&amp;b);</span><br><span class="line">    cout&lt;&lt;&quot;after do swap    &quot;&lt;&lt;a&lt;&lt;&quot; * &quot;&lt;&lt;b&lt;&lt;endl;</span><br><span class="line">    system(&quot;PAUSE&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">一：值传递</span><br><span class="line"></span><br><span class="line">//值传递</span><br><span class="line">void swap1(int x,int y)</span><br><span class="line">&#123;</span><br><span class="line">    int temp;</span><br><span class="line">    temp=x;</span><br><span class="line">    x=y;</span><br><span class="line">    y=temp;</span><br><span class="line">    cout&lt;&lt;&quot;do swap1：\t&quot;&lt;&lt;x&lt;&lt;&quot; * &quot;&lt;&lt;y&lt;&lt; &quot;\t值传递&quot; &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">原因：swap1(int x, int y)函数采用值传递的方式，传入的实参实际上是a和b的副本而非其本身，所以对副本的改变并不会反应到a和b本身上。</span><br><span class="line"></span><br><span class="line">二：引用传递</span><br><span class="line"></span><br><span class="line">//引用传递</span><br><span class="line">void swap2(int &amp;x,int &amp;y)</span><br><span class="line">&#123;</span><br><span class="line">    int temp;</span><br><span class="line">    temp=x;</span><br><span class="line">    x=y;</span><br><span class="line">    y=temp;</span><br><span class="line">    cout&lt;&lt;&quot;do swap2\t&quot;&lt;&lt;x&lt;&lt;&quot; * &quot;&lt;&lt;y&lt;&lt; &quot;\t引用传递&quot; &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">原因：swap2(int x, int y)函数采用引用传递的方式，传入的实参实际上是a和b的引用，对引用的改变会直接反应到a和b本身上。</span><br><span class="line"></span><br><span class="line">三：指针传递</span><br><span class="line"></span><br><span class="line">    改变指针的间接引用</span><br><span class="line"></span><br><span class="line">//指针传递：改变指针的间接引用</span><br><span class="line">void swap3(int *x,int *y)</span><br><span class="line">&#123;</span><br><span class="line">    int temp;</span><br><span class="line">    temp=*x;</span><br><span class="line">    *x=*y;</span><br><span class="line">    *y=temp;</span><br><span class="line">    cout&lt;&lt;&quot;do swap3\t&quot;&lt;&lt;*x&lt;&lt;&quot; * &quot;&lt;&lt;*y&lt;&lt; &quot;\t指针传递：改变指针的间接引用&quot; &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">调用方法：swap3(&amp;a, &amp;b) ;</span><br><span class="line">原因：swap3(int x, int y)函数采用指针传递的方式，传入的实参虽然也是a和b的指针的副本，但是改变的是副本的间接引用，无论是指针本身还是其副本，都指向相同的值，所以这个改变会反应到a和b本身上。</span><br><span class="line"></span><br><span class="line">    改变指针的间接引用</span><br><span class="line"></span><br><span class="line">//指针传递：改变指针本身</span><br><span class="line">void swap4(int *x,int *y)</span><br><span class="line">&#123;</span><br><span class="line">    int *temp;</span><br><span class="line">    temp=x;</span><br><span class="line">    x=y;</span><br><span class="line">    y=temp;</span><br><span class="line">    cout&lt;&lt;&quot;do swap4\t&quot;&lt;&lt;*x&lt;&lt;&quot; * &quot;&lt;&lt;*y&lt;&lt; &quot;\t指针传递：改变指针本身&quot; &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">调用方法：swap4(&amp;a, &amp;b) ;</span><br><span class="line">输出结果：</span><br><span class="line"></span><br><span class="line">原因：swap4(int x, int y)函数采用指针传递的方式，传入的实参实际上是a和b的指针的副本，而且改变的是副本本身而非其间接引用，所以不会影响的指针所指向的值，即a和b本身上。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> 1 #include&lt;iostream&gt;</span><br><span class="line"> 2 using namespace std;</span><br><span class="line"> 3 //值传递</span><br><span class="line"> 4  void change1(int n)&#123;</span><br><span class="line"> 5     cout&lt;&lt;&quot;值传递--函数操作地址&quot;&lt;&lt;&amp;n&lt;&lt;endl;         //显示的是拷贝的地址而不是源地址</span><br><span class="line"> 6     n++;</span><br><span class="line"> 7 &#125;</span><br><span class="line"> 8</span><br><span class="line"> 9 //引用传递</span><br><span class="line">10 void change2(int &amp; n)&#123;</span><br><span class="line">11     cout&lt;&lt;&quot;引用传递--函数操作地址&quot;&lt;&lt;&amp;n&lt;&lt;endl;</span><br><span class="line">12     n++;</span><br><span class="line">13 &#125;</span><br><span class="line">14  //指针传递</span><br><span class="line">15 void change3(int *n)&#123;</span><br><span class="line">16      cout&lt;&lt;&quot;指针传递--函数操作地址 &quot;&lt;&lt;n&lt;&lt;endl;</span><br><span class="line">17     *n=*n+1;</span><br><span class="line">18  &#125;</span><br><span class="line">19 int     main()&#123;</span><br><span class="line">20     int n=10;</span><br><span class="line">21     cout&lt;&lt;&quot;实参的地址&quot;&lt;&lt;&amp;n&lt;&lt;endl;</span><br><span class="line">22     change1(n);</span><br><span class="line">23     cout&lt;&lt;&quot;after change1() n=&quot;&lt;&lt;n&lt;&lt;endl;</span><br><span class="line">24     change2(n);</span><br><span class="line">25     cout&lt;&lt;&quot;after change2() n=&quot;&lt;&lt;n&lt;&lt;endl;</span><br><span class="line">26     change3(&amp;n);</span><br><span class="line">27     cout&lt;&lt;&quot;after change3() n=&quot;&lt;&lt;n&lt;&lt;endl;</span><br><span class="line">28     return true;</span><br><span class="line">29 &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">无论你传值还是传指针，函数都会生成一个临时变量， 但传引用时，不会生成临时变量，</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">你可以把引用当做语法糖，但传引用主要是它不生成临时变量，不进行返回值copy等，速度快。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">以下来自Google C++ Style Guide:All parameters passed by reference must be labeled const.来自: http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml#Reference_Arguments</span><br><span class="line">这样也就有了一些使用倾向，当参数不希望被修改时，使用引用+const；当有可能要修改时，使用指针。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">在 C 语言中，所有的参数传递都是值传递，所以如果你需要在一个函数中改变函数外变量值，你需要把函数的参数声明为指针（全局变量另当别论）。但是在 C++ 中存在传递引用，它也可以用来改变变量值。此外引用也同时消除了拷贝对象带来的开销。</span><br><span class="line"></span><br><span class="line">既然传递指针和引用都能到达到同样的效果，那么函数声明的时候应该使用引用呢还是指针呢？</span><br><span class="line">More Effective C++ 一书的总结</span><br><span class="line"></span><br><span class="line">这本书的第一条就是区分指针和引用。它们两者之间的最大区别是引用必须指向某个对象而指针可以是NULL，此外引用一旦指定不能更改而指针可以。</span><br><span class="line"></span><br><span class="line">这两个区别点导致引用有更加安全和高效的特性，但是指针却有无可比拟的灵活性。大部分人出于安全性的考虑会推荐使用引用，这其实也是它设计的主要目的，但是如果你想要灵活的设计，大部分时候你只能选用指针，比如设计模式种的大部分设计都是使用指针而不是使用引用。引用在参数传递的时候用得多一些，而类内部的组合中可能会使用指针来提高设计的灵活性（毕竟一旦设定就无法改变对于灵活性来说是个灾难）。</span><br></pre></td></tr></table></figure></p>
+<h5 id="CString与LPCWSTR、LPSTR、char-、LPWSTR等类型的转换"><a href="#CString与LPCWSTR、LPSTR、char-、LPWSTR等类型的转换" class="headerlink" title="CString与LPCWSTR、LPSTR、char*、LPWSTR等类型的转换"></a>CString与LPCWSTR、LPSTR、char*、LPWSTR等类型的转换</h5><p><a href="http://blog.csdn.net/sl159/article/details/6412171" target="_blank" rel="noopener">http://blog.csdn.net/sl159/article/details/6412171</a></p>
+<h5 id="C-Debug-Reference"><a href="#C-Debug-Reference" class="headerlink" title="C++ Debug Reference"></a>C++ Debug Reference</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line">2018.01.05 update</span><br><span class="line"></span><br><span class="line">strcpy, strncpy, strncpy_s</span><br><span class="line">http://zh.cppreference.com/w/c/string/byte/strncpy</span><br><span class="line">http://blog.csdn.net/xin_yu_xin/article/details/51577008</span><br><span class="line">http://blog.csdn.net/geekvc/article/details/22578215</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">unsigned char and signed char</span><br><span class="line">http://bbs.chinaunix.net/thread-4291073-1-1.html</span><br><span class="line">https://ask.helplib.com/c++/post_864391</span><br><span class="line">http://www.cnblogs.com/qytan36/archive/2010/09/27/1836569.html</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">std::cout and printf</span><br><span class="line">http://blog.csdn.net/witnessai1/article/details/47658283</span><br><span class="line">https://www.cnblogs.com/devymex/archive/2010/09/06/1818754.html</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">string</span><br><span class="line">https://www.cnblogs.com/xFreedom/archive/2011/05/16/2048037.html</span><br><span class="line">https://www.renfei.org/blog/introduction-to-cpp-string.html</span><br><span class="line">http://www.cnblogs.com/youxin/archive/2012/06/21/2558279.html</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">string, LPCWSTR, CString</span><br><span class="line">http://xionghuilin.com/?p=621</span><br><span class="line">https://www.kancloud.cn/wangshubo1989/string/100983</span><br><span class="line">https://social.msdn.microsoft.com/Forums/vstudio/en-US/901f3217-f667-485b-9bd8-83d6f7fe89d4/how-to-convert-lpcwstr-to-string</span><br><span class="line">http://www.cnblogs.com/foolboy/archive/2005/07/25/199869.html</span><br><span class="line">https://stackoverflow.com/questions/5271461/vc-how-to-convert-a-cstring-into-lpcwstr</span><br><span class="line">https://stackoverflow.com/questions/27220/how-to-convert-stdstring-to-lpcwstr-in-c-unicode</span><br><span class="line">https://blackfs.blogspot.jp/2015/01/convert-stdstring-to-lpcwstr-in-c.html</span><br><span class="line">http://wiki.jikexueyuan.com/project/visual-studio/1.html</span><br><span class="line">http://blog.csdn.net/ezhou_liukai/article/details/13779091</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">MSXML2</span><br><span class="line">https://www.bbsmax.com/A/n2d9GR4JDv/</span><br><span class="line">http://www.cnblogs.com/xuandi/p/5719295.html</span><br><span class="line">http://blog.csdn.net/dongdan_002/article/details/41348985</span><br><span class="line">https://msdn.microsoft.com/en-us/library/ms766702(v=vs.85).aspx</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">2018.01.22 update</span><br><span class="line"></span><br><span class="line">char * to string</span><br><span class="line">https://stackoverflow.com/questions/1195675/convert-a-char-to-stdstring</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">string对象的方法</span><br><span class="line">http://blog.csdn.net/ezhou_liukai/article/details/13779091</span><br><span class="line">http://blog.csdn.net/qq_35040828/article/details/65445241</span><br><span class="line">http://blog.csdn.net/monkeyduck/article/details/23541073</span><br><span class="line">https://www.cnblogs.com/web100/archive/2012/12/02/cpp-string-find-npos.html</span><br><span class="line">http://en.cppreference.com/w/cpp/string/basic_string/size</span><br><span class="line">https://zh.wikipedia.org/wiki/String_(C%2B%2B%E6%A0%87%E5%87%86%E5%BA%93)</span><br><span class="line">https://www.renfei.org/blog/introduction-to-cpp-string.html</span><br><span class="line">https://www.cnblogs.com/xFreedom/archive/2011/05/16/2048037.html</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">integer to string</span><br><span class="line">http://www.cppblog.com/forLinda/archive/2006/03/17/4298.html</span><br><span class="line">http://www.cnblogs.com/lshguang89/archive/2008/06/09/1216334.html</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sprintf</span><br><span class="line">http://www.cnblogs.com/jeekun/archive/2013/01/15/2862051.html</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">char to wchar</span><br><span class="line">http://www.cnitblog.com/textbox/archive/2010/03/16/64672.aspx</span><br><span class="line">http://www.voidcn.com/article/p-pspenxdm-bcy.html</span><br><span class="line">http://blog.csdn.net/github_35160620/article/details/53687757</span><br><span class="line">https://github.com/isocpp/CppCoreGuidelines/issues/829</span><br><span class="line">https://social.msdn.microsoft.com/Forums/vstudio/en-US/54ea02f7-02df-4726-8fb7-c3660db30739/convert-char-to-wchart?forum=vcgeneral</span><br><span class="line">http://blog.csdn.net/u010476094/article/details/74545823</span><br><span class="line">https://www.codeproject.com/Questions/172037/Convert-char-to-wchar</span><br><span class="line">https://stackoverflow.com/questions/3074776/how-to-convert-char-array-to-wchar-t-array</span><br><span class="line">https://stackoverflow.com/questions/8032080/how-to-convert-char-to-wchar-t</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">visual studio configure utf-8</span><br><span class="line">http://blog.csdn.net/stelalala/article/details/9635817</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cout</span><br><span class="line">http://blog.csdn.net/xijiaoda_liuhao/article/details/8807742</span><br><span class="line">https://www.cnblogs.com/devymex/archive/2010/09/06/1818754.html</span><br></pre></td></tr></table></figure>
+<h5 id="C-Library-API-reference"><a href="#C-Library-API-reference" class="headerlink" title="C++ Library API reference"></a>C++ Library API reference</h5><p><a href="http://en.cppreference.com/w/cpp/string/basic_string/size" target="_blank" rel="noopener">http://en.cppreference.com/w/cpp/string/basic_string/size</a><br><a href="http://www.cplusplus.com/reference/string/string/compare/" target="_blank" rel="noopener">http://www.cplusplus.com/reference/string/string/compare/</a><br><a href="http://www.howsoftworks.net/cplusplus.api/std/string_compare.html" target="_blank" rel="noopener">http://www.howsoftworks.net/cplusplus.api/std/string_compare.html</a></p>
+<h5 id="Win32串口编程"><a href="#Win32串口编程" class="headerlink" title="Win32串口编程"></a>Win32串口编程</h5><p><a href="http://blog.csdn.net/czc1009/article/details/17118971" target="_blank" rel="noopener">http://blog.csdn.net/czc1009/article/details/17118971</a><br><a href="http://blog.csdn.net/lingtianyulong/article/details/8477130" target="_blank" rel="noopener">http://blog.csdn.net/lingtianyulong/article/details/8477130</a><br><a href="http://blog.csdn.net/ypist/article/details/8793037" target="_blank" rel="noopener">http://blog.csdn.net/ypist/article/details/8793037</a><br><a href="http://blog.csdn.net/bingcaihuang/article/details/5668474" target="_blank" rel="noopener">http://blog.csdn.net/bingcaihuang/article/details/5668474</a><br><a href="http://blog.csdn.net/changyourmind/article/details/52161096" target="_blank" rel="noopener">http://blog.csdn.net/changyourmind/article/details/52161096</a><br><a href="http://blog.csdn.net/u013232740/article/details/49871113" target="_blank" rel="noopener">http://blog.csdn.net/u013232740/article/details/49871113</a><br><a href="http://blog.csdn.net/cancan8538/article/details/7329092" target="_blank" rel="noopener">http://blog.csdn.net/cancan8538/article/details/7329092</a><br><a href="http://www.go-gddq.com/down/2011-06/11060523185438.pdf" target="_blank" rel="noopener">http://www.go-gddq.com/down/2011-06/11060523185438.pdf</a><br><a href="http://www.tk4479.net/CaroTong/article/details/41347281" target="_blank" rel="noopener">http://www.tk4479.net/CaroTong/article/details/41347281</a></p>
+<p>COM10以上串口<br><a href="http://blog.csdn.net/playboy1/article/details/48316263" target="_blank" rel="noopener">http://blog.csdn.net/playboy1/article/details/48316263</a><br><a href="http://blog.csdn.net/ccing/article/details/6234050" target="_blank" rel="noopener">http://blog.csdn.net/ccing/article/details/6234050</a></p>
+<h5 id="C-正则表达式"><a href="#C-正则表达式" class="headerlink" title="C++正则表达式"></a>C++正则表达式</h5><p><a href="https://msdn.microsoft.com/zh-cn/library/bb982727.aspx" target="_blank" rel="noopener">https://msdn.microsoft.com/zh-cn/library/bb982727.aspx</a><br><a href="http://www.cnblogs.com/pmars/archive/2012/10/24/2736831.html" target="_blank" rel="noopener">http://www.cnblogs.com/pmars/archive/2012/10/24/2736831.html</a><br><a href="http://www.cnblogs.com/ittinybird/p/4853532.html" target="_blank" rel="noopener">http://www.cnblogs.com/ittinybird/p/4853532.html</a><br><a href="http://blog.csdn.net/mycwq/article/details/18838151" target="_blank" rel="noopener">http://blog.csdn.net/mycwq/article/details/18838151</a></p>
+<h5 id="strcpy-strncpy-strncpy-s"><a href="#strcpy-strncpy-strncpy-s" class="headerlink" title="strcpy, strncpy, strncpy_s"></a>strcpy, strncpy, strncpy_s</h5><p><a href="http://zh.cppreference.com/w/c/string/byte/strncpy" target="_blank" rel="noopener">http://zh.cppreference.com/w/c/string/byte/strncpy</a><br><a href="http://blog.csdn.net/xin_yu_xin/article/details/51577008" target="_blank" rel="noopener">http://blog.csdn.net/xin_yu_xin/article/details/51577008</a><br><a href="http://blog.csdn.net/geekvc/article/details/22578215" target="_blank" rel="noopener">http://blog.csdn.net/geekvc/article/details/22578215</a></p>
+<h5 id="std-cout与printf"><a href="#std-cout与printf" class="headerlink" title="std::cout与printf"></a>std::cout与printf</h5><p>std::cout and printf<br><a href="http://blog.csdn.net/witnessai1/article/details/47658283" target="_blank" rel="noopener">http://blog.csdn.net/witnessai1/article/details/47658283</a><br><a href="https://www.cnblogs.com/devymex/archive/2010/09/06/1818754.html" target="_blank" rel="noopener">https://www.cnblogs.com/devymex/archive/2010/09/06/1818754.html</a></p>
+<h5 id="C-操作xml文件"><a href="#C-操作xml文件" class="headerlink" title="C++操作xml文件"></a>C++操作xml文件</h5><p><a href="https://www.bbsmax.com/A/n2d9GR4JDv/" target="_blank" rel="noopener">https://www.bbsmax.com/A/n2d9GR4JDv/</a><br><a href="https://msdn.microsoft.com/en-us/library/ms756987(v=vs.85).aspx" target="_blank" rel="noopener">https://msdn.microsoft.com/en-us/library/ms756987(v=vs.85).aspx</a><br><a href="http://blog.csdn.net/cds27/article/details/5545455" target="_blank" rel="noopener">http://blog.csdn.net/cds27/article/details/5545455</a><br><a href="http://www.cnblogs.com/xuandi/p/5719295.html" target="_blank" rel="noopener">http://www.cnblogs.com/xuandi/p/5719295.html</a><br><a href="http://blog.csdn.net/dongdan_002/article/details/41348985" target="_blank" rel="noopener">http://blog.csdn.net/dongdan_002/article/details/41348985</a><br><a href="https://msdn.microsoft.com/en-us/library/ms766702(v=vs.85).aspx" target="_blank" rel="noopener">https://msdn.microsoft.com/en-us/library/ms766702(v=vs.85).aspx</a></p>
+<h5 id="Win32-API-reference"><a href="#Win32-API-reference" class="headerlink" title="Win32 API reference"></a>Win32 API reference</h5><p><a href="https://stackoverflow.com/questions/4701193/download-windows-api-reference-msdn-for-offline-use" target="_blank" rel="noopener">https://stackoverflow.com/questions/4701193/download-windows-api-reference-msdn-for-offline-use</a><br><a href="http://laurencejackson.com/win32/" target="_blank" rel="noopener">http://laurencejackson.com/win32/</a><br><a href="https://www.microsoft.com/zh-CN/download/details.aspx?id=20955" target="_blank" rel="noopener">https://www.microsoft.com/zh-CN/download/details.aspx?id=20955</a></p>
+<h5 id="面向对象基本知识"><a href="#面向对象基本知识" class="headerlink" title="面向对象基本知识"></a>面向对象基本知识</h5><p><a href="http://coredumper.cn/index.php/2017/05/21/c_plus_plus_booklist/" target="_blank" rel="noopener">http://coredumper.cn/index.php/2017/05/21/c_plus_plus_booklist/</a></p>
+<p><a href="http://www.cnblogs.com/lrh-xl/p/5252156.html" target="_blank" rel="noopener">http://www.cnblogs.com/lrh-xl/p/5252156.html</a><br><a href="http://blog.csdn.net/hankai1024/article/details/7948376" target="_blank" rel="noopener">http://blog.csdn.net/hankai1024/article/details/7948376</a><br><a href="http://blog.csdn.net/hankai1024/article/details/7947989" target="_blank" rel="noopener">http://blog.csdn.net/hankai1024/article/details/7947989</a></p>
+<p><a href="http://www.runoob.com/cplusplus/cpp-static-members.html" target="_blank" rel="noopener">http://www.runoob.com/cplusplus/cpp-static-members.html</a><br><a href="http://www.runoob.com/cplusplus/cpp-class-access-modifiers.html" target="_blank" rel="noopener">http://www.runoob.com/cplusplus/cpp-class-access-modifiers.html</a><br><a href="http://www.runoob.com/cplusplus/assignment-operators-overloading.html" target="_blank" rel="noopener">http://www.runoob.com/cplusplus/assignment-operators-overloading.html</a><br><a href="https://www.w3cschool.cn/cpp/cpp-polymorphism.html" target="_blank" rel="noopener">https://www.w3cschool.cn/cpp/cpp-polymorphism.html</a></p>
+<p><a href="http://www.cnblogs.com/qlwy/archive/2011/08/25/2153584.html" target="_blank" rel="noopener">http://www.cnblogs.com/qlwy/archive/2011/08/25/2153584.html</a><br><a href="http://blog.csdn.net/junlon2006/article/details/53066660" target="_blank" rel="noopener">http://blog.csdn.net/junlon2006/article/details/53066660</a><br><a href="http://blog.sina.com.cn/s/blog_5c5bc9070100xmuk.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_5c5bc9070100xmuk.html</a><br><a href="http://blog.csdn.net/morewindows/article/details/6721430" target="_blank" rel="noopener">http://blog.csdn.net/morewindows/article/details/6721430</a></p>
+<p><a href="http://blog.csdn.net/qsyzb/article/details/9896543" target="_blank" rel="noopener">http://blog.csdn.net/qsyzb/article/details/9896543</a><br><a href="http://blog.csdn.net/gaoxuelin/article/details/9766619" target="_blank" rel="noopener">http://blog.csdn.net/gaoxuelin/article/details/9766619</a></p>
+<p><a href="https://www.zhihu.com/question/34018632" target="_blank" rel="noopener">https://www.zhihu.com/question/34018632</a><br><a href="https://www.zhihu.com/question/26911239" target="_blank" rel="noopener">https://www.zhihu.com/question/26911239</a><br><a href="http://blog.csdn.net/gatieme/article/details/17589981" target="_blank" rel="noopener">http://blog.csdn.net/gatieme/article/details/17589981</a><br><a href="http://blog.csdn.net/KingCat666/article/details/45048385" target="_blank" rel="noopener">http://blog.csdn.net/KingCat666/article/details/45048385</a><br><a href="http://blog.csdn.net/wuha0/article/details/7084136" target="_blank" rel="noopener">http://blog.csdn.net/wuha0/article/details/7084136</a></p>
+</ol>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C-C/" rel="tag"># C&C++</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/11/c-program-language-usage/" rel="next" title="C语言问题记录">
+                <i class="fa fa-chevron-left"></i> C语言问题记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/11/cmocka-usage/" rel="prev" title="comcka单元测试框架使用记录">
+                comcka单元测试框架使用记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Hogan Chen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#读写文件"><span class="nav-number">1.</span> <span class="nav-text">读写文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#error-”cout-“-was-not-declared-in-this-scope"><span class="nav-number">2.</span> <span class="nav-text">error :”cout “ was not declared in this scope</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#error-no-matching-function-for-call-to-‘std-basic-ifstream-open-std-string-amp"><span class="nav-number">3.</span> <span class="nav-text">error: no matching function for call to ‘std::basic_ifstream::open(std::string&amp;)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#visual-studio读写xml文件"><span class="nav-number">4.</span> <span class="nav-text">visual studio读写xml文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#string操作与char-和CString的转换"><span class="nav-number">5.</span> <span class="nav-text">string操作与char *和CString的转换</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#c-中类对象作为参数都是值拷贝吗？"><span class="nav-number">6.</span> <span class="nav-text">c++中类对象作为参数都是值拷贝吗？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#String处理函数"><span class="nav-number">7.</span> <span class="nav-text">String处理函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CString-LPCWSTR-string-char-等字符串格式的互相转换"><span class="nav-number">8.</span> <span class="nav-text">CString, LPCWSTR, string, char *等字符串格式的互相转换</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#string-to-LPCWSTR-C-unicode"><span class="nav-number">9.</span> <span class="nav-text">string to LPCWSTR(C++ unicode)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#unsigned-char-and-signed-char区别"><span class="nav-number">10.</span> <span class="nav-text">unsigned char and signed char区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#string比较"><span class="nav-number">11.</span> <span class="nav-text">string比较</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Vector使用"><span class="nav-number">12.</span> <span class="nav-text">Vector使用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#C-值传递，引用传递和指针传递"><span class="nav-number">13.</span> <span class="nav-text">C++值传递，引用传递和指针传递</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CString与LPCWSTR、LPSTR、char-、LPWSTR等类型的转换"><span class="nav-number">14.</span> <span class="nav-text">CString与LPCWSTR、LPSTR、char*、LPWSTR等类型的转换</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#C-Debug-Reference"><span class="nav-number">15.</span> <span class="nav-text">C++ Debug Reference</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#C-Library-API-reference"><span class="nav-number">16.</span> <span class="nav-text">C++ Library API reference</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Win32串口编程"><span class="nav-number">17.</span> <span class="nav-text">Win32串口编程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#C-正则表达式"><span class="nav-number">18.</span> <span class="nav-text">C++正则表达式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#strcpy-strncpy-strncpy-s"><span class="nav-number">19.</span> <span class="nav-text">strcpy, strncpy, strncpy_s</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#std-cout与printf"><span class="nav-number">20.</span> <span class="nav-text">std::cout与printf</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#C-操作xml文件"><span class="nav-number">21.</span> <span class="nav-text">C++操作xml文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Win32-API-reference"><span class="nav-number">22.</span> <span class="nav-text">Win32 API reference</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#面向对象基本知识"><span class="nav-number">23.</span> <span class="nav-text">面向对象基本知识</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hogan Chen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
