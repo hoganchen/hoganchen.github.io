@@ -142,6 +142,31 @@ sudo mount -t vboxsf Ubuntu /mnt/share
 sudo vi /etc/fstab
 /etc/fstab添加如下语句
 Ubuntu /mnt/share vboxsf rw,gid=100,uid=1000,auto 0 0
+
+*****20200621 update*****
+在实际使用中，因为系统调用fstab的时候，Virtualbox的共享目录的模块还没有加载，所以每次加载都会失败
+以下是ubuntu 16上实际使用方式
+1. 设置--共享文件夹--设置目录(固定分配勾选，注意把自动挂载选项去掉，Ubuntu不能勾选自动挂载，Ubuntu不能勾选自动挂载，Ubuntu不能勾选自动挂载，重要的事说三遍。。。
+
+2. 修改/etc/rc.local，把mount的语句加在rc.local中，rc.local是最后执行的开机启动任务，所以这时候virtualbox的相关模块已启动，不会导致加载失败的问题，值得注意的是，一定要把virtualbox设置中的自动挂载去掉
+hogan@ubuntu:~$ cat /etc/rc.local
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+
+mount -t vboxsf ubuntu /mnt/share
+mount -t vboxsf codes /mnt/repository
+exit 0
+
 ```
 
 ##### <li> 安装mysql server
@@ -188,6 +213,43 @@ alias conda='~/anaconda3/bin/conda'
 
 alias toshare='cd /mnt/share'
 alias updatemysql='cd /mnt/share/codes/python/stcksql; condapython update_mysql_data.py'
+
+*****20200621 update*****
+# go env
+export GOROOT=~/go
+export GOPATH=$HOME/gopath
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+# user alias
+alias torepo='cd /mnt/repository'
+alias tocode='cd /mnt/repository/github/codes'
+alias tostck='cd /mnt/repository/github/codes/python/stcksql'
+alias updata='cd ~/bin; nohup bash mysql_update > /dev/null 2>&1 &'
+
+# added by Anaconda3 installer
+export PATH="/home/hogan/anaconda3/bin:$PATH"
+
+```
+
+##### <li> mysql_update
+```
+hogan@ubuntu:~$ cat bin/mysql_update
+#!/bin/bash
+
+cd /mnt/repository/github/codes/python/stcksql
+
+# ~/anaconda3/bin/python update_hist_data.py > update_hist_data_`date "+%Y%m%d%H%M%S"`.log 2>&1
+~/anaconda3/bin/python update_hist_data.py > update_hist_data.log 2>&1
+sleep 10
+
+# ~/anaconda3/bin/python update_extend_hist_data.py > update_extend_hist_data_`date "+%Y%m%d%H%M%S"`.log 2>&1
+~/anaconda3/bin/python update_extend_hist_data.py > update_extend_hist_data.log 2>&1
+
+```
+
+##### <li> 桥接网络设置
+```
+不知道是否路由器的原因，桥接网络有时候不能获取IP地址，但是这时候重启Host电脑，然后再打开虚拟机启动guest，就能够获取IP了，如果还不行，可以在桥接网络设置，混杂模式切换试试
 ```
 
 ##### <li> Ubuntu Server只安装安全更新(未验证)
